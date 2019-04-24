@@ -15,13 +15,13 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class ExcelReadParameterPerStage {
-
+public class ExcelReadParameterPerStage{
+    static String fileName = "src\\main\\resources\\parameter_per_stage.xlsx";
     public ExcelReadParameterPerStage() {
 
     }
 
-    public List<ParameterPerStage> readExcelData(String fileName) {
+    public List<ParameterPerStage> readExcelData() {
         List<ParameterPerStage> parameterPerStageList = new ArrayList<ParameterPerStage>();
 
         try {
@@ -49,10 +49,10 @@ public class ExcelReadParameterPerStage {
                 Iterator<Row> rowIterator = sheet.iterator();
                 while (rowIterator.hasNext()) {
 
-                    Double nutrientPerStageId = null;
-                    Double paramPerCropId = null;
-                    Double varietyId = null;
-                    Double phenologicalStageId = null;
+                    Integer nutrientPerStageId = null;
+                    Integer paramPerCropId = null;
+                    Integer varietyId = null;
+                    Integer phenologicalStageId = null;
                     Double percent = null;
 
                     //Get the row object
@@ -69,14 +69,14 @@ public class ExcelReadParameterPerStage {
                         switch (cell.getCellType()) {
                             case Cell.CELL_TYPE_NUMERIC:
                                 if (nutrientPerStageId == null) {
-                                    nutrientPerStageId = cell.getNumericCellValue();
+                                    nutrientPerStageId = (int)cell.getNumericCellValue();
                                 } else if (paramPerCropId == null) {
                                     //2nd column
-                                    paramPerCropId = cell.getNumericCellValue();
+                                    paramPerCropId = (int)cell.getNumericCellValue();
                                 } else if (varietyId == null) {
-                                    varietyId = cell.getNumericCellValue();
+                                    varietyId = (int)cell.getNumericCellValue();
                                 } else if (phenologicalStageId == null) {
-                                    phenologicalStageId = cell.getNumericCellValue();
+                                    phenologicalStageId = (int)cell.getNumericCellValue();
                                 } else if (percent == null) {
                                     percent = cell.getNumericCellValue();
                                 } else {
@@ -93,7 +93,7 @@ public class ExcelReadParameterPerStage {
                     if (nutrientPerStageId != null && paramPerCropId != null && varietyId != null
                             && phenologicalStageId != null && percent != null) {
                         ParameterPerStage pps = new ParameterPerStage(nutrientPerStageId.intValue(), paramPerCropId.intValue()
-                                , varietyId.intValue(), phenologicalStageId.intValue(), percent.doubleValue());
+                                , varietyId.intValue(), phenologicalStageId.intValue(), percent);
                         parameterPerStageList.add(pps);
                     } else{
                         System.out.println("row number " + row.getRowNum() + " have null!!");

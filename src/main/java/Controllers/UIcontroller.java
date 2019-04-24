@@ -4,6 +4,7 @@ import DB.Dao.*;
 import DB.DaoImpl.*;
 import DB.Entites.*;
 import Model.UserInput;
+
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -11,16 +12,19 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextField;
 
-import java.awt.*;
+import javafx.scene.control.*;
+import javafx.stage.FileChooser;
+
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+
 import java.util.ResourceBundle;
 
 
@@ -30,13 +34,20 @@ public class UIcontroller extends  BaseController{
     private Crop selectedCrop = null;
     private variety_type selectedVarType = null;
     private Soil selectedSoil = null;
-    private Double selectedexpectedYield = null;
+    private Double selectedExpectedYield = null;
     private int selectedNCredit;
     private IrrigationMethod selectedIrrigationMethod = null;
     private Double selectedIrrigationVolume = null;
     private fertilization_method selectedFertilizationMethod = null;
     private Boolean selectedBaseDressing = null;
+    private Double selectedSoilCorrection = null;
     private Double selectedSoilPH = null;
+
+    private File selectedSoilAnalysisFile;
+    private File selectedTissueAnalysisFile;
+    private File selectedWaterAnalysisFile;
+
+    private LocalDate selectedDate;
 
     private UserInput ui;
 
@@ -65,48 +76,127 @@ public class UIcontroller extends  BaseController{
     @FXML
     private TextField irrigationVolumeTF;
     @FXML
+    private TextField soilCorrectionTF;
+    @FXML
     private TextField soilPHTF;
 
+    //Labels
+    @FXML
+    private Label labSoilAnalysis;
+    @FXML
+    private Label labTissueAnalysis;
+    @FXML
+    private Label labWaterAnalysis;
+
+    //Buttons
+    @FXML
+    private Button btnSoilAnalysis;
+    @FXML
+    private Button btnTissueAnalysis;
+    @FXML
+    private Button btnWaterAnalysis;
     @FXML
     private Button submitB;
 
+    //DatePicker
+    @FXML
+    private DatePicker datePicker;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        loadData();
 
+    //Actions
+    @FXML
+    private void soilAnalysisFileChooserAction(ActionEvent event){
+        FileChooser fc = new FileChooser();
+        List<String> extensionFilter = new ArrayList<>();
+        extensionFilter.add("*.xlsx");
+        extensionFilter.add("*.xls");
+        extensionFilter.add("*.XLSX");
+        extensionFilter.add("*.XLS");
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("xlsx or xls files",extensionFilter));
+
+        this.selectedSoilAnalysisFile = fc.showOpenDialog(null);
+        if (this.selectedSoilAnalysisFile != null) {
+            labSoilAnalysis.setText("Selected file:" + this.selectedSoilAnalysisFile.getName());
+        }
+    }
+    @FXML
+    private void tissueAnalysisFileChooserAction(ActionEvent event){
+        FileChooser fc = new FileChooser();
+        List<String> extensionFilter = new ArrayList<>();
+        extensionFilter.add("*.xlsx");
+        extensionFilter.add("*.xls");
+        extensionFilter.add("*.XLSX");
+        extensionFilter.add("*.XLS");
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("xlsx or xls files",extensionFilter));
+
+        this.selectedTissueAnalysisFile = fc.showOpenDialog(null);
+        if (this.selectedTissueAnalysisFile != null) {
+            labTissueAnalysis.setText("Selected file:" + this.selectedTissueAnalysisFile.getName());
+        }
+    }
+    @FXML
+    private void waterAnalysisFileChooserAction(ActionEvent event){
+        FileChooser fc = new FileChooser();
+        List<String> extensionFilter = new ArrayList<>();
+        extensionFilter.add("*.xlsx");
+        extensionFilter.add("*.xls");
+        extensionFilter.add("*.XLSX");
+        extensionFilter.add("*.XLS");
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("xlsx or xls files",extensionFilter));
+
+        this.selectedWaterAnalysisFile = fc.showOpenDialog(null);
+        if (this.selectedWaterAnalysisFile != null) {
+            labWaterAnalysis.setText("Selected file:" + this.selectedWaterAnalysisFile.getName());
+        }
     }
 
 
 
-    private void loadData()  {
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        loadCropType();
+        loadDatePicker();
 
-        this.loadCropType();
+    }
 
-
-
-            }
     private void submit(){
         // action event
         EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e)
             {
-                 ui = new UserInput(selectedCrop,selectedVarType,selectedSoil,selectedexpectedYield,
+                 ui = new UserInput(selectedCrop,selectedVarType,selectedSoil,selectedExpectedYield,
                          selectedNCredit,selectedIrrigationMethod,selectedIrrigationVolume,
-                        selectedFertilizationMethod,selectedBaseDressing,selectedSoilPH);
+                        selectedFertilizationMethod,selectedBaseDressing,selectedSoilCorrection,selectedSoilPH,
+                         selectedSoilAnalysisFile,selectedTissueAnalysisFile,selectedWaterAnalysisFile,selectedDate);
                 instructionsTF.setText("Thank you !");
+
                 try {
-                    URL url = new File("src/main/java/Views/UIView.fxml").toURL();
-                    refreshPage("/Views/ResultView.fxml");
+
+                    refreshPage("src/main/java/Views/PathsView.fxml");
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
+
+
             }
+
         };
         submitB.setOnAction(event);
     }
 
-
+    private void loadDatePicker(){
+        // make the DatePicker non-editable
+        datePicker.setEditable(false);
+        // add listener
+        datePicker.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event)
+            {
+                selectedDate = datePicker.getValue();
+                System.out.println("Selected date: " + selectedDate);
+            }
+        });
+    }
 
 
     private void loadCropType() {
@@ -119,6 +209,8 @@ public class UIcontroller extends  BaseController{
         }
         cropTypesCB.getItems().addAll(oList);
 
+
+
         // add a listener
         this.cropTypesCB.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 
@@ -127,11 +219,14 @@ public class UIcontroller extends  BaseController{
             {
                 int choosenIndex = new_value.intValue();
                 selectedCrop = new Crop(cropTypes.get(choosenIndex));
-                loadVarType();
                 instructionsTF.setText("Please select Variety");
+                loadVarType();
             }
         });
     }
+
+
+
 
     private void loadVarType() {
         this.oList.removeAll(oList);
@@ -154,12 +249,13 @@ public class UIcontroller extends  BaseController{
                 loadExpectedYield();
             }
         });
+
     }
 
 
 
     private void loadExpectedYield() {
-        loadSoilType();
+
         int varTypeId = this.selectedVarType.getVariety_id();
         double minRange = -1;
         double maxRange = -1;
@@ -180,9 +276,10 @@ public class UIcontroller extends  BaseController{
         this.expectedYieldTF.textProperty().addListener((ov,value,new_value) -> {
                 String choosenVal = new_value;
                 try {
-                    selectedexpectedYield = Double.parseDouble(choosenVal);
-                    if (selectedexpectedYield >= fMinRange && selectedexpectedYield <= fMaxRange) {
+                    selectedExpectedYield = Double.parseDouble(choosenVal);
+                    if (selectedExpectedYield >= fMinRange && selectedExpectedYield <= fMaxRange) {
                         instructionsTF.setText("Please select Soil type");
+                        loadSoilType();
                     }
                     else {
                         this.instructionsTF.setText("Please select expected yield value between " + fMinRange + " to " + fMaxRange);
@@ -197,6 +294,7 @@ public class UIcontroller extends  BaseController{
 
 
         });
+
 
     }
 
@@ -217,18 +315,19 @@ public class UIcontroller extends  BaseController{
             {
                 int choosenIndex = new_value.intValue();
                 selectedSoil = new Soil(soilTypes.get(choosenIndex));
+                loadPreviousCropNCredit();
             }
         });
-        loadPreviousCropNCredit();
+
     }
 
     private void loadPreviousCropNCredit() {
         instructionsTF.setText("Please enter previous crop N credit, if none please enter 0");
-        loadIrrigationMethod();
         this.oList.removeAll(oList);
         //Pull the PreviousCropNCredit from DB
         List<String> previousCropTypes = this.getPreviousCropNCredit();
         oList.addAll(previousCropTypes);
+        previousCropCB.getItems().removeAll();
         previousCropCB.getItems().addAll(oList);
 
         // add a listener
@@ -239,6 +338,7 @@ public class UIcontroller extends  BaseController{
             {
                 int choosenIndex = new_value.intValue();
                 this.setNCreditByChoosenIndex(choosenIndex);
+                loadIrrigationMethod();
 
             }
             private void setNCreditByChoosenIndex(int choosenIndex) {
@@ -247,18 +347,22 @@ public class UIcontroller extends  BaseController{
             }
 
         });
-    this.loadIrrigationMethod();
+
     }
 
 
 
     private void loadIrrigationMethod() {
+        this.instructionsTF.setText("Please enter irrigation volume (mm/season)");
+        this.irrigationMethodCB.getItems().removeAll();
         this.oList.removeAll(oList);
+
         //Pull the cropTypes from DB
         List<IrrigationMethod> irrigationMethods = this.getIrrigationMethod();
         for (IrrigationMethod method : irrigationMethods) {
             oList.add(method.getIrrigation_method_desc());
         }
+
         irrigationMethodCB.getItems().addAll(oList);
 
         // add a listener
@@ -273,6 +377,7 @@ public class UIcontroller extends  BaseController{
                 loadIrrigationVolume();
             }
         });
+
     }
 
     private void loadIrrigationVolume() {
@@ -317,9 +422,9 @@ public class UIcontroller extends  BaseController{
                 int choosenIndex = new_value.intValue();
                 selectedFertilizationMethod= new fertilization_method(fertilizationMethods.get(choosenIndex));
                 instructionsTF.setText("Please select base dressing option");
-                loadBaseDressing();
             }
         });
+        loadBaseDressing();
     }
     private void loadBaseDressing(){
         this.oList.removeAll(oList);
@@ -339,11 +444,35 @@ public class UIcontroller extends  BaseController{
                     selectedBaseDressing = Boolean.FALSE;
                 }
 
-                instructionsTF.setText("Please enter soil pH between 0.00 to 14.00");
-                loadSoilPH();
+
+            }
+        });
+        instructionsTF.setText("Please soil correction (percent/season) in range from 0 to 100");
+        loadSoilCorrection();
+    }
+    private void loadSoilCorrection(){
+        // add a listener
+        this.soilCorrectionTF.textProperty().addListener((ov,value,new_value) -> {
+            String choosenVal = new_value;
+            try {
+                double tempSoilCorrection = Double.parseDouble(choosenVal);
+                if (tempSoilCorrection >= 0 && tempSoilCorrection <= 100) {
+                    // translate percent to double
+                    selectedSoilCorrection = tempSoilCorrection / 100;
+                    instructionsTF.setText("Please enter soil pH between 0.00 to 14.00 ");
+                    loadSoilPH();
+
+                }
+                else {
+                    this.instructionsTF.setText("Please enter only positive numbers from the range!");
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                this.instructionsTF.setText("Please enter only numbers!");
             }
         });
     }
+
     private void loadSoilPH(){
         // add a listener
         this.soilPHTF.textProperty().addListener((ov,value,new_value) -> {

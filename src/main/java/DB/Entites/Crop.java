@@ -42,4 +42,13 @@ public class Crop {
     public void setCrop_group_id(int crop_group_id) {
         this.crop_group_id = crop_group_id;
     }
+
+    @Override
+    public String toString() {
+        return "Crop{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", crop_group_id=" + crop_group_id +
+                '}';
+    }
 }

@@ -1,4 +1,5 @@
 
+import Model.UserInput;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,7 +11,6 @@ import java.net.URL;
 
 public class Main extends Application{
 
-
     @Override
     public void start(Stage primaryStage) throws Exception {
         URL url = new File("src/main/java/Views/UIView.fxml").toURL();
@@ -18,6 +18,7 @@ public class Main extends Application{
         primaryStage.setTitle("");
         primaryStage.setScene(new Scene(root, 600, 600));
         primaryStage.show();
+
     }
     public static void main(String[] args) {
 

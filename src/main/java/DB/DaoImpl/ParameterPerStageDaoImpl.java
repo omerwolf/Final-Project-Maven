@@ -278,7 +278,7 @@ public class ParameterPerStageDaoImpl implements ParameterPerStageDao {
     @Override
     public void autoInsertAll() {
         ExcelReadParameterPerStage ppsER = new ExcelReadParameterPerStage();
-        List<ParameterPerStage> parameterPerStageList = ppsER.readExcelData("src/main/resources/parameter_per_stage.xlsx");
+        List<ParameterPerStage> parameterPerStageList = ppsER.readExcelData();
         this.insertAll(parameterPerStageList);
     }
 }

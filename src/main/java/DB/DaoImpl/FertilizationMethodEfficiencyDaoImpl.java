@@ -3,6 +3,7 @@ package DB.DaoImpl;
 import DB.Dao.FertilizationMethodEfficiencyDao;
 import DB.Entites.FertilizationMethodEfficiency;
 import DB.Util.ConnectionConfiguration;
+import Tools.ERFertilizationMethodEfficiency;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -17,12 +18,14 @@ public class FertilizationMethodEfficiencyDaoImpl implements FertilizationMethod
             connection = ConnectionConfiguration.getConnection();
             preparedStatement = connection.prepareStatement("INSERT INTO `fertilization_method_efficiency` " +
                     "(fert_method_efficiency_id," +
+                    "fert_method_id," +
                     "parameter_id," +
                     "fert_method_efficiency)" +
-                    "VALUES (?, ?, ?)");
+                    "VALUES (?, ?, ?, ?)");
             preparedStatement.setInt(1, fertilizationMethodEfficiency.getFert_method_efficiency_id());
-            preparedStatement.setInt(2, fertilizationMethodEfficiency.getParameter_id());
-            preparedStatement.setDouble(3, fertilizationMethodEfficiency.getFert_method_efficiency());
+            preparedStatement.setInt(2, fertilizationMethodEfficiency.getFert_method_id());
+            preparedStatement.setInt(3, fertilizationMethodEfficiency.getParameter_id());
+            preparedStatement.setDouble(4, fertilizationMethodEfficiency.getFert_method_efficiency());
             preparedStatement.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -60,6 +63,7 @@ public class FertilizationMethodEfficiencyDaoImpl implements FertilizationMethod
 
             while (resultSet.next()) {
                 fertilizationMethodEfficiency.setFert_method_efficiency_id(resultSet.getInt("fert_method_efficiency_id"));
+                fertilizationMethodEfficiency.setFert_method_id(resultSet.getInt("fert_method_id"));
                 fertilizationMethodEfficiency.setParameter_id(resultSet.getInt("parameter_id"));
                 fertilizationMethodEfficiency.setFert_method_efficiency(resultSet.getDouble("fert_method_efficiency"));
             }
@@ -107,6 +111,7 @@ public class FertilizationMethodEfficiencyDaoImpl implements FertilizationMethod
             while (resultSet.next()) {
                 FertilizationMethodEfficiency fertilizationMethodEfficiency = new FertilizationMethodEfficiency();
                 fertilizationMethodEfficiency.setFert_method_efficiency_id(resultSet.getInt("fert_method_efficiency_id"));
+                fertilizationMethodEfficiency.setFert_method_id(resultSet.getInt("fert_method_id"));
                 fertilizationMethodEfficiency.setParameter_id(resultSet.getInt("parameter_id"));
                 fertilizationMethodEfficiency.setFert_method_efficiency(resultSet.getDouble("fert_method_efficiency"));
                 fertilizationMethodEfficiencyList.add(fertilizationMethodEfficiency);
@@ -180,12 +185,13 @@ public class FertilizationMethodEfficiencyDaoImpl implements FertilizationMethod
         try {
             connection = ConnectionConfiguration.getConnection();
             preparedStatement = connection.prepareStatement("UPDATE `fertilization_method_efficiency` SET " +
+                    "fert_method_id = ?," +
                     "parameter_id = ?," +
                     " fert_method_efficiency = ? WHERE fert_method_efficiency_id = ?");
-
-            preparedStatement.setInt(1, fertilizationMethodEfficiency.getParameter_id());
-            preparedStatement.setDouble(2, fertilizationMethodEfficiency.getFert_method_efficiency());
-            preparedStatement.setInt(3, id);
+            preparedStatement.setInt(1, fertilizationMethodEfficiency.getFert_method_id());
+            preparedStatement.setInt(2, fertilizationMethodEfficiency.getParameter_id());
+            preparedStatement.setDouble(3, fertilizationMethodEfficiency.getFert_method_efficiency());
+            preparedStatement.setInt(4, id);
             preparedStatement.executeUpdate();
 
 
@@ -267,6 +273,8 @@ public class FertilizationMethodEfficiencyDaoImpl implements FertilizationMethod
 
     @Override
     public void autoInsertAll() {
-
+        ERFertilizationMethodEfficiency ERFertilizationMethodEfficiency= new ERFertilizationMethodEfficiency();
+        List<FertilizationMethodEfficiency> ERFertilizationMethodEfficiencyList = ERFertilizationMethodEfficiency.readExcelData();
+        this.insertAll(ERFertilizationMethodEfficiencyList);
     }
 }

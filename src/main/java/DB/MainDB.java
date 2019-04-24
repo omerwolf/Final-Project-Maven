@@ -214,13 +214,14 @@ public class MainDB {
         pcncd.update(pcnc2,1);*/
 
         //irrigation method testing
-
+/*
         IrrigationMethodDao irrigationMethodDao = new IrrigationMethodDaoImpl();
 
         List<IrrigationMethod> listIrr = irrigationMethodDao.selectAll();
         for (IrrigationMethod im: listIrr) {
             System.out.println(im.getIrrigation_method_desc());
         }
+        */
         //IrrigationMethod im1 = irrigationMethodDao.selectById(3);
         //System.out.println("im1 desc is: " +im1.getIrrigation_method_desc());
 
@@ -234,8 +235,11 @@ public class MainDB {
         //crop_expected_yield_validationDao ceyv = new crop_expected_yield_validationDaoImpl();
         //ceyv.autoInsertAll();
 
-        //ParameterPerStageDao pps = new ParameterPerStageDaoImpl();
-        //pps.autoInsertAll();
+        ParameterPerStageDao pps = new ParameterPerStageDaoImpl();
+        pps.autoInsertAll();
+
+        //FertilizationMethodEfficiencyDao fme = new FertilizationMethodEfficiencyDaoImpl();
+        //fme.autoInsertAll();
 
     }
     }
