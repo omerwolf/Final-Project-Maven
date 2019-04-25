@@ -3,6 +3,10 @@ package Controllers;
 import DB.Dao.*;
 import DB.DaoImpl.*;
 import DB.Entites.*;
+import DB.WaterAnalysis.WaterAnalysis;
+import DB.WaterAnalysis.WaterAnalysisDao;
+import DB.WaterAnalysis.WaterAnalysisDaoImpl;
+import ExcelReadWrite.ERWaterAnalysis;
 import Model.UserInput;
 
 import javafx.beans.value.ChangeListener;
@@ -147,6 +151,11 @@ public class UIcontroller extends  BaseController{
         this.selectedWaterAnalysisFile = fc.showOpenDialog(null);
         if (this.selectedWaterAnalysisFile != null) {
             labWaterAnalysis.setText("Selected file:" + this.selectedWaterAnalysisFile.getName());
+            //insert analysis to DB
+            ERWaterAnalysis erWaterAnalysis = new ERWaterAnalysis(this.selectedWaterAnalysisFile.getAbsolutePath());
+            WaterAnalysisDao waterAnalysisDao = new WaterAnalysisDaoImpl();
+            WaterAnalysis wa = erWaterAnalysis.read();
+            waterAnalysisDao.insert(wa);
         }
     }
 

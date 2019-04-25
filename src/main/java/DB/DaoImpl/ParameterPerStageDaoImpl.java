@@ -2,11 +2,10 @@ package DB.DaoImpl;
 import DB.Dao.ParameterPerStageDao;
 import DB.Entites.ParameterPerStage;
 import DB.Util.ConnectionConfiguration;
-import Tools.ExcelReadParameterPerStage;
+import ExcelReadWrite.ExcelReadParameterPerStage;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 public class ParameterPerStageDaoImpl implements ParameterPerStageDao {
     @Override

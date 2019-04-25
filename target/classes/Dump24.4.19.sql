@@ -322,6 +322,32 @@ INSERT INTO `fertilization method` VALUES (1,'Soil Application'),(2,'Band Applic
 UNLOCK TABLES;
 
 --
+-- Table structure for table `fertilization_method_efficiency`
+--
+
+DROP TABLE IF EXISTS `fertilization_method_efficiency`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `fertilization_method_efficiency` (
+  `fert_method_efficiency_id` int(11) NOT NULL,
+  `fert_method_id` int(11) NOT NULL,
+  `parameter_id` int(11) NOT NULL,
+  `fert_method_efficiency` decimal(10,3) NOT NULL,
+  PRIMARY KEY (`fert_method_efficiency_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `fertilization_method_efficiency`
+--
+
+LOCK TABLES `fertilization_method_efficiency` WRITE;
+/*!40000 ALTER TABLE `fertilization_method_efficiency` DISABLE KEYS */;
+INSERT INTO `fertilization_method_efficiency` VALUES (1,1,1,0.800),(2,1,2,0.450),(3,1,3,0.700),(4,1,4,0.750),(5,1,5,0.750),(6,1,6,0.850),(7,1,7,0.900),(8,1,8,0.900),(9,1,9,0.900),(10,1,10,0.900),(11,1,11,0.900),(12,1,12,0.900),(13,2,1,0.850),(14,2,2,0.550),(15,2,3,0.750),(16,2,4,0.800),(17,2,5,0.800),(18,2,6,0.800),(19,2,7,0.950),(20,2,8,0.950),(21,2,9,0.950),(22,2,10,0.950),(23,2,11,0.950),(24,2,12,0.950),(25,3,1,0.900),(26,3,2,0.600),(27,3,3,0.800),(28,3,4,0.850),(29,3,5,0.850),(30,3,6,0.850),(31,3,7,1.000),(32,3,8,1.000),(33,3,9,1.000),(34,3,10,1.000),(35,3,11,1.000),(36,3,12,1.000),(37,4,1,0.900),(38,4,2,0.600),(39,4,3,0.800),(40,4,4,0.850),(41,4,5,0.850),(42,4,6,0.850),(43,4,7,1.000),(44,4,8,1.000),(45,4,9,1.000),(46,4,10,1.000),(47,4,11,1.000),(48,4,12,1.000),(49,5,1,0.900),(50,5,2,0.600),(51,5,3,0.800),(52,5,4,0.850),(53,5,5,0.850),(54,5,6,0.850),(55,5,7,1.000),(56,5,8,1.000),(57,5,9,1.000),(58,5,10,1.000),(59,5,11,1.000),(60,5,12,1.000),(61,6,1,0.900),(62,6,2,0.600),(63,6,3,0.800),(64,6,4,0.850),(65,6,5,0.850),(66,6,6,0.850),(67,6,7,1.000),(68,6,8,1.000),(69,6,9,1.000),(70,6,10,1.000),(71,6,11,1.000),(72,6,12,1.000),(73,7,1,0.850),(74,7,2,0.550),(75,7,3,0.750),(76,7,4,0.800),(77,7,5,0.800),(78,7,6,0.800),(79,7,7,0.950),(80,7,8,0.950),(81,7,9,0.950),(82,7,10,0.950),(83,7,11,0.950),(84,7,12,0.950);
+/*!40000 ALTER TABLE `fertilization_method_efficiency` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `groups`
 --
 
@@ -1662,4 +1688,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-22 15:54:09
+-- Dump completed on 2019-04-24 19:54:33

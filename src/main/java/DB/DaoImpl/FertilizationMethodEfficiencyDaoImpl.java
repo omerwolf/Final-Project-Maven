@@ -3,11 +3,10 @@ package DB.DaoImpl;
 import DB.Dao.FertilizationMethodEfficiencyDao;
 import DB.Entites.FertilizationMethodEfficiency;
 import DB.Util.ConnectionConfiguration;
-import Tools.ERFertilizationMethodEfficiency;
+import ExcelReadWrite.ERFertilizationMethodEfficiency;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 public class FertilizationMethodEfficiencyDaoImpl implements FertilizationMethodEfficiencyDao{
     @Override

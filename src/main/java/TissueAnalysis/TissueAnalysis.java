@@ -1,4 +1,8 @@
-package DB.Entites;
+package TissueAnalysis;
+
+import DB.Entites.Crop;
+import DB.Entites.CropGroup;
+import DB.Entites.variety_type;
 
 import java.util.Date;
 
@@ -10,7 +14,7 @@ public class TissueAnalysis {
     private String sample_name;
     private CropGroup crop_group;
     private Crop crop_type;
-    private variety_type variety_type;
+    private DB.Entites.variety_type variety_type;
     private int phenological_stage_id;
     private int tissue_type_id;
 /**
