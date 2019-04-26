@@ -11,11 +11,12 @@ public class SoilType {
         this.ui = ui;
     }
 
-    public void soilType(Nutrients n) {
-        //if lab analysis data?
+    public Nutrients soilType(Parameters p, Nutrients n) {
+        //if lab analysis is active, read soil info from there (should be in the db at this stage).
 
         //else
-        String soilType = ui.getSelectedSoil().getName();
-
+        //take soil from simulation data
+        n.setSoil(p.getUi().getSelectedSoil());
+        return n;
     }
 }

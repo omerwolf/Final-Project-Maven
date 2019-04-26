@@ -64,7 +64,7 @@ public class ParameterPerStageDaoImpl implements ParameterPerStageDao {
                 parameterPerStage.setNutrientPerStageId(resultSet.getInt("nutrient_per_stage_id"));
                 parameterPerStage.setParamPerCropId(resultSet.getInt("param_per_crop_id"));
                 parameterPerStage.setVarietyId(resultSet.getInt("variety_id"));
-                parameterPerStage.setPhenologicalStageId(resultSet.getInt("`phenological stage_id`"));
+                parameterPerStage.setPhenologicalStageId(resultSet.getInt("phenological stage_id"));
                 parameterPerStage.setPercent(resultSet.getDouble("percent"));
             }
 
@@ -113,8 +113,8 @@ public class ParameterPerStageDaoImpl implements ParameterPerStageDao {
                 parameterPerStage.setNutrientPerStageId(resultSet.getInt("nutrient_per_stage_id"));
                 parameterPerStage.setParamPerCropId(resultSet.getInt("param_per_crop_id"));
                 parameterPerStage.setVarietyId(resultSet.getInt("variety_id"));
-                parameterPerStage.setPhenologicalStageId(resultSet.getInt("`phenological stage_id`"));
-                parameterPerStage.setPercent(resultSet.getInt("percent"));
+                parameterPerStage.setPhenologicalStageId(resultSet.getInt("phenological stage_id"));
+                parameterPerStage.setPercent(resultSet.getDouble("percent"));
                 parameterPerStageList.add(parameterPerStage);
             }
 

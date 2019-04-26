@@ -7,7 +7,7 @@ import DB.WaterAnalysis.WaterAnalysis;
 import DB.WaterAnalysis.WaterAnalysisDao;
 import DB.WaterAnalysis.WaterAnalysisDaoImpl;
 import ExcelReadWrite.ERWaterAnalysis;
-import Model.UserInput;
+import Model.*;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -19,6 +19,7 @@ import javafx.fxml.FXML;
 
 import javafx.scene.control.*;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 
 import java.io.File;
@@ -178,7 +179,35 @@ public class UIcontroller extends  BaseController{
                         selectedFertilizationMethod,selectedBaseDressing,selectedSoilCorrection,selectedSoilPH,
                          selectedSoilAnalysisFile,selectedTissueAnalysisFile,selectedWaterAnalysisFile,selectedDate);
                 instructionsTF.setText("Thank you !");
-
+                /*ParameterPerStageDao pps = new ParameterPerStageDaoImpl();
+                for (int i=1;i<=564;i++) {
+                    pps.delete(i);
+                }
+                pps.autoInsertAll();*/
+                //parameter_cropDao pc = new parameter_cropDaoImpl();
+                //pc.autoInsertAll();
+                /*Parameters p = new Parameters();
+                p.setUi(ui);
+                StageDate sd = new StageDate();
+                p = sd.stageDate(p);
+                for (StageDate d:p.getStageDates()) {
+                    System.out.println(d.getStageName() + " " + d.getStageDate());
+                }
+                Nutrients n = new Nutrients();
+                NutrientsBasicRemoval nbr = new NutrientsBasicRemoval(ui);
+                n = nbr.calculateRemoval(p);
+                List<NutrientsBasicRemovalPerStage> lista = n.getBasicRemovalPerStages();
+                for (NutrientsBasicRemovalPerStage na:lista) {
+                    System.out.println(na.print());
+                }
+                SoilType st = new SoilType();
+                n = st.soilType(p,n);
+                NCredit ncredit = new NCredit();
+                n = ncredit.nCredit(p,n);
+                System.out.println(n.getSoilNutrients().getnCredits().get(0));*/
+                //System.out.println(p.getUi().getSelectedCrop().getName());
+                //ParameterPerStageDao pps = new ParameterPerStageDaoImpl();
+                //pps.autoInsertAll();
                 try {
 
                     refreshPage("src/main/java/Views/PathsView.fxml");
@@ -346,7 +375,7 @@ public class UIcontroller extends  BaseController{
             public void changed(ObservableValue ov, Number value, Number new_value)
             {
                 int choosenIndex = new_value.intValue();
-                this.setNCreditByChoosenIndex(choosenIndex);
+                this.setNCreditByChoosenIndex(choosenIndex + 1);
                 loadIrrigationMethod();
 
             }
