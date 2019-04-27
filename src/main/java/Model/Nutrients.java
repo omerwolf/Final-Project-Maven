@@ -1,10 +1,15 @@
 package Model;
+import DB.Entites.Soil;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Nutrients {
     private List<Double> basicRemoval = new ArrayList<>();
     private List<String> name = new ArrayList<>();
+    private Soil soil;
+    private List <NutrientsBasicRemovalPerStage> basicRemovalPerStages = new ArrayList<>();
+    private SoilNutrients soilNutrients;
 
     public Nutrients() {
 
@@ -24,5 +29,29 @@ public class Nutrients {
 
     public void setName(List<String> name) {
         this.name = name;
+    }
+
+    public Soil getSoil() {
+        return soil;
+    }
+
+    public void setSoil(Soil soil) {
+        this.soil = soil;
+    }
+
+    public List<NutrientsBasicRemovalPerStage> getBasicRemovalPerStages() {
+        return basicRemovalPerStages;
+    }
+
+    public void setBasicRemovalPerStages(List<NutrientsBasicRemovalPerStage> basicRemovalPerStages) {
+        this.basicRemovalPerStages = basicRemovalPerStages;
+    }
+
+    public SoilNutrients getSoilNutrients() {
+        return soilNutrients;
+    }
+
+    public void setSoilNutrients(SoilNutrients soilNutrients) {
+        this.soilNutrients = soilNutrients;
     }
 }

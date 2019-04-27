@@ -1,11 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8d9316a5-2402-4042-81e8-1d330161d927" name="Default" comment="" />
+    <list default="true" id="8d9316a5-2402-4042-81e8-1d330161d927" name="Default" comment="test">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/UIcontroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/UIcontroller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DB/DaoImpl/ParameterPerStageDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DB/DaoImpl/ParameterPerStageDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DB/Entites/data_types.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DB/Entites/data_types.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DB/Entites/fertilization_method.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DB/Entites/fertilization_method.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DB/Entites/variety_type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DB/Entites/variety_type.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DB/Util/ConnectionConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DB/Util/ConnectionConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Nutrients.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Nutrients.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/NutrientsBasicRemoval.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/NutrientsBasicRemoval.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Parameters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Parameters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/SoilType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/SoilType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/StageDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/StageDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Dump25.4.19.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/CropDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/CropDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/CropGroupDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/CropGroupDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/FertilizationMethodEfficiencyDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/FertilizationMethodEfficiencyDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/IrrigationMethodDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/IrrigationMethodDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/LabAnalysisResultDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/LabAnalysisResultDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/ParameterPerStageDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/ParameterPerStageDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/PreviousCropNCreditDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/PreviousCropNCreditDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/SoilDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/SoilDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/crop_expected_yield_validationDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/crop_expected_yield_validationDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/data_typesDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/data_typesDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/elementsDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/elementsDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/fertilization_methodDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/fertilization_methodDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/layer_depth_typeDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/layer_depth_typeDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/parameter_cropDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/parameter_cropDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/parametersDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/parametersDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/pheonological_stageDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/pheonological_stageDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/variety_typeDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/variety_typeDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DB/Entites/data_types.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DB/Entites/data_types.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DB/Entites/fertilization_method.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DB/Entites/fertilization_method.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DB/Entites/variety_type.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DB/Entites/variety_type.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DB/Util/ConnectionConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DB/Util/ConnectionConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DB/WaterAnalysis/WaterAnalysisDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DB/WaterAnalysis/WaterAnalysisDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Dump24.4.19.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/Nutrients.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/Nutrients.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/NutrientsBasicRemoval.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/NutrientsBasicRemoval.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/Parameters.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/Parameters.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/SoilType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/SoilType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/StageDate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/StageDate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/~$fertilization_method_efficiency.xlsx" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +67,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Final_Project_Maven$Main.coverage" NAME="Main Coverage Results" MODIFIED="1556194115165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
+<<<<<<< HEAD
   <component name="DockManager">
     <window id="4">
       <content type="file-editors">
@@ -156,10 +210,53 @@
                 <element signature="e#678#679#0" expanded="true" />
                 <element signature="e#710#711#0" expanded="true" />
               </folding>
+=======
+  <component name="FUSProjectUsageTrigger">
+    <session id="1837291443">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.93" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="1" />
+          <entry key="java" value="44" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="1" />
+          <entry key="JAVA" value="44" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="3637" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="3637" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="75">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Model/NutrientsBasicRemoval.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="112" column="25" lean-forward="true" selection-start-line="112" selection-start-column="25" selection-end-line="112" selection-end-column="25" />
+>>>>>>> f4ba0ba9c3485623af866e949601e4d79933d2ec
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="ERSoilAnalysis.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/SoilAnalysis/ERSoilAnalysis.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -170,11 +267,29 @@
                 <element signature="e#895#896#0" expanded="true" />
                 <element signature="e#927#928#0" expanded="true" />
                 <element signature="e#5651#5668#0" expanded="true" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Model/Nutrients.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="646">
+              <caret line="49" column="45" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
+              <folding>
+                <element signature="e#642#643#0" expanded="true" />
+                <element signature="e#669#670#0" expanded="true" />
+                <element signature="e#707#708#0" expanded="true" />
+                <element signature="e#739#740#0" expanded="true" />
+                <element signature="e#908#909#0" expanded="true" />
+                <element signature="e#952#953#0" expanded="true" />
+                <element signature="e#1245#1246#0" expanded="true" />
+                <element signature="e#1310#1311#0" expanded="true" />
+                <element signature="e#1360#1361#0" expanded="true" />
+>>>>>>> f4ba0ba9c3485623af866e949601e4d79933d2ec
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="WaterLabAnalysisResult.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/WaterAnalysis/WaterLabAnalysisResult.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -193,11 +308,25 @@
                 <element signature="e#886#887#0" expanded="true" />
                 <element signature="e#948#949#0" expanded="true" />
                 <element signature="e#1002#1003#0" expanded="true" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Model/SoilNutrients.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#242#243#0" expanded="true" />
+                <element signature="e#273#274#0" expanded="true" />
+                <element signature="e#328#329#0" expanded="true" />
+                <element signature="e#368#369#0" expanded="true" />
+>>>>>>> f4ba0ba9c3485623af866e949601e4d79933d2ec
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="SoilType.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Model/SoilType.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -216,10 +345,18 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/DB/Entites/ParameterPerStage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
+>>>>>>> f4ba0ba9c3485623af866e949601e4d79933d2ec
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="LabAnalysisResultDaoImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/LabAnalysisResultDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -228,10 +365,18 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Model/SoilType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="13" column="58" lean-forward="true" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
+>>>>>>> f4ba0ba9c3485623af866e949601e4d79933d2ec
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="SoilLabAnalysisResult.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/SoilAnalysis/SoilLabAnalysisResult.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -254,11 +399,72 @@
                 <element signature="e#1201#1202#0" expanded="true" />
                 <element signature="e#1270#1271#0" expanded="true" />
                 <element signature="e#1334#1335#0" expanded="true" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Model/NutrientsBasicRemovalPerStage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="295">
+              <caret line="145" column="85" selection-start-line="145" selection-start-column="85" selection-end-line="145" selection-end-column="85" />
+              <folding>
+                <element signature="e#441#442#0" expanded="true" />
+                <element signature="e#466#467#0" expanded="true" />
+                <element signature="e#505#506#0" expanded="true" />
+                <element signature="e#533#534#0" expanded="true" />
+                <element signature="e#561#562#0" expanded="true" />
+                <element signature="e#585#586#0" expanded="true" />
+                <element signature="e#619#620#0" expanded="true" />
+                <element signature="e#645#646#0" expanded="true" />
+                <element signature="e#673#674#0" expanded="true" />
+                <element signature="e#697#698#0" expanded="true" />
+                <element signature="e#731#732#0" expanded="true" />
+                <element signature="e#757#758#0" expanded="true" />
+                <element signature="e#785#786#0" expanded="true" />
+                <element signature="e#809#810#0" expanded="true" />
+                <element signature="e#843#844#0" expanded="true" />
+                <element signature="e#869#870#0" expanded="true" />
+                <element signature="e#898#899#0" expanded="true" />
+                <element signature="e#923#924#0" expanded="true" />
+                <element signature="e#959#960#0" expanded="true" />
+                <element signature="e#987#988#0" expanded="true" />
+                <element signature="e#1016#1017#0" expanded="true" />
+                <element signature="e#1041#1042#0" expanded="true" />
+                <element signature="e#1077#1078#0" expanded="true" />
+                <element signature="e#1105#1106#0" expanded="true" />
+                <element signature="e#1133#1134#0" expanded="true" />
+                <element signature="e#1157#1158#0" expanded="true" />
+                <element signature="e#1191#1192#0" expanded="true" />
+                <element signature="e#1217#1218#0" expanded="true" />
+                <element signature="e#1246#1247#0" expanded="true" />
+                <element signature="e#1271#1272#0" expanded="true" />
+                <element signature="e#1307#1308#0" expanded="true" />
+                <element signature="e#1335#1336#0" expanded="true" />
+                <element signature="e#1364#1365#0" expanded="true" />
+                <element signature="e#1389#1390#0" expanded="true" />
+                <element signature="e#1425#1426#0" expanded="true" />
+                <element signature="e#1453#1454#0" expanded="true" />
+                <element signature="e#1481#1482#0" expanded="true" />
+                <element signature="e#1505#1506#0" expanded="true" />
+                <element signature="e#1539#1540#0" expanded="true" />
+                <element signature="e#1565#1566#0" expanded="true" />
+                <element signature="e#1594#1595#0" expanded="true" />
+                <element signature="e#1619#1620#0" expanded="true" />
+                <element signature="e#1655#1656#0" expanded="true" />
+                <element signature="e#1683#1684#0" expanded="true" />
+                <element signature="e#1712#1713#0" expanded="true" />
+                <element signature="e#1737#1738#0" expanded="true" />
+                <element signature="e#1773#1774#0" expanded="true" />
+                <element signature="e#1801#1802#0" expanded="true" />
+                <element signature="e#1830#1831#0" expanded="true" />
+                <element signature="e#1855#1856#0" expanded="true" />
+                <element signature="e#1891#1892#0" expanded="true" />
+                <element signature="e#1919#1920#0" expanded="true" />
+>>>>>>> f4ba0ba9c3485623af866e949601e4d79933d2ec
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="WaterAnalysis.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/WaterAnalysis/WaterAnalysis.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -303,21 +509,44 @@
                 <element signature="e#2422#2423#0" expanded="true" />
                 <element signature="e#2458#2459#0" expanded="true" />
                 <element signature="e#2493#2494#0" expanded="true" />
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/UIcontroller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="206" column="80" selection-start-line="206" selection-start-column="80" selection-end-line="206" selection-end-column="80" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#21049#21050#0" expanded="true" />
+                <element signature="e#21079#21080#0" expanded="true" />
+>>>>>>> f4ba0ba9c3485623af866e949601e4d79933d2ec
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="WaterAnalysisDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/WaterAnalysis/WaterAnalysisDao.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
               <folding />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Model/NCredit.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="56" lean-forward="true" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+>>>>>>> f4ba0ba9c3485623af866e949601e4d79933d2ec
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="UIcontroller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/UIcontroller.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -327,6 +556,18 @@
                 <element signature="imports" expanded="true" />
                 <element signature="e#19957#19958#0" expanded="true" />
                 <element signature="e#19987#19988#0" expanded="true" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parameters.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="7" column="39" lean-forward="true" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+              <folding>
+                <element signature="e#380#381#0" expanded="true" />
+                <element signature="e#405#406#0" expanded="true" />
+                <element signature="e#444#445#0" expanded="true" />
+                <element signature="e#472#473#0" expanded="true" />
+>>>>>>> f4ba0ba9c3485623af866e949601e4d79933d2ec
               </folding>
             </state>
           </provider>
@@ -351,6 +592,7 @@
       <find>xl</find>
       <find>TXT</find>
       <find>fertilizationMethodEfficiencyList</find>
+<<<<<<< HEAD
       <find>private</find>
       <find>getStringCellValue();</find>
       <find>(null,null,</find>
@@ -359,6 +601,14 @@
       <find>null,null,</find>
       <find>, map);</find>
       <find>);</find>
+=======
+      <find>counter is</find>
+      <find>0.6</find>
+      <find>println</find>
+      <find>array</find>
+      <find>previous</find>
+      <find>ncred</find>
+>>>>>>> f4ba0ba9c3485623af866e949601e4d79933d2ec
     </findStrings>
     <replaceStrings>
       <replace>fertilization_method</replace>
@@ -377,16 +627,18 @@
     </replaceStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../Final-Project-Mavel/Final-Project-Maven" />
-  </component>
-  <component name="GradleLocalSettings">
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/src/main/java/DB/DaoImpl/parametersDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DB/DaoImpl/variety_typeDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DB/DaoImpl/CropGroupDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DB/DaoImpl/fertilization_methodDaoImpl.java" />
+>>>>>>> f4ba0ba9c3485623af866e949601e4d79933d2ec
         <option value="$PROJECT_DIR$/src/main/java/DB/DaoImpl/SoilDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/DB/DaoImpl/IrrigationMethodDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/DB/ReadExcelFile.java" />
@@ -394,7 +646,6 @@
         <option value="$PROJECT_DIR$/src/main/java/DB/Entites/ParameterPerStage.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Tools/ExcelRead.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DB/DaoImpl/ParameterPerStageDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/Tools/ExcelReadFertillitionMethod.java" />
         <option value="$PROJECT_DIR$/src/main/java/Tools/ExcelReadFertilizationMethodEfficiency.java" />
         <option value="$PROJECT_DIR$/src/main/java/Tools/Filechooser.java" />
@@ -406,10 +657,14 @@
         <option value="$PROJECT_DIR$/src/main/java/DB/Entites/FertilizationMethodEfficiency.java" />
         <option value="$PROJECT_DIR$/src/main/java/DB/DaoImpl/FertilizationMethodEfficiencyDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/Tools/ExcelReadParameterPerStage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DB/MainDB.java" />
         <option value="$PROJECT_DIR$/src/main/java/Tools/LocalDateBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/UserInput.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/main/java/ExcelReadWrite/ExcelReadParameterPerStage.java" />
+=======
+        <option value="$PROJECT_DIR$/src/main/java/Views/UIView.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/ExcelReadWrite/ERTissueAnalysis.java" />
+>>>>>>> f4ba0ba9c3485623af866e949601e4d79933d2ec
         <option value="$PROJECT_DIR$/src/main/java/TissueAnalysis/TissueAnalysis.java" />
         <option value="$PROJECT_DIR$/src/main/java/DB/WaterAnalysis/WaterAnalysisDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/DB/Dao/IrrigationMethodDao.java" />
@@ -417,6 +672,7 @@
         <option value="$PROJECT_DIR$/src/main/java/ExcelReadWrite/ERWaterAnalysis.java" />
         <option value="$PROJECT_DIR$/src/main/java/DB/WaterAnalysis/WaterAnalysisDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/DB/DaoImpl/LabAnalysisResultDaoImpl.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/main/java/Views/UIView.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/ExcelReadWrite/ERTissueAnalysis.java" />
         <option value="$PROJECT_DIR$/src/main/java/DB/SoilAnalysis/WaterAnalysis.java" />
@@ -435,11 +691,34 @@
         <option value="$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/LabAnalysisResultDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/LabAnalysisResult.java" />
         <option value="$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/LabAnalysisResultDaoImpl.java" />
+=======
+        <option value="$PROJECT_DIR$/src/main/java/DB/Util/ConnectionConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/Parameters.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DB/Entites/variety_type.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DB/Entites/data_types.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DB/Entites/fertilization_method.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/StageDate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DB/MainDB.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ExcelReadWrite/ExcelReadParameterPerStage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DB/DaoImpl/ParameterPerStageDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/NutrientsBasicRemovalPerStage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/NutrientsBasicRemoval.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/SoilType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/SoilNutrients.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/Nutrients.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/NCredit.java" />
+>>>>>>> f4ba0ba9c3485623af866e949601e4d79933d2ec
         <option value="$PROJECT_DIR$/src/main/java/Controllers/UIcontroller.java" />
         <option value="$PROJECT_DIR$/src/main/java/Analysis/WaterAnalysis/ERWaterAnalysis.java" />
         <option value="$PROJECT_DIR$/src/main/java/Analysis/SoilAnalysis/ERSoilAnalysis.java" />
       </list>
     </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
@@ -463,25 +742,14 @@
     <option name="width" value="1382" />
     <option name="height" value="784" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -508,22 +776,128 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
+<<<<<<< HEAD
+=======
+            <path>
+              <item name="Final-Project-Maven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final-Project-Maven" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Final-Project-Maven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final-Project-Maven" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="DB" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Final-Project-Maven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final-Project-Maven" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="DB" type="462c0819:PsiDirectoryNode" />
+              <item name="DaoImpl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Final-Project-Maven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final-Project-Maven" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="DB" type="462c0819:PsiDirectoryNode" />
+              <item name="Entites" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Final-Project-Maven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final-Project-Maven" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="DB" type="462c0819:PsiDirectoryNode" />
+              <item name="Util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Final-Project-Maven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final-Project-Maven" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ExcelReadWrite" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Final-Project-Maven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final-Project-Maven" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Final-Project-Maven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final-Project-Maven" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="TissueAnalysis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Final-Project-Maven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final-Project-Maven" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Tools" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Final-Project-Maven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final-Project-Maven" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Tools" type="462c0819:PsiDirectoryNode" />
+              <item name="Filechooser.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </path>
+            <path>
+              <item name="Final-Project-Maven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final-Project-Maven" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Final-Project-Maven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final-Project-Maven" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+>>>>>>> f4ba0ba9c3485623af866e949601e4d79933d2ec
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.12207031" />
-    <property name="project.structure.side.proportion" value="0.30589545" />
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556298477737" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../‏‏תיקיה חדשה" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.12207031" />
+    <property name="project.structure.side.proportion" value="0.30589545" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -559,194 +933,126 @@
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="ExcelReadParameterPerStage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+      <option name="MAIN_CLASS_NAME" value="ExcelReadWrite.ExcelReadParameterPerStage" />
+      <module name="Final-Project-Maven" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Analysis.WaterAnalysis.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="ExcelReadWrite.ExcelReadParameterPerStage" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Final-Project-Maven" />
-      <envs />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="FileChooser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+      <option name="MAIN_CLASS_NAME" value="Tools.FileChooser" />
+      <module name="Final-Project-Maven" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Analysis.WaterAnalysis.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="Tools.FileChooser" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Final-Project-Maven" />
-      <envs />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
       <module name="Final-Project-Maven" />
-      <envs />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="MainDB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="DB.MainDB" />
+      <module name="Final-Project-Maven" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Analysis.WaterAnalysis.WaterAnalysis.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="DB.MainDB" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Final-Project-Maven" />
-      <envs />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="poi-ooxml-4.1.0.jar" type="JarApplication" factoryName="JAR Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="JAR_PATH" value="$PROJECT_DIR$/lib/poi-4.1.0/poi-ooxml-4.1.0.jar" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
-      <envs />
+      <method v="2" />
     </configuration>
     <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
+      <module name="Final-Project-Mavel" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Final-Project-Mavel" />
-      <envs />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
       <properties />
       <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JAR Application.poi-ooxml-4.1.0.jar" />
-      <item index="1" class="java.lang.String" itemvalue="Application.MainDB" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="3" class="java.lang.String" itemvalue="Application.ExcelReadParameterPerStage" />
-      <item index="4" class="java.lang.String" itemvalue="Application.FileChooser" />
+    <list>
+      <item itemvalue="JAR Application.poi-ooxml-4.1.0.jar" />
+      <item itemvalue="Application.MainDB" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.ExcelReadParameterPerStage" />
+      <item itemvalue="Application.FileChooser" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="1" class="java.lang.String" itemvalue="Application.MainDB" />
-        <item index="2" class="java.lang.String" itemvalue="Application.FileChooser" />
-        <item index="3" class="java.lang.String" itemvalue="Application.ExcelReadParameterPerStage" />
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.MainDB" />
+        <item itemvalue="Application.FileChooser" />
+        <item itemvalue="Application.ExcelReadParameterPerStage" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -758,6 +1064,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1555851968776</updated>
+      <workItem from="1556196876116" duration="14108000" />
+      <workItem from="1556261212133" duration="23107000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1556124742749</created>
@@ -769,6 +1077,9 @@
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="37215000" />
+  </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
@@ -779,6 +1090,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="-8" y="-8" width="1382" height="784" extended-state="7" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -837,7 +1149,73 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45987654" sideWeight="0.49394855" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+=======
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Capture Tool" order="0" />
+      <window_info id="Designer" order="1" />
+      <window_info id="UI Designer" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="4" visible="true" weight="0.33452722" />
+      <window_info id="Structure" order="5" weight="0.25" />
+      <window_info id="Image Layers" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.301059" side_tool="true" weight="0.27623457" />
+      <window_info anchor="bottom" id="Messages" order="1" sideWeight="0.49092284" weight="0.34724092" />
+      <window_info anchor="bottom" id="Version Control" order="2" sideWeight="0.49394855" weight="0.3287037" />
+      <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.4969743" weight="0.32853982" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" sideWeight="0.49394855" weight="0.45987654" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.698941" visible="true" weight="0.32839838" />
+      <window_info anchor="bottom" id="Debug" order="7" sideWeight="0.47881997" weight="0.32253087" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="10" weight="0.3287037" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="right" id="Palette&#9;" order="0" />
+      <window_info anchor="right" id="Maven Projects" order="1" weight="0.13430421" />
+      <window_info anchor="right" id="Capture Analysis" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Commander" order="5" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
+      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.15658094" />
+      <window_info anchor="right" id="Database" order="9" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Capture Tool" order="0" />
+      <window_info id="Designer" order="1" />
+      <window_info id="UI Designer" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="4" weight="0.0" />
+      <window_info id="Structure" order="5" weight="0.25" />
+      <window_info id="Image Layers" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.301059" side_tool="true" weight="0.27623457" />
+      <window_info anchor="bottom" id="Messages" order="1" sideWeight="0.49092284" weight="0.34845132" />
+      <window_info anchor="bottom" id="Version Control" order="2" sideWeight="0.49394855" weight="0.3287037" />
+      <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.4969743" weight="0.32853982" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" sideWeight="0.49394855" weight="0.45987654" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.698941" visible="true" weight="0.3287037" />
+      <window_info anchor="bottom" id="Debug" order="7" sideWeight="0.47881997" weight="0.32253087" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="10" weight="0.3287037" />
+      <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.15658094" />
+      <window_info anchor="right" id="Palette&#9;" order="1" />
+      <window_info anchor="right" id="Maven Projects" order="2" weight="0.13430421" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Commander" order="6" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
+>>>>>>> f4ba0ba9c3485623af866e949601e4d79933d2ec
     </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -889,6 +1267,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="C:\Users\new\Desktop\year 3 sem 1\פרויקט\Final-Project-Mavel\Final-Project-Maven" />
+    </ignored-roots>
     <MESSAGE value="test" />
     <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
@@ -897,7 +1278,11 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Controllers/UIcontroller.java</url>
+<<<<<<< HEAD
           <line>479</line>
+=======
+          <line>499</line>
+>>>>>>> f4ba0ba9c3485623af866e949601e4d79933d2ec
           <properties />
           <option name="timeStamp" value="41" />
         </line-breakpoint>
@@ -952,7 +1337,10 @@
           <option name="timeStamp" value="46" />
         </line-breakpoint>
       </breakpoints>
+<<<<<<< HEAD
       <option name="time" value="105" />
+=======
+>>>>>>> f4ba0ba9c3485623af866e949601e4d79933d2ec
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -961,6 +1349,7 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/DB/DaoImpl/CropDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1120,11 +1509,144 @@
         <state relative-caret-position="289">
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="62" />
           <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/DB/Entites/Soil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DB/Entites/layer_depth_type.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DB/WaterAnalysis/WaterAnalysisDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/javafx-src.zip!/javafx/stage/Window.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/javafx-src.zip!/com/sun/glass/ui/View.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/DB/DaoImpl/parameter_cropDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/src.zip!/java/lang/Thread.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/javafx-src.zip!/com/sun/glass/ui/win/WinApplication.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi-ooxml/3.10-FINAL/poi-ooxml-3.10-FINAL-sources.jar!/org/apache/poi/xssf/usermodel/XSSFCell.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/DB/WaterAnalysis/WaterAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DB/Entites/parameter_crop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DB/Dao/IrrigationMethodDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DB/Dao/layer_depth_typeDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="19" selection-start-line="19" selection-end-line="19" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/javafx-src.zip!/javafx/fxml/FXMLLoader.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/DB/Entites/LabAnalysisResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DB/Dao/LabAnalysisResultDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DB/DaoImpl/FertilizationMethodEfficiencyDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="45" column="9" selection-start-line="13" selection-start-column="4" selection-end-line="45" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DB/WaterAnalysis/WaterAnalysisDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="36" selection-start-line="36" selection-end-line="36" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ExcelReadWrite/ERTissueAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-793">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ExcelReadWrite/ERWaterAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1972">
+          <caret line="116" selection-start-line="116" selection-end-line="116" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#853#854#0" expanded="true" />
+            <element signature="e#885#886#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TissueAnalysis/TissueAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DB/DaoImpl/IrrigationMethodDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DB/DaoImpl/layer_depth_typeDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+>>>>>>> f4ba0ba9c3485623af866e949601e4d79933d2ec
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DB/Entites/IrrigationMethod.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="-17">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding />
@@ -1187,11 +1709,57 @@
         <state relative-caret-position="145">
           <caret line="176" column="0" lean-forward="false" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
           <folding />
+=======
+        <state relative-caret-position="17">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ExcelReadWrite/ERFertilizationMethodEfficiency.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1462">
+          <caret line="99" column="17" lean-forward="true" selection-start-line="99" selection-start-column="17" selection-end-line="99" selection-end-column="17" />
+          <folding>
+            <element signature="e#780#811#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DB/DaoImpl/LabAnalysisResultDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="57" column="63" selection-start-line="57" selection-start-column="63" selection-end-line="57" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DB/Util/ConnectionConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="12" column="128" lean-forward="true" selection-start-line="12" selection-start-column="128" selection-end-line="12" selection-end-column="128" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Program Files/Java/jdk1.8.0_121/src.zip!/java/net/URL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="1044" selection-start-line="1044" selection-end-line="1044" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Program Files/Java/jdk1.8.0_121/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="3096" selection-start-line="3096" selection-end-line="3096" />
+>>>>>>> f4ba0ba9c3485623af866e949601e4d79933d2ec
         </state>
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="146">
           <caret line="1657" column="0" lean-forward="false" selection-start-line="1657" selection-start-column="0" selection-end-line="1657" selection-end-column="0" />
           <folding>
@@ -1398,10 +1966,165 @@
             <element signature="e#1201#1202#0" expanded="true" />
             <element signature="e#1270#1271#0" expanded="true" />
             <element signature="e#1334#1335#0" expanded="true" />
+=======
+        <state relative-caret-position="227">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Program Files/Java/jdk1.8.0_121/jre/lib/rt.jar!/sun/net/www/protocol/file/FileURLConnection.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="154" selection-start-line="154" selection-end-line="154" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Program Files/Java/jdk1.8.0_121/src.zip!/java/io/FileInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="92" selection-start-line="92" selection-end-line="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Tools/Filechooser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1133">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DB/Entites/fertilization_method.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DB/Entites/data_types.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DB/Entites/variety_type.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DB/MainDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3655">
+          <caret line="237" selection-start-line="237" selection-end-line="238" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="428" selection-start-line="428" selection-end-line="428" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ExcelReadWrite/ExcelReadParameterPerStage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="80" column="73" lean-forward="true" selection-start-line="80" selection-start-column="73" selection-end-line="80" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DB/DaoImpl/ParameterPerStageDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="270" column="43" lean-forward="true" selection-start-line="270" selection-start-column="43" selection-end-line="270" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/StageDate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/NutrientsBasicRemoval.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="112" column="25" lean-forward="true" selection-start-line="112" selection-start-column="25" selection-end-line="112" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/NutrientsBasicRemovalPerStage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="145" column="85" selection-start-line="145" selection-start-column="85" selection-end-line="145" selection-end-column="85" />
+          <folding>
+            <element signature="e#441#442#0" expanded="true" />
+            <element signature="e#466#467#0" expanded="true" />
+            <element signature="e#505#506#0" expanded="true" />
+            <element signature="e#533#534#0" expanded="true" />
+            <element signature="e#561#562#0" expanded="true" />
+            <element signature="e#585#586#0" expanded="true" />
+            <element signature="e#619#620#0" expanded="true" />
+            <element signature="e#645#646#0" expanded="true" />
+            <element signature="e#673#674#0" expanded="true" />
+            <element signature="e#697#698#0" expanded="true" />
+            <element signature="e#731#732#0" expanded="true" />
+            <element signature="e#757#758#0" expanded="true" />
+            <element signature="e#785#786#0" expanded="true" />
+            <element signature="e#809#810#0" expanded="true" />
+            <element signature="e#843#844#0" expanded="true" />
+            <element signature="e#869#870#0" expanded="true" />
+            <element signature="e#898#899#0" expanded="true" />
+            <element signature="e#923#924#0" expanded="true" />
+            <element signature="e#959#960#0" expanded="true" />
+            <element signature="e#987#988#0" expanded="true" />
+            <element signature="e#1016#1017#0" expanded="true" />
+            <element signature="e#1041#1042#0" expanded="true" />
+            <element signature="e#1077#1078#0" expanded="true" />
+            <element signature="e#1105#1106#0" expanded="true" />
+            <element signature="e#1133#1134#0" expanded="true" />
+            <element signature="e#1157#1158#0" expanded="true" />
+            <element signature="e#1191#1192#0" expanded="true" />
+            <element signature="e#1217#1218#0" expanded="true" />
+            <element signature="e#1246#1247#0" expanded="true" />
+            <element signature="e#1271#1272#0" expanded="true" />
+            <element signature="e#1307#1308#0" expanded="true" />
+            <element signature="e#1335#1336#0" expanded="true" />
+            <element signature="e#1364#1365#0" expanded="true" />
+            <element signature="e#1389#1390#0" expanded="true" />
+            <element signature="e#1425#1426#0" expanded="true" />
+            <element signature="e#1453#1454#0" expanded="true" />
+            <element signature="e#1481#1482#0" expanded="true" />
+            <element signature="e#1505#1506#0" expanded="true" />
+            <element signature="e#1539#1540#0" expanded="true" />
+            <element signature="e#1565#1566#0" expanded="true" />
+            <element signature="e#1594#1595#0" expanded="true" />
+            <element signature="e#1619#1620#0" expanded="true" />
+            <element signature="e#1655#1656#0" expanded="true" />
+            <element signature="e#1683#1684#0" expanded="true" />
+            <element signature="e#1712#1713#0" expanded="true" />
+            <element signature="e#1737#1738#0" expanded="true" />
+            <element signature="e#1773#1774#0" expanded="true" />
+            <element signature="e#1801#1802#0" expanded="true" />
+            <element signature="e#1830#1831#0" expanded="true" />
+            <element signature="e#1855#1856#0" expanded="true" />
+            <element signature="e#1891#1892#0" expanded="true" />
+            <element signature="e#1919#1920#0" expanded="true" />
+>>>>>>> f4ba0ba9c3485623af866e949601e4d79933d2ec
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/SoilAnalysis/SoilAnalysis.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
@@ -1486,10 +2209,29 @@
             <element signature="e#886#887#0" expanded="true" />
             <element signature="e#948#949#0" expanded="true" />
             <element signature="e#1002#1003#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/DB/Entites/parameters.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parameters.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="7" column="39" lean-forward="true" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+          <folding>
+            <element signature="e#380#381#0" expanded="true" />
+            <element signature="e#405#406#0" expanded="true" />
+            <element signature="e#444#445#0" expanded="true" />
+            <element signature="e#472#473#0" expanded="true" />
+>>>>>>> f4ba0ba9c3485623af866e949601e4d79933d2ec
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/LabAnalysisResultDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1525,10 +2267,34 @@
             <element signature="e#1701#1702#0" expanded="true" />
             <element signature="e#1763#1764#0" expanded="true" />
             <element signature="e#1817#1818#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/SoilType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="13" column="58" lean-forward="true" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Nutrients.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="49" column="45" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
+          <folding>
+            <element signature="e#642#643#0" expanded="true" />
+            <element signature="e#669#670#0" expanded="true" />
+            <element signature="e#707#708#0" expanded="true" />
+            <element signature="e#739#740#0" expanded="true" />
+            <element signature="e#908#909#0" expanded="true" />
+            <element signature="e#952#953#0" expanded="true" />
+            <element signature="e#1245#1246#0" expanded="true" />
+            <element signature="e#1310#1311#0" expanded="true" />
+            <element signature="e#1360#1361#0" expanded="true" />
+>>>>>>> f4ba0ba9c3485623af866e949601e4d79933d2ec
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/WaterAnalysis/ERWaterAnalysis.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-283">
@@ -1545,12 +2311,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="67" column="60" lean-forward="false" selection-start-line="67" selection-start-column="36" selection-end-line="67" selection-end-column="60" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/DB/Entites/ParameterPerStage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/NCredit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="56" lean-forward="true" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
+>>>>>>> f4ba0ba9c3485623af866e949601e4d79933d2ec
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/UIcontroller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
@@ -1559,12 +2339,25 @@
             <element signature="imports" expanded="true" />
             <element signature="e#19957#19958#0" expanded="true" />
             <element signature="e#19987#19988#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/SoilNutrients.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#242#243#0" expanded="true" />
+            <element signature="e#273#274#0" expanded="true" />
+            <element signature="e#328#329#0" expanded="true" />
+            <element signature="e#368#369#0" expanded="true" />
+>>>>>>> f4ba0ba9c3485623af866e949601e4d79933d2ec
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/SoilAnalysis/ERSoilAnalysis.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="-221">
           <caret line="152" column="2" lean-forward="false" selection-start-line="152" selection-start-column="2" selection-end-line="152" selection-end-column="2" />
           <folding>
@@ -1572,6 +2365,14 @@
             <element signature="e#895#896#0" expanded="true" />
             <element signature="e#927#928#0" expanded="true" />
             <element signature="e#5651#5668#0" expanded="true" />
+=======
+        <state relative-caret-position="294">
+          <caret line="206" column="80" selection-start-line="206" selection-start-column="80" selection-end-line="206" selection-end-column="80" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#21049#21050#0" expanded="true" />
+            <element signature="e#21079#21080#0" expanded="true" />
+>>>>>>> f4ba0ba9c3485623af866e949601e4d79933d2ec
           </folding>
         </state>
       </provider>
