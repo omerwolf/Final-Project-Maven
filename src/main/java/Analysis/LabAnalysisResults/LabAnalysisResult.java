@@ -1,12 +1,14 @@
-package DB.Entites;
+package Analysis.LabAnalysisResults;
 
-public class LabAnalysisResult {
+public  class LabAnalysisResult {
     private Integer tissue_analysis_id;
     private Integer soil_analysis_id;
     private Integer water_analysis_id;
     private int parameter_id;
     private double parameter_value;
-
+    private int uom_id;
+    private int extraction_analysis_id;
+    private int extraction_method_id;
 
     public LabAnalysisResult() {
     }

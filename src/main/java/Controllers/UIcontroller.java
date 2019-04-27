@@ -3,10 +3,14 @@ package Controllers;
 import DB.Dao.*;
 import DB.DaoImpl.*;
 import DB.Entites.*;
-import DB.WaterAnalysis.WaterAnalysis;
-import DB.WaterAnalysis.WaterAnalysisDao;
-import DB.WaterAnalysis.WaterAnalysisDaoImpl;
-import ExcelReadWrite.ERWaterAnalysis;
+import Analysis.SoilAnalysis.ERSoilAnalysis;
+import Analysis.SoilAnalysis.SoilAnalysis;
+import Analysis.SoilAnalysis.SoilAnalysisDao;
+import Analysis.SoilAnalysis.SoilAnalysisDaoImpl;
+import Analysis.WaterAnalysis.WaterAnalysis;
+import Analysis.WaterAnalysis.WaterAnalysisDao;
+import Analysis.WaterAnalysis.WaterAnalysisDaoImpl;
+import Analysis.WaterAnalysis.ERWaterAnalysis;
 import Model.UserInput;
 
 import javafx.beans.value.ChangeListener;
@@ -121,6 +125,11 @@ public class UIcontroller extends  BaseController{
         this.selectedSoilAnalysisFile = fc.showOpenDialog(null);
         if (this.selectedSoilAnalysisFile != null) {
             labSoilAnalysis.setText("Selected file:" + this.selectedSoilAnalysisFile.getName());
+            //insert analysis to DB
+            ERSoilAnalysis erSoilAnalysis = new ERSoilAnalysis(this.selectedSoilAnalysisFile.getAbsolutePath());
+            SoilAnalysisDao soilAnalysisDao = new SoilAnalysisDaoImpl();
+            erSoilAnalysis.read();
+
         }
     }
     @FXML
@@ -154,8 +163,8 @@ public class UIcontroller extends  BaseController{
             //insert analysis to DB
             ERWaterAnalysis erWaterAnalysis = new ERWaterAnalysis(this.selectedWaterAnalysisFile.getAbsolutePath());
             WaterAnalysisDao waterAnalysisDao = new WaterAnalysisDaoImpl();
-            WaterAnalysis wa = erWaterAnalysis.read();
-            waterAnalysisDao.insert(wa);
+            erWaterAnalysis.read();
+
         }
     }
 

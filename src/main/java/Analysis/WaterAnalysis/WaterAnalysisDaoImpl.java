@@ -1,9 +1,8 @@
-package DB.WaterAnalysis;
+package Analysis.WaterAnalysis;
 
 import DB.Util.ConnectionConfiguration;
 
 import java.sql.*;
-import java.util.List;
 
 public class WaterAnalysisDaoImpl implements WaterAnalysisDao {
     @Override

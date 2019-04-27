@@ -1,28 +1,21 @@
-package ExcelReadWrite;
+package Analysis.WaterAnalysis;
 
 
 
-import DB.Dao.LabAnalysisResultDao;
-import DB.DaoImpl.LabAnalysisResultDaoImpl;
-import DB.Entites.LabAnalysisResult;
-import DB.Entites.ParameterPerStage;
-import DB.WaterAnalysis.WaterAnalysis;
+import Analysis.LabAnalysisResults.LabAnalysisResultDao;
+import Analysis.LabAnalysisResults.LabAnalysisResultDaoImpl;
+import Analysis.LabAnalysisResults.LabAnalysisResult;
+import Analysis.WaterAnalysis.WaterAnalysis;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.formula.functions.Now;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.sql.SQLData;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 
 public class ERWaterAnalysis {
@@ -34,7 +27,7 @@ public class ERWaterAnalysis {
 
     public WaterAnalysis read() {
         WaterAnalysis waterAnalysis = new WaterAnalysis();
-        List<LabAnalysisResult> labAnalysisResultList = new ArrayList<>();
+        List<WaterLabAnalysisResult> labAnalysisResultList = new ArrayList<>();
         try {
             //Create the input stream from the xlsx/xls file
             FileInputStream fis = new FileInputStream(path);
@@ -70,6 +63,10 @@ public class ERWaterAnalysis {
 
                 try{
                     waterAnalysis = new WaterAnalysis(water_analysis_id,is_active,farm_id,sample_date,sample_name,ib_id,water_EC,water_pH);
+
+                    //insert to water_lab_analysis schema
+                    WaterAnalysisDao wad = new WaterAnalysisDaoImpl();
+                    wad.insert(waterAnalysis);
                 } catch (Exception e){
                     e.printStackTrace();
                     System.out.println("failed to create water analysis");
@@ -96,25 +93,27 @@ public class ERWaterAnalysis {
                     double p16Val = firstSheet.getRow(24).getCell(1).getNumericCellValue();
                     double p17Val = firstSheet.getRow(25).getCell(1).getNumericCellValue();
                     double p18Val = firstSheet.getRow(26).getCell(1).getNumericCellValue();
-                    labAnalysisResultList.add(new LabAnalysisResult(null,null,water_analysis_id,1,p1Val));
-                    labAnalysisResultList.add(new LabAnalysisResult(null,null,water_analysis_id,2,p2Val));
-                    labAnalysisResultList.add(new LabAnalysisResult(null,null,water_analysis_id,3,p3Val));
-                    labAnalysisResultList.add(new LabAnalysisResult(null,null,water_analysis_id,4,p4Val));
-                    labAnalysisResultList.add(new LabAnalysisResult(null,null,water_analysis_id,5,p5Val));
-                    labAnalysisResultList.add(new LabAnalysisResult(null,null,water_analysis_id,6,p6Val));
-                    labAnalysisResultList.add(new LabAnalysisResult(null,null,water_analysis_id,7,p7Val));
-                    labAnalysisResultList.add(new LabAnalysisResult(null,null,water_analysis_id,8,p8Val));
-                    labAnalysisResultList.add(new LabAnalysisResult(null,null,water_analysis_id,9,p9Val));
-                    labAnalysisResultList.add(new LabAnalysisResult(null,null,water_analysis_id,10,p10Val));
-                    labAnalysisResultList.add(new LabAnalysisResult(null,null,water_analysis_id,11,p11Val));
-                    labAnalysisResultList.add(new LabAnalysisResult(null,null,water_analysis_id,12,p12Val));
-                    labAnalysisResultList.add(new LabAnalysisResult(null,null,water_analysis_id,13,p13Val));
-                    labAnalysisResultList.add(new LabAnalysisResult(null,null,water_analysis_id,14,p14Val));
-                    labAnalysisResultList.add(new LabAnalysisResult(null,null,water_analysis_id,16,p16Val));
-                    labAnalysisResultList.add(new LabAnalysisResult(null,null,water_analysis_id,17,p17Val));
-                    labAnalysisResultList.add(new LabAnalysisResult(null,null,water_analysis_id,18,p18Val));
+                    labAnalysisResultList.add(new WaterLabAnalysisResult(water_analysis_id,1,p1Val));
+                    labAnalysisResultList.add(new WaterLabAnalysisResult(water_analysis_id,2,p2Val));
+                    labAnalysisResultList.add(new WaterLabAnalysisResult(water_analysis_id,3,p3Val));
+                    labAnalysisResultList.add(new WaterLabAnalysisResult(water_analysis_id,4,p4Val));
+                    labAnalysisResultList.add(new WaterLabAnalysisResult(water_analysis_id,5,p5Val));
+                    labAnalysisResultList.add(new WaterLabAnalysisResult(water_analysis_id,6,p6Val));
+                    labAnalysisResultList.add(new WaterLabAnalysisResult(water_analysis_id,7,p7Val));
+                    labAnalysisResultList.add(new WaterLabAnalysisResult(water_analysis_id,8,p8Val));
+                    labAnalysisResultList.add(new WaterLabAnalysisResult(water_analysis_id,9,p9Val));
+                    labAnalysisResultList.add(new WaterLabAnalysisResult(water_analysis_id,10,p10Val));
+                    labAnalysisResultList.add(new WaterLabAnalysisResult(water_analysis_id,11,p11Val));
+                    labAnalysisResultList.add(new WaterLabAnalysisResult(water_analysis_id,12,p12Val));
+                    labAnalysisResultList.add(new WaterLabAnalysisResult(water_analysis_id,13,p13Val));
+                    labAnalysisResultList.add(new WaterLabAnalysisResult(water_analysis_id,14,p14Val));
+                    labAnalysisResultList.add(new WaterLabAnalysisResult(water_analysis_id,16,p16Val));
+                    labAnalysisResultList.add(new WaterLabAnalysisResult(water_analysis_id,17,p17Val));
+                    labAnalysisResultList.add(new WaterLabAnalysisResult(water_analysis_id,18,p18Val));
+
+                    //insert to lab_analysis_results schema
                     LabAnalysisResultDao larDao = new LabAnalysisResultDaoImpl();
-                    larDao.insertAll(labAnalysisResultList);
+                    larDao.insertAllWater(labAnalysisResultList);
                 } catch (Exception e){
                     e.printStackTrace();
                     System.out.println("wrong read parameters - lab analysis");

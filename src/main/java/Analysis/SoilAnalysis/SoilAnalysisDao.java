@@ -1,9 +1,9 @@
-package DB.WaterAnalysis;
+package Analysis.SoilAnalysis;
 
-import java.util.List;
+public interface SoilAnalysisDao {
+    void insert(SoilAnalysis soilAnalysis);
 
-public interface WaterAnalysisDao {
-    void insert(WaterAnalysis waterAnalyses);
+    //void insertAll(List<SoilAnalysis> SoilAnalysisList);
 
     //WaterAnalysis selectById(int id);
 
@@ -14,8 +14,6 @@ public interface WaterAnalysisDao {
     //void update(WaterAnalysis waterAnalyses, int id);
 
     //int generateUniqueId();
-
-    //void insertAll(List<WaterAnalysis> waterAnalysesList);
 
     //void autoInsertAll();
 

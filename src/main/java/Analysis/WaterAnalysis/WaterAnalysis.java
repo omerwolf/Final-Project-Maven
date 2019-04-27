@@ -1,8 +1,10 @@
-package DB.WaterAnalysis;
+package Analysis.WaterAnalysis;
 
 import java.time.LocalDate;
 
 public class WaterAnalysis {
+    final int test_type_id = 2;
+
     private int water_analysis_id;
     private boolean is_active;
     private int farm_id;
@@ -37,7 +39,7 @@ public class WaterAnalysis {
         this.water_analysis_id = water_analysis_id;
     }
 
-    public boolean isIs_active() {
+    public boolean getIs_active() {
         return is_active;
     }
 
@@ -99,6 +101,10 @@ public class WaterAnalysis {
 
     public void setId_status(Integer id_status) {
         this.id_status = id_status;
+    }
+
+    public int getTest_type_id() {
+        return test_type_id;
     }
 
     @Override

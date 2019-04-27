@@ -503,51 +503,6 @@ INSERT INTO `irrigation_method` VALUES (1,'Drip',0.90,0.50),(2,'SDI',0.90,0.50),
 UNLOCK TABLES;
 
 --
--- Table structure for table `lab analysis results`
---
-
-DROP TABLE IF EXISTS `lab analysis results`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `lab analysis results` (
-  `lab_results_id` int(11) NOT NULL,
-  `tissue_analysis_id` int(11) DEFAULT NULL,
-  `soil_analysis_id` int(11) DEFAULT NULL,
-  `water_analysis_id` int(11) DEFAULT NULL,
-  `extraction_analysis_id` int(11) DEFAULT NULL,
-  `parameter_id` int(11) NOT NULL,
-  `parameter_value` int(11) DEFAULT NULL,
-  `uom_id` int(11) NOT NULL,
-  `extraction_method_id` int(11) DEFAULT NULL,
-  `user_insert` varchar(20) DEFAULT NULL,
-  `date_insert` datetime DEFAULT NULL,
-  `user_update` varchar(20) DEFAULT NULL,
-  `date_update` datetime DEFAULT NULL,
-  `user_delete` varchar(20) DEFAULT NULL,
-  `date_delete` datetime DEFAULT NULL,
-  PRIMARY KEY (`lab_results_id`),
-  KEY `idx_lab_analysis_results_parameter_id` (`parameter_id`),
-  KEY `idx_lab_analysis_results_water_analysis_id` (`water_analysis_id`),
-  KEY `idx_lab_analysis_results_soil_analysis_id` (`soil_analysis_id`),
-  KEY `idx_lab_analysis_results_extraction_analysis_id` (`extraction_analysis_id`),
-  KEY `idx_lab_analysis_results_tissue_analysis_id` (`tissue_analysis_id`),
-  CONSTRAINT `fk_lab analysis results_analysis_parameters` FOREIGN KEY (`parameter_id`) REFERENCES `parameters` (`parameter_id`),
-  CONSTRAINT `fk_lab analysis results_extraction_lab_analysis` FOREIGN KEY (`extraction_analysis_id`) REFERENCES `extraction_lab_analysis` (`extraction_sample_id`),
-  CONSTRAINT `fk_lab analysis results_tissue_lab_analysis_0` FOREIGN KEY (`tissue_analysis_id`) REFERENCES `tissue_lab_analysis` (`tissue_analysis_id`),
-  CONSTRAINT `fk_lab analysis results_wataer_lab_analysis` FOREIGN KEY (`water_analysis_id`) REFERENCES `water_lab_analysis` (`water_analysis_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `lab analysis results`
---
-
-LOCK TABLES `lab analysis results` WRITE;
-/*!40000 ALTER TABLE `lab analysis results` DISABLE KEYS */;
-/*!40000 ALTER TABLE `lab analysis results` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `lab_analysis__status`
 --
 
@@ -569,6 +524,52 @@ CREATE TABLE `lab_analysis__status` (
 LOCK TABLES `lab_analysis__status` WRITE;
 /*!40000 ALTER TABLE `lab_analysis__status` DISABLE KEYS */;
 /*!40000 ALTER TABLE `lab_analysis__status` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `lab_analysis_results`
+--
+
+DROP TABLE IF EXISTS `lab_analysis_results`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `lab_analysis_results` (
+  `lab_results_id` int(11) NOT NULL AUTO_INCREMENT,
+  `tissue_analysis_id` int(11) DEFAULT NULL,
+  `soil_analysis_id` int(11) DEFAULT NULL,
+  `water_analysis_id` int(11) DEFAULT NULL,
+  `parameter_id` int(11) NOT NULL,
+  `parameter_value` int(11) NOT NULL,
+  `uom_id` int(11) DEFAULT NULL,
+  `extraction_analysis_id` int(11) DEFAULT NULL,
+  `extraction_method_id` int(11) DEFAULT NULL,
+  `user_insert` varchar(20) DEFAULT NULL,
+  `date_insert` datetime DEFAULT NULL,
+  `user_update` varchar(20) DEFAULT NULL,
+  `date_update` datetime DEFAULT NULL,
+  `user_delete` varchar(20) DEFAULT NULL,
+  `date_delete` datetime DEFAULT NULL,
+  PRIMARY KEY (`lab_results_id`),
+  KEY `idx_lab_analysis_results_parameter_id` (`parameter_id`),
+  KEY `idx_lab_analysis_results_water_analysis_id` (`water_analysis_id`),
+  KEY `idx_lab_analysis_results_soil_analysis_id` (`soil_analysis_id`),
+  KEY `idx_lab_analysis_results_extraction_analysis_id` (`extraction_analysis_id`),
+  KEY `idx_lab_analysis_results_tissue_analysis_id` (`tissue_analysis_id`),
+  CONSTRAINT `fk_lab analysis results_analysis_parameters` FOREIGN KEY (`parameter_id`) REFERENCES `parameters` (`parameter_id`),
+  CONSTRAINT `fk_lab analysis results_extraction_lab_analysis` FOREIGN KEY (`extraction_analysis_id`) REFERENCES `extraction_lab_analysis` (`extraction_sample_id`),
+  CONSTRAINT `fk_lab analysis results_tissue_lab_analysis_0` FOREIGN KEY (`tissue_analysis_id`) REFERENCES `tissue_lab_analysis` (`tissue_analysis_id`),
+  CONSTRAINT `fk_lab analysis results_wataer_lab_analysis` FOREIGN KEY (`water_analysis_id`) REFERENCES `water_lab_analysis` (`water_analysis_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `lab_analysis_results`
+--
+
+LOCK TABLES `lab_analysis_results` WRITE;
+/*!40000 ALTER TABLE `lab_analysis_results` DISABLE KEYS */;
+INSERT INTO `lab_analysis_results` VALUES (1,NULL,NULL,125,1,5,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(2,NULL,NULL,125,2,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(3,NULL,NULL,125,3,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4,NULL,NULL,125,4,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(5,NULL,NULL,125,5,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(6,NULL,NULL,125,6,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(7,NULL,NULL,125,7,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(8,NULL,NULL,125,8,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(9,NULL,NULL,125,9,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(10,NULL,NULL,125,10,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(11,NULL,NULL,125,11,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(12,NULL,NULL,125,12,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(13,NULL,NULL,125,13,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(14,NULL,NULL,125,14,5,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(15,NULL,NULL,125,16,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(16,NULL,NULL,125,17,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(17,NULL,NULL,125,18,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `lab_analysis_results` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1651,11 +1652,14 @@ DROP TABLE IF EXISTS `water_lab_analysis`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `water_lab_analysis` (
   `water_analysis_id` int(11) NOT NULL,
+  `is_active` tinyint(4) DEFAULT NULL,
   `farm_id` int(11) NOT NULL,
   `sample_date` date DEFAULT NULL,
-  `id_status` int(11) NOT NULL,
-  `sample name` varchar(100) DEFAULT NULL,
+  `sample_name` varchar(100) DEFAULT NULL,
   `ib_id` int(11) NOT NULL,
+  `water_EC` decimal(10,3) DEFAULT NULL,
+  `water_pH` decimal(10,3) DEFAULT NULL,
+  `id_status` int(11) DEFAULT NULL,
   `user_insert` varchar(20) DEFAULT NULL,
   `date_insert` datetime DEFAULT NULL,
   `user_update` varchar(20) DEFAULT NULL,
@@ -1665,8 +1669,7 @@ CREATE TABLE `water_lab_analysis` (
   PRIMARY KEY (`water_analysis_id`),
   KEY `idx_wataer_lab_analysis_ib_id` (`ib_id`),
   KEY `idx_wataer_lab_analysis_id_status` (`id_status`),
-  CONSTRAINT `fk_wataer_lab_analysis_irrigation_blocks` FOREIGN KEY (`ib_id`) REFERENCES `irrigation_blocks` (`ib_id`),
-  CONSTRAINT `fk_wataer_lab_analysis_lab_analysis__status` FOREIGN KEY (`id_status`) REFERENCES `analysis status type` (`id_status`)
+  CONSTRAINT `fk_wataer_lab_analysis_irrigation_blocks` FOREIGN KEY (`ib_id`) REFERENCES `irrigation_blocks` (`ib_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1676,6 +1679,7 @@ CREATE TABLE `water_lab_analysis` (
 
 LOCK TABLES `water_lab_analysis` WRITE;
 /*!40000 ALTER TABLE `water_lab_analysis` DISABLE KEYS */;
+INSERT INTO `water_lab_analysis` VALUES (123,NULL,1,'2016-08-16','tap',1,1.100,6.500,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(124,NULL,1,'2018-03-01','tap',1,1.100,6.500,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(125,NULL,1,'2018-03-01','tap',1,1.100,6.500,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `water_lab_analysis` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -1688,4 +1692,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-24 19:54:33
+-- Dump completed on 2019-04-25 15:28:07
