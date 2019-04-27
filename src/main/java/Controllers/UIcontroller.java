@@ -3,7 +3,7 @@ package Controllers;
 import DB.Dao.*;
 import DB.DaoImpl.*;
 import DB.Entites.*;
-<<<<<<< HEAD
+
 import Analysis.SoilAnalysis.ERSoilAnalysis;
 import Analysis.SoilAnalysis.SoilAnalysis;
 import Analysis.SoilAnalysis.SoilAnalysisDao;
@@ -13,13 +13,13 @@ import Analysis.WaterAnalysis.WaterAnalysisDao;
 import Analysis.WaterAnalysis.WaterAnalysisDaoImpl;
 import Analysis.WaterAnalysis.ERWaterAnalysis;
 import Model.UserInput;
-=======
-import DB.WaterAnalysis.WaterAnalysis;
-import DB.WaterAnalysis.WaterAnalysisDao;
-import DB.WaterAnalysis.WaterAnalysisDaoImpl;
-import ExcelReadWrite.ERWaterAnalysis;
+
+import Analysis.WaterAnalysis.WaterAnalysis;
+import Analysis.WaterAnalysis.WaterAnalysisDao;
+import Analysis.WaterAnalysis.WaterAnalysisDaoImpl;
+import Analysis.WaterAnalysis.ERWaterAnalysis;
 import Model.*;
->>>>>>> f4ba0ba9c3485623af866e949601e4d79933d2ec
+
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
