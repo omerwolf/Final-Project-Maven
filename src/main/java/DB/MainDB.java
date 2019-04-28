@@ -235,11 +235,14 @@ public class MainDB {
         //crop_expected_yield_validationDao ceyv = new crop_expected_yield_validationDaoImpl();
         //ceyv.autoInsertAll();
 
-        ParameterPerStageDao pps = new ParameterPerStageDaoImpl();
-        pps.autoInsertAll();
+        //ParameterPerStageDao pps = new ParameterPerStageDaoImpl();
+        //pps.autoInsertAll();
 
         //FertilizationMethodEfficiencyDao fme = new FertilizationMethodEfficiencyDaoImpl();
         //fme.autoInsertAll();
+
+        //ExtractionMethodDao emd = new ExtractionMethodDaoImpl();
+        //emd.insertAll();
 
     }
     }

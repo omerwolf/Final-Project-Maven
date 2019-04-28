@@ -2,11 +2,14 @@ package Analysis.SoilAnalysis;
 
 import Analysis.LabAnalysisResults.LabAnalysisResultDao;
 import Analysis.LabAnalysisResults.LabAnalysisResultDaoImpl;
+import DB.Dao.ExtractionMethodDao;
 import DB.Dao.SoilDao;
 import DB.Dao.layer_depth_typeDao;
+import DB.DaoImpl.ExtractionMethodDaoImpl;
 import DB.DaoImpl.SoilDaoImpl;
 import DB.DaoImpl.layer_depth_typeDaoImpl;
 import Analysis.LabAnalysisResults.LabAnalysisResult;
+import DB.Entites.ExtractionMethod;
 import DB.Entites.Soil;
 import DB.Entites.layer_depth_type;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -24,6 +27,7 @@ import java.util.*;
 
 public class ERSoilAnalysis {
      String path;
+     List<ExtractionMethod> emList;
 
 
     public ERSoilAnalysis(String path) {
@@ -102,30 +106,25 @@ public class ERSoilAnalysis {
                     double p17Val = firstSheet.getRow(33).getCell(1).getNumericCellValue();
                     double p19Val = firstSheet.getRow(34).getCell(1).getNumericCellValue();
 
-                    Map<String, Integer> map = new HashMap<String, Integer>();
-                    map.put("2m KCl",3);
-                    map.put("Kjeldahl",11);
-                    map.put("Olsen",1);
-                    map.put("Ammonium Acetate",8);
 
-                    int p1ExtractionMethod = map.get(firstSheet.getRow(17).getCell(3).getStringCellValue());
-                    int p13ExtractionMethod  =map.get(firstSheet.getRow(18).getCell(3).getStringCellValue());
-                    int p14ExtractionMethod  =map.get(firstSheet.getRow(19).getCell(3).getStringCellValue());
-                    int p15ExtractionMethod  =map.get(firstSheet.getRow(20).getCell(3).getStringCellValue());
-                    int p2ExtractionMethod  =map.get(firstSheet.getRow(21).getCell(3).getStringCellValue());
-                    int p3ExtractionMethod  =map.get(firstSheet.getRow(22).getCell(3).getStringCellValue());
-                    int p4ExtractionMethod  =map.get(firstSheet.getRow(23).getCell(3).getStringCellValue());
-                    int p5ExtractionMethod  =map.get(firstSheet.getRow(24).getCell(3).getStringCellValue());
-                    int p6ExtractionMethod  =map.get(firstSheet.getRow(25).getCell(3).getStringCellValue());
-                    int p7ExtractionMethod  =map.get(firstSheet.getRow(26).getCell(3).getStringCellValue());
-                    int p8ExtractionMethod  =map.get(firstSheet.getRow(27).getCell(3).getStringCellValue());
-                    int p9ExtractionMethod  =map.get(firstSheet.getRow(28).getCell(3).getStringCellValue());
-                    int p10ExtractionMethod  =map.get(firstSheet.getRow(29).getCell(3).getStringCellValue());
-                    int p11ExtractionMethod  =map.get(firstSheet.getRow(30).getCell(3).getStringCellValue());
-                    int p12ExtractionMethod  =map.get(firstSheet.getRow(31).getCell(3).getStringCellValue());
-                    int p16ExtractionMethod  =map.get(firstSheet.getRow(32).getCell(3).getStringCellValue());
-                    int p17ExtractionMethod  =map.get(firstSheet.getRow(33).getCell(3).getStringCellValue());
-                    int p19ExtractionMethod  =map.get(firstSheet.getRow(34).getCell(3).getStringCellValue());
+                    int p1ExtractionMethod = this.getExtractionMethodId(firstSheet.getRow(17).getCell(3).getStringCellValue());
+                    int p13ExtractionMethod = this.getExtractionMethodId(firstSheet.getRow(18).getCell(3).getStringCellValue());
+                    int p14ExtractionMethod  = this.getExtractionMethodId(firstSheet.getRow(19).getCell(3).getStringCellValue());
+                    int p15ExtractionMethod  = this.getExtractionMethodId(firstSheet.getRow(20).getCell(3).getStringCellValue());
+                    int p2ExtractionMethod  = this.getExtractionMethodId(firstSheet.getRow(21).getCell(3).getStringCellValue());
+                    int p3ExtractionMethod  = this.getExtractionMethodId(firstSheet.getRow(22).getCell(3).getStringCellValue());
+                    int p4ExtractionMethod  = this.getExtractionMethodId(firstSheet.getRow(23).getCell(3).getStringCellValue());
+                    int p5ExtractionMethod  = this.getExtractionMethodId(firstSheet.getRow(24).getCell(3).getStringCellValue());
+                    int p6ExtractionMethod  = this.getExtractionMethodId(firstSheet.getRow(25).getCell(3).getStringCellValue());
+                    int p7ExtractionMethod  = this.getExtractionMethodId(firstSheet.getRow(26).getCell(3).getStringCellValue());
+                    int p8ExtractionMethod  = this.getExtractionMethodId(firstSheet.getRow(27).getCell(3).getStringCellValue());
+                    int p9ExtractionMethod  = this.getExtractionMethodId(firstSheet.getRow(28).getCell(3).getStringCellValue());
+                    int p10ExtractionMethod  = this.getExtractionMethodId(firstSheet.getRow(29).getCell(3).getStringCellValue());
+                    int p11ExtractionMethod  = this.getExtractionMethodId(firstSheet.getRow(30).getCell(3).getStringCellValue());
+                    int p12ExtractionMethod  = this.getExtractionMethodId(firstSheet.getRow(31).getCell(3).getStringCellValue());
+                    int p16ExtractionMethod  = this.getExtractionMethodId(firstSheet.getRow(32).getCell(3).getStringCellValue());
+                    int p17ExtractionMethod  = this.getExtractionMethodId(firstSheet.getRow(33).getCell(3).getStringCellValue());
+                    int p19ExtractionMethod  = this.getExtractionMethodId(firstSheet.getRow(34).getCell(3).getStringCellValue());
 
                     labAnalysisResultList.add(new SoilLabAnalysisResult(soil_analysis_id,1,p1Val,p1ExtractionMethod));
                     labAnalysisResultList.add(new SoilLabAnalysisResult(soil_analysis_id,2,p2Val,p2ExtractionMethod));
@@ -146,11 +145,11 @@ public class ERSoilAnalysis {
                     labAnalysisResultList.add(new SoilLabAnalysisResult(soil_analysis_id,17,p17Val,p17ExtractionMethod));
                     labAnalysisResultList.add(new SoilLabAnalysisResult(soil_analysis_id,19,p19Val,p19ExtractionMethod));
 
-                    /*
+
                     //insert to lab_analysis_results schema
                     LabAnalysisResultDao larDao = new LabAnalysisResultDaoImpl();
                     larDao.insertAllSoil(labAnalysisResultList);
-*/
+
                 } catch (Exception e){
                     e.printStackTrace();
                     System.out.println("wrong read parameters - lab analysis");
@@ -213,6 +212,19 @@ public class ERSoilAnalysis {
 
     }
 
+    private int getExtractionMethodId(String s) {
+        if (this.emList == null) {
+            ExtractionMethodDao emd = new ExtractionMethodDaoImpl();
+            this.emList = emd.selectAll();
+        }
+        for (ExtractionMethod em : emList){
+            if (s.equals(em.getExtraction_method_desc())){
+                return em.getExtraction_method_id();
+            }
+        }
+        System.out.println("Extraction method ID - problem : " + s);
+        return 0;
+    }
 
 
 }
