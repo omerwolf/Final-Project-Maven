@@ -203,7 +203,7 @@ public class UIcontroller extends  BaseController{
                 pps.autoInsertAll();*/
                 //parameter_cropDao pc = new parameter_cropDaoImpl();
                 //pc.autoInsertAll();
-                /*Parameters p = new Parameters();
+                Parameters p = new Parameters();
                 p.setUi(ui);
                 StageDate sd = new StageDate();
                 p = sd.stageDate(p);
@@ -221,7 +221,14 @@ public class UIcontroller extends  BaseController{
                 n = st.soilType(p,n);
                 NCredit ncredit = new NCredit();
                 n = ncredit.nCredit(p,n);
-                System.out.println(n.getSoilNutrients().getnCredits().get(0));*/
+                System.out.println(n.getSoilNutrients().getnCredits().get(0));
+                //needs to add a check if lab analysis exists.
+                OrganicMatterContribution omc = new OrganicMatterContribution();
+                n = omc.organicMatterContribution(p,n);
+                PreSeasonNutrientsSoilAnalysis psnsa= new PreSeasonNutrientsSoilAnalysis();
+                n = psnsa.PreSeasonNutrientsSoilAnalysis(p,n);
+                //SoilAnalysisDao sad = new SoilAnalysisDaoImpl();
+                //SoilAnalysis sa =
                 //System.out.println(p.getUi().getSelectedCrop().getName());
                 //ParameterPerStageDao pps = new ParameterPerStageDaoImpl();
                 //pps.autoInsertAll();
