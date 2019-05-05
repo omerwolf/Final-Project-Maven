@@ -191,7 +191,7 @@ public class ERSoilAnalysis {
         SoilDao soilDao = new SoilDaoImpl();
         List<Soil> soils = soilDao.selectAll();
         for (Soil soil : soils){
-            if(soil.getName().equals(cropName)){
+            if(soil.getName().toLowerCase().equals(cropName.toLowerCase())){
                 return soil.getId();
             }
         }
@@ -203,7 +203,7 @@ public class ERSoilAnalysis {
         layer_depth_typeDao ldtDao = new layer_depth_typeDaoImpl();
         List<layer_depth_type> layers = ldtDao.selectAll();
         for (layer_depth_type layer : layers){
-            if(layer.getLayer_depth_name().equals(layerDepth)){
+            if(layer.getLayer_depth_name().toLowerCase().equals(layerDepth.toLowerCase())){
                 return  layer.getLayer_depth_id();
             }
         }
@@ -218,7 +218,7 @@ public class ERSoilAnalysis {
             this.emList = emd.selectAll();
         }
         for (ExtractionMethod em : emList){
-            if (s.equals(em.getExtraction_method_desc())){
+            if (s.toLowerCase().equals(em.getExtraction_method_desc().toLowerCase())){
                 return em.getExtraction_method_id();
             }
         }
