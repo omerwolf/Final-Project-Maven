@@ -2,7 +2,7 @@ package DB.DaoImpl;
 import DB.Dao.ParameterPerStageDao;
 import DB.Entites.ParameterPerStage;
 import DB.Util.ConnectionConfiguration;
-import ExcelReadWrite.ExcelReadParameterPerStage;
+import DB.ExcelReadWrite.ExcelReadParameterPerStage;
 
 import java.sql.*;
 import java.util.ArrayList;

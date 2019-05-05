@@ -8,7 +8,6 @@ import DB.Dao.layer_depth_typeDao;
 import DB.DaoImpl.ExtractionMethodDaoImpl;
 import DB.DaoImpl.SoilDaoImpl;
 import DB.DaoImpl.layer_depth_typeDaoImpl;
-import Analysis.LabAnalysisResults.LabAnalysisResult;
 import DB.Entites.ExtractionMethod;
 import DB.Entites.Soil;
 import DB.Entites.layer_depth_type;
@@ -34,7 +33,8 @@ public class ERSoilAnalysis {
         this.path = path;
     }
 
-    public void read() {
+    public int read() {
+        Integer soilAnalysisId = null;
         SoilAnalysis soilAnalysis = null;
         List<SoilLabAnalysisResult> labAnalysisResultList = new ArrayList<>();
         try {
@@ -78,6 +78,7 @@ public class ERSoilAnalysis {
                     //insert to soil_lab_analysis schema
                     SoilAnalysisDao sad = new SoilAnalysisDaoImpl();
                     sad.insert(soilAnalysis);
+                    soilAnalysisId = soil_analysis_id;
                 } catch (Exception e){
                     e.printStackTrace();
                     System.out.println("failed to create water analysis");
@@ -164,6 +165,7 @@ public class ERSoilAnalysis {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return soilAnalysisId;
     }
 
     LocalDate getLocalDate(Cell cell){
@@ -222,7 +224,9 @@ public class ERSoilAnalysis {
                 return em.getExtraction_method_id();
             }
         }
-        System.out.println("Extraction method ID - problem : " + s);
+        if (!s.equals("")){
+            System.out.println("Extraction method ID - problem : " + s);
+        }
         return 0;
     }
 

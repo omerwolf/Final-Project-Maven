@@ -66,4 +66,12 @@ public class variety_type {
     public void setVariety_name(String variety_name) {
         this.variety_name = variety_name;
     }
+
+    @Override
+    public String toString() {
+        return "variety_type{" +
+                "variety_id=" + variety_id +
+                ", variety_name='" + variety_name + '\'' +
+                '}';
+    }
 }

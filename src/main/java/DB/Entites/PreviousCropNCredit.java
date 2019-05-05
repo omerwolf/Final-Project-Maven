@@ -49,4 +49,14 @@ public class PreviousCropNCredit {
     public void setnCredit(int nCredit) {
         this.nCredit = nCredit;
     }
+
+    @Override
+    public String toString() {
+        return "PreviousCropNCredit{" +
+                "previousCropId=" + previousCropId +
+                ", previousCropName='" + previousCropName + '\'' +
+                ", percent=" + percent +
+                ", nCredit=" + nCredit +
+                '}';
+    }
 }

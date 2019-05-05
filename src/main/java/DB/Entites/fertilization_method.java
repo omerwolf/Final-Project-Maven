@@ -65,4 +65,12 @@ public class fertilization_method {
     public void setFert_method_desc(String fert_method_desc) {
         this.fert_method_desc = fert_method_desc;
     }
+
+    @Override
+    public String toString() {
+        return "fertilization_method{" +
+                "fert_method_id=" + fert_method_id +
+                ", fert_method_desc='" + fert_method_desc + '\'' +
+                '}';
+    }
 }

@@ -54,4 +54,14 @@ public class IrrigationMethod {
     public void setIrrigation_method_wetted_area(double irrigation_method_wetted_area) {
         this.irrigation_method_wetted_area = irrigation_method_wetted_area;
     }
+
+    @Override
+    public String toString() {
+        return "IrrigationMethod{" +
+                "irrigation_method_id=" + irrigation_method_id +
+                ", irrigation_method_desc='" + irrigation_method_desc + '\'' +
+                ", irrigation_method_efficiency=" + irrigation_method_efficiency +
+                ", irrigation_method_wetted_area=" + irrigation_method_wetted_area +
+                '}';
+    }
 }

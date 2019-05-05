@@ -27,4 +27,12 @@ public class ExtractionMethod {
     public void setExtraction_method_desc(String extraction_method_desc) {
         this.extraction_method_desc = extraction_method_desc;
     }
+
+    @Override
+    public String toString() {
+        return "ExtractionMethod{" +
+                "extraction_method_id=" + extraction_method_id +
+                ", extraction_method_desc='" + extraction_method_desc + '\'' +
+                '}';
+    }
 }

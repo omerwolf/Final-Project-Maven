@@ -60,6 +60,9 @@ public class UIcontroller extends  BaseController{
     private Double selectedSoilCorrection = null;
     private Double selectedSoilPH = null;
 
+    private int selectedSoilAnalysisId;
+    private int selectedWaterAnalysisId;
+
     private File selectedSoilAnalysisFile;
     private File selectedTissueAnalysisFile;
     private File selectedWaterAnalysisFile;
@@ -137,7 +140,7 @@ public class UIcontroller extends  BaseController{
             //insert analysis to DB
             ERSoilAnalysis erSoilAnalysis = new ERSoilAnalysis(this.selectedSoilAnalysisFile.getAbsolutePath());
             SoilAnalysisDao soilAnalysisDao = new SoilAnalysisDaoImpl();
-            erSoilAnalysis.read();
+            this.selectedSoilAnalysisId = erSoilAnalysis.read();
 
         }
     }
@@ -172,7 +175,7 @@ public class UIcontroller extends  BaseController{
             //insert analysis to DB
             ERWaterAnalysis erWaterAnalysis = new ERWaterAnalysis(this.selectedWaterAnalysisFile.getAbsolutePath());
             WaterAnalysisDao waterAnalysisDao = new WaterAnalysisDaoImpl();
-            erWaterAnalysis.read();
+            this.selectedWaterAnalysisId = erWaterAnalysis.read();
 
         }
     }
@@ -203,7 +206,7 @@ public class UIcontroller extends  BaseController{
                 pps.autoInsertAll();*/
                 //parameter_cropDao pc = new parameter_cropDaoImpl();
                 //pc.autoInsertAll();
-                /*Parameters p = new Parameters();
+                Parameters p = new Parameters();
                 p.setUi(ui);
                 StageDate sd = new StageDate();
                 p = sd.stageDate(p);
@@ -221,7 +224,14 @@ public class UIcontroller extends  BaseController{
                 n = st.soilType(p,n);
                 NCredit ncredit = new NCredit();
                 n = ncredit.nCredit(p,n);
-                System.out.println(n.getSoilNutrients().getnCredits().get(0));*/
+                System.out.println(n.getSoilNutrients().getnCredits().get(0));
+                //needs to add a check if lab analysis exists.
+                OrganicMatterContribution omc = new OrganicMatterContribution();
+                n = omc.organicMatterContribution(p,n);
+                PreSeasonNutrientsSoilAnalysis psnsa= new PreSeasonNutrientsSoilAnalysis();
+                n = psnsa.PreSeasonNutrientsSoilAnalysis(p,n);
+                //SoilAnalysisDao sad = new SoilAnalysisDaoImpl();
+                //SoilAnalysis sa =
                 //System.out.println(p.getUi().getSelectedCrop().getName());
                 //ParameterPerStageDao pps = new ParameterPerStageDaoImpl();
                 //pps.autoInsertAll();

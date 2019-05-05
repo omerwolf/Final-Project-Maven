@@ -3,7 +3,7 @@ package DB.DaoImpl;
 import DB.Dao.FertilizationMethodEfficiencyDao;
 import DB.Entites.FertilizationMethodEfficiency;
 import DB.Util.ConnectionConfiguration;
-import ExcelReadWrite.ERFertilizationMethodEfficiency;
+import DB.ExcelReadWrite.ERFertilizationMethodEfficiency;
 
 import java.sql.*;
 import java.util.ArrayList;

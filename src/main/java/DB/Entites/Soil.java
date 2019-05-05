@@ -168,4 +168,24 @@ public class Soil {
     public void setDefualtBulkDensity(double defualtBulkDensity) {
         this.defualtBulkDensity = defualtBulkDensity;
     }
+
+    @Override
+    public String toString() {
+        return "Soil{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", nPrecent=" + nPrecent +
+                ", pPrecent=" + pPrecent +
+                ", kPrecent=" + kPrecent +
+                ", somDecompHigh=" + somDecompHigh +
+                ", somDecompModerate=" + somDecompModerate +
+                ", somDecompLow=" + somDecompLow +
+                ", baseDressingStrategy=" + baseDressingStrategy +
+                ", rainEffect=" + rainEffect +
+                ", defualtCEC=" + defualtCEC +
+                ", lowerCEC=" + lowerCEC +
+                ", upperCEC=" + upperCEC +
+                ", defualtBulkDensity=" + defualtBulkDensity +
+                '}';
+    }
 }

@@ -58,4 +58,15 @@ public class crop_expected_yield_validation {
     public void setMax_yield(double max_yield) {
         this.max_yield = max_yield;
     }
+
+    @Override
+    public String toString() {
+        return "crop_expected_yield_validation{" +
+                "validation_id=" + validation_id +
+                ", crop_id=" + crop_id +
+                ", variety_id=" + variety_id +
+                ", min_yield=" + min_yield +
+                ", max_yield=" + max_yield +
+                '}';
+    }
 }

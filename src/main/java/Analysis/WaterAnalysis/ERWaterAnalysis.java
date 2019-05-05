@@ -25,7 +25,8 @@ public class ERWaterAnalysis {
         this.path = path;
     }
 
-    public WaterAnalysis read() {
+    public int read() {
+        Integer waterAnalysisId = null;
         WaterAnalysis waterAnalysis = new WaterAnalysis();
         List<WaterLabAnalysisResult> labAnalysisResultList = new ArrayList<>();
         try {
@@ -67,6 +68,7 @@ public class ERWaterAnalysis {
                     //insert to water_lab_analysis schema
                     WaterAnalysisDao wad = new WaterAnalysisDaoImpl();
                     wad.insert(waterAnalysis);
+                    waterAnalysisId = water_analysis_id;
                 } catch (Exception e){
                     e.printStackTrace();
                     System.out.println("failed to create water analysis");
@@ -127,7 +129,7 @@ public class ERWaterAnalysis {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return waterAnalysis;
+        return waterAnalysisId;
     }
 
 
