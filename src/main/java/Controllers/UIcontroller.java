@@ -60,8 +60,8 @@ public class UIcontroller extends  BaseController{
     private Double selectedSoilCorrection = null;
     private Double selectedSoilPH = null;
 
-    private int selectedSoilAnalysisId;
-    private int selectedWaterAnalysisId;
+    private Integer selectedSoilAnalysisId = null;
+    private Integer selectedWaterAnalysisId = null;
 
     private File selectedSoilAnalysisFile;
     private File selectedTissueAnalysisFile;
@@ -69,7 +69,6 @@ public class UIcontroller extends  BaseController{
 
     private LocalDate selectedDate;
 
-    private UserInput ui;
 
 
     @FXML
@@ -194,55 +193,12 @@ public class UIcontroller extends  BaseController{
         EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e)
             {
-                 ui = new UserInput(selectedCrop,selectedVarType,selectedSoil,selectedExpectedYield,
+                 UserInput ui = new UserInput(selectedCrop,selectedVarType,selectedSoil,selectedExpectedYield,
                          selectedNCredit,selectedIrrigationMethod,selectedIrrigationVolume,
                         selectedFertilizationMethod,selectedBaseDressing,selectedSoilCorrection,selectedSoilPH,
                          selectedSoilAnalysisFile,selectedTissueAnalysisFile,selectedWaterAnalysisFile,selectedDate);
-                instructionsTF.setText("Thank you !");
-                /*ParameterPerStageDao pps = new ParameterPerStageDaoImpl();
-                for (int i=1;i<=564;i++) {
-                    pps.delete(i);
-                }
-                pps.autoInsertAll();*/
-                //parameter_cropDao pc = new parameter_cropDaoImpl();
-                //pc.autoInsertAll();
-                Parameters p = new Parameters();
-                p.setUi(ui);
-                StageDate sd = new StageDate();
-                p = sd.stageDate(p);
-                for (StageDate d:p.getStageDates()) {
-                    System.out.println(d.getStageName() + " " + d.getStageDate());
-                }
-                Nutrients n = new Nutrients();
-                NutrientsBasicRemoval nbr = new NutrientsBasicRemoval(ui);
-                n = nbr.calculateRemoval(p);
-                List<NutrientsBasicRemovalPerStage> lista = n.getBasicRemovalPerStages();
-                for (NutrientsBasicRemovalPerStage na:lista) {
-                    System.out.println(na.print());
-                }
-                SoilType st = new SoilType();
-                n = st.soilType(p,n);
-                NCredit ncredit = new NCredit();
-                n = ncredit.nCredit(p,n);
-                System.out.println(n.getSoilNutrients().getnCredits().get(0));
-                //needs to add a check if lab analysis exists.
-                OrganicMatterContribution omc = new OrganicMatterContribution();
-                n = omc.organicMatterContribution(p,n);
-                PreSeasonNutrientsSoilAnalysis psnsa= new PreSeasonNutrientsSoilAnalysis();
-                n = psnsa.PreSeasonNutrientsSoilAnalysis(p,n);
-                //SoilAnalysisDao sad = new SoilAnalysisDaoImpl();
-                //SoilAnalysis sa =
-                //System.out.println(p.getUi().getSelectedCrop().getName());
-                //ParameterPerStageDao pps = new ParameterPerStageDaoImpl();
-                //pps.autoInsertAll();
-                try {
-
-                    refreshPage("src/main/java/Views/PathsView.fxml");
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
-
-
+            Model  model= new Model(selectedSoilAnalysisId, selectedWaterAnalysisId, ui, selectedDate);
+            model.init();
             }
 
         };
@@ -609,9 +565,5 @@ public class UIcontroller extends  BaseController{
         return pCropAndPrecent;
     }
 
-
-    public UserInput getUi() {
-        return this.ui;
-    }
 }
 
