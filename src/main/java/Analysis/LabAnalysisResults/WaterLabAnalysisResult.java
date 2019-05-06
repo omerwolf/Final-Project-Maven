@@ -57,4 +57,14 @@ public class WaterLabAnalysisResult {
     public void setWater_analysis_id(int water_analysis_id) {
         this.water_analysis_id = water_analysis_id;
     }
+
+    @Override
+    public String toString() {
+        return "WaterLabAnalysisResult{" +
+                "lab_results_id=" + lab_results_id +
+                ", water_analysis_id=" + water_analysis_id +
+                ", parameter_id=" + parameter_id +
+                ", parameter_value=" + parameter_value +
+                '}';
+    }
 }

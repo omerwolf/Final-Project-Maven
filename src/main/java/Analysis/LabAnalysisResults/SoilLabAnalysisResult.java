@@ -67,4 +67,15 @@ public class SoilLabAnalysisResult{
     public void setLab_results_id(int lab_results_id) {
         this.lab_results_id = lab_results_id;
     }
+
+    @Override
+    public String toString() {
+        return "SoilLabAnalysisResult{" +
+                "lab_results_id=" + lab_results_id +
+                ", soil_analysis_id=" + soil_analysis_id +
+                ", parameter_id=" + parameter_id +
+                ", parameter_value=" + parameter_value +
+                ", extraction_method_id=" + extraction_method_id +
+                '}';
+    }
 }
