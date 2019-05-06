@@ -1,20 +1,20 @@
 package Model;
 
-import java.time.LocalDate;
+
 import java.util.List;
 
 public class Model {
-    final int soilAnalysisId;
-    final int waterAnalysisId;
+    final Integer soilAnalysisId;
+    final Integer waterAnalysisId;
     final UserInput ui;
-    final LocalDate selectedDate;
 
 
-    public Model(int soilAnalysisId, int waterAnalysisId, UserInput ui, LocalDate selectedDate) {
+
+    public Model(Integer soilAnalysisId, Integer waterAnalysisId, UserInput ui) {
         this.soilAnalysisId = soilAnalysisId;
         this.waterAnalysisId = waterAnalysisId;
         this.ui = ui;
-        this.selectedDate = selectedDate;
+
     }
 
     public void init() {

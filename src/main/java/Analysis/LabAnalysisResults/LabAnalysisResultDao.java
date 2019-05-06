@@ -1,8 +1,5 @@
 package Analysis.LabAnalysisResults;
 
-import Analysis.SoilAnalysis.SoilLabAnalysisResult;
-import Analysis.WaterAnalysis.WaterLabAnalysisResult;
-
 import java.util.List;
 
 public interface LabAnalysisResultDao {
@@ -14,4 +11,8 @@ public interface LabAnalysisResultDao {
     void insertSoil(SoilLabAnalysisResult soilLabAnalysisResult);
 
     void insertAllSoil(List<SoilLabAnalysisResult> soilLabAnalysisResultList);
+
+    List<SoilLabAnalysisResult> selectAllSoilById(int soilAnalasisId);
+
+    List<WaterLabAnalysisResult> selectAllWaterById(int waterAnalasisId);
 }

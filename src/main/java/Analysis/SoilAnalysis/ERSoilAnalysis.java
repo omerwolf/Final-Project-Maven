@@ -2,6 +2,7 @@ package Analysis.SoilAnalysis;
 
 import Analysis.LabAnalysisResults.LabAnalysisResultDao;
 import Analysis.LabAnalysisResults.LabAnalysisResultDaoImpl;
+import Analysis.LabAnalysisResults.SoilLabAnalysisResult;
 import DB.Dao.ExtractionMethodDao;
 import DB.Dao.SoilDao;
 import DB.Dao.layer_depth_typeDao;

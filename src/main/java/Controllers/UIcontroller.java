@@ -197,7 +197,7 @@ public class UIcontroller extends  BaseController{
                          selectedNCredit,selectedIrrigationMethod,selectedIrrigationVolume,
                         selectedFertilizationMethod,selectedBaseDressing,selectedSoilCorrection,selectedSoilPH,
                          selectedSoilAnalysisFile,selectedTissueAnalysisFile,selectedWaterAnalysisFile,selectedDate);
-            Model  model= new Model(selectedSoilAnalysisId, selectedWaterAnalysisId, ui, selectedDate);
+            Model  model= new Model(selectedSoilAnalysisId, selectedWaterAnalysisId, ui);
             model.init();
             }
 

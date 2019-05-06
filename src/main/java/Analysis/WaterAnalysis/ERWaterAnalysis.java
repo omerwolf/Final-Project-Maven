@@ -4,8 +4,7 @@ package Analysis.WaterAnalysis;
 
 import Analysis.LabAnalysisResults.LabAnalysisResultDao;
 import Analysis.LabAnalysisResults.LabAnalysisResultDaoImpl;
-import Analysis.LabAnalysisResults.LabAnalysisResult;
-import Analysis.WaterAnalysis.WaterAnalysis;
+import Analysis.LabAnalysisResults.WaterLabAnalysisResult;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;

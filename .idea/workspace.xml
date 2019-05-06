@@ -2,50 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d9316a5-2402-4042-81e8-1d330161d927" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Model/Model.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Model/WriteOutput/XlsxFileGenerator.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_5.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_3_10_FINAL.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_3_10_FINAL.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_schemas_3_10_FINAL.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlbeans_xmlbeans_2_3_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__xml_apis_xml_apis_1_0_b2.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Final-Project-Maven.iml" afterPath="$PROJECT_DIR$/Final-Project-Maven.iml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/LabAnalysisResultDao.java" afterPath="$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/LabAnalysisResultDao.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/LabAnalysisResultDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/LabAnalysisResultDaoImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Analysis/SoilAnalysis/ERSoilAnalysis.java" afterPath="$PROJECT_DIR$/src/main/java/Analysis/SoilAnalysis/ERSoilAnalysis.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Analysis/SoilAnalysis/SoilLabAnalysisResult.java" afterPath="$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/SoilLabAnalysisResult.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Analysis/WaterAnalysis/ERWaterAnalysis.java" afterPath="$PROJECT_DIR$/src/main/java/Analysis/WaterAnalysis/ERWaterAnalysis.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Analysis/WaterAnalysis/WaterLabAnalysisResult.java" afterPath="$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/WaterLabAnalysisResult.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/UIcontroller.java" afterPath="$PROJECT_DIR$/src/main/java/Controllers/UIcontroller.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/WriteOutput/WriteOutput.java" afterPath="$PROJECT_DIR$/src/main/java/Model/WriteOutput/WriteOutput.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Dump27.4.19.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Dump6.5.19.sql" afterPath="$PROJECT_DIR$/src/main/resources/Dump6.5.19.sql" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Analysis/LabAnalysisResults/LabAnalysisResultDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/Analysis/LabAnalysisResults/LabAnalysisResultDaoImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Analysis/SoilAnalysis/SoilAnalysisDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/Analysis/SoilAnalysis/SoilAnalysisDaoImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Analysis/WaterAnalysis/WaterAnalysisDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/Analysis/WaterAnalysis/WaterAnalysisDaoImpl.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Model.java" afterPath="$PROJECT_DIR$/src/main/java/Model/Model.java" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Analysis/SoilAnalysis/SoilLabAnalysisResult.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Analysis/WaterAnalysis/WaterLabAnalysisResult.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$1.class" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$1.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$2.class" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$2.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$3.class" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$3.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$4.class" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$4.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$5.class" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$5.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$6.class" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$6.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$7.class" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$7.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$8.class" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$8.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$9.class" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$9.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller.class" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/CropDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/CropDaoImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/CropGroupDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/CropGroupDaoImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/ExtractionMethodDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/ExtractionMethodDaoImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/IrrigationMethodDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/IrrigationMethodDaoImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/PreviousCropNCreditDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/PreviousCropNCreditDaoImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/SoilDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/SoilDaoImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/crop_expected_yield_validationDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/crop_expected_yield_validationDaoImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/data_typesDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/data_typesDaoImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/elementsDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/elementsDaoImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/fertilization_methodDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/fertilization_methodDaoImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/layer_depth_typeDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/layer_depth_typeDaoImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/parameter_cropDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/parameter_cropDaoImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/parametersDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/parametersDaoImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/pheonological_stageDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/pheonological_stageDaoImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DB/DaoImpl/variety_typeDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/DB/DaoImpl/variety_typeDaoImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Dump27.4.19.sql" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Dump6.5.19.sql" afterPath="$PROJECT_DIR$/target/classes/Dump6.5.19.sql" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/Model.class" afterPath="$PROJECT_DIR$/target/classes/Model/Model.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -58,82 +29,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="75">
-      <file leaf-file-name="NutrientsBasicRemovalPerStage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Model/NutrientsBasicRemovalPerStage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="44" lean-forward="false" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NutrientsOutput.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Model/WriteOutput/NutrientsOutput.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WriteOutput.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Model/WriteOutput/WriteOutput.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="19" column="7" lean-forward="false" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainDB.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/DB/MainDB.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="31" column="16" lean-forward="false" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="XlsxFileGenerator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Model/WriteOutput/XlsxFileGenerator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UIcontroller.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/UIcontroller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="200" column="0" lean-forward="true" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Model.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Model/Model.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SoilAnalysis.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/SoilAnalysis/SoilAnalysis.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -144,21 +39,106 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="MainDB.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/DB/MainDB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="102">
+              <caret line="28" column="44" lean-forward="true" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Nutrients.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Model/Nutrients.java">
+      <file leaf-file-name="SoilLabAnalysisResult.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/SoilLabAnalysisResult.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="10" column="47" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="47" />
+            <state relative-caret-position="153">
+              <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+              <folding>
+                <element signature="e#1847#1848#0" expanded="true" />
+                <element signature="e#1884#1885#0" expanded="true" />
+                <element signature="e#1941#1942#0" expanded="true" />
+                <element signature="e#1993#1994#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WaterLabAnalysisResult.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/WaterLabAnalysisResult.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="48" column="36" lean-forward="false" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
+              <folding>
+                <element signature="e#1479#1480#0" expanded="true" />
+                <element signature="e#1536#1537#0" expanded="true" />
+                <element signature="e#1588#1589#0" expanded="true" />
+                <element signature="e#1651#1652#0" expanded="true" />
+                <element signature="e#1709#1710#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LabAnalysisResult.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/LabAnalysisResult.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LabAnalysisResultDaoImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/LabAnalysisResultDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2133">
+              <caret line="169" column="73" lean-forward="true" selection-start-line="169" selection-start-column="73" selection-end-line="169" selection-end-column="73" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4229#4252#0" expanded="true" />
+                <element signature="e#6130#6154#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainModel.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Model/MainModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserInput.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Model/UserInput.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CropDaoImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/DB/DaoImpl/CropDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="136" column="21" lean-forward="true" selection-start-line="93" selection-start-column="2" selection-end-line="136" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LabAnalysisResultDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/LabAnalysisResultDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -221,9 +201,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/Tools/LocalDateBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Model/UserInput.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ExcelReadWrite/ExcelReadParameterPerStage.java" />
         <option value="$PROJECT_DIR$/src/main/java/TissueAnalysis/TissueAnalysis.java" />
         <option value="$PROJECT_DIR$/src/main/java/DB/WaterAnalysis/WaterAnalysisDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/DB/Dao/IrrigationMethodDao.java" />
@@ -243,12 +220,9 @@
         <option value="$PROJECT_DIR$/src/main/java/DB/SoilAnalysis/ERSoilAnalysis.java" />
         <option value="$PROJECT_DIR$/src/main/java/Analysis/WaterAnalysis/WaterAnalysis/WaterAnalysisDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/Analysis/WaterAnalysis/WaterAnalysisDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/SoilLabAnalysisResult.java" />
         <option value="$PROJECT_DIR$/src/main/java/Analysis/SoilAnalysis/SoilLabAnalysisResult.java" />
         <option value="$PROJECT_DIR$/src/main/java/Analysis/WaterAnalysis/WaterLabAnalysisResult.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/LabAnalysisResultDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/LabAnalysisResult.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/LabAnalysisResultDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/DB/Util/ConnectionConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/DB/MainDB.java" />
         <option value="$PROJECT_DIR$/src/main/java/DB/Dao/ExtractionMethodDao.java" />
@@ -270,8 +244,14 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Model/WriteOutput/XlsxFileGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/WriteOutput/WriteOutput.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Model/Model.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controllers/UIcontroller.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/Model.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/LabAnalysisResultDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/SoilLabAnalysisResult.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/WaterLabAnalysisResult.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/LabAnalysisResultDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/UserInput.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/MainModel.java" />
       </list>
     </option>
   </component>
@@ -282,11 +262,16 @@
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="Final-Project-Maven" type="9519ce18:MavenProjectsStructure$ProjectNode" />
         </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Final-Project-Maven" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
       </expand>
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1493" />
     <option name="y" value="74" />
     <option name="width" value="1382" />
@@ -348,7 +333,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="DB" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Final-Project-Maven" type="b2602c69:ProjectViewProjectNode" />
@@ -357,15 +342,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Final-Project-Maven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Final-Project-Maven" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="WriteOutput" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Final-Project-Maven" type="b2602c69:ProjectViewProjectNode" />
@@ -426,7 +402,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.MainModel">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -437,7 +413,7 @@
     <configuration name="ExcelReadParameterPerStage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="Analysis.WaterAnalysis.*" />
+          <option name="PATTERN" value="Analysis.LabAnalysisResults.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -456,7 +432,7 @@
     <configuration name="FileChooser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="Analysis.WaterAnalysis.*" />
+          <option name="PATTERN" value="Analysis.LabAnalysisResults.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -499,6 +475,25 @@
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Final-Project-Maven" />
+      <envs />
+    </configuration>
+    <configuration name="MainModel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="Model.MainModel" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
@@ -598,19 +593,21 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
-    <list size="5">
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="JAR Application.poi-ooxml-4.1.0.jar" />
       <item index="1" class="java.lang.String" itemvalue="Application.MainDB" />
       <item index="2" class="java.lang.String" itemvalue="Application.Main" />
       <item index="3" class="java.lang.String" itemvalue="Application.ExcelReadParameterPerStage" />
       <item index="4" class="java.lang.String" itemvalue="Application.FileChooser" />
+      <item index="5" class="java.lang.String" itemvalue="Application.MainModel" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="1" class="java.lang.String" itemvalue="Application.MainDB" />
-        <item index="2" class="java.lang.String" itemvalue="Application.FileChooser" />
-        <item index="3" class="java.lang.String" itemvalue="Application.ExcelReadParameterPerStage" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Application.MainModel" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="2" class="java.lang.String" itemvalue="Application.MainDB" />
+        <item index="3" class="java.lang.String" itemvalue="Application.FileChooser" />
+        <item index="4" class="java.lang.String" itemvalue="Application.ExcelReadParameterPerStage" />
       </list>
     </recent_temporary>
   </component>
@@ -648,7 +645,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-8" width="1296" height="1040" extended-state="7" />
+    <frame x="1358" y="-8" width="1296" height="1040" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -658,18 +655,18 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27623457" sideWeight="0.301059" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13430421" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23561947" sideWeight="0.698941" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.04773463" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3550885" sideWeight="0.698941" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.49394855" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32853982" sideWeight="0.4969743" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30097088" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2669903" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32253087" sideWeight="0.47881997" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32190266" sideWeight="0.47881997" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -784,12 +781,6 @@
           <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/LabAnalysisResultDaoImpl.java</url>
-          <line>146</line>
-          <properties />
-          <option name="timeStamp" value="97" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/DB/MainDB.java</url>
           <line>244</line>
           <properties />
@@ -797,7 +788,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Analysis/SoilAnalysis/ERSoilAnalysis.java</url>
-          <line>222</line>
+          <line>223</line>
           <properties />
           <option name="timeStamp" value="109" />
         </line-breakpoint>
@@ -810,7 +801,7 @@
           <option name="timeStamp" value="46" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="110" />
+      <option name="time" value="111" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -819,58 +810,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/WaterAnalysis/WaterAnalysisDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/WaterAnalysis/WaterAnalysis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="26" lean-forward="false" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/SoilAnalysis/SoilLabAnalysisResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/WaterAnalysis/WaterLabAnalysisResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="37" lean-forward="true" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/LabAnalysisResultDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="66" lean-forward="false" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/LabAnalysisResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/LabAnalysisResultDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="67" column="60" lean-forward="false" selection-start-line="67" selection-start-column="36" selection-end-line="67" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
@@ -896,14 +835,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DB/DaoImpl/CropDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2193">
-          <caret line="136" column="21" lean-forward="false" selection-start-line="93" selection-start-column="6" selection-end-line="136" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -1043,8 +974,8 @@
           <caret line="228" column="8" lean-forward="false" selection-start-line="228" selection-start-column="8" selection-end-line="228" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#991#992#0" expanded="false" />
-            <element signature="e#1023#1024#0" expanded="false" />
+            <element signature="e#1049#1050#0" expanded="false" />
+            <element signature="e#1081#1082#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1069,14 +1000,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/UserInput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-697">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1171,16 +1094,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Model/WriteOutput/NutrientsOutput.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -1195,22 +1110,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/SoilAnalysis/SoilAnalysis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DB/MainDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="31" column="16" lean-forward="false" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Model/WriteOutput/WriteOutput.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
@@ -1221,21 +1120,130 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="23" lean-forward="false" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/BaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="35" column="7" lean-forward="true" selection-start-line="32" selection-start-column="4" selection-end-line="35" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/UIcontroller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="200" column="0" lean-forward="true" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="25" />
+        <state relative-caret-position="-2031">
+          <caret line="62" column="19" lean-forward="false" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Model/Model.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="204">
+          <caret line="12" column="48" lean-forward="false" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/SoilAnalysis/SoilAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/LabAnalysisResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/LabAnalysisResultDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DB/DaoImpl/CropDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="136" column="21" lean-forward="true" selection-start-line="93" selection-start-column="2" selection-end-line="136" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/SoilLabAnalysisResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+          <folding>
+            <element signature="e#1847#1848#0" expanded="true" />
+            <element signature="e#1884#1885#0" expanded="true" />
+            <element signature="e#1941#1942#0" expanded="true" />
+            <element signature="e#1993#1994#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/WaterLabAnalysisResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="48" column="36" lean-forward="false" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
+          <folding>
+            <element signature="e#1479#1480#0" expanded="true" />
+            <element signature="e#1536#1537#0" expanded="true" />
+            <element signature="e#1588#1589#0" expanded="true" />
+            <element signature="e#1651#1652#0" expanded="true" />
+            <element signature="e#1709#1710#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/LabAnalysisResultDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2133">
+          <caret line="169" column="73" lean-forward="true" selection-start-line="169" selection-start-column="73" selection-end-line="169" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4229#4252#0" expanded="true" />
+            <element signature="e#6130#6154#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DB/MainDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="28" column="44" lean-forward="true" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/UserInput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/MainModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

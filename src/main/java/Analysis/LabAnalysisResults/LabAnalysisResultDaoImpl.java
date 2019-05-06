@@ -1,13 +1,9 @@
 package Analysis.LabAnalysisResults;
 
-import Analysis.SoilAnalysis.SoilLabAnalysisResult;
-import Analysis.WaterAnalysis.WaterLabAnalysisResult;
 import DB.Util.ConnectionConfiguration;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class LabAnalysisResultDaoImpl implements LabAnalysisResultDao {
@@ -104,56 +100,42 @@ public class LabAnalysisResultDaoImpl implements LabAnalysisResultDao {
         }
         System.out.println("finish insertAll to lab_analysis_results");
     }
-/*
-    public void insert(LabAnalysisResult labAnalysisResult) {
+
+    @Override
+    public List<SoilLabAnalysisResult> selectAllSoilById(int soilAnalasisId) {
+        List<SoilLabAnalysisResult> results = new ArrayList<SoilLabAnalysisResult>();
         Connection connection = null;
-        PreparedStatement preparedStatement = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
+
         try {
             connection = ConnectionConfiguration.getConnection();
-            Statement statement = connection.createStatement();
-            statement.executeQuery("SET FOREIGN_KEY_CHECKS=0");
-            preparedStatement = connection.prepareStatement("INSERT INTO lab_analysis_results " +
-                    "(tissue_analysis_id," +
-                    "soil_analysis_id," +
-                    "water_analysis_id," +
-                    "parameter_id," +
-                    "parameter_value)" +
-                    "VALUES (?, ?, ?, ?, ?)");
-            if(labAnalysisResult.getTissue_analysis_id() == null && labAnalysisResult.getWater_analysis_id() == null) {
-                preparedStatement = connection.prepareStatement("INSERT INTO lab_analysis_results " +
-                        "(soil_analysis_id," +
-                        "parameter_id," +
-                        "parameter_value)" +
-                        "VALUES (?, ?, ?)");
-                preparedStatement.setInt(1, labAnalysisResult.getSoil_analysis_id());
-            } else if(labAnalysisResult.getTissue_analysis_id() == null && labAnalysisResult.getSoil_analysis_id() == null){
-                preparedStatement = connection.prepareStatement("INSERT INTO lab_analysis_results " +
-                        "(water_analysis_id," +
-                        "parameter_id," +
-                        "parameter_value)" +
-                        "VALUES (?, ?, ?)");
-                preparedStatement.setInt(1, labAnalysisResult.getWater_analysis_id());
-            }else if(labAnalysisResult.getWater_analysis_id() == null && labAnalysisResult.getSoil_analysis_id() == null){
-                preparedStatement = connection.prepareStatement("INSERT INTO lab_analysis_results " +
-                        "(tissue_analysis_id," +
-                        "parameter_id," +
-                        "parameter_value) " +
-                        "VALUES (?, ?, ?)");
-                preparedStatement.setInt(1, labAnalysisResult.getTissue_analysis_id());
-            }else {
-               System.out.println("more or less null lab analysis id");
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery("SELECT * FROM `lab_analysis_results` WHERE soil_analysis_id = " + soilAnalasisId);
+
+            while (resultSet.next()) {
+                SoilLabAnalysisResult result = new SoilLabAnalysisResult();
+                result.setLab_results_id(resultSet.getInt("lab_results_id"));
+                result.setSoil_analysis_id(resultSet.getInt("soil_analysis_id"));
+                result.setParameter_id(resultSet.getInt("parameter_id"));
+                result.setParameter_value(resultSet.getInt("parameter_value"));
+                result.setExtraction_method_id(resultSet.getInt("extraction_method_id"));
+                results.add(result);
             }
 
-            preparedStatement.setInt(2, labAnalysisResult.getParameter_id());
-            preparedStatement.setDouble(3, labAnalysisResult.getParameter_value());
-            preparedStatement.executeUpdate();
-            statement.executeQuery("SET FOREIGN_KEY_CHECKS=1");
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            if (preparedStatement != null) {
+            if (resultSet != null) {
                 try {
-                    preparedStatement.close();
+                    resultSet.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (statement != null) {
+                try {
+                    statement.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -166,10 +148,56 @@ public class LabAnalysisResultDaoImpl implements LabAnalysisResultDao {
                 }
             }
         }
+        return results;
     }
 
-*/
+    @Override
+    public List<WaterLabAnalysisResult> selectAllWaterById(int waterAnalasisId) {
+        List<WaterLabAnalysisResult> results = new ArrayList<WaterLabAnalysisResult>();
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
 
+        try {
+            connection = ConnectionConfiguration.getConnection();
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery("SELECT * FROM `lab_analysis_results` WHERE water_analysis_id = " + waterAnalasisId);
 
+            while (resultSet.next()) {
+                WaterLabAnalysisResult result = new WaterLabAnalysisResult();
+                result.setLab_results_id(resultSet.getInt("lab_results_id"));
+                result.setWater_analysis_id(resultSet.getInt("water_analysis_id"));
+                result.setParameter_id(resultSet.getInt("parameter_id"));
+                result.setParameter_value(resultSet.getInt("parameter_value"));
+                results.add(result);
+            }
 
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (resultSet != null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return results;
     }
+
+}
