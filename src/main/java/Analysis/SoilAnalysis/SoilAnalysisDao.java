@@ -5,7 +5,7 @@ public interface SoilAnalysisDao {
 
     //void insertAll(List<SoilAnalysis> SoilAnalysisList);
 
-    //WaterAnalysis selectById(int id);
+    SoilAnalysis selectById(int id);
 
     //List<WaterAnalysis> selectAll();
 
