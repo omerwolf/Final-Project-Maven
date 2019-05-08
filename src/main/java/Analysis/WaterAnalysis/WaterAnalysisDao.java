@@ -3,7 +3,7 @@ package Analysis.WaterAnalysis;
 public interface WaterAnalysisDao {
     void insert(WaterAnalysis waterAnalyses);
 
-    //WaterAnalysis selectById(int id);
+    WaterAnalysis selectById(int id);
 
     //List<WaterAnalysis> selectAll();
 

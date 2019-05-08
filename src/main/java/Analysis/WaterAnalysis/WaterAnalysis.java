@@ -83,7 +83,7 @@ public class WaterAnalysis {
         return water_EC;
     }
 
-    public void setWater_EC(float water_EC) {
+    public void setWater_EC(double water_EC) {
         this.water_EC = water_EC;
     }
 
@@ -91,7 +91,7 @@ public class WaterAnalysis {
         return water_pH;
     }
 
-    public void setWater_pH(float wateR_pH) {
+    public void setWater_pH(double wateR_pH) {
         this.water_pH = wateR_pH;
     }
 

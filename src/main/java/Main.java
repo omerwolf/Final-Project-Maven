@@ -16,7 +16,7 @@ public class Main extends Application{
         URL url = new File("src/main/java/Views/UIView.fxml").toURL();
         Parent root = FXMLLoader.load(url);
         primaryStage.setTitle("");
-        primaryStage.setScene(new Scene(root, 600, 600));
+        primaryStage.setScene(new Scene(root,570, 680));
         primaryStage.show();
 
     }

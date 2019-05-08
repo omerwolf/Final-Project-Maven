@@ -2,39 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d9316a5-2402-4042-81e8-1d330161d927" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Model/WriteOutput/SoilAnalysisOutput.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Model/WriteOutput/WaterAnalysisOutput.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/ModelTests/WriteOutputTest.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Final-Project-Maven.iml" afterPath="$PROJECT_DIR$/Final-Project-Maven.iml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/LabAnalysisResult.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/UIcontroller.java" afterPath="$PROJECT_DIR$/src/main/java/Controllers/UIcontroller.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Analysis/SoilAnalysis/SoilAnalysisDao.java" afterPath="$PROJECT_DIR$/src/main/java/Analysis/SoilAnalysis/SoilAnalysisDao.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Analysis/SoilAnalysis/SoilAnalysisDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/Analysis/SoilAnalysis/SoilAnalysisDaoImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Analysis/WaterAnalysis/WaterAnalysis.java" afterPath="$PROJECT_DIR$/src/main/java/Analysis/WaterAnalysis/WaterAnalysis.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Analysis/WaterAnalysis/WaterAnalysisDao.java" afterPath="$PROJECT_DIR$/src/main/java/Analysis/WaterAnalysis/WaterAnalysisDao.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Analysis/WaterAnalysis/WaterAnalysisDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/Analysis/WaterAnalysis/WaterAnalysisDaoImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DB/Util/ConnectionConfiguration.java" afterPath="$PROJECT_DIR$/src/main/java/DB/Util/ConnectionConfiguration.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/MainModel.java" afterPath="$PROJECT_DIR$/src/main/java/Model/MainModel.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/UserInput.java" afterPath="$PROJECT_DIR$/src/main/java/Model/UserInput.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/WriteOutput/NutrientsOutput.java" afterPath="$PROJECT_DIR$/src/main/java/Model/WriteOutput/NutrientsOutput.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/WriteOutput/WriteOutput.java" afterPath="$PROJECT_DIR$/src/main/java/Model/WriteOutput/WriteOutput.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/WriteOutput/XlsxFileGenerator.java" afterPath="$PROJECT_DIR$/src/main/java/Model/WriteOutput/XlsxFileGenerator.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Views/ResultView.fxml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Views/UIView.fxml" afterPath="$PROJECT_DIR$/src/main/java/Views/UIView.fxml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Analysis/LabAnalysisResults/LabAnalysisResult.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$1.class" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$1.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$2.class" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$2.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$3.class" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$3.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$4.class" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$4.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$5.class" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$5.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$6.class" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$6.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$7.class" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$7.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$8.class" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$8.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$9.class" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller$9.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Model.java" afterPath="$PROJECT_DIR$/src/main/java/Model/Model.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Parameters.java" afterPath="$PROJECT_DIR$/src/main/java/Model/Parameters.java" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Analysis/LabAnalysisResults/LabAnalysisResultDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/Analysis/LabAnalysisResults/LabAnalysisResultDaoImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Analysis/SoilAnalysis/SoilAnalysisDao.class" afterPath="$PROJECT_DIR$/target/classes/Analysis/SoilAnalysis/SoilAnalysisDao.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Analysis/SoilAnalysis/SoilAnalysisDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/Analysis/SoilAnalysis/SoilAnalysisDaoImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Analysis/WaterAnalysis/WaterAnalysis.class" afterPath="$PROJECT_DIR$/target/classes/Analysis/WaterAnalysis/WaterAnalysis.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Analysis/WaterAnalysis/WaterAnalysisDao.class" afterPath="$PROJECT_DIR$/target/classes/Analysis/WaterAnalysis/WaterAnalysisDao.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Analysis/WaterAnalysis/WaterAnalysisDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/Analysis/WaterAnalysis/WaterAnalysisDaoImpl.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller.class" afterPath="$PROJECT_DIR$/target/classes/Controllers/UIcontroller.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DB/Util/ConnectionConfiguration.class" afterPath="$PROJECT_DIR$/target/classes/DB/Util/ConnectionConfiguration.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/Model/MainModel.class" afterPath="$PROJECT_DIR$/target/classes/Model/MainModel.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/UserInput.class" afterPath="$PROJECT_DIR$/target/classes/Model/UserInput.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/WriteOutput/NutrientsOutput.class" afterPath="$PROJECT_DIR$/target/classes/Model/WriteOutput/NutrientsOutput.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/WriteOutput/WriteOutput.class" afterPath="$PROJECT_DIR$/target/classes/Model/WriteOutput/WriteOutput.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/WriteOutput/XlsxFileGenerator.class" afterPath="$PROJECT_DIR$/target/classes/Model/WriteOutput/XlsxFileGenerator.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/Model.class" afterPath="$PROJECT_DIR$/target/classes/Model/Model.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/Parameters.class" afterPath="$PROJECT_DIR$/target/classes/Model/Parameters.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -50,7 +39,7 @@
       <file leaf-file-name="XlsxFileGenerator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Model/WriteOutput/XlsxFileGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
+            <state relative-caret-position="374">
               <caret line="35" column="44" lean-forward="false" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -66,7 +55,7 @@
       <file leaf-file-name="UIcontroller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/UIcontroller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
+            <state relative-caret-position="476">
               <caret line="72" column="17" lean-forward="false" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="17" />
               <folding />
             </state>
@@ -76,7 +65,7 @@
       <file leaf-file-name="UserInput.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Model/UserInput.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
+            <state relative-caret-position="374">
               <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
               <folding />
             </state>
@@ -87,7 +76,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/ModelTests/WriteOutputTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1853">
-              <caret line="109" column="77" lean-forward="true" selection-start-line="109" selection-start-column="77" selection-end-line="109" selection-end-column="77" />
+              <caret line="109" column="77" lean-forward="false" selection-start-line="109" selection-start-column="77" selection-end-line="109" selection-end-column="77" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1627#1644#0" expanded="true" />
@@ -101,14 +90,14 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
+            <state relative-caret-position="697">
               <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WriteOutput.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WriteOutput.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Model/WriteOutput/WriteOutput.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="250">
@@ -121,8 +110,8 @@
       <file leaf-file-name="WaterAnalysisOutput.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Model/WriteOutput/WaterAnalysisOutput.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-202">
-              <caret line="15" column="49" lean-forward="true" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+            <state relative-caret-position="255">
+              <caret line="15" column="49" lean-forward="false" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
               <folding>
                 <element signature="e#793#794#0" expanded="true" />
                 <element signature="e#830#831#0" expanded="true" />
@@ -156,8 +145,28 @@
       <file leaf-file-name="MainModel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Model/MainModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="153">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConnectionConfiguration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/DB/Util/ConnectionConfiguration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="12" column="125" lean-forward="false" selection-start-line="12" selection-start-column="125" selection-end-line="12" selection-end-column="125" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="18" column="47" lean-forward="false" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -240,7 +249,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/DB/SoilAnalysis/SoilAnalysisDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/DB/WaterAnalysis/WaterAnalysis.java" />
         <option value="$PROJECT_DIR$/src/main/java/DB/SoilAnalysis/WaterAnalysisDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/DB/SoilAnalysis/SoilAnalysis.java" />
@@ -252,7 +260,6 @@
         <option value="$PROJECT_DIR$/src/main/java/Analysis/SoilAnalysis/SoilLabAnalysisResult.java" />
         <option value="$PROJECT_DIR$/src/main/java/Analysis/WaterAnalysis/WaterLabAnalysisResult.java" />
         <option value="$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/LabAnalysisResult.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DB/Util/ConnectionConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/DB/MainDB.java" />
         <option value="$PROJECT_DIR$/src/main/java/DB/Dao/ExtractionMethodDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/DB/DaoImpl/ExtractionMethodDaoImpl.java" />
@@ -278,7 +285,6 @@
         <option value="$PROJECT_DIR$/src/main/java/Views/UIView.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/Controllers/UIcontroller.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/WriteOutput/NutrientsOutput.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Model/MainModel.java" />
         <option value="$PROJECT_DIR$/src/test/java/XlsxWriteTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/ModelTests/Test.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -291,6 +297,9 @@
         <option value="$PROJECT_DIR$/src/main/java/Model/WriteOutput/SoilAnalysisOutput.java" />
         <option value="$PROJECT_DIR$/src/test/java/ModelTests/WriteOutputTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/WriteOutput/WriteOutput.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/MainModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DB/Util/ConnectionConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
       </list>
     </option>
   </component>
@@ -310,7 +319,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="117" />
     <option name="y" value="224" />
     <option name="width" value="1382" />
@@ -332,7 +341,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -343,6 +353,11 @@
             <path>
               <item name="Final-Project-Maven" type="b2602c69:ProjectViewProjectNode" />
               <item name="Final-Project-Maven" type="462c0819:PsiDirectoryNode" />
+              <item name="Output" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Final-Project-Maven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final-Project-Maven" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -362,30 +377,16 @@
               <item name="Final-Project-Maven" type="b2602c69:ProjectViewProjectNode" />
               <item name="Final-Project-Maven" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Final-Project-Maven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Final-Project-Maven" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Final-Project-Maven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Final-Project-Maven" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ModelTests" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -434,7 +435,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.WriteOutputTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -648,11 +649,11 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.WriteOutputTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.WriteOutputTest.TestWaterAnalysisOutput" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.XlsxWriteTest" />
-        <item index="3" class="java.lang.String" itemvalue="Application.MainTest" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.WriteOutputTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.WriteOutputTest.TestWaterAnalysisOutput" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.XlsxWriteTest" />
+        <item index="4" class="java.lang.String" itemvalue="Application.MainTest" />
       </list>
     </recent_temporary>
   </component>
@@ -681,15 +682,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="WriteOutputTest - 2019.05.08 at 18h 42m 03s.xml">
-      <configuration name="WriteOutputTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WriteOutputTest - 2019.05.08 at 18h 43m 21s.xml">
-      <configuration name="WriteOutputTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WriteOutputTest - 2019.05.08 at 18h 49m 03s.xml">
-      <configuration name="WriteOutputTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="WriteOutputTest - 2019.05.08 at 18h 50m 14s.xml">
       <configuration name="WriteOutputTest" configurationId="JUnit" />
     </history-entry>
@@ -703,6 +695,15 @@
       <configuration name="WriteOutputTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="WriteOutputTest - 2019.05.08 at 19h 20m 21s.xml">
+      <configuration name="WriteOutputTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WriteOutputTest - 2019.05.08 at 19h 31m 12s.xml">
+      <configuration name="WriteOutputTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WriteOutputTest - 2019.05.08 at 19h 31m 48s.xml">
+      <configuration name="WriteOutputTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WriteOutputTest - 2019.05.08 at 19h 31m 52s.xml">
       <configuration name="WriteOutputTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="WriteOutputTest_TestWaterAnalysisOutput - 2019.05.08 at 18h 38m 34s.xml">
@@ -722,11 +723,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34513274" sideWeight="0.49092284" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3441358" sideWeight="0.49092284" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -737,7 +739,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32853982" sideWeight="0.4969743" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22768533" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23146747" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -868,12 +870,6 @@
           <properties />
           <option name="timeStamp" value="109" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Model/MainModel.java</url>
-          <line>10</line>
-          <properties />
-          <option name="timeStamp" value="113" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Tools/Filechooser.java</url>
           <line>67</line>
@@ -892,19 +888,10 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/DB/Entites/crop_expected_yield_validation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="62" column="18" lean-forward="false" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DB/Entites/ExtractionMethod.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="31" column="18" lean-forward="false" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -912,7 +899,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="69" column="18" lean-forward="false" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -920,7 +906,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-272">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -928,7 +913,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="58" column="18" lean-forward="false" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -936,7 +920,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="53" column="18" lean-forward="false" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -944,7 +927,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
           <caret line="172" column="18" lean-forward="false" selection-start-line="172" selection-start-column="18" selection-end-line="172" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -963,7 +945,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -971,7 +952,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -979,7 +959,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -987,7 +966,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -995,7 +973,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1027,7 +1004,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="17" column="43" lean-forward="false" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1035,7 +1011,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="952">
           <caret line="66" column="25" lean-forward="false" selection-start-line="66" selection-start-column="15" selection-end-line="66" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1043,7 +1018,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1051,7 +1025,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1067,7 +1040,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="44" lean-forward="false" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1087,19 +1059,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/LabAnalysisResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-213">
-          <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/LabAnalysisResult.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Analysis/LabAnalysisResults/LabAnalysisResultDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1118,7 +1082,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="35" column="7" lean-forward="true" selection-start-line="32" selection-start-column="4" selection-end-line="35" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1166,7 +1129,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
           <caret line="12" column="48" lean-forward="false" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1174,7 +1136,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-350">
           <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1243,7 +1204,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1259,7 +1219,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="29" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1271,17 +1230,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="22" column="44" lean-forward="false" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/UIcontroller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
+        <state relative-caret-position="476">
           <caret line="72" column="17" lean-forward="false" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="17" />
           <folding />
         </state>
@@ -1289,7 +1240,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Model/UserInput.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
+        <state relative-caret-position="374">
           <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
           <folding />
         </state>
@@ -1306,41 +1257,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/MainModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ModelTests/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ModelTests/Test.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
+        <state relative-caret-position="697">
           <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/MainTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/MainTest.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Model/WriteOutput/XlsxFileGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
+        <state relative-caret-position="374">
           <caret line="35" column="44" lean-forward="false" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1392,7 +1321,7 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/ModelTests/WriteOutputTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1853">
-          <caret line="109" column="77" lean-forward="true" selection-start-line="109" selection-start-column="77" selection-end-line="109" selection-end-column="77" />
+          <caret line="109" column="77" lean-forward="false" selection-start-line="109" selection-start-column="77" selection-end-line="109" selection-end-column="77" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1627#1644#0" expanded="true" />
@@ -1404,8 +1333,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Model/WriteOutput/WaterAnalysisOutput.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-202">
-          <caret line="15" column="49" lean-forward="true" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+        <state relative-caret-position="255">
+          <caret line="15" column="49" lean-forward="false" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
           <folding>
             <element signature="e#793#794#0" expanded="true" />
             <element signature="e#830#831#0" expanded="true" />
@@ -1439,6 +1368,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="73" column="60" lean-forward="false" selection-start-line="73" selection-start-column="60" selection-end-line="73" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/MainModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DB/Util/ConnectionConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="12" column="125" lean-forward="false" selection-start-line="12" selection-start-column="125" selection-end-line="12" selection-end-column="125" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="18" column="47" lean-forward="false" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
           <folding />
         </state>
       </provider>

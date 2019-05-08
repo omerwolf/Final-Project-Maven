@@ -3,6 +3,7 @@ package Analysis.WaterAnalysis;
 import DB.Util.ConnectionConfiguration;
 
 import java.sql.*;
+import java.time.LocalDate;
 
 public class WaterAnalysisDaoImpl implements WaterAnalysisDao {
     @Override
@@ -55,13 +56,63 @@ public class WaterAnalysisDaoImpl implements WaterAnalysisDao {
         }
 
     }
-/*
-    @Override
-    public WaterAnalysis selectById(int id) {
-        return null;
-    }
 
     @Override
+    public WaterAnalysis selectById(int id) {
+        WaterAnalysis waterAnalysis = new WaterAnalysis();
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        try {
+            connection = ConnectionConfiguration.getConnection();
+            preparedStatement = connection.prepareStatement("SELECT * FROM water_lab_analysis WHERE water_analysis_id = ?");
+            preparedStatement.setInt(1, id);
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+
+                waterAnalysis.setWater_analysis_id(resultSet.getInt("water_analysis_id"));
+                waterAnalysis.setFarm_id(resultSet.getInt("farm_id"));
+                //convert sql date to local date
+                Date date = resultSet.getDate("sample_date");
+                LocalDate localdate = date.toLocalDate();
+                waterAnalysis.setSample_date(localdate);
+                waterAnalysis.setSample_name(resultSet.getString("sample_name"));
+                waterAnalysis.setIb_id(resultSet.getInt("ib_id"));
+                waterAnalysis.setWater_EC(resultSet.getDouble("water_EC"));
+                waterAnalysis.setWater_pH(resultSet.getDouble("water_pH"));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (resultSet != null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (preparedStatement != null) {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return waterAnalysis;
+    }
+
+/*  @Override
     public List<WaterAnalysis> selectAll() {
         return null;
     }
