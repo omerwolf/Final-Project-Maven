@@ -21,6 +21,7 @@ import Analysis.WaterAnalysis.ERWaterAnalysis;
 import Model.*;
 
 
+import Model.WriteOutput.XlsxFileGenerator;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -32,6 +33,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.apache.poi.ss.usermodel.Workbook;
 
 
 import java.io.File;
@@ -59,6 +61,7 @@ public class UIcontroller extends  BaseController{
     private Boolean selectedBaseDressing = null;
     private Double selectedSoilCorrection = null;
     private Double selectedSoilPH = null;
+    private String selectedRunName = null;
 
     private Integer selectedSoilAnalysisId = null;
     private Integer selectedWaterAnalysisId = null;
@@ -98,6 +101,8 @@ public class UIcontroller extends  BaseController{
     private TextField soilCorrectionTF;
     @FXML
     private TextField soilPHTF;
+    @FXML
+    private TextField runNameTF;
 
     //Labels
     @FXML
@@ -185,6 +190,7 @@ public class UIcontroller extends  BaseController{
     public void initialize(URL location, ResourceBundle resources) {
         loadCropType();
         loadDatePicker();
+        loadRunName();
 
     }
 
@@ -193,12 +199,13 @@ public class UIcontroller extends  BaseController{
         EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e)
             {
-                 UserInput ui = new UserInput(selectedCrop,selectedVarType,selectedSoil,selectedExpectedYield,
+                 UserInput ui = new UserInput(selectedRunName,selectedCrop,selectedVarType,selectedSoil,selectedExpectedYield,
                          selectedNCredit,selectedIrrigationMethod,selectedIrrigationVolume,
-                        selectedFertilizationMethod,selectedBaseDressing,selectedSoilCorrection,selectedSoilPH,
-                         selectedSoilAnalysisFile,selectedTissueAnalysisFile,selectedWaterAnalysisFile,selectedDate);
-            Model  model= new Model(selectedSoilAnalysisId, selectedWaterAnalysisId, ui);
-            model.init();
+                        selectedFertilizationMethod,selectedBaseDressing,selectedSoilCorrection,selectedSoilPH,selectedDate);
+                XlsxFileGenerator fileGenerator = new XlsxFileGenerator(ui);
+                Workbook w = fileGenerator.getWorkbook();
+                 Model  model= new Model(selectedSoilAnalysisId, selectedWaterAnalysisId, ui);
+                model.init();
             }
 
         };
@@ -512,6 +519,13 @@ public class UIcontroller extends  BaseController{
                 e.printStackTrace();
                 this.instructionsTF.setText("Please enter only numbers!");
             }
+        });
+    }
+    private void loadRunName(){
+        // add a listener
+        this.runNameTF.textProperty().addListener((ov,value,new_value) -> {
+            String choosenVal = new_value;
+            selectedRunName = choosenVal;
         });
     }
 

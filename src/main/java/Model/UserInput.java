@@ -17,18 +17,16 @@ public class UserInput {
     private Boolean selectedBaseDressing;
     private Double selectedSoilCorrection;
     private Double selectedSoilPH;
+    private String runName;
 
-    private File selectedSoilAnalysisFile;
-    private File selectedTissueAnalysisFile;
-    private File selectednWaterAnalysisFile;
 
     private LocalDate selectedDate;
 
-    public UserInput(Crop selectedCrop, variety_type selectedVarType, Soil selectedSoil, Double selectedexpectedYield,
+
+    public UserInput(String runName,Crop selectedCrop, variety_type selectedVarType, Soil selectedSoil, Double selectedexpectedYield,
                      int selectedNCredit, IrrigationMethod selectedIrrigationMethod, Double selectedIrrigationVolume,
                      fertilization_method selectedFertilizationMethod, Boolean selectedBaseDressing,
-                     Double selectedSoilCorrection, Double selectedSoilPH, File selectedSoilAnalysisFile,
-                     File selectedTissueAnalysisFile, File selectednWaterAnalysisFile, LocalDate selectedDate) {
+                     Double selectedSoilCorrection, Double selectedSoilPH, LocalDate selectedDate) {
         this.selectedCrop = selectedCrop;
         this.selectedVarType = selectedVarType;
         this.selectedSoil = selectedSoil;
@@ -40,9 +38,7 @@ public class UserInput {
         this.selectedBaseDressing = selectedBaseDressing;
         this.selectedSoilCorrection = selectedSoilCorrection;
         this.selectedSoilPH = selectedSoilPH;
-        this.selectedSoilAnalysisFile = selectedSoilAnalysisFile;
-        this.selectedTissueAnalysisFile = selectedTissueAnalysisFile;
-        this.selectednWaterAnalysisFile = selectednWaterAnalysisFile;
+        this.runName = runName;
         this.selectedDate = selectedDate;
     }
 
@@ -90,19 +86,30 @@ public class UserInput {
         return selectedSoilPH;
     }
 
-    public File getSelectedSoilAnalysisFile() {
-        return selectedSoilAnalysisFile;
-    }
-
-    public File getSelectedTissueAnalysisFile() {
-        return selectedTissueAnalysisFile;
-    }
-
-    public File getSelectednWaterAnalysisFile() {
-        return selectednWaterAnalysisFile;
+    public String getRunName() {
+        return runName;
     }
 
     public LocalDate getSelectedDate() {
         return selectedDate;
+    }
+
+    @Override
+    public String toString() {
+        return "UserInput{" +
+                "selectedCrop=" + selectedCrop +
+                ", selectedVarType=" + selectedVarType +
+                ", selectedSoil=" + selectedSoil +
+                ", selectedexpectedYield=" + selectedexpectedYield +
+                ", selectedNCredit=" + selectedNCredit +
+                ", selectedIrrigationMethod=" + selectedIrrigationMethod +
+                ", selectedIrrigationVolume=" + selectedIrrigationVolume +
+                ", selectedFertilizationMethod=" + selectedFertilizationMethod +
+                ", selectedBaseDressing=" + selectedBaseDressing +
+                ", selectedSoilCorrection=" + selectedSoilCorrection +
+                ", selectedSoilPH=" + selectedSoilPH +
+                ", runName='" + runName + '\'' +
+                ", selectedDate=" + selectedDate +
+                '}';
     }
 }

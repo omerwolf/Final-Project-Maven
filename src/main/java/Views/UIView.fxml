@@ -9,13 +9,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="598.0" prefWidth="569.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.UIcontroller">
+<AnchorPane prefHeight="680.0" prefWidth="573.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.UIcontroller">
    <children>
-      <TextField id="instructionsTF" fx:id="instructionsTF" alignment="TOP_CENTER" layoutX="22.0" layoutY="12.0" prefHeight="33.0" prefWidth="328.0">
+      <TextField id="instructionsTF" fx:id="instructionsTF" alignment="TOP_CENTER" layoutX="20.0" layoutY="10.0" prefHeight="33.0" prefWidth="531.0">
          <font>
             <Font name="System Bold" size="13.0" />
          </font></TextField>
-      <TextArea id="textArea" layoutX="-3.0" layoutY="50.0" prefHeight="550.0" prefWidth="576.0" text="Crop:&#10;Variety: &#10;Expected yield (ton/ha):&#10;Soil type: &#10;Previous crop:&#10;Irrigation method:&#10;Irrigation vol. (mm/season):&#10;Fertilization method:&#10;Base dressing:&#10;Soil correction (%/season):&#10;Soil pH:">
+      <TextArea id="textArea" layoutX="-3.0" layoutY="50.0" prefHeight="629.0" prefWidth="576.0" text="Crop:&#10;Variety: &#10;Expected yield (ton/ha):&#10;Soil type: &#10;Previous crop:&#10;Irrigation method:&#10;Irrigation vol. (mm/season):&#10;Fertilization method:&#10;Base dressing:&#10;Soil correction (%/season):&#10;Soil pH:&#10;Start season date:&#10;Run name:">
           <font>
             <Font size="24.0" />
          </font>
@@ -29,16 +29,17 @@
       <ChoiceBox fx:id="fertilizationMethodCB" layoutX="312.0" layoutY="308.0" prefHeight="25.0" prefWidth="254.0" />
       <ChoiceBox fx:id="baseDressingCB" layoutX="312.0" layoutY="343.0" prefHeight="25.0" prefWidth="254.0" />
       <TextField fx:id="soilPHTF" layoutX="312.0" layoutY="415.0" prefHeight="25.0" prefWidth="254.0" />
-      <Button fx:id="submitB" layoutX="245.0" layoutY="564.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="78.0" text="Submit" />
+      <Button fx:id="submitB" layoutX="234.0" layoutY="642.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="78.0" text="Submit" />
       <TextField fx:id="soilCorrectionTF" layoutX="312.0" layoutY="379.0" prefHeight="25.0" prefWidth="254.0" />
       <ChoiceBox fx:id="previousCropCB" layoutX="312.0" layoutY="203.0" prefHeight="25.0" prefWidth="254.0" />
-      <Button fx:id="btnSoilAnalysis" layoutX="22.0" layoutY="466.0" mnemonicParsing="false" onAction="#soilAnalysisFileChooserAction" prefHeight="25.0" prefWidth="140.0" text="Select soil analysis:" />
-      <Label fx:id="labSoilAnalysis" layoutX="168.0" layoutY="469.0" prefHeight="17.0" prefWidth="380.0" text="no file selected  (possible to skip)" />
-      <Button fx:id="btnTissueAnalysis" layoutX="22.0" layoutY="534.0" mnemonicParsing="false" onAction="#tissueAnalysisFileChooserAction" prefHeight="25.0" prefWidth="140.0" text="Select tissue analysis:" />
-      <Label fx:id="labTissueAnalysis" layoutX="168.0" layoutY="537.0" prefHeight="17.0" prefWidth="380.0" text="no file selected  (possible to skip)" />
-      <Button fx:id="btnWaterAnalysis" layoutX="22.0" layoutY="500.0" mnemonicParsing="false" onAction="#waterAnalysisFileChooserAction" prefHeight="25.0" prefWidth="140.0" text="Select water analysis:" />
-      <Label fx:id="labWaterAnalysis" layoutX="168.0" layoutY="503.0" prefHeight="17.0" prefWidth="380.0" text="no file selected  (possible to skip)" />
-      <DatePicker fx:id="datePicker" layoutX="374.0" layoutY="16.0" />
+      <Button fx:id="btnSoilAnalysis" layoutX="22.0" layoutY="530.0" mnemonicParsing="false" onAction="#soilAnalysisFileChooserAction" prefHeight="25.0" prefWidth="140.0" text="Select soil analysis:" />
+      <Label fx:id="labSoilAnalysis" layoutX="168.0" layoutY="533.0" prefHeight="17.0" prefWidth="380.0" text="no file selected  (possible to skip)" />
+      <Button fx:id="btnTissueAnalysis" layoutX="22.0" layoutY="598.0" mnemonicParsing="false" onAction="#tissueAnalysisFileChooserAction" prefHeight="25.0" prefWidth="140.0" text="Select tissue analysis:" />
+      <Label fx:id="labTissueAnalysis" layoutX="168.0" layoutY="601.0" prefHeight="17.0" prefWidth="380.0" text="no file selected  (possible to skip)" />
+      <Button fx:id="btnWaterAnalysis" layoutX="22.0" layoutY="564.0" mnemonicParsing="false" onAction="#waterAnalysisFileChooserAction" prefHeight="25.0" prefWidth="140.0" text="Select water analysis:" />
+      <Label fx:id="labWaterAnalysis" layoutX="168.0" layoutY="567.0" prefHeight="17.0" prefWidth="380.0" text="no file selected  (possible to skip)" />
+      <DatePicker fx:id="datePicker" layoutX="313.0" layoutY="448.0" prefHeight="25.0" prefWidth="254.0" />
+      <TextField fx:id="runNameTF" layoutX="313.0" layoutY="485.0" prefHeight="25.0" prefWidth="254.0" />
       
 
 
