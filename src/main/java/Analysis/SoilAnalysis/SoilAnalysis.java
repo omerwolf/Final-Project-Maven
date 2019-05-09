@@ -15,17 +15,17 @@ public class SoilAnalysis {
     private int layer_depth_id;
     private int irrigation_block_id;
     private double organic_matter;
-    private double bulk_density;
-    private double soil_pH;
+    private Double bulk_density;
+    private Double soil_pH;
     private double soil_EC;
-    private double soil_CEC;
+    private Double soil_CEC;
 
     public SoilAnalysis() {
     }
 
     public SoilAnalysis(String sample_name, int soil_analysis_id, boolean is_active, int farm_id, LocalDate sample_date,
                         int lab_id, int soil_type_id, int layer_depth_id, int irrigation_block_id, double organic_matter,
-                        double bulk_density, double soil_pH, double soil_EC, double soil_CEC) {
+                        Double bulk_density, Double soil_pH, double soil_EC, Double soil_CEC) {
         this.sample_name = sample_name;
         this.soil_analysis_id = soil_analysis_id;
         this.is_active = is_active;
@@ -126,19 +126,19 @@ public class SoilAnalysis {
         this.organic_matter = organic_matter;
     }
 
-    public double getBulk_density() {
+    public Double getBulk_density() {
         return bulk_density;
     }
 
-    public void setBulk_density(double bulk_density) {
+    public void setBulk_density(Double bulk_density) {
         this.bulk_density = bulk_density;
     }
 
-    public double getSoil_pH() {
+    public Double getSoil_pH() {
         return soil_pH;
     }
 
-    public void setSoil_pH(double soil_pH) {
+    public void setSoil_pH(Double soil_pH) {
         this.soil_pH = soil_pH;
     }
 
@@ -150,11 +150,11 @@ public class SoilAnalysis {
         this.soil_EC = soil_EC;
     }
 
-    public double getSoil_CEC() {
+    public Double getSoil_CEC() {
         return soil_CEC;
     }
 
-    public void setSoil_CEC(double soil_CEC) {
+    public void setSoil_CEC(Double soil_CEC) {
         this.soil_CEC = soil_CEC;
     }
 

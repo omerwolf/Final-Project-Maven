@@ -1,6 +1,9 @@
 package Model;
 
+import DB.Dao.layer_depth_typeDao;
+import DB.DaoImpl.layer_depth_typeDaoImpl;
 import DB.Entites.Soil;
+import DB.Entites.layer_depth_type;
 import javafx.stage.Stage;
 
 import java.util.*;
@@ -17,8 +20,13 @@ public class OrganicMatterContribution {
 
         //if check (once pre season soil excel will be in the DB, and if labeled "yes")
         //the following lines will take the data from the DB, for now, random values are assigned.
-        double organicMatter = 0.012; //will be changed once excel will be in DB
-        double layerDepth = 30/100; // divide value (taken from DB) by 100
+        double organicMatter = p.getSa().getOrganic_matter();
+        //extracting the range for the depth
+        int layerDepthId = p.getSa().getLayer_depth_id();
+        layer_depth_typeDao ldtd = new layer_depth_typeDaoImpl();
+        layer_depth_type ldt = ldtd.selectById(layerDepthId);
+        double layerAvg = (ldt.getLayer_min() + ldt.getLayer_max())/2;
+        double layerDepth = layerAvg/100; // divide value (taken from DB) by 100
         if (layerDepth == 0) { //null
             layerDepth = 0.3;
         }
@@ -27,11 +35,14 @@ public class OrganicMatterContribution {
         double oc = 0.58;
         Soil soil = n.getSoil();
         //active and yes check
-        double db = 1000; //* bulk density in pre soil
-        //else
-        System.out.println("default is " + soil.getDefualtBulkDensity());
-        //db = 1000*soil.getDefualtBulkDensity(); // get from table
-        db = 1000*soil.getDefualtBulkDensity();
+        double db; //* bulk density in pre soil
+        System.out.println("pre soil bulk is: " + p.getSa().getBulk_density());
+        if (p.getSa() != null ) { //bulk null check? may be redundant
+            db = 1000 * p.getSa().getBulk_density();
+        }
+        else {
+            db = 1000 * soil.getDefualtBulkDensity();
+        }
         List<StageDate> stageDateList= p.getStageDates();
         Set<Integer> months = uniqueMonths(stageDateList);
         for (Integer i:months) {

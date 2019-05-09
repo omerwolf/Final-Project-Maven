@@ -26,8 +26,8 @@ import java.time.ZoneId;
 import java.util.*;
 
 public class ERSoilAnalysis {
-     String path;
-     List<ExtractionMethod> emList;
+    String path;
+    List<ExtractionMethod> emList;
 
 
     public ERSoilAnalysis(String path) {
@@ -66,10 +66,10 @@ public class ERSoilAnalysis {
                 int layer_depth_id = this.getLayerDepthId(firstSheet.getRow(9).getCell(1).getStringCellValue());
                 int irrigation_block_id = (int)firstSheet.getRow(10).getCell(1).getNumericCellValue();
                 double organic_matter = firstSheet.getRow(11).getCell(1).getNumericCellValue();
-                double bulk_density = firstSheet.getRow(12).getCell(1).getNumericCellValue();
-                double soil_pH = firstSheet.getRow(14).getCell(1).getNumericCellValue();
+                Double bulk_density = firstSheet.getRow(12).getCell(1).getNumericCellValue();
+                Double soil_pH = firstSheet.getRow(14).getCell(1).getNumericCellValue();
                 double soil_EC = firstSheet.getRow(15).getCell(1).getNumericCellValue();
-                double soil_CEC = firstSheet.getRow(16).getCell(1).getNumericCellValue();
+                Double soil_CEC = firstSheet.getRow(16).getCell(1).getNumericCellValue();
 
 
                 try{
@@ -179,7 +179,7 @@ public class ERSoilAnalysis {
         return null;
     }
 
-     Boolean getIsActive(String s){
+    Boolean getIsActive(String s){
         if(s.toLowerCase().equals("yes") || s.toLowerCase().equals("true")) {
             return true;
         }else if(s.toLowerCase().equals("no") || s.toLowerCase().equals("false")) {
