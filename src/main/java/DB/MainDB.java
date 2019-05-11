@@ -244,8 +244,8 @@ public class MainDB {
         //ExtractionMethodDao emd = new ExtractionMethodDaoImpl();
         //emd.insertAll();
 
-        soil_thresholdsDao std = new soil_thresholdsDaoImpl();
-        std.autoInsertAll();
+        //soil_thresholdsDao std = new soil_thresholdsDaoImpl();
+        //std.autoInsertAll();
 
     }
     }

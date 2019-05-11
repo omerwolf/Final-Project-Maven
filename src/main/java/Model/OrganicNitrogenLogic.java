@@ -1,23 +1,20 @@
 package Model;
 
+import DB.Dao.SoilDao;
 import DB.Dao.layer_depth_typeDao;
+import DB.DaoImpl.SoilDaoImpl;
 import DB.DaoImpl.layer_depth_typeDaoImpl;
 import DB.Entites.Soil;
 import DB.Entites.layer_depth_type;
 
-public class PreSeasonNutrientsSoilAnalysis {
+public class OrganicNitrogenLogic {
 
-    public PreSeasonNutrientsSoilAnalysis() {
+    public OrganicNitrogenLogic() {
 
     }
 
-    public Nutrients PreSeasonNutrientsSoilAnalysis(Parameters p, Nutrients n) {
-        // p factor assigns - to complete
+    public Nutrients calculateOnl(Parameters p, Nutrients n) {
 
-        //yes no activation if - to complete/check with ofer
-
-
-        Soil soil = n.getSoil();
         int layerDepthId = p.getSa().getLayer_depth_id();
         layer_depth_typeDao ldtd = new layer_depth_typeDaoImpl();
         layer_depth_type ldt = ldtd.selectById(layerDepthId);
@@ -30,21 +27,17 @@ public class PreSeasonNutrientsSoilAnalysis {
         else {
             db = 1000 * n.getSoil().getDefualtBulkDensity(); //get default value
         }
-        double cec;
-        if (p.getSa().getSoil_CEC() != null) {
-            cec = p.getSa().getSoil_CEC();
-        }
-        else {
-            soil.getDefualtCEC(); //default bulk density in matlab - seems like a mistake
-        }
 
-        double soilWeight = db * layerDepth * 10000; //soil weight in kg/ha
-
+        double soilWeight = db * layerDepth * 10000 ; // soil weight in kg/ha
         double wettedArea = p.getUi().getSelectedIrrigationVolume(); //wetted area is different?
 
-        //th checks - will be filled after th table is added to db
+        Double nOrganic = 32.0; //needs to be read from analysis - add column?
+        if (nOrganic != null && nOrganic!= 0) {
+            double kg = (nOrganic * soilWeight)/(Math.pow(10,6)) * wettedArea;
+            //after pre soil calc
+        }
 
-
+        //organic n - check with ofer
         return n;
     }
 }

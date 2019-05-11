@@ -6,10 +6,22 @@ public class PhAdjustment {
 
     }
 
-    public Nutrients phAdjustment(Parameters p, Nutrients n, double ph) {
+    public Nutrients phAdjustment(Parameters p, Nutrients n, double sample) {
 
-        //if pre soil checks, need to read
-        double soilPh = p.getUi().getSelectedSoilPH(); //else
+        double soilPh = 0;
+        System.out.println(p.getSa().getSoil_pH());
+        if (true) { //if general excel table of pre soil is active - check if needed
+            if (sample == 0) { // 0 = pre season
+                if (p.getSa().getSoil_pH() != null) { //if pre soil value of ph isn't null
+                    soilPh = p.getSa().getSoil_pH();
+                } else {
+                    soilPh = p.getUi().getSelectedSoilPH(); //else
+                }
+            }
+        }
+        else {
+            soilPh = p.getUi().getSelectedSoilPH();
+        }
         String phDesc;
         if (soilPh < 4.5) {
             phDesc = "Very_Acidic";
@@ -29,7 +41,9 @@ public class PhAdjustment {
         else {
             phDesc = "NaN";
         }
-
+        //factors - take column with the ph adjustment desc for each nutrient - check with ofer
+        //to row
+        //later
         return n;
     }
 }

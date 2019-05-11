@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.13, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.15, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: lab analysis
+-- Host: localhost    Database: lab analysis
 -- ------------------------------------------------------
--- Server version	8.0.13
+-- Server version	8.0.15
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -1043,8 +1043,8 @@ CREATE TABLE `soil_lab_analysis` (
   `latitude` decimal(10,0) DEFAULT NULL,
   `layer_depth_id` int(11) NOT NULL,
   `soil_type_id` int(11) NOT NULL,
-  `bulk_density` decimal(10,0) DEFAULT NULL,
-  `organic_matter` decimal(3,0) DEFAULT NULL,
+  `bulk_density` decimal(5,4) DEFAULT NULL,
+  `organic_matter` decimal(5,4) DEFAULT NULL,
   `user_insert` varchar(20) DEFAULT NULL,
   `date_insert` datetime DEFAULT NULL,
   `user_update` varchar(20) DEFAULT NULL,
@@ -1066,7 +1066,7 @@ CREATE TABLE `soil_lab_analysis` (
   CONSTRAINT `fk_soil_lab_analysis_layer_depth_type` FOREIGN KEY (`layer_depth_id`) REFERENCES `layer_depth_type` (`layer_depth_id`),
   CONSTRAINT `fk_soil_lab_analysis_pheonological_stage` FOREIGN KEY (`phenological_stage_id`) REFERENCES `pheonological stage` (`pheonological_stage_id`),
   CONSTRAINT `fk_soil_lab_analysis_test_type` FOREIGN KEY (`test_type_id`) REFERENCES `test_type` (`test_type_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1232 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22223 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1075,7 +1075,7 @@ CREATE TABLE `soil_lab_analysis` (
 
 LOCK TABLES `soil_lab_analysis` WRITE;
 /*!40000 ALTER TABLE `soil_lab_analysis` DISABLE KEYS */;
-INSERT INTO `soil_lab_analysis` VALUES (111,222,'2018-03-01 00:00:00',333,1,NULL,'aaa',4444,NULL,0.000,0.000,0.000,NULL,NULL,1,11,0,555,NULL,NULL,NULL,NULL,NULL,NULL),(1231,222,'2018-03-01 00:00:00',333,1,NULL,'aaa',4444,NULL,0.000,0.000,0.000,NULL,NULL,1,11,0,555,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `soil_lab_analysis` VALUES (111,222,'2018-03-01 00:00:00',333,1,NULL,'aaa',4444,NULL,5.000,2.000,3.000,NULL,NULL,1,11,1.3000,1.2000,NULL,NULL,NULL,NULL,NULL,NULL),(1231,222,'2018-03-01 00:00:00',333,1,NULL,'aaa',4444,NULL,0.000,0.000,0.000,NULL,NULL,1,11,0.0000,1.1000,NULL,NULL,NULL,NULL,NULL,NULL),(22222,12,'2019-05-02 00:00:00',11,1,NULL,'test',2,NULL,2.000,3.000,4.000,NULL,NULL,1,11,0.0000,0.0000,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `soil_lab_analysis` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1698,4 +1698,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-06 23:45:37
+-- Dump completed on 2019-05-09 17:09:23
