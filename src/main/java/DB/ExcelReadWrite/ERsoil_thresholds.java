@@ -34,9 +34,6 @@ public class ERsoil_thresholds {
             } else if (fileName.toLowerCase().endsWith("xls")) {
                 workbook = new HSSFWorkbook(fis);
             }
-            //Get the number of sheets in the xlsx file
-            int numberOfSheets = workbook.getNumberOfSheets();
-
 
             Sheet sheet = workbook.getSheetAt(0);
 

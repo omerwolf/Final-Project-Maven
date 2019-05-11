@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.15, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.13, for Win64 (x86_64)
 --
--- Host: localhost    Database: lab analysis
+-- Host: 127.0.0.1    Database: lab analysis
 -- ------------------------------------------------------
--- Server version	8.0.15
+-- Server version	8.0.13
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -1098,11 +1098,11 @@ CREATE TABLE `soil_thresholds` (
   `lab_website` varchar(100) DEFAULT NULL,
   `lab_phone` varchar(15) DEFAULT NULL,
   `lab_address` varchar(250) DEFAULT NULL,
-  `very_low_threshold` decimal(10,0) DEFAULT NULL,
-  `low_threshold` decimal(10,0) DEFAULT NULL,
-  `high_threshold` decimal(10,0) DEFAULT NULL,
-  `very_high_threshold` decimal(10,0) DEFAULT NULL,
-  `target_value` decimal(10,0) DEFAULT NULL,
+  `very_low_threshold` decimal(10,3) DEFAULT NULL,
+  `low_threshold` decimal(10,3) DEFAULT NULL,
+  `high_threshold` decimal(10,3) DEFAULT NULL,
+  `very_high_threshold` decimal(10,3) DEFAULT NULL,
+  `target_value` decimal(10,3) DEFAULT NULL,
   `user_insert` varchar(20) DEFAULT NULL,
   `date_insert` datetime DEFAULT NULL,
   `user_update` varchar(20) DEFAULT NULL,
@@ -1116,7 +1116,7 @@ CREATE TABLE `soil_thresholds` (
   CONSTRAINT `fk_soil_thresholds_analysis_parameters` FOREIGN KEY (`parameter_id`) REFERENCES `parameters` (`parameter_id`),
   CONSTRAINT `fk_soil_thresholds_labs` FOREIGN KEY (`lab_id`) REFERENCES `labs` (`lab_id`),
   CONSTRAINT `fk_soil_thresholds_soil_lab_analysis` FOREIGN KEY (`soil_analysis_id`) REFERENCES `soil_lab_analysis` (`soil_analysis_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1125,6 +1125,7 @@ CREATE TABLE `soil_thresholds` (
 
 LOCK TABLES `soil_thresholds` WRITE;
 /*!40000 ALTER TABLE `soil_thresholds` DISABLE KEYS */;
+INSERT INTO `soil_thresholds` VALUES (1,1,1,NULL,2,1,NULL,NULL,NULL,NULL,NULL,3.000,7.000,13.000,22.000,11.200,NULL,NULL,NULL,NULL,NULL,NULL),(2,1,2,NULL,3,18,NULL,NULL,NULL,NULL,NULL,0.005,0.020,0.050,0.150,0.041,NULL,NULL,NULL,NULL,NULL,NULL),(3,1,2,NULL,4,18,NULL,NULL,NULL,NULL,NULL,0.350,0.650,0.800,0.950,0.755,NULL,NULL,NULL,NULL,NULL,NULL),(4,1,2,NULL,5,18,NULL,NULL,NULL,NULL,NULL,0.040,0.100,0.150,0.230,0.135,NULL,NULL,NULL,NULL,NULL,NULL),(5,1,3,NULL,6,1,NULL,NULL,NULL,NULL,NULL,5.000,10.000,30.000,40.000,24.000,NULL,NULL,NULL,NULL,NULL,NULL),(6,1,4,NULL,7,1,NULL,NULL,NULL,NULL,NULL,1.200,2.500,4.500,20.000,3.900,NULL,NULL,NULL,NULL,NULL,NULL),(7,1,4,NULL,8,1,NULL,NULL,NULL,NULL,NULL,0.500,1.000,2.000,3.500,1.700,NULL,NULL,NULL,NULL,NULL,NULL),(8,1,5,NULL,9,1,NULL,NULL,NULL,NULL,NULL,0.300,0.750,1.500,5.000,1.275,NULL,NULL,NULL,NULL,NULL,NULL),(9,1,4,NULL,10,1,NULL,NULL,NULL,NULL,NULL,0.200,0.500,0.800,2.000,0.710,NULL,NULL,NULL,NULL,NULL,NULL),(10,1,4,NULL,11,1,NULL,NULL,NULL,NULL,NULL,0.150,0.300,0.600,0.900,0.510,NULL,NULL,NULL,NULL,NULL,NULL),(11,1,6,NULL,12,1,NULL,NULL,NULL,NULL,NULL,0.090,0.150,0.300,0.600,0.255,NULL,NULL,NULL,NULL,NULL,NULL),(12,1,9,NULL,2,1,NULL,NULL,NULL,NULL,NULL,8.000,17.000,26.000,39.000,22.000,NULL,NULL,NULL,NULL,NULL,NULL),(13,1,10,NULL,2,1,NULL,NULL,NULL,NULL,NULL,5.000,15.000,31.000,51.000,22.000,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `soil_thresholds` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1698,4 +1699,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-09 17:09:23
+-- Dump completed on 2019-05-11 14:31:38
