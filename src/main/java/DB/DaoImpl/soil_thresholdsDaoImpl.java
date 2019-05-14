@@ -6,6 +6,7 @@ import DB.ExcelReadWrite.ERsoil_thresholds;
 import DB.Util.ConnectionConfiguration;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class soil_thresholdsDaoImpl implements soil_thresholdsDao {
@@ -118,6 +119,60 @@ public class soil_thresholdsDaoImpl implements soil_thresholdsDao {
         }
         return soilThresholds;
 
+    }
+    @Override
+    public List<soil_thresholds> selectAll() {
+        List<soil_thresholds> soil_thresholdsList = new ArrayList<soil_thresholds>();
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            connection = ConnectionConfiguration.getConnection();
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery("SELECT * FROM `soil_thresholds`");
+
+            while (resultSet.next()) {
+                soil_thresholds soil_thresholds = new soil_thresholds();
+                soil_thresholds.setSoil_threshold_id(resultSet.getInt("soil_threshold_id"));
+                soil_thresholds.setLab_id(resultSet.getInt("lab_id"));
+                soil_thresholds.setExtraction_method_id(resultSet.getInt("extraction_method_id"));
+                soil_thresholds.setParameters_id(resultSet.getInt("parameter_id"));
+                soil_thresholds.setUom_id(resultSet.getInt("uom_id"));
+                soil_thresholds.setVery_low_threshold(resultSet.getDouble("very_low_threshold"));
+                soil_thresholds.setLow_threshold(resultSet.getDouble("low_threshold"));
+                soil_thresholds.setHigh_threshold(resultSet.getDouble("high_threshold"));
+                soil_thresholds.setVery_high_threshold(resultSet.getDouble("very_high_threshold"));
+                soil_thresholds.setTarget_value(resultSet.getDouble("target_value"));
+                soil_thresholdsList.add(soil_thresholds);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (resultSet != null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return soil_thresholdsList;
     }
     public void autoInsertAll(){
         ERsoil_thresholds ERst = new ERsoil_thresholds();

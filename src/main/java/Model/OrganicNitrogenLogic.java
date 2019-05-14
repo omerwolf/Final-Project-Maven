@@ -18,7 +18,7 @@ public class OrganicNitrogenLogic {
         int layerDepthId = p.getSa().getLayer_depth_id();
         layer_depth_typeDao ldtd = new layer_depth_typeDaoImpl();
         layer_depth_type ldt = ldtd.selectById(layerDepthId);
-        double layerAvg = (double)(ldt.getLayer_min() + ldt.getLayer_max())/2;
+        double layerAvg = (double)(ldt.getLayer_max() - ldt.getLayer_min());
         double layerDepth = layerAvg/100; // divide value (taken from DB) by 100
         double db;
         if (p.getSa().getBulk_density() != null) {
@@ -29,7 +29,7 @@ public class OrganicNitrogenLogic {
         }
 
         double soilWeight = db * layerDepth * 10000 ; // soil weight in kg/ha
-        double wettedArea = p.getUi().getSelectedIrrigationVolume(); //wetted area is different?
+        double wettedArea = p.getUi().getSelectedIrrigationMethod().getIrrigation_method_wetted_area();
 
         Double nOrganic = 32.0; //needs to be read from analysis - add column?
         if (nOrganic != null && nOrganic!= 0) {

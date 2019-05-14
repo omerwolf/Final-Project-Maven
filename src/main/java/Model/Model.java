@@ -50,6 +50,7 @@ public class Model {
 
         Parameters p = new Parameters(ui, sa, wa, soilLabAnalysisResults, waterLabAnalysisResults);
         List<NutrientsOutput> nutrientsOutputs = new ArrayList<>();
+        PreSeason ps = new PreSeason(); //add preseason - location of creation may change
         StageDate sd = new StageDate();
         p = sd.stageDate(p);
         for (StageDate d : p.getStageDates()) {
@@ -77,6 +78,10 @@ public class Model {
         n = psnsa.PreSeasonNutrientsSoilAnalysis(p, n);
         PhAdjustment pha = new PhAdjustment();
         n = pha.phAdjustment(p,n,0);
+        FertilizationEfficiency fe = new FertilizationEfficiency();
+        n = fe.calculateFertilizationEfficiency(p,n);
+        NutrientsWaterAnalysis nwa = new NutrientsWaterAnalysis();
+        n = nwa.nutrientsWaterAnalysis(p,n);
     }
 
     public void testSoilAnalysisOutput(SoilAnalysis sa) {

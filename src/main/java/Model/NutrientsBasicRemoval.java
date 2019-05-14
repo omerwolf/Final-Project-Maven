@@ -14,6 +14,8 @@ public class NutrientsBasicRemoval {
 
     public Nutrients calculateRemoval(Parameters parameters) {
         Nutrients nutrients = new Nutrients();
+        PreSeason ps = new PreSeason();
+        nutrients.setPs(ps);
         List<Double> a = new ArrayList<>();
         List<Double> b = new ArrayList<>();
         List<String> name = new ArrayList<>();

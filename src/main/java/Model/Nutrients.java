@@ -10,6 +10,7 @@ public class Nutrients {
     private Soil soil;
     private List <NutrientsBasicRemovalPerStage> basicRemovalPerStages = new ArrayList<>();
     private SoilNutrients soilNutrients;
+    private PreSeason preSeason;
 
     public Nutrients() {
 
@@ -53,5 +54,13 @@ public class Nutrients {
 
     public void setSoilNutrients(SoilNutrients soilNutrients) {
         this.soilNutrients = soilNutrients;
+    }
+
+    public PreSeason getPreSeason() {
+        return preSeason;
+    }
+
+    public void setPs(PreSeason preSeason) {
+        this.preSeason = preSeason;
     }
 }
