@@ -2,6 +2,7 @@ package DB;
 
 import DB.Dao.*;
 import DB.DaoImpl.*;
+import DB.Entites.*;
 import DB.Entites.Crop;
 import DB.Entites.Soil;
 import DB.Entites.data_types;
@@ -246,6 +247,12 @@ public class MainDB {
 
         //soil_thresholdsDao std = new soil_thresholdsDaoImpl();
         //std.autoInsertAll();
+
+        //PhRangesDao prd = new PhRangesDaoImpl();
+        //prd.autoInsertAll();
+
+        //ParameterPhEffectDao pped = new ParameterPhEffectDaoImpl();
+        //pped.autoInsertAll();
 
     }
     }

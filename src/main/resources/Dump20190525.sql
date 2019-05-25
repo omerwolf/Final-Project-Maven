@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.13, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.15, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: lab analysis
+-- Host: localhost    Database: lab analysis
 -- ------------------------------------------------------
--- Server version	8.0.13
+-- Server version	8.0.15
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -202,7 +202,7 @@ CREATE TABLE `elements` (
 
 LOCK TABLES `elements` WRITE;
 /*!40000 ALTER TABLE `elements` DISABLE KEYS */;
-INSERT INTO `elements` VALUES (1,'N','Nitrogen'),(2,'P','Phosphorus'),(3,'K','Potassium'),(4,'Ca','Calcium'),(5,'Mg','Magnesium'),(6,'S','Sulfur'),(7,'Fe','Iron'),(8,'Mn','Manganese'),(9,'B','Boron'),(10,'Zn','Zinc'),(11,'Cu','Copper'),(12,'Mo','Molybdenum'),(13,'N-NH4','Ammoniacal Nitrogen'),(14,'N-NO3','Nitrate Nitrogen'),(15,'N-NH2','Ureic Nitrogen'),(16,'Cl','Chloride'),(17,'Na','Sodium'),(18,'HCO3','Bicarbonate'),(19,'Al','Aluminum');
+INSERT INTO `elements` VALUES (1,'N','Nitrogen'),(2,'P','Phosphorus'),(3,'K','Potassium'),(4,'Ca','Calcium'),(5,'Mg','Magnesium'),(6,'S','Sulfur'),(7,'Fe','Iron'),(8,'Mn','Manganese'),(9,'B','Boron'),(10,'Zn','Zinc'),(11,'Cu','Copper'),(12,'Mo','Molybdenum'),(13,'N-NH4','Ammoniacal Nitrogen'),(14,'N-NO3','Nitrate Nitrogen'),(15,'N-NH2','Ureic Nitrogen'),(16,'Cl','Chloride'),(17,'Na','Sodium'),(18,'HCO3','Bicarbonate'),(19,'Al','Aluminum'),(20,'Organic-N','Organic Nitrogen');
 /*!40000 ALTER TABLE `elements` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -757,11 +757,10 @@ CREATE TABLE `parameter_ph_effect` (
   `range_id` int(11) NOT NULL,
   `effect` decimal(2,2) NOT NULL,
   PRIMARY KEY (`effect_id`),
-  UNIQUE KEY `unq_parameter_ph_effect_range_id` (`range_id`),
-  KEY `idx_nutrient_ph_effect_parameter_id` (`parameter_id`),
+  KEY `fk_parameter_ph_effect_parameters` (`parameter_id`),
   CONSTRAINT `fk_nutrient_ph_effect_parameters` FOREIGN KEY (`parameter_id`) REFERENCES `parameters` (`parameter_id`),
   CONSTRAINT `fk_parameter_ph_effect_parameters` FOREIGN KEY (`parameter_id`) REFERENCES `parameters` (`parameter_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -770,6 +769,7 @@ CREATE TABLE `parameter_ph_effect` (
 
 LOCK TABLES `parameter_ph_effect` WRITE;
 /*!40000 ALTER TABLE `parameter_ph_effect` DISABLE KEYS */;
+INSERT INTO `parameter_ph_effect` VALUES (1,1,1,0.05),(2,2,1,0.10),(3,3,1,0.05),(4,4,1,0.10),(5,5,1,0.10),(6,6,1,0.05),(7,7,1,-0.05),(8,8,1,0.00),(9,9,1,0.05),(10,10,1,0.05),(11,11,1,0.05),(12,12,1,0.10),(13,1,2,0.05),(14,2,2,0.10),(15,3,2,0.05),(16,4,2,0.05),(17,5,2,0.05),(18,6,2,0.00),(19,7,2,0.00),(20,8,2,0.00),(21,9,2,0.00),(22,10,2,0.00),(23,11,2,0.00),(24,12,2,0.05),(25,1,3,0.00),(26,2,3,0.00),(27,3,3,0.00),(28,4,3,0.00),(29,5,3,0.00),(30,6,3,0.00),(31,7,3,0.00),(32,8,3,0.00),(33,9,3,0.00),(34,10,3,0.00),(35,11,3,0.00),(36,12,3,0.00),(37,1,4,0.00),(38,2,4,0.05),(39,3,4,0.00),(40,4,4,0.00),(41,5,4,0.00),(42,6,4,0.00),(43,7,4,0.05),(44,8,4,0.00),(45,9,4,0.05),(46,10,4,0.05),(47,11,4,0.05),(48,12,4,0.00),(49,1,5,0.05),(50,2,5,0.00),(51,3,5,0.00),(52,4,5,0.05),(53,5,5,0.00),(54,6,5,0.00),(55,7,5,0.15),(56,8,5,0.05),(57,9,5,0.00),(58,10,5,0.10),(59,11,5,0.10),(60,12,5,-0.10);
 /*!40000 ALTER TABLE `parameter_ph_effect` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -850,12 +850,11 @@ DROP TABLE IF EXISTS `ph_ranges`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `ph_ranges` (
   `range_id` int(11) NOT NULL AUTO_INCREMENT,
-  `range_desc` varchar(15) NOT NULL,
+  `range_desc` varchar(20) NOT NULL,
   `min_ph_range` decimal(4,2) NOT NULL,
   `max_ph_range` decimal(4,2) NOT NULL,
-  PRIMARY KEY (`range_id`),
-  CONSTRAINT `fk_ph_ranges_parameter_ph_effect` FOREIGN KEY (`range_id`) REFERENCES `parameter_ph_effect` (`range_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`range_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -864,6 +863,7 @@ CREATE TABLE `ph_ranges` (
 
 LOCK TABLES `ph_ranges` WRITE;
 /*!40000 ALTER TABLE `ph_ranges` DISABLE KEYS */;
+INSERT INTO `ph_ranges` VALUES (1,'Very_Acidic',0.00,4.50),(2,'Acidic',4.51,5.50),(3,'Neutral',5.51,7.50),(4,'Slightly_Alkaline',7.51,8.50),(5,'Alkaline',8.51,14.00);
 /*!40000 ALTER TABLE `ph_ranges` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1116,7 +1116,7 @@ CREATE TABLE `soil_thresholds` (
   CONSTRAINT `fk_soil_thresholds_analysis_parameters` FOREIGN KEY (`parameter_id`) REFERENCES `parameters` (`parameter_id`),
   CONSTRAINT `fk_soil_thresholds_labs` FOREIGN KEY (`lab_id`) REFERENCES `labs` (`lab_id`),
   CONSTRAINT `fk_soil_thresholds_soil_lab_analysis` FOREIGN KEY (`soil_analysis_id`) REFERENCES `soil_lab_analysis` (`soil_analysis_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1699,4 +1699,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-11 14:31:38
+-- Dump completed on 2019-05-25 22:55:17
