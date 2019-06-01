@@ -1,5 +1,7 @@
 package Model.WriteOutput;
 
+import java.util.List;
+
 public class NutrientsOutput {
     private String stageName;
     private double N;
@@ -32,6 +34,21 @@ public class NutrientsOutput {
         Mo = mo;
     }
 
+    public NutrientsOutput(String stageName, List<Double> nutrients) {
+        this.stageName = stageName;
+        N = nutrients.get(0);
+        P205 = nutrients.get(1);
+        K20 = nutrients.get(2);
+        Ca0 = nutrients.get(3);
+        Mg0 = nutrients.get(4);
+        S = nutrients.get(5);
+        Fe = nutrients.get(6);
+        B = nutrients.get(7);
+        Mn = nutrients.get(8);
+        Zn = nutrients.get(9);
+        Cu = nutrients.get(10);
+        Mo = nutrients.get(11);
+    }
     public String getStageName() {
         return stageName;
     }
