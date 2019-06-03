@@ -12,6 +12,7 @@ import Analysis.WaterAnalysis.*;
 import Model.WriteOutput.NutrientsOutput;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Model {
@@ -56,7 +57,7 @@ public class Model {
         for (StageDate d : p.getStageDates()) {
             System.out.println(d.getStageName() + " " + d.getStageDate());
         }
-        Nutrients n = new Nutrients();
+        Nutrients n;
         NutrientsBasicRemoval nbr = new NutrientsBasicRemoval(ui);
         n = nbr.calculateRemoval(p);
         String basicRemoval = "Basic Removal";
@@ -76,6 +77,14 @@ public class Model {
         n = omc.organicMatterContribution(p, n);
         PreSeasonNutrientsSoilAnalysis psnsa = new PreSeasonNutrientsSoilAnalysis();
         n = psnsa.PreSeasonNutrientsSoilAnalysis(p, n);
+        OrganicNitrogenLogic onl = new OrganicNitrogenLogic();
+        n = onl.calculateOnl(p,n);
+
+        n = calculateSummaryAdjTable(p,n);
+        //if pre season, write to output the soil Analysis output (nutrients->preseason->soilanalysis
+
+
+
         PhAdjustment pha = new PhAdjustment();
         n = pha.phAdjustment(p,n,0);
         FertilizationEfficiency fe = new FertilizationEfficiency();
@@ -107,5 +116,22 @@ public class Model {
                 basicR.get(3),basicR.get(4),basicR.get(5),basicR.get(6),basicR.get(7),basicR.get(8),basicR.get(9)
                 ,basicR.get(10),basicR.get(11));
         return nutrientsOutput;
+    }
+
+    public Nutrients calculateSummaryAdjTable(Parameters p, Nutrients n) {
+
+        List<NutrientsOutput> nutrientsOutputList = n.getPreSeason().getAdjNutrients();
+        List<Double> summary = new ArrayList<Double>(Collections.nCopies(12,0.0));
+        for (int i=0;i<nutrientsOutputList.size();i++) {
+            List<Double> currentNutrientOutput = nutrientsOutputList.get(i).nutrientsList();
+            for (int j=0;j<currentNutrientOutput.size();j++) {
+                summary.set(j, summary.get(j) + currentNutrientOutput.get(j));
+            }
+        }
+        System.out.println("summary is: "+summary);
+        NutrientsOutput summaryOutput = new NutrientsOutput("summary",summary);
+        nutrientsOutputList.add(summaryOutput);
+        n.getPreSeason().setAdjNutrients(nutrientsOutputList);
+        return n;
     }
 }

@@ -5,6 +5,8 @@ import java.util.List;
 import DB.Dao.*;
 import DB.DaoImpl.*;
 import DB.Entites.*;
+import Model.WriteOutput.NutrientsOutput;
+
 public class NutrientsBasicRemoval {
 
     private UserInput ui;
@@ -67,6 +69,7 @@ public class NutrientsBasicRemoval {
         }
         nutrients.setBasicRemoval(remove);
         nutrients.setName(name);
+        //System.out.println(remove);
 
         //Calculate Nutrients per stage:
         //Create matrix for caulculations:
@@ -99,6 +102,7 @@ public class NutrientsBasicRemoval {
         List<Double> copy = nutrients.getBasicRemoval();
         int counter =0;
         int multi = 0;
+        //add to list the breakdown of basic removal per stage
         for (int i=0;i<removalPerStage.size();i+=nutrients.getBasicRemoval().size()) {
             NutrientsBasicRemovalPerStage nbrps = new NutrientsBasicRemovalPerStage(parameters.getStageDates().get(counter),
                     removalPerStage.get(multi), removalPerStage.get(multi+1),
@@ -112,6 +116,12 @@ public class NutrientsBasicRemoval {
             multi+=nutrients.getBasicRemoval().size();
         }
         nutrients.setBasicRemovalPerStages(nbrpsList);
+
+        //adding basic removal to nutrients output table
+        List<NutrientsOutput> nutrientsOutputList = new ArrayList<>();
+        NutrientsOutput nOutputBasicRemoval = new NutrientsOutput("Basic_Removal", remove);
+        nutrientsOutputList.add(nOutputBasicRemoval);
+        nutrients.getPreSeason().setAdjNutrients(nutrientsOutputList);
         return nutrients;
 
 

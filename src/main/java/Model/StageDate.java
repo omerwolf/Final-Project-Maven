@@ -20,7 +20,7 @@ public class StageDate {
     }
 
     public Parameters stageDate(Parameters parameters) {
-        //needs to add planting date for user input
+        //checks user input date. if empty, takes the current day
         LocalDate ld = parameters.getUi().getSelectedDate();
         if (ld == null) {
             ld = LocalDate.now();
@@ -41,12 +41,17 @@ public class StageDate {
         List<String> stageName = new ArrayList<>();
         List<Integer> stageDuration = new ArrayList<>();
         stageDuration.add(0);
+        int duration = 0;
         for (pheonological_stage ps:pheonologicalStageList) {
             if (ps.getCrop_id() == parameters.getUi().getSelectedCrop().getId()) { //should be updated when user input includes stage date
                 stageName.add(ps.getPheonological_stage_desc());
                 stageDuration.add(ps.getPheonological_stage_duration_days());
+                duration += ps.getPheonological_stage_duration_days();
             }
         }
+        //add duration to parameters class
+        parameters.setDuration(duration);
+        System.out.println("the duration total is: " +duration);
         List<String> dates = new ArrayList<>();
         //calculate the dates for each stage
         for (int i=0;i<stageName.size();i++) {

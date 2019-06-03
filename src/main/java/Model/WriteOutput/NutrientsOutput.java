@@ -1,5 +1,7 @@
 package Model.WriteOutput;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class NutrientsOutput {
@@ -55,6 +57,12 @@ public class NutrientsOutput {
 
     public void setStageName(String stageName) {
         this.stageName = stageName;
+    }
+
+    public List<Double> nutrientsList() {
+        List<Double> nutrientsValues = Arrays.asList(getN(),getP205(),getK20(), getCa0(),
+                getMg0(),getS(),getFe(),getB(),getMn(),getZn(),getCu(),getMo());
+        return nutrientsValues;
     }
 
     public double getN() {

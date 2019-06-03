@@ -303,7 +303,10 @@ public class PreSeasonNutrientsSoilAnalysis {
         nutrientsOutputsList.add(recommendationOutput);
         nutrientsOutputsList.add(soilCorrectionOutput);
         n.getPreSeason().setAdjNutrients(nutrientsOutputsList);
-        System.out.println("preseason updated correciton: " + n.getPreSeason().getAdjNutrients().get(0));
+        for (int i=0;i<n.getPreSeason().getAdjNutrients().size();i++) {
+            System.out.println(n.getPreSeason().getAdjNutrients().get(i).getStageName() +
+                    " " + n.getPreSeason().getAdjNutrients().get(i));
+        }
         System.out.println("results are: " +soilNutrientsResults);
         System.out.println("analysis status is " +analysisStatus);
         System.out.println("soil thresholds is: " +soilThresholds);

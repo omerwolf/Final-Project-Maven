@@ -20,6 +20,7 @@ public class Parameters {
     private List<SoilLabAnalysisResult> slar;
     private List<WaterLabAnalysisResult> wlar;
     private List<StageDate> stageDates;
+    private int duration;
     public Parameters() {
 
     }
@@ -137,5 +138,21 @@ public class Parameters {
      */
     public void setWlar(List<WaterLabAnalysisResult> wlar) {
         this.wlar = wlar;
+    }
+
+    /**
+     * returns the duration of the crop's growth
+     * @return duration - duration of the crop's growth
+     */
+    public int getDuration() {
+        return duration;
+    }
+
+    /**
+     * sets the amount of days it takes to grow to crop
+     * @param duration - the duration to set
+     */
+    public void setDuration(int duration) {
+        this.duration = duration;
     }
 }

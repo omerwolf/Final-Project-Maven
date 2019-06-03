@@ -4,6 +4,8 @@ import DB.Dao.FertilizationMethodEfficiencyDao;
 import DB.DaoImpl.FertilizationMethodEfficiencyDaoImpl;
 import DB.Entites.FertilizationMethodEfficiency;
 import DB.Entites.fertilization_method;
+import Model.Climate.ERClimate;
+import Model.Climate.MonthClimate;
 import Model.WriteOutput.NutrientsOutput;
 
 import java.util.ArrayList;
@@ -18,10 +20,8 @@ public class FertilizationEfficiency {
     }
 
     public Nutrients calculateFertilizationEfficiency(Parameters p, Nutrients n) {
-        //some adjs - later added
-        //NutrientsOutput adjN = getNutrientOutput(n,"pH_Adjusted"); //get ph adjusted from adjtable (1)
+        NutrientsOutput adjN = getNutrientOutput(n,"pH_Adjusted");
         List<NutrientsOutput> nutrientsOutputList = new ArrayList<>();
-        NutrientsOutput adjN = new NutrientsOutput("adj_nutrients", 219.81,39.966,308.75,0,29.25,0,0,0,0,0,0,0);
         double [] adjArray = {Math.round(adjN.getN()),Math.round(adjN.getP205()),Math.round(adjN.getK20()), Math.round(adjN.getCa0()),
                 Math.round(adjN.getMg0()),Math.round(adjN.getS()), Math.round(adjN.getFe()), Math.round(adjN.getB()),
                 Math.round(adjN.getMn()),Math.round(adjN.getZn()),Math.round(adjN.getCu()),Math.round(adjN.getMo())};
@@ -46,7 +46,7 @@ public class FertilizationEfficiency {
             }
         }
 
-        if (p.getUi().getSelectedBaseDressing() == true) {
+        if (p.getUi().getSelectedBaseDressing()) {
             //int minMonth;
             StageDate plantingMonth = p.getStageDates().get(0);
             String plantingMonthString = plantingMonth.getStageDate();
@@ -58,9 +58,16 @@ public class FertilizationEfficiency {
             }
             System.out.println("month is: " +plantMonth);
             List<Integer> rainRegimeMonths = calculateRainMonths(plantMonth);
-            double meanRate = 18.3333; //should be taken from climate - check with omer/ofer
+            ERClimate erclimate = new ERClimate();
+            double meanRain = 0.0;
+            for (Integer rainMonth:rainRegimeMonths) {
+                MonthClimate mc = erclimate.getMonth(rainMonth);
+                meanRain += mc.getRain();
+            }
+            meanRain = meanRain/rainRegimeMonths.size();
+            System.out.println(meanRain);
             double rainEffect;
-            if (meanRate > 150) {
+            if (meanRain > 150) {
                 rainEffect = n.getSoil().getRainEffect();
             }
             else {
@@ -71,7 +78,6 @@ public class FertilizationEfficiency {
             baseFactor[2] = n.getSoil().getkPrecent() * (1-rainEffect);
             for (int i=0; i<baseFactor.length ;i++) {
                 baseDressing[i] = adjArray[i] * baseFactor[i];
-                //System.out.println("current base factor is: " + baseFactor[i]);
                 fertilization[i] = adjArray[i] * (1-baseFactor[i]);
             }
         }
@@ -86,34 +92,7 @@ public class FertilizationEfficiency {
             actualBaseDressing[i] = baseDressing[i]/baseEfficiency.get(i);
             actualFertilization[i] = fertilization[i]/fertEfficientValues.get(i);
         }
-        //print checks
-        System.out.println();
-        System.out.print("adjArray ");
-        for (int i=0;i<adjArray.length;i++) {
-            System.out.print(adjArray[i] + ", ");
-        }
-        System.out.println();
-        System.out.print("baseDressing ");
-        for (int i=0;i<baseDressing.length;i++) {
-            System.out.print(baseDressing[i] + ", ");
-        }
-        System.out.println();
-        System.out.print("fertilization ");
-        for (int i=0;i<fertilization.length;i++) {
-            System.out.print(fertilization[i] + ", ");
-        }
-        System.out.println();
-        System.out.print("actual base dressing ");
-        for (int i=0;i<actualBaseDressing.length;i++) {
-            System.out.print(actualBaseDressing[i] + ", ");
-        }
-        System.out.println();
-        System.out.print("actual fertilization ");
-        for (int i=0;i<actualFertilization.length;i++) {
-            System.out.print(actualFertilization[i] + ", ");
-        }
 
-        //need to add rounding and add to PreSeason, in order to output later
         for (int i=0;i<12;i++) {
             baseDressing[i] = Math.round(baseDressing[i]);
             fertilization[i] = Math.round(fertilization[i]);

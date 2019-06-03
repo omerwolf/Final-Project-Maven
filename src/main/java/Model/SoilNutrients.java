@@ -4,26 +4,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SoilNutrients {
-    private List<Integer> nCredits = new ArrayList<>();
-    private List<Integer> som = new ArrayList<>();
+    private List<Double> nCredits = new ArrayList<>();
+    private List<Double> som = new ArrayList<>();
 
     public SoilNutrients() {
 
     }
 
-    public List<Integer> getnCredits() {
+    public List<Double> getnCredits() {
         return nCredits;
     }
 
-    public void setnCredits(List<Integer> nCredits) {
+    public void setnCredits(List<Double> nCredits) {
         this.nCredits = nCredits;
     }
 
-    public List<Integer> getSom() {
+    public List<Double> getSom() {
         return som;
     }
 
-    public void setSom(List<Integer> som) {
+    public void setSom(List<Double> som) {
         this.som = som;
     }
 }

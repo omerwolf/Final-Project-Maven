@@ -4,6 +4,9 @@ import DB.Dao.layer_depth_typeDao;
 import DB.DaoImpl.layer_depth_typeDaoImpl;
 import DB.Entites.Soil;
 import DB.Entites.layer_depth_type;
+import Model.Climate.ERClimate;
+import Model.Climate.MonthClimate;
+import Model.WriteOutput.NutrientsOutput;
 import javafx.stage.Stage;
 
 import java.util.*;
@@ -19,7 +22,6 @@ public class OrganicMatterContribution {
     public Nutrients organicMatterContribution(Parameters p, Nutrients n) {
 
         //if check (once pre season soil excel will be in the DB, and if labeled "yes")
-        //the following lines will take the data from the DB, for now, random values are assigned.
         double organicMatter = p.getSa().getOrganic_matter();
         //extracting the range for the depth
         int layerDepthId = p.getSa().getLayer_depth_id();
@@ -27,7 +29,7 @@ public class OrganicMatterContribution {
         layer_depth_type ldt = ldtd.selectById(layerDepthId);
         double layerAvg = (ldt.getLayer_min() + ldt.getLayer_max())/2;
         double layerDepth = layerAvg/100; // divide value (taken from DB) by 100
-        if (layerDepth == 0) { //null
+        if (layerDepth == 0) {
             layerDepth = 0.3;
         }
 
@@ -44,11 +46,18 @@ public class OrganicMatterContribution {
             db = 1000 * soil.getDefualtBulkDensity();
         }
         List<StageDate> stageDateList= p.getStageDates();
-        Set<Integer> months = uniqueMonths(stageDateList);
-        for (Integer i:months) {
+        Set<Integer> uniqueMonths = uniqueMonths(stageDateList);
+        for (Integer i:uniqueMonths) {
             System.out.println("unique month: " +i);
         }
-        double meanTemp = 26.5;//need to get temp from climate (excel to db?)
+        ERClimate erClimate = new ERClimate();
+        double meanTemp = 0.0;
+        for (Integer monthId:uniqueMonths) {
+            MonthClimate mc = erClimate.getMonth(monthId);
+            meanTemp += mc.getTemp();
+        }
+        meanTemp = meanTemp/uniqueMonths.size();
+        System.out.println("mean temp is: " + meanTemp);
         double decomosingRate;
         if (meanTemp < 15) {
             decomosingRate = soil.getSomDecompLow();
@@ -60,8 +69,9 @@ public class OrganicMatterContribution {
             decomosingRate = soil.getSomDecompHigh();
         }
 
-        double duration = 0.3288; //will be changed
 
+        double duration = (p.getDuration())/365.0;
+        System.out.println("duration is: " + duration);
         double soilWeight = layerDepth * db * 10;
         double soilOc = oc * soilWeight * organicMatter;
         double annualOcDecomp = soilOc * decomosingRate;
@@ -73,18 +83,27 @@ public class OrganicMatterContribution {
             System.out.println(nps[i]);
         }
 
-        List<Integer> som = new ArrayList<>(Collections.nCopies(n.getName().size(),0));
+        List<Double> som = new ArrayList<>(Collections.nCopies(n.getName().size(),0.0));
         for (int i=0;i<n.getName().size() ;i++) {
             System.out.println(n.getName().get(i));
         }
-        som.set(0,(int)Math.round(-nps[0]));
-        som.set(1,(int)Math.round(-nps[1]));
-        som.set(5,(int)Math.round(-nps[2]));
+        Integer somN = (int)Math.round(-nps[0]);
+        Integer somP = (int)Math.round(-nps[1]);
+        Integer somS = (int)Math.round(-nps[2]);
+        som.set(0,Double.valueOf(somN));
+        som.set(1,Double.valueOf(somP));
+        som.set(5,Double.valueOf(somS));
+        System.out.println("som values: ");
         for (int i=0;i<som.size() ;i++) {
             System.out.println(som.get(i));
         }
 
+        //adding som to nutrients adj output table
         n.getSoilNutrients().setSom(som);
+        List<NutrientsOutput> nutrientsOutputList = n.getPreSeason().getAdjNutrients();
+        NutrientsOutput nutrientsOutput = new NutrientsOutput("SOM", som);
+        nutrientsOutputList.add(nutrientsOutput);
+        n.getPreSeason().setAdjNutrients(nutrientsOutputList);
         return n;
     }
 
