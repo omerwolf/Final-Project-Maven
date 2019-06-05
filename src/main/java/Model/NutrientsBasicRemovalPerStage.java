@@ -1,7 +1,7 @@
 package Model;
 
 public class NutrientsBasicRemovalPerStage {
-    private StageDate sd;
+    private CropStage sd;
     private double n;
     private double p;
     private double k;
@@ -19,7 +19,7 @@ public class NutrientsBasicRemovalPerStage {
 
     }
 
-    public NutrientsBasicRemovalPerStage(StageDate sd, double n, double p, double k,
+    public NutrientsBasicRemovalPerStage(CropStage sd, double n, double p, double k,
                                          double ca, double mg, double s, double fe,
                                          double mn, double b, double zn, double cu, double mo) {
         this.sd = sd;
@@ -37,11 +37,11 @@ public class NutrientsBasicRemovalPerStage {
         this.mo = mo;
     }
 
-    public StageDate getSd() {
+    public CropStage getSd() {
         return sd;
     }
 
-    public void setSd(StageDate sd) {
+    public void setSd(CropStage sd) {
         this.sd = sd;
     }
 

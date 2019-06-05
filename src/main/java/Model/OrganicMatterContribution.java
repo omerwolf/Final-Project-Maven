@@ -7,18 +7,27 @@ import DB.Entites.layer_depth_type;
 import Model.Climate.ERClimate;
 import Model.Climate.MonthClimate;
 import Model.WriteOutput.NutrientsOutput;
-import javafx.stage.Stage;
 
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * the class is responsible for the calculation of the omc (organic matter contribution).
+ */
 public class OrganicMatterContribution {
 
     public OrganicMatterContribution() {
 
     }
 
+    /**
+     * calculates the organic matter contribution. it adds it to
+     * the adjusted nutrient table, and then returns the updated nutrients data.
+     * @param p - the parameters data.
+     * @param n - the nutrients data.
+     * @return n - the updated nutrients data.
+     */
     public Nutrients organicMatterContribution(Parameters p, Nutrients n) {
 
         //if check (once pre season soil excel will be in the DB, and if labeled "yes")
@@ -45,11 +54,12 @@ public class OrganicMatterContribution {
         else {
             db = 1000 * soil.getDefualtBulkDensity();
         }
-        List<StageDate> stageDateList= p.getStageDates();
-        Set<Integer> uniqueMonths = uniqueMonths(stageDateList);
+        List<CropStage> cropStageList = p.getCropStages();
+        Set<Integer> uniqueMonths = uniqueMonths(cropStageList);
         for (Integer i:uniqueMonths) {
             System.out.println("unique month: " +i);
         }
+        //calculating the mean temperature
         ERClimate erClimate = new ERClimate();
         double meanTemp = 0.0;
         for (Integer monthId:uniqueMonths) {
@@ -59,6 +69,7 @@ public class OrganicMatterContribution {
         meanTemp = meanTemp/uniqueMonths.size();
         System.out.println("mean temp is: " + meanTemp);
         double decomosingRate;
+        //get decomposing rate based on the calculated meanTemp value
         if (meanTemp < 15) {
             decomosingRate = soil.getSomDecompLow();
         }
@@ -82,7 +93,7 @@ public class OrganicMatterContribution {
             nps[i] = somNutrients[i] * ocDecomp;
             System.out.println(nps[i]);
         }
-
+        //soil organic matter(som) calculation
         List<Double> som = new ArrayList<>(Collections.nCopies(n.getName().size(),0.0));
         for (int i=0;i<n.getName().size() ;i++) {
             System.out.println(n.getName().get(i));
@@ -107,11 +118,18 @@ public class OrganicMatterContribution {
         return n;
     }
 
-    public Set<Integer> uniqueMonths(List<StageDate> stageDateList) {
+    /**
+     * receives the crop stage list and returns a set that contains
+     * the unique months in which a stage is started.
+     * note: it means that if two or more stages begin in the same month,
+     * their month id value will be taken only once.
+     * @param cropStageList - list containing info about each crop start date and name.
+     * @return months - a set of unique months.
+     */
+    public Set<Integer> uniqueMonths(List<CropStage> cropStageList) {
         Set<Integer> months = new LinkedHashSet<>();
-        for (StageDate d:stageDateList) {
+        for (CropStage d: cropStageList) {
             String date = d.getStageDate();
-            //System.out.println(date);
             Pattern pattern = Pattern.compile("/(.*?)/");
             Matcher matcher = pattern.matcher(date);
             while (matcher.find()) {

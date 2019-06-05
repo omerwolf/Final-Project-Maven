@@ -1,24 +1,35 @@
 package Model;
-import DB.Dao.*;
-import DB.DaoImpl.*;
-import DB.Entites.*;
-import javafx.stage.Stage;
 
-import java.text.DateFormat;
+import DB.Dao.pheonological_stageDao;
+import DB.DaoImpl.pheonological_stageDaoImpl;
+import DB.Entites.pheonological_stage;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
 
+/**
+ * calculates the dates for each stage of the crop and their names,
+ * and the total duration of the crop's growth.
+ */
 public class StageDate {
 
-    String stageName;
-    String stageDate;
-    public StageDate(){
+    public StageDate() {
 
     }
 
+    /**
+     * takes the initial date from the user input (if exists, otherwise takes current day),
+     * and calculates the dates and names of each stage during the crop's growth.
+     * it also calculates the total duration of the crop's growth.
+     * they are inserted to the parameters class(which was received as an input) and then returned.
+     * @param parameters - the parameters data.
+     * @return parameters - the same class, with updated members.
+     */
     public Parameters stageDate(Parameters parameters) {
         //checks user input date. if empty, takes the current day
         LocalDate ld = parameters.getUi().getSelectedDate();
@@ -42,14 +53,15 @@ public class StageDate {
         List<Integer> stageDuration = new ArrayList<>();
         stageDuration.add(0);
         int duration = 0;
+        //add the names of each stage, and calculate the duration of each stage
         for (pheonological_stage ps:pheonologicalStageList) {
-            if (ps.getCrop_id() == parameters.getUi().getSelectedCrop().getId()) { //should be updated when user input includes stage date
+            if (ps.getCrop_id() == parameters.getUi().getSelectedCrop().getId()) {
                 stageName.add(ps.getPheonological_stage_desc());
                 stageDuration.add(ps.getPheonological_stage_duration_days());
                 duration += ps.getPheonological_stage_duration_days();
             }
         }
-        //add duration to parameters class
+        //sets the crop growth duration in parameters
         parameters.setDuration(duration);
         System.out.println("the duration total is: " +duration);
         List<String> dates = new ArrayList<>();
@@ -59,32 +71,17 @@ public class StageDate {
             formattedString = sdf.format(c.getTime());
             dates.add(formattedString);
         }
-        List<StageDate> stageDateList= new ArrayList<>();
+        List<CropStage> cropStageList = new ArrayList<>();
         //add the dates for each stage and their names to a list
         for (int i=0; i<dates.size();i++) {
-            StageDate sd = new StageDate();
+            CropStage sd = new CropStage();
             sd.setStageDate(dates.get(i));
             sd.setStageName(stageName.get(i));
-            stageDateList.add(sd);
+            cropStageList.add(sd);
         }
-        parameters.setStageDates(stageDateList);
+        //sets the crop stage list in parameters class
+        parameters.setCropStages(cropStageList);
         System.out.println("end of stagedate");
         return parameters;
-    }
-
-    public String getStageName() {
-        return stageName;
-    }
-
-    public void setStageName(String stageName) {
-        this.stageName = stageName;
-    }
-
-    public String getStageDate() {
-        return stageDate;
-    }
-
-    public void setStageDate(String stageDate) {
-        this.stageDate = stageDate;
     }
 }

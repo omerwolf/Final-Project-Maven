@@ -14,12 +14,25 @@ import Model.WriteOutput.NutrientsOutput;
 
 import java.util.*;
 
+/**
+ * responsible for the calculation of the Organic Nitrogen.
+ */
 public class OrganicNitrogenLogic {
 
     public OrganicNitrogenLogic() {
 
     }
 
+    /**
+     * takes the nOrganic value from the db.
+     * if not null or 0, removes from adjustment nutrient table the som and n credit,
+     * and calculates the kg, which will be added to adjustment nutrient table.
+     * otherwise just adds it as a list of zeroes.
+     * returns the updated nutrients data.
+     * @param p - the parameters data.
+     * @param n - the nutrients data.
+     * @return n - the updated nutrients data.
+     */
     public Nutrients calculateOnl(Parameters p, Nutrients n) {
 
         //getting the layer depth range values
@@ -44,7 +57,6 @@ public class OrganicNitrogenLogic {
         List<Double> soilRecommendation = new ArrayList<Double>(Collections.nCopies(nutrientNames.size(),0.0));
         elementsDao ed = new elementsDaoImpl();
         elements e = ed.selectById(20); //select norganic - id=20 (may change actual name)
-        List<SoilLabAnalysisResult> soilLabResults = p.getSlar();
         Double nOrganic = null;
         for (int i=0;i<p.getSlar().size();i++) {
             if (p.getSlar().get(i).getParameter_id() == e.getElement_id()) {

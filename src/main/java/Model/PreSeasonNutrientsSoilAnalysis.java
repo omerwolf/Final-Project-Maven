@@ -1,10 +1,8 @@
 package Model;
 
-import DB.Dao.IrrigationMethodDao;
 import DB.Dao.layer_depth_typeDao;
 import DB.Dao.parametersDao;
 import DB.Dao.soil_thresholdsDao;
-import DB.DaoImpl.IrrigationMethodDaoImpl;
 import DB.DaoImpl.layer_depth_typeDaoImpl;
 import DB.DaoImpl.parametersDaoImpl;
 import DB.DaoImpl.soil_thresholdsDaoImpl;
@@ -21,12 +19,26 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * responsible for calculating all the necessary pre soil analysis data,
+ * including the output for the interpretation table, and the recommendation
+ * and soil correction values for the adjusted nutrients table.
+ */
 public class PreSeasonNutrientsSoilAnalysis {
 
     public PreSeasonNutrientsSoilAnalysis() {
 
     }
 
+    /**
+     * reads from the parameters and the db the necessary data needed for the pre season soil analysis
+     * of the nutrients.
+     * calculates the interpretation output table for the soil analysis, including soil recommendation
+     * and correction, which are added to the adjusted nutrients output table.
+     * @param p - the parameters data
+     * @param n - the nutrients data
+     * @return n - the updated nutrients data
+     */
     public Nutrients PreSeasonNutrientsSoilAnalysis(Parameters p, Nutrients n) {
         double soilCorrectionFactor = p.getUi().getSelectedSoilCorrection();
         //read p factors from database
@@ -78,14 +90,13 @@ public class PreSeasonNutrientsSoilAnalysis {
             preSeason = true;
         }
         else {
-            stage = p.getStageDates().get(0).stageName; //get the name of first stage of crop
+            stage = p.getCropStages().get(0).stageName; //get the name of first stage of crop
             preSeason = false;
         }
         //load soil analysis thresholds from database (currently n threshold are taken from the same table)
         soil_thresholdsDao std = new soil_thresholdsDaoImpl();
         List<soil_thresholds> stList = std.selectAll();
         List<String> nutrientNames = Arrays.asList("N", "P" ,"K" ,"Ca" ,"Mg" ,"S" ,"Fe" ,"B" ,"Mn" ,"Zn", "Cu" ,"Mo");
-        //List<String> thString?
         String[] interp = {"Very Low", "Low", "Sufficient", "High", "Very High"};
 
         List<Double> soilNutrientsResults = new ArrayList<Double>(Collections.nCopies(nutrientNames.size(),0.0));
@@ -180,7 +191,7 @@ public class PreSeasonNutrientsSoilAnalysis {
             currentSoilThreshList.add(currentThresh.getHigh_threshold());
             currentSoilThreshList.add(currentThresh.getVery_high_threshold());
             currentSoilThreshList.add(currentThresh.getTarget_value());
-            System.out.println("current thresh is: " +currentThresh);
+            //System.out.println("current thresh is: " +currentThresh);
             soilThresholds.set(i,currentThresh.getLow_threshold() + " - " + currentThresh.getHigh_threshold());
             Double target;
             Double factor;
@@ -216,7 +227,7 @@ public class PreSeasonNutrientsSoilAnalysis {
                 } else {
                     analysisStatus.set(i, interp[threshIndex]);
                 }
-                System.out.println("status is: " + analysisStatus.get(i));
+                //System.out.println("status is: " + analysisStatus.get(i));
                 if (result == null) {
                     soilNutrientsBalance.set(i, null);
                 } else {
@@ -267,7 +278,7 @@ public class PreSeasonNutrientsSoilAnalysis {
                     soilRecommendation.set(i,0.0);
                 }
             }
-            System.out.println(currentSoilThreshList);
+            //System.out.println(currentSoilThreshList);
         }
         for (int i=0;i<soilRecommendation.size();i++) {
             Double currentValue = soilRecommendation.get(i);

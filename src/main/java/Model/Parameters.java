@@ -19,7 +19,7 @@ public class Parameters {
     private WaterAnalysis wa;
     private List<SoilLabAnalysisResult> slar;
     private List<WaterLabAnalysisResult> wlar;
-    private List<StageDate> stageDates;
+    private List<CropStage> cropStages;
     private int duration;
     public Parameters() {
 
@@ -43,20 +43,20 @@ public class Parameters {
     }
 
     /**
-     * return the stageDates
-     * @return stageDates - the dates of each stage of the crop's growth
+     * return the cropStages
+     * @return cropStages - the dates of each stage of the crop's growth
      */
-    public List<StageDate> getStageDates() {
-        return stageDates;
+    public List<CropStage> getCropStages() {
+        return cropStages;
     }
 
     /**
      * sets the dates of each stage of the crop's growth,
-     * which are calculated in the StageDate class.
-     * @param stageDates
+     * which are calculated in the CropStage class.
+     * @param cropStages
      */
-    public void setStageDates(List<StageDate> stageDates) {
-        this.stageDates = stageDates;
+    public void setCropStages(List<CropStage> cropStages) {
+        this.cropStages = cropStages;
     }
 
     /**

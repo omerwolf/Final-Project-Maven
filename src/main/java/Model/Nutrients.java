@@ -4,6 +4,10 @@ import DB.Entites.Soil;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * represents all the data needed for the nutrients used during the crop's growth.
+ * including the output tables (PreSeason member).
+ */
 public class Nutrients {
     private List<Double> basicRemoval = new ArrayList<>();
     private List<String> name = new ArrayList<>();

@@ -9,14 +9,29 @@ import DB.Entites.PhRanges;
 import Model.WriteOutput.NutrientsOutput;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
+/**
+ * updates the summary of the nutrients in the adjustment table output
+ * by multiplying them with the ph effect values.
+ */
 public class PhAdjustment {
 
     public PhAdjustment() {
 
     }
 
+    /**
+     * gets the soilPh in order to get the proper range of the ph values.
+     * calculates the effects for each parameter, and then multiply them by
+     * the nutrients amount summary values in order to get the updated amount for each nutrient,
+     * which is affected by the soil ph value.
+     * @param p - .parameters data.
+     * @param n - the nutrients data.
+     * @param sample - a sampling point during the crop's growth
+     * @return
+     */
     public Nutrients phAdjustment(Parameters p, Nutrients n, double sample) {
 
         double soilPh = 0;
@@ -79,6 +94,17 @@ public class PhAdjustment {
             for (int i=0;i<rangePhValues.size();i++) {
                 System.out.println(i);
                 phValues.add(summary.get(i) *(1+rangePhValues.get(i)));
+            }
+            NutrientsOutput phAdjustedOutput = new NutrientsOutput("pH_Adjusted", phValues);
+            nutrientsOutputList.add(phAdjustedOutput);
+            n.getPreSeason().setAdjNutrients(nutrientsOutputList);
+        }
+        else {
+            List<NutrientsOutput> nutrientsOutputList = n.getPreSeason().getAdjNutrients();
+            List<Double> summary = nutrientsOutputList.get(nutrientsOutputList.size()-1).nutrientsList();
+            List<Double> phValues = new ArrayList<>();
+            for (Double nutrientSummary:summary) {
+                phValues.add(nutrientSummary);
             }
             NutrientsOutput phAdjustedOutput = new NutrientsOutput("pH_Adjusted", phValues);
             nutrientsOutputList.add(phAdjustedOutput);

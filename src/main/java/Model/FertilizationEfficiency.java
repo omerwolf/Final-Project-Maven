@@ -13,12 +13,23 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * calculates the fertilization efficiency and add it to the actual nutrient output table.
+ */
 public class FertilizationEfficiency {
 
     public FertilizationEfficiency() {
 
     }
 
+    /**
+     * takes the ph adjusted values from the adjusted nutrient output table, and then calculates
+     * the efficiency of the fertilization method that was selected. those calculations are added
+     * to the actual nutrients output table which is added to the nutrients data.
+     * @param p - the parameters data.
+     * @param n - the nutrients data.
+     * @return - the updated nutrients data.
+     */
     public Nutrients calculateFertilizationEfficiency(Parameters p, Nutrients n) {
         NutrientsOutput adjN = getNutrientOutput(n,"pH_Adjusted");
         List<NutrientsOutput> nutrientsOutputList = new ArrayList<>();
@@ -48,7 +59,7 @@ public class FertilizationEfficiency {
 
         if (p.getUi().getSelectedBaseDressing()) {
             //int minMonth;
-            StageDate plantingMonth = p.getStageDates().get(0);
+            CropStage plantingMonth = p.getCropStages().get(0);
             String plantingMonthString = plantingMonth.getStageDate();
             Pattern pattern = Pattern.compile("/(.*?)/");
             Matcher matcher = pattern.matcher(plantingMonthString);
@@ -113,21 +124,29 @@ public class FertilizationEfficiency {
         n.getPreSeason().setActualNutrients(nutrientsOutputList);
         System.out.println(nutrientsOutputList);
         return n;
-
-
     }
 
+    /**
+     * Calculates the rain months for the current crop, based on the
+     * month in which the crop was planted.
+     * @param plantMonth - The planting month
+     * @return rainMonths - An Integer List which contains the planting month and
+     * its two preceding months.
+     */
     public List<Integer> calculateRainMonths(int plantMonth) {
         List<Integer> rainMonths = new ArrayList<>();
         rainMonths.add(plantMonth);
+        //if planting month is a month in range march-december
         if (plantMonth >=3) {
             rainMonths.add(plantMonth - 1);
             rainMonths.add(plantMonth - 2);
         }
+        //if planting month is february
         else if (plantMonth >=2) {
                 rainMonths.add(plantMonth - 1);
                 rainMonths.add(12);
         }
+        //if planting month is january
         else {
             rainMonths.add(12);
             rainMonths.add(11);
@@ -136,6 +155,13 @@ public class FertilizationEfficiency {
         return rainMonths;
     }
 
+    /**
+     * gets a nutrient output row from the list (which represents the output table),
+     * using the given row name, and returns it.
+     * @param n - the nutrients data
+     * @param rowName - the name of the row in the nutrient output table/list
+     * @return nutrientsOutput - the list with the row values of the given name.
+     */
     public NutrientsOutput getNutrientOutput(Nutrients n,String rowName) {
         List<NutrientsOutput> nlist = n.getPreSeason().getAdjNutrients();
         NutrientsOutput nutrientsOutput = null;
@@ -147,6 +173,14 @@ public class FertilizationEfficiency {
         }
         return nutrientsOutput;
     }
+
+    /**
+     * takes a double array and a name, and convert them to NutrientOutput - a row
+     * in an output table.
+     * @param output - the output array to be converted
+     * @param name - the row name to add to the output table
+     * @return nutrientsOutput - the output array, converted to NutrientsOutput class
+     */
     public NutrientsOutput toNutrientOutput(double [] output, String name) {
         NutrientsOutput nutrientsOutput = new NutrientsOutput(name,output[0],output[1],output[2],
                 output[3],output[4],output[5],output[6],output[7],output[8],output[9],output[10], output[11]);

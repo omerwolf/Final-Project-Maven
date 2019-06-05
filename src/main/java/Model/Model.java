@@ -54,7 +54,7 @@ public class Model {
         PreSeason ps = new PreSeason(); //add preseason - location of creation may change
         StageDate sd = new StageDate();
         p = sd.stageDate(p);
-        for (StageDate d : p.getStageDates()) {
+        for (CropStage d : p.getCropStages()) {
             System.out.println(d.getStageName() + " " + d.getStageDate());
         }
         Nutrients n;
