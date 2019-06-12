@@ -1,6 +1,10 @@
 package Model.WriteOutput;
 
 import java.io.FileOutputStream;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Iterator;
 import java.util.List;
 
@@ -143,6 +147,7 @@ public class WriteOutput {
         headerFont.setColor(IndexedColors.RED.getIndex());
         CellStyle headerCellStyle = workbook.createCellStyle();
         headerCellStyle.setFont(headerFont);
+        headerCellStyle.setAlignment(HorizontalAlignment.CENTER);
 
         Cell cell = firstRow.createCell(1);
         cell.setCellValue("N");
@@ -201,44 +206,58 @@ public class WriteOutput {
      */
     private void writeNutrientsOutputData(Row row, NutrientsOutput no ) {
 
+        CellStyle style = workbook.createCellStyle();
+        style.setAlignment(HorizontalAlignment.CENTER);
         Cell cell = row.createCell(0);
         cell.setCellValue(no.getStageName());
 
         cell = row.createCell(1);
         cell.setCellValue(no.getN());
+        cell.setCellStyle(style);
 
         cell = row.createCell(2);
         cell.setCellValue(no.getP205());
+        cell.setCellStyle(style);
 
         cell = row.createCell(3);
         cell.setCellValue(no.getK20());
+        cell.setCellStyle(style);
 
         cell = row.createCell(4);
         cell.setCellValue(no.getCa0());
+        cell.setCellStyle(style);
 
         cell = row.createCell(5);
         cell.setCellValue(no.getMg0());
+        cell.setCellStyle(style);
 
         cell = row.createCell(6);
         cell.setCellValue(no.getS());
+        cell.setCellStyle(style);
 
         cell = row.createCell(7);
         cell.setCellValue(no.getFe());
+        cell.setCellStyle(style);
 
         cell = row.createCell(8);
         cell.setCellValue(no.getB());
+        cell.setCellStyle(style);
 
         cell = row.createCell(9);
         cell.setCellValue(no.getMn());
+        cell.setCellStyle(style);
 
         cell = row.createCell(10);
         cell.setCellValue(no.getZn());
+        cell.setCellStyle(style);
 
         cell = row.createCell(11);
         cell.setCellValue(no.getCu());
+        cell.setCellStyle(style);
 
         cell = row.createCell(12);
         cell.setCellValue(no.getMo());
+        cell.setCellStyle(style);
 
     }
 
@@ -254,6 +273,7 @@ public class WriteOutput {
         headerFont.setColor(IndexedColors.RED.getIndex());
         CellStyle headerCellStyle = workbook.createCellStyle();
         headerCellStyle.setFont(headerFont);
+        headerCellStyle.setAlignment(HorizontalAlignment.CENTER);
 
         Cell cell = firstRow.createCell(1);
         cell.setCellValue("Water nutrients");
@@ -285,23 +305,32 @@ public class WriteOutput {
      */
     private void writeWaterAnalysisOutputData(Row row, WaterAnalysisOutput wao ) {
 
+
+        CellStyle style = workbook.createCellStyle();
+        style.setAlignment(HorizontalAlignment.CENTER);
+
         Cell cell = row.createCell(0);
         cell.setCellValue(wao.getNutrientSymbol());
 
         cell = row.createCell(1);
         cell.setCellValue(wao.getWaterNutrients());
+        cell.setCellStyle(style);
 
         cell = row.createCell(2);
         cell.setCellValue(wao.getResultsUnits());
+        cell.setCellStyle(style);
 
         cell = row.createCell(3);
         cell.setCellValue(wao.getAppliedNutrients());
+        cell.setCellStyle(style);
 
         cell = row.createCell(4);
         cell.setCellValue(wao.getEfficiency());
+        cell.setCellStyle(style);
 
         cell = row.createCell(5);
         cell.setCellValue(wao.getActualNutrientsKg());
+        cell.setCellStyle(style);
     }
 
     /**
@@ -316,6 +345,7 @@ public class WriteOutput {
         headerFont.setColor(IndexedColors.RED.getIndex());
         CellStyle headerCellStyle = workbook.createCellStyle();
         headerCellStyle.setFont(headerFont);
+        headerCellStyle.setAlignment(HorizontalAlignment.CENTER);
 
         Cell cell = firstRow.createCell(1);
         cell.setCellValue("Nutrients result");
@@ -351,26 +381,35 @@ public class WriteOutput {
      */
     private void writeSoilAnalysisOutputData(Row row, SoilAnalysisOutput sao ) {
 
+        CellStyle style = workbook.createCellStyle();
+        style.setAlignment(HorizontalAlignment.CENTER);
+
         Cell cell = row.createCell(0);
         cell.setCellValue(sao.getNutrientSymbol());
 
         cell = row.createCell(1);
         cell.setCellValue(sao.getNutrientBalance());
+        cell.setCellStyle(style);
 
         cell = row.createCell(2);
         cell.setCellValue(sao.getAnalysisStatus());
+        cell.setCellStyle(style);
 
         cell = row.createCell(3);
         cell.setCellValue(sao.getThresholds());
+        cell.setCellStyle(style);
 
         cell = row.createCell(4);
         cell.setCellValue(sao.getNutrientBalance());
+        cell.setCellStyle(style);
 
         cell = row.createCell(5);
         cell.setCellValue(sao.getRecommendation());
+        cell.setCellStyle(style);
 
         cell = row.createCell(6);
         cell.setCellValue(sao.getCorrection());
+        cell.setCellStyle(style);
     }
 
 }

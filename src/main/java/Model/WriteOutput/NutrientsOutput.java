@@ -1,5 +1,9 @@
 package Model.WriteOutput;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -210,5 +214,27 @@ public class NutrientsOutput {
                 ", Cu=" + Cu +
                 ", Mo=" + Mo +
                 '}';
+    }
+
+    public void round() {
+        List<Double> list = Arrays.asList(N,P205,K20,Ca0,Mg0,S,Fe,B,Mn,Zn,Cu,Mo);
+        for (int i=0;i<list.size();i++) {
+            double e = list.get(i);
+            e = new BigDecimal(e).setScale(2, RoundingMode.FLOOR).doubleValue();
+            list.set(i,e);
+        }
+        N = list.get(0);
+        P205 = list.get(1);
+        K20 = list.get(2);
+        Ca0 = list.get(3);
+        Mg0 = list.get(4);
+        S = list.get(5);
+        Fe = list.get(6);
+        B = list.get(7);
+        Mn = list.get(8);
+        Zn = list.get(9);
+        Cu = list.get(10);
+        Mo = list.get(11);
+        //list.add
     }
 }

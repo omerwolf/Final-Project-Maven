@@ -10,6 +10,8 @@ import Analysis.SoilAnalysis.SoilAnalysisDao;
 import Analysis.SoilAnalysis.SoilAnalysisDaoImpl;
 import Analysis.WaterAnalysis.*;
 import Model.WriteOutput.NutrientsOutput;
+import Model.WriteOutput.SoilAnalysisOutput;
+import Model.WriteOutput.WaterAnalysisOutput;
 import Model.WriteOutput.WriteOutput;
 
 import java.util.ArrayList;
@@ -80,7 +82,7 @@ public class Model {
         n = psnsa.PreSeasonNutrientsSoilAnalysis(p, n);
         OrganicNitrogenLogic onl = new OrganicNitrogenLogic();
         n = onl.calculateOnl(p,n);
-
+        n = roundResults(n);
         n = calculateSummaryAdjTable(p,n);
         //if pre season, write to output the soil Analysis output (nutrients->preseason->soilanalysis
 
@@ -162,5 +164,19 @@ public class Model {
             System.out.println("there was an error with one or more of the outputs");
             System.out.println(e.getMessage());
         }
+    }
+
+    public Nutrients roundResults(Nutrients n) {
+        List<NutrientsOutput> adjust = n.getPreSeason().getAdjNutrients();
+        List<NutrientsOutput> actual = n.getPreSeason().getActualNutrients();
+        List<WaterAnalysisOutput> water = n.getPreSeason().getWaterAnalysis();
+        List<SoilAnalysisOutput> soil = n.getPreSeason().getSoilAnalysis();
+        for (int i=0;i<adjust.size();i++) {
+            adjust.get(i).round();
+        }
+        for (int i=0;i<actual.size();i++) {
+            actual.get(i).round();
+        }
+        return n;
     }
 }

@@ -12,6 +12,8 @@ import DB.Entites.soil_thresholds;
 import Model.WriteOutput.NutrientsOutput;
 import Model.WriteOutput.SoilAnalysisOutput;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -199,12 +201,25 @@ public class PreSeasonNutrientsSoilAnalysis {
                 System.out.println(target);
             }
             //conversion if nutrient is K, CA or Mg
+            //need to check with ofer from where to take that value (didn't ask to add original)
             else {
-                factor = 10/0.049; //need to check with ofer from where to take that value (didn't ask to add original)
+                if (nutrientNames.get(i).equals("K")) {
+                    factor = 10/0.0256;
+                }
+                else if (nutrientNames.get(i).equals("Ca")) {
+                    factor = 10/0.0499;
+                }
+                else {
+                    factor = 10/0.0823;
+                }
                 for (int j=0;j<currentSoilThreshList.size();j++) {
                     Double thresh = currentSoilThreshList.get(j);
                     currentSoilThreshList.set(j,thresh * factor * cec);
-                    soilThresholds.set(i,currentSoilThreshList.get(1) + " - " +currentSoilThreshList.get(2));
+                    Double soilThresCur = currentSoilThreshList.get(1);
+                    Double soilThresCur2 = currentSoilThreshList.get(2);
+                    soilThresCur = new BigDecimal(soilThresCur).setScale(2, RoundingMode.FLOOR).doubleValue();
+                    soilThresCur2 = new BigDecimal(soilThresCur2).setScale(2, RoundingMode.FLOOR).doubleValue();
+                    soilThresholds.set(i,soilThresCur + " - " + soilThresCur2);
                 }
                 target = currentSoilThreshList.get(currentSoilThreshList.size()-1);
             }
@@ -292,7 +307,10 @@ public class PreSeasonNutrientsSoilAnalysis {
             soilRecommendation.set(i, soilRecommendation.get(i)*oxide[i]);
             soilCorrection.set(i, soilCorrection.get(i) * oxide[i]);
         }
-
+        soilNutrientsResults = decimalRound(soilNutrientsResults);
+        soilNutrientsBalance = decimalRound(soilNutrientsBalance);
+        soilRecommendation = decimalRound(soilRecommendation);
+        soilCorrection = decimalRound(soilCorrection);
         List<SoilAnalysisOutput> soilAnalysisOutputList = new ArrayList<>();
         for (int i=0;i<nutrientNames.size();i++) {
             SoilAnalysisOutput sao = new SoilAnalysisOutput(nutrientNames.get(i),soilNutrientsResults.get(i),
@@ -364,5 +382,12 @@ public class PreSeasonNutrientsSoilAnalysis {
 
         return factorListOfLists;
     }
+        public List<Double> decimalRound(List<Double> row) {
+            for (int i=0;i<row.size();i++) {
+                Double d = new BigDecimal(row.get(i)).setScale(2, RoundingMode.FLOOR).doubleValue();
+                row.set(i,d);
+            }
+            return row;
+        }
 
 }
