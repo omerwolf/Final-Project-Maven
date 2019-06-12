@@ -57,7 +57,7 @@ public class MainModel {
     }
 
     public static Crop getCrop(int id) {
-        CropDao cd = new CropDaoImpl();
+        Dao<Crop> cd = new CropDaoImpl();
         Crop c = cd.selectById(id);
         return c;
     }
@@ -66,7 +66,7 @@ public class MainModel {
         crop_expected_yield_validationDao ceyv = new crop_expected_yield_validationDaoImpl();
         List<Integer> matchVarTypeId = ceyv.getMatchVarType(cropId);
 
-        variety_typeDao varTypeDao = new variety_typeDaoImpl();
+        Dao<variety_type> varTypeDao = new variety_typeDaoImpl();
         List<variety_type> matchVarType = new ArrayList<>();
         for (int id : matchVarTypeId) {
             variety_type vt = varTypeDao.selectById(id);
@@ -77,7 +77,7 @@ public class MainModel {
     }
 
     public static Soil getSoil(int id) {
-        SoilDao sd = new SoilDaoImpl();
+        Dao<Soil> sd = new SoilDaoImpl();
         Soil s = sd.selectById(id);
         return s;
     }
@@ -106,13 +106,13 @@ public class MainModel {
     }
 
     public static IrrigationMethod getIrrigationMethod(int irrigationMethodId) {
-        IrrigationMethodDao imd = new IrrigationMethodDaoImpl();
+        Dao<IrrigationMethod> imd = new IrrigationMethodDaoImpl();
         IrrigationMethod im = imd.selectById(irrigationMethodId);
         return im;
     }
 
     public static fertilization_method getFertilizationMethod(int fertilizationMethodId) {
-        fertilization_methodDao fmd = new fertilization_methodDaoImpl();
+        Dao<fertilization_method> fmd = new fertilization_methodDaoImpl();
         fertilization_method fm = fmd.selectById(fertilizationMethodId);
         return fm;
     }

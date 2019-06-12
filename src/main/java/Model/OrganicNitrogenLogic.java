@@ -1,13 +1,8 @@
 package Model;
 
-import Analysis.LabAnalysisResults.SoilLabAnalysisResult;
-import DB.Dao.SoilDao;
-import DB.Dao.elementsDao;
-import DB.Dao.layer_depth_typeDao;
-import DB.DaoImpl.SoilDaoImpl;
+import DB.Dao.Dao;
 import DB.DaoImpl.elementsDaoImpl;
 import DB.DaoImpl.layer_depth_typeDaoImpl;
-import DB.Entites.Soil;
 import DB.Entites.elements;
 import DB.Entites.layer_depth_type;
 import Model.WriteOutput.NutrientsOutput;
@@ -37,7 +32,7 @@ public class OrganicNitrogenLogic {
 
         //getting the layer depth range values
         int layerDepthId = p.getSa().getLayer_depth_id();
-        layer_depth_typeDao ldtd = new layer_depth_typeDaoImpl();
+        Dao<layer_depth_type> ldtd = new layer_depth_typeDaoImpl();
         layer_depth_type ldt = ldtd.selectById(layerDepthId);
         double layerAvg = (double)(ldt.getLayer_max() - ldt.getLayer_min());
         double layerDepth = layerAvg/100; // divide value (taken from DB) by 100
@@ -55,7 +50,7 @@ public class OrganicNitrogenLogic {
         List<NutrientsOutput> nutrientsOutputList = n.getPreSeason().getAdjNutrients();
         List<String> nutrientNames = Arrays.asList("N", "P" ,"K" ,"Ca" ,"Mg" ,"S" ,"Fe" ,"B" ,"Mn" ,"Zn", "Cu" ,"Mo");
         List<Double> soilRecommendation = new ArrayList<Double>(Collections.nCopies(nutrientNames.size(),0.0));
-        elementsDao ed = new elementsDaoImpl();
+        Dao<elements> ed = new elementsDaoImpl();
         elements e = ed.selectById(20); //select norganic - id=20 (may change actual name)
         Double nOrganic = null;
         for (int i=0;i<p.getSlar().size();i++) {

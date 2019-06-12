@@ -1,15 +1,23 @@
 package DB.DaoImpl;
 
-import DB.Dao.SoilDao;
+import DB.Dao.Dao;
 import DB.Entites.Soil;
 import DB.Util.ConnectionConfiguration;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class SoilDaoImpl implements SoilDao {
+/**
+ * the class implements the generic Dao class.
+ * responsible for performing actions on the database table `soil_types`.
+ */
+public class SoilDaoImpl implements Dao<Soil> {
+    /**
+     * receives a Soil record and inserts it
+     * to the `soil_types` table in the database.
+     * @param soil - a Soil record.
+     */
     @Override
     public void insert(Soil soil) {
         Connection connection = null;
@@ -70,7 +78,12 @@ public class SoilDaoImpl implements SoilDao {
             }
         }
     }
-
+    /**
+     * receives a soil_type_id number, and returns a record that has
+     * the same soil_type_id number.
+     * @param id - the soil_type_id of the record that will be selected.
+     * @return a Soil record.
+     */
     @Override
     public Soil selectById(int id) {
         Soil soil = new Soil();
@@ -129,6 +142,11 @@ public class SoilDaoImpl implements SoilDao {
         return soil;
     }
 
+    /**
+     * selects all Soil records in the table 'soil_types',
+     * and returns them as a list.
+     * @return a list of all Soil records from database table 'soil_types'.
+     */
     @Override
     public List<Soil> selectAll() {
         List<Soil> soils = new ArrayList<Soil>();
@@ -188,6 +206,11 @@ public class SoilDaoImpl implements SoilDao {
         return soils;
     }
 
+    /**
+     * deletes a Soil record from the database table `soil_types`
+     * with the same soil_type_id as the param.
+     * @param id - the soil_type_id of the record to remove.
+     */
     @Override
     public void delete(int id) {
         Connection connection = null;
@@ -218,6 +241,13 @@ public class SoilDaoImpl implements SoilDao {
         }
     }
 
+    /**
+     * takes a Soil record with values and a soil_type_id, and updates
+     * the record in the table with the same soil_type_id with the values
+     * of the other record.
+     * @param soil - the Soil record to get the values from.
+     * @param id - the id position of the Soil record to update.
+     */
     @Override
     public void update(Soil soil, int id) {
         Connection connection = null;
@@ -278,6 +308,11 @@ public class SoilDaoImpl implements SoilDao {
         }
     }
 
+    /**
+     * returns an int of the first soil_type_id of a record that does not yet exist
+     * in the 'soil_types' table.
+     * @return the first unoccupied soil_type_id in the 'soil_types' table.
+     */
     @Override
     public int generateUniqueId() {
         Connection connection = null;
@@ -324,6 +359,11 @@ public class SoilDaoImpl implements SoilDao {
         return emptySpace;
     }
 
+    /**
+     * receives a list of Soil records, and inserts all of them
+     * to the `soil_types` table.
+     * @param soils - the Soil records list to be added to the database.
+     */
     @Override
     public void insertAll(List<Soil> soils) {
         soils.sort((Soil s1, Soil s2) -> s1.getName().compareTo(s2.getName()));
@@ -335,6 +375,9 @@ public class SoilDaoImpl implements SoilDao {
         System.out.println("InsertAll finished");
     }
 
+    /**
+     * insert all Soil records that are supposed to be in the database initially.
+     */
     @Override
     public void autoInsertAll() {
         Soil s1 = new Soil("Sand", .0, 0.15, 0.15, 0.015, 0.01, 0.005, 1, 0.5, 5, 1, 10, 1.71);

@@ -25,11 +25,20 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * used in order to perform actions in the database, such as inserting
+ * and deleting records.
+ * note: not set as main class by default.
+ */
 public class MainDB {
 
     public static void main(String[] args) {
         //data_typesDao cdi = new data_typesDaoImpl();
-        //CropDao cdi = new CropDaoImpl();
+        /*Dao<Crop> cdi = new CropDaoImpl();
+        List<Crop> listCrop = cdi.selectAll();
+        for (int i=0;i<listCrop.size();i++) {
+            System.out.println("crop name is:" +listCrop.get(i).getName());
+        }*/
         /**Insert a new record**/
         //Crop crop = new Crop(cdi.generateUniqueId(), "aaaaaaa");
         //cdi.insert(crop);
@@ -61,9 +70,12 @@ public class MainDB {
             System.out.println(c.getId() + ", " + c.getName() + ", " + c.getCrop_group_id());
         }*/
 
-        //SoilDao sdi = new SoilDaoImpl();
+        //Dao<Soil> sdi = new SoilDaoImpl();
         //sdi.autoInsertAll();
-        //List<Soil> soils = sdi.selectAll();
+        /*List<Soil> soils = sdi.selectAll();
+        for (Soil s:soils) {
+            System.out.println("Soil name is " + s.getName());
+        }*/
         //Soil soil = sdi.selectById(1);
         //sdi.update(soil,1);
         //sdi.delete(1);
@@ -72,7 +84,7 @@ public class MainDB {
 
         //data type testing
 
-        //data_typesDao dt = new data_typesDaoImpl();
+        //Dao<data_types> dt = new data_typesDaoImpl();
         //data_types id = dt.selectById(1);
         //System.out.println(id.getData_type_id() + "," + id.getData_type_desc());
         //data_types dtn = new data_types(dt.generateUniqueId(),"an element");
@@ -84,18 +96,31 @@ public class MainDB {
         /*List<data_types> ldata = dt.selectAll();
         for (data_types d: ldata) {
             System.out.println(d.getData_type_id() +" " + d.getData_type_desc());
+        }
+        for (int i=0;i<ldata.size();i++) {
+            dt.delete(i+1);
         }*/
-
         //variety type testing
 
-        //variety_typeDao vt = new variety_typeDaoImpl();
+        /*Dao<variety_type> vt = new variety_typeDaoImpl();
+        List<variety_type> varietyTypeList = vt.selectAll();
+        for (variety_type vtype:varietyTypeList) {
+            System.out.println("variety name is: " + vtype.getVariety_name());
+        }*/
+        /*for (int i=0;i<varietyTypeList.size();i++) {
+            vt.delete(i+1);
+        }*/
         //vt.autoInsertAll();
         //variety_type vtpe = new variety_type(vt.generateUniqueId(),"new");
         //vt.insert(vtpe);
         //vt.delete(27);
         //variety_type vtype2 = vt.selectById(13);
         //System.out.println(vtype2.getVariety_id() + ", " + vtype2.getVariety_name());
-        //parameter_cropDao pc = new parameter_cropDaoImpl();
+        /*Dao<parameter_crop> pc = new parameter_cropDaoImpl();
+        List<parameter_crop> parameter_crop = pc.selectAll();
+        for (int i=0;i<parameter_crop.size();i++) {
+            System.out.println("parameter crop amount is: " + parameter_crop.get(i).getAmount());
+        }*/
         //pc.autoInsertAll();
         //variety_type vtpeu = new variety_type(26,"Or");
         //vt.update(vtpeu,26);
@@ -106,7 +131,7 @@ public class MainDB {
 
         //phenological stage testing
 
-        //pheonological_stageDao psd = new pheonological_stageDaoImpl();
+        //Dao<pheonological_stage> psd = new pheonological_stageDaoImpl();
         //pheonological_stage ps = new pheonological_stage("hi2",3,3,null);
         //psd.insert(ps);
         //pheonological_stage update = new pheonological_stage("hia",6,5,2);
@@ -124,7 +149,7 @@ public class MainDB {
 
         //fertilization method testing
 
-        //fertilization_methodDao fert = new fertilization_methodDaoImpl();
+        //Dao<fertilization_method> fert = new fertilization_methodDaoImpl();
         //fertilization_method fertm = new fertilization_method(fert.generateUniqueId(),"unique");
         //fert.insert(fertm);
         //fert.update(fertm,1);
@@ -133,14 +158,16 @@ public class MainDB {
         //System.out.println(fert2.getFert_method_id() + " " + fert2.getFert_method_desc());
         //String[] arrfert = {"first","second","third"};
         //fert.insertAll(arrfert);
-        /*fert.autoInsertAll();
-        List<fertilization_method> listfert= fert.selectAll();
+        //fert.autoInsertAll();
+        /*List<fertilization_method> listfert= fert.selectAll();
         for (fertilization_method f:listfert) {
             System.out.println(f.getFert_method_id() +" " + f.getFert_method_desc());
         }*/
-
+        /*for (int i=0;i<listfert.size();i++) {
+            fert.delete(i+1);
+        }*/
         //elements testing
-        //elementsDao eled = new elementsDaoImpl();
+        //Dao<elements> eled = new elementsDaoImpl();
         //elements element = new elements("S", "Something");
         //eled.insert(element);
         //eled.delete(0);
@@ -152,58 +179,64 @@ public class MainDB {
         for (elements elem:listelem) {
             System.out.println(elem.getElement_id() + " " + elem.getSymbol() +" " + elem.getDescription());
         }*/
+        /*int number = 19;
+        elements e = new elements("Al","Aluminum");
+        e.setElement_id(number);
+        eled.insert(e);*/
         //eled.autoInsertAll();
 
         //parameters testing
-        //parametersDao parad = new parametersDaoImpl();
+        //Dao<parameters> parad = new parametersDaoImpl();
         //parad.autoInsertAll();
         /*List<parameters> parameterslist = parad.selectAll();
         for (parameters p:parameterslist) {
-            System.out.println(p.getParameter_id());
-        }
-        parameters p1 = parad.selectById(2);
+            System.out.println("parameter high factor is: " +p.getPre_high_factor());
+        }*/
+        /*parameters p1 = parad.selectById(2);
         System.out.println(p1.getPre_low_factor());
         for (int i=1;i<11;i++) {
             parad.delete(i);
         }*/
 
         //layer_depth testing
-        /*layer_depth_typeDao layerd = new layer_depth_typeDaoImpl();
-        layerd.autoInsertAll();
+        /*Dao<layer_depth_type> layerd = new layer_depth_typeDaoImpl();
+        //layerd.autoInsertAll();
         List<layer_depth_type> listLayer = layerd.selectAll();
         for (layer_depth_type layer:listLayer) {
             System.out.println(layer.getLayer_depth_name());
-        }
+        }*/
         //for (int i=1;i<10;i++) {
         //    layerd.delete(i);
         //}
-        layer_depth_type layerid = layerd.selectById(5);
-        System.out.println(layerid.getLayer_depth_name());*/
+        //layer_depth_type layerid = layerd.selectById(5);
+        //System.out.println(layerid.getLayer_depth_name());*/
 
         //crop Group testing
-        //CropGroupDao cropGroupDao = new CropGroupDaoImpl();
+        //Dao<CropGroup> cropGroupDao = new CropGroupDaoImpl();
         //cropGroupDao.autoInsertAll();
         /*List<CropGroup> cropGroupList = cropGroupDao.selectAll();
         for (CropGroup cg:cropGroupList) {
             System.out.println(cg.getCropGroupId() + " " + cg.getCropGroupDesc());
         }*/
+        //cropGroupDao.delete(1);
+        //cropGroupDao.delete(2);
         /*for (int i=1;i<=2;i++) {
             cropGroupDao.delete(i);
         }*/
-        /*CropGroup cropGroup = new CropGroup(1,"Group1");
-        CropGroup cropGroup2 = new CropGroup(2,"Group2");
-        cropGroupDao.insert(cropGroup);
-        cropGroupDao.insert(cropGroup2);
-        cropGroupDao.update(cropGroup2,1);
-        CropGroup check = cropGroupDao.selectById(1);
-        System.out.println(check.getCropGroupId());*/
+        /*CropGroup cropGroup = new CropGroup(3,"Group1");
+        //CropGroup cropGroup2 = new CropGroup(2,"Group2");
+        //cropGroupDao.insert(cropGroup);
+        //cropGroupDao.insert(cropGroup2);
+        //cropGroupDao.update(cropGroupDao.selectById(2),3);
+        //CropGroup check = cropGroupDao.selectById(1);
+        //System.out.println(check.getCropGroupId());*/
 
         //previous crop n credit testing
-        //PreviousCropNCreditDao pcncd = new PreviousCropNCreditDaoImpl();
+        //Dao<PreviousCropNCredit> pcncd = new PreviousCropNCreditDaoImpl();
         //pcncd.autoInsertAll();
         /*List<PreviousCropNCredit> pcncList = pcncd.selectAll();
         for (PreviousCropNCredit credit:pcncList) {
-            System.out.println(credit.getPercent());
+            System.out.println("previous crop n credit name is: " + credit.getPreviousCropName());
         }*/
         //PreviousCropNCredit pcncSelect = pcncd.selectById(5);
         //System.out.println(pcncSelect.getPreviousCropId() + " " + pcncSelect.getPreviousCropName());
@@ -215,14 +248,14 @@ public class MainDB {
         pcncd.update(pcnc2,1);*/
 
         //irrigation method testing
-/*
-        IrrigationMethodDao irrigationMethodDao = new IrrigationMethodDaoImpl();
+
+        /*Dao<IrrigationMethod> irrigationMethodDao = new IrrigationMethodDaoImpl();
 
         List<IrrigationMethod> listIrr = irrigationMethodDao.selectAll();
         for (IrrigationMethod im: listIrr) {
-            System.out.println(im.getIrrigation_method_desc());
-        }
-        */
+            System.out.println("irrigation method desc: " + im.getIrrigation_method_desc());
+        }*/
+
         //IrrigationMethod im1 = irrigationMethodDao.selectById(3);
         //System.out.println("im1 desc is: " +im1.getIrrigation_method_desc());
 
@@ -233,13 +266,25 @@ public class MainDB {
         //IrrigationMethod im2 = irrigationMethodDao.selectById(2);
         //irrigationMethodDao.update(im2,5);
 
-        //crop_expected_yield_validationDao ceyv = new crop_expected_yield_validationDaoImpl();
+        /*crop_expected_yield_validationDao ceyv = new crop_expected_yield_validationDaoImpl();
         //ceyv.autoInsertAll();
+        List<crop_expected_yield_validation> list = ceyv.selectAll();
+        for (int i=0;i<list.size();i++) {
+            System.out.println("item max yield is: " + list.get(i).getMax_yield());
+        }*/
 
-        //ParameterPerStageDao pps = new ParameterPerStageDaoImpl();
+        /*Dao<ParameterPerStage> pps = new ParameterPerStageDaoImpl();
+        List<ParameterPerStage> parameterPerStageList = pps.selectAll();
+        for (int i=0;i<parameterPerStageList.size();i++) {
+            System.out.println("parameter per stage percentage is; " +parameterPerStageList.get(i).getPercent());
+        }*/
         //pps.autoInsertAll();
 
-        //FertilizationMethodEfficiencyDao fme = new FertilizationMethodEfficiencyDaoImpl();
+        /*Dao<FertilizationMethodEfficiency> fme = new FertilizationMethodEfficiencyDaoImpl();
+        List<FertilizationMethodEfficiency> fmeList = fme.selectAll();
+        for (int i=0;i<fmeList.size();i++) {
+            System.out.println("fertEff is: " + fmeList.get(i).getFert_method_efficiency());
+        }*/
         //fme.autoInsertAll();
 
         //ExtractionMethodDao emd = new ExtractionMethodDaoImpl();
@@ -248,10 +293,18 @@ public class MainDB {
         //soil_thresholdsDao std = new soil_thresholdsDaoImpl();
         //std.autoInsertAll();
 
-        //PhRangesDao prd = new PhRangesDaoImpl();
+        /*Dao<PhRanges> prd = new PhRangesDaoImpl();
+        List<PhRanges> phRangesList = prd.selectAll();
+        for (PhRanges pr:phRangesList) {
+            System.out.println("range desc is: " + pr.getRangeDesc());
+        }*/
         //prd.autoInsertAll();
 
-        //ParameterPhEffectDao pped = new ParameterPhEffectDaoImpl();
+        /*Dao<ParameterPhEffect> pped = new ParameterPhEffectDaoImpl();
+        List<ParameterPhEffect> parameterPhEffectList = pped.selectAll();
+        for(ParameterPhEffect ppe:parameterPhEffectList) {
+            System.out.println("parameter ph effect is: " + ppe.getEffect());
+        }*/
         //pped.autoInsertAll();
 
     }

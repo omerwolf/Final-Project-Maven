@@ -1,6 +1,6 @@
 package Model;
 
-import DB.Dao.FertilizationMethodEfficiencyDao;
+import DB.Dao.Dao;
 import DB.DaoImpl.FertilizationMethodEfficiencyDaoImpl;
 import DB.Entites.FertilizationMethodEfficiency;
 import DB.Entites.IrrigationMethod;
@@ -37,7 +37,7 @@ public class NutrientsWaterAnalysis {
         double irrigationVolume = p.getUi().getSelectedIrrigationVolume();
         //double wettedArea = im.getIrrigation_method_wetted_area();
         fertilization_method fm = p.getUi().getSelectedFertilizationMethod();
-        FertilizationMethodEfficiencyDao fmed = new FertilizationMethodEfficiencyDaoImpl();
+        Dao<FertilizationMethodEfficiency> fmed = new FertilizationMethodEfficiencyDaoImpl();
         List<FertilizationMethodEfficiency> fmList = fmed.selectAll();
         List<Double> fertEfficientFactors = new ArrayList<>();
         for (FertilizationMethodEfficiency fme:fmList) {

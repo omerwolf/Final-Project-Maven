@@ -1,15 +1,23 @@
 package DB.DaoImpl;
 
-import DB.Dao.layer_depth_typeDao;
+import DB.Dao.Dao;
 import DB.Entites.layer_depth_type;
 import DB.Util.ConnectionConfiguration;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-public class layer_depth_typeDaoImpl implements layer_depth_typeDao{
 
+/**
+ * the class implements the generic Dao class.
+ * responsible for performing actions on the database table `layer_depth_type`.
+ */
+public class layer_depth_typeDaoImpl implements Dao<layer_depth_type> {
+    /**
+     * receives a layer_depth_type record and inserts it
+     * to the `layer_depth_type` table in the database.
+     * @param layerDepthType - a layer_depth_type record.
+     */
     @Override
     public void insert(layer_depth_type layerDepthType) {
         Connection connection = null;
@@ -50,7 +58,12 @@ public class layer_depth_typeDaoImpl implements layer_depth_typeDao{
             }
         }
     }
-
+    /**
+     * receives a layer_depth_id number, and returns a record that has
+     * the same layer_depth_id number.
+     * @param id - the layer_depth_id of the record that will be selected.
+     * @return a layer_depth_type record.
+     */
     @Override
     public layer_depth_type selectById(int id) {
         layer_depth_type layerDepthType = new layer_depth_type();
@@ -99,6 +112,11 @@ public class layer_depth_typeDaoImpl implements layer_depth_typeDao{
         return layerDepthType;
     }
 
+    /**
+     * selects all layer_depth_type records in the table 'layer_depth_type',
+     * and returns them as a list.
+     * @return a list of all layer_depth_type records from database table 'layer_depth_type'.
+     */
     @Override
     public List<layer_depth_type> selectAll() {
         List<layer_depth_type> layerDepthTypes = new ArrayList<layer_depth_type>();
@@ -148,6 +166,11 @@ public class layer_depth_typeDaoImpl implements layer_depth_typeDao{
         return layerDepthTypes;
     }
 
+    /**
+     * deletes a layer_depth_type record from the database table `layer_depth_type`
+     * with the same layer_depth_id as the param.
+     * @param id - the layer_depth_id of the record to remove.
+     */
     @Override
     public void delete(int id) {
         Connection connection = null;
@@ -178,6 +201,13 @@ public class layer_depth_typeDaoImpl implements layer_depth_typeDao{
         }
     }
 
+    /**
+     * takes a layer_depth_type record with values and a layer_depth_id, and updates
+     * the record in the table with the same layer_depth_id with the values
+     * of the other record.
+     * @param layerDepthType - the layer_depth_type record to get the values from.
+     * @param id - the id position of the layer_depth_type record to update.
+     */
     @Override
     public void update(layer_depth_type layerDepthType, int id) {
         Connection connection = null;
@@ -218,6 +248,11 @@ public class layer_depth_typeDaoImpl implements layer_depth_typeDao{
         }
     }
 
+    /**
+     * returns an int of the first layer_depth_id of a record that does not yet exist
+     * in the 'layer_depth_type' table.
+     * @return the first unoccupied layer_depth_id in the 'layer_depth_type' table.
+     */
     @Override
     public int generateUniqueId() {
         Connection connection = null;
@@ -264,6 +299,11 @@ public class layer_depth_typeDaoImpl implements layer_depth_typeDao{
         return emptySpace;
     }
 
+    /**
+     * receives a list of layer_depth_type records, and inserts all of them
+     * to the `layer_depth_type` table.
+     * @param layerDepthTypeList - the layer_depth_type records list to be added to the database.
+     */
     @Override
     public void insertAll(List<layer_depth_type> layerDepthTypeList) {
 
@@ -274,6 +314,9 @@ public class layer_depth_typeDaoImpl implements layer_depth_typeDao{
         System.out.println("InsertAll finished");
     }
 
+    /**
+     * insert all layer_depth_type records that are supposed to be in the database initially.
+     */
     @Override
     public void autoInsertAll() {
         layer_depth_type ldt1 = new layer_depth_type("0-30",(short)0,(short)30);

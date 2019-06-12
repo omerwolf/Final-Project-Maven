@@ -1,17 +1,29 @@
 package DB.Entites;
 
+/**
+ * represents a record in the fertilization_method_efficiency table
+ * in the database.
+ */
 public class FertilizationMethodEfficiency {
     private int fert_method_efficiency_id;
     private int fert_method_id;
     private int parameter_id;
     private double fert_method_efficiency;
 
-
+    /**
+     * default constructor.
+     */
     public FertilizationMethodEfficiency() {
 
     }
 
-
+    /**
+     * creates a FertilizationMethodEfficiency record.
+     * @param fert_method_efficiency_id - the fertilization method efficiency id
+     * @param fert_method_id - the fertilization method id.
+     * @param parameter_id - the parameter id.
+     * @param fert_method_efficiency - the efficiency (double between 0-1).
+     */
     public FertilizationMethodEfficiency(int fert_method_efficiency_id, int fert_method_id, int parameter_id, double fert_method_efficiency) {
         this.fert_method_efficiency_id = fert_method_efficiency_id;
         this.fert_method_id = fert_method_id;

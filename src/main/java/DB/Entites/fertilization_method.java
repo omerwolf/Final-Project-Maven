@@ -1,7 +1,7 @@
 package DB.Entites;
 
 /**
- * represents a record in the fertilization_method table.
+ * represents a record in the fertilization_method table
  * in the database.
  */
 public class fertilization_method {
@@ -66,6 +66,11 @@ public class fertilization_method {
         this.fert_method_desc = fert_method_desc;
     }
 
+    /**
+     * overrides toString method in order to print the record's
+     * names and values.
+     * @return record's fields name and values.
+     */
     @Override
     public String toString() {
         return "fertilization_method{" +

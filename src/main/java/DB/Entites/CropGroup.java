@@ -1,7 +1,7 @@
 package DB.Entites;
 
 /**
- * represents a record in the crop group table
+ * represents a record in the `crop_group` table
  * in the database.
  */
 public class CropGroup {

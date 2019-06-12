@@ -1,5 +1,9 @@
 package DB.Entites;
 
+/**
+ * represents a record in the `parameter_crop` table
+ * in the database.
+ */
 public class parameter_crop {
     private int param_per_crop_id;
     private int crop_id;
@@ -9,12 +13,47 @@ public class parameter_crop {
     private double base_line;
     private double amount2;
 
+    /**
+     * the default constructor.
+     */
     public parameter_crop(){
 
     }
 
-    public parameter_crop(int crop_id, int variety_id, int parameter_id, double amount, double base_line, double amount2) {
+    /**
+     * creates a parameter_crop record, receiving all required parameters
+     * except the id (which needs to be set later).
+     * @param crop_id - the id of the crop.
+     * @param variety_id - the id of the crop's variety.
+     * @param parameter_id - the id of the current parameter (the nutrient).
+     * @param amount - the amount the crop needs throughout the season.
+     * @param base_line - base line, used in calculations of basic removal.
+     * @param amount2 - additional amount that may be needed (usually zero).
+     */
+    public parameter_crop(int crop_id, int variety_id, int parameter_id,
+                          double amount, double base_line, double amount2) {
         this.param_per_crop_id = 0;
+        this.crop_id = crop_id;
+        this.variety_id = variety_id;
+        this.parameter_id = parameter_id;
+        this.amount = amount;
+        this.base_line = base_line;
+        this.amount2 = amount2;
+    }
+
+    /**
+     * creates a parameter_crop record, receiving all required parameters.
+     * @param param_per_crop_id - the id of the parameter per crop.
+     * @param crop_id - the id of the crop.
+     * @param variety_id - the id of the crop's variety.
+     * @param parameter_id - the id of the current parameter (the nutrient).
+     * @param amount - the amount the crop needs throughout the season.
+     * @param base_line - base line, used in calculations of basic removal.
+     * @param amount2 - additional amount that may be needed (usually zero).
+     */
+    public parameter_crop(int param_per_crop_id, int crop_id, int variety_id,
+                          int parameter_id, double amount, double base_line, double amount2) {
+        this.param_per_crop_id = param_per_crop_id;
         this.crop_id = crop_id;
         this.variety_id = variety_id;
         this.parameter_id = parameter_id;

@@ -1,13 +1,21 @@
 package DB.DaoImpl;
-import DB.Dao.data_typesDao;
+import DB.Dao.Dao;
 import DB.Entites.data_types;
 import DB.Util.ConnectionConfiguration;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-public class data_typesDaoImpl implements data_typesDao{
+/**
+ * the class implements the generic Dao class.
+ * responsible for performing actions on the database table `data_types`.
+ */
+public class data_typesDaoImpl implements Dao<data_types> {
+    /**
+     * receives a data_types record and inserts it
+     * to the `data_types` table in the database.
+     * @param dt - a data_types record.
+     */
     @Override
     public void insert(data_types dt) {
         Connection connection = null;
@@ -42,7 +50,12 @@ public class data_typesDaoImpl implements data_typesDao{
             }
         }
     }
-
+    /**
+     * receives a data_type_id number, and returns a record that has
+     * the same data_type_id number.
+     * @param id - the data_type_id of the record that will be selected.
+     * @return a data_types record.
+     */
     @Override
     public data_types selectById(int id) {
         data_types dt = new data_types();
@@ -88,7 +101,11 @@ public class data_typesDaoImpl implements data_typesDao{
         }
         return dt;
     }
-
+    /**
+     * selects all data_types records in the table 'data_types',
+     * and returns them as a list.
+     * @return a list of all data_types records from database table 'data_types'.
+     */
     @Override
     public List<data_types> selectAll() {
         List<data_types> dtList = new ArrayList<data_types>();
@@ -135,6 +152,11 @@ public class data_typesDaoImpl implements data_typesDao{
         return dtList;
     }
 
+    /**
+     * deletes a data_types record from the database table `data_types`
+     * with the same data_type_id as the param.
+     * @param id - the data_type_id of the record to remove.
+     */
     @Override
     public void delete(int id) {
         Connection connection = null;
@@ -165,6 +187,13 @@ public class data_typesDaoImpl implements data_typesDao{
         }
     }
 
+    /**
+     * takes a data_types record with values and a data_type_id, and updates
+     * the record in the table with the same data_type_id with the values
+     * of the other record.
+     * @param data_types - the data_types record to get the values from.
+     * @param id - the id position of the data_types record to update.
+     */
     @Override
     public void update(data_types data_types, int id) {
         Connection connection = null;
@@ -197,6 +226,11 @@ public class data_typesDaoImpl implements data_typesDao{
         }
     }
 
+    /**
+     * returns an int of the first data_type_id of a record that does not yet exist
+     * in the 'data_types' table.
+     * @return the first unoccupied data_type_id in the 'data_types' table.
+     */
     @Override
     public int generateUniqueId() {
         Connection connection = null;
@@ -240,23 +274,31 @@ public class data_typesDaoImpl implements data_typesDao{
         return emptySpace;
     }
 
+    /**
+     * receives a list of data_types records, and inserts all of them
+     * to the `data_types` table.
+     * @param dtList - the data_types records list to be added to the database.
+     */
     @Override
-    public void insertAll(String []dtList) {
-        for(String data_type_name : dtList) {
-            data_types dt = new data_types();
-            dt.setData_type_desc(data_type_name);
-            dt.setData_type_id(this.generateUniqueId());
-            System.out.println(dt.getData_type_id());
-            this.insert(dt);
-
+    public void insertAll(List<data_types> dtList) {
+        for(data_types dataTypes : dtList) {
+            this.insert(dataTypes);
         }
         System.out.println("insertAll finished!");
 
     }
 
+    /**
+     * insert all data_types records that are supposed to be in the database initially.
+     */
     @Override
     public void autoInsertAll() {
         String[] dts = {"Macro element" , "Secondary element", "Micro element", "element"};
-        this.insertAll(dts);
+        List<data_types> dataTypesList = new ArrayList<>();
+        for (String dataTypeName:dts) {
+            data_types dataTypes = new data_types(this.generateUniqueId(),dataTypeName);
+            dataTypesList.add(dataTypes);
+        }
+        this.insertAll(dataTypesList);
     }
 }

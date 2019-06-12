@@ -43,8 +43,8 @@ public class NutrientsBasicRemoval {
         int varietyId = ui.getSelectedVarType().getVariety_id();
 
         crop_expected_yield_validationDao expectedDao = new crop_expected_yield_validationDaoImpl();
-        parameter_cropDao parameterCropDao = new parameter_cropDaoImpl();
-        elementsDao elem = new elementsDaoImpl();
+        Dao<parameter_crop> parameterCropDao = new parameter_cropDaoImpl();
+        Dao<elements> elem = new elementsDaoImpl();
 
         List<crop_expected_yield_validation> expectedList = expectedDao.selectAll();
         List<parameter_crop> parameterCropList = parameterCropDao.selectAll();
@@ -92,7 +92,7 @@ public class NutrientsBasicRemoval {
         nutrients.setName(name);
 
         //per stage removal calculation
-        ParameterPerStageDao  ppsd= new ParameterPerStageDaoImpl();
+        Dao<ParameterPerStage>  ppsd= new ParameterPerStageDaoImpl();
         List<ParameterPerStage> pps = ppsd.selectAll();
         System.out.println("parameter per stage id at 0 is: " + pps.get(0).getPhenologicalStageId());
         List<ParameterPerStage> ppst = new ArrayList<>();

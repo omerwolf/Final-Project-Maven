@@ -1,14 +1,23 @@
 package DB.DaoImpl;
 
-import DB.Dao.PhRangesDao;
+import DB.Dao.Dao;
 import DB.Entites.PhRanges;
 import DB.Util.ConnectionConfiguration;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-public class PhRangesDaoImpl implements PhRangesDao {
+
+/**
+ * the class implements the generic Dao class.
+ * responsible for performing actions on the database table `ph_ranges`.
+ */
+public class PhRangesDaoImpl implements Dao<PhRanges> {
+    /**
+     * receives a PhRanges record and inserts it
+     * to the `ph_ranges` table in the database.
+     * @param phRanges - a PhRanges record.
+     */
     @Override
     public void insert(PhRanges phRanges) {
         Connection connection = null;
@@ -49,7 +58,12 @@ public class PhRangesDaoImpl implements PhRangesDao {
             }
         }
     }
-
+    /**
+     * receives a range_id number, and returns a record that has
+     * the same range_id number.
+     * @param id - the range_id of the record that will be selected.
+     * @return a PhRanges record.
+     */
     @Override
     public PhRanges selectById(int id) {
         PhRanges phRanges = new PhRanges();
@@ -98,6 +112,11 @@ public class PhRangesDaoImpl implements PhRangesDao {
         return phRanges;
     }
 
+    /**
+     * selects all PhRanges records in the table 'ph_ranges',
+     * and returns them as a list.
+     * @return a list of all PhRanges records from database table 'ph_ranges'.
+     */
     @Override
     public List<PhRanges> selectAll() {
         List<PhRanges> phRangesList = new ArrayList<PhRanges>();
@@ -147,6 +166,11 @@ public class PhRangesDaoImpl implements PhRangesDao {
         return phRangesList;
     }
 
+    /**
+     * deletes a PhRanges record from the database table `ph_ranges`
+     * with the same range_id as the param.
+     * @param id - the range_id of the record to remove.
+     */
     @Override
     public void delete(int id) {
         Connection connection = null;
@@ -177,6 +201,13 @@ public class PhRangesDaoImpl implements PhRangesDao {
         }
     }
 
+    /**
+     * takes a PhRanges record with values and a range_id, and updates
+     * the record in the table with the same range_id with the values
+     * of the other record.
+     * @param phRanges - the PhRanges record to get the values from.
+     * @param id - the id position of the PhRanges record to update.
+     */
     @Override
     public void update(PhRanges phRanges, int id) {
         Connection connection = null;
@@ -216,6 +247,11 @@ public class PhRangesDaoImpl implements PhRangesDao {
         }
     }
 
+    /**
+     * returns an int of the first range_id of a record that does not yet exist
+     * in the 'ph_ranges' table.
+     * @return the first unoccupied range_id in the 'ph_ranges' table.
+     */
     @Override
     public int generateUniqueId() {
         Connection connection = null;
@@ -262,6 +298,11 @@ public class PhRangesDaoImpl implements PhRangesDao {
         return emptySpace;
     }
 
+    /**
+     * receives a list of PhRanges records, and inserts all of them
+     * to the `ph_ranges` table.
+     * @param phRangesList - the PhRanges records list to be added to the database.
+     */
     @Override
     public void insertAll(List<PhRanges> phRangesList) {
         //soils.sort((Soil s1, Soil s2) -> s1.getName().compareTo(s2.getName()));
@@ -273,6 +314,9 @@ public class PhRangesDaoImpl implements PhRangesDao {
         System.out.println("InsertAll finished");
     }
 
+    /**
+     * insert all PhRanges records that are supposed to be in the database initially.
+     */
     @Override
     public void autoInsertAll() {
         PhRanges pr1 = new PhRanges(1, "Very_Acidic", 0, 4.5);

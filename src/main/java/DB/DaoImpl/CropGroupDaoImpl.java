@@ -1,15 +1,23 @@
 package DB.DaoImpl;
 
-import DB.Dao.CropGroupDao;
+import DB.Dao.Dao;
 import DB.Entites.CropGroup;
 import DB.Util.ConnectionConfiguration;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class CropGroupDaoImpl implements CropGroupDao {
+/**
+ * the class implements the generic Dao class.
+ * responsible for performing actions on the database table `crop_group`.
+ */
+public class CropGroupDaoImpl implements Dao<CropGroup> {
+    /**
+     * receives a CropGroup record and inserts it
+     * to the `crop_group` table in the database.
+     * @param cropGroup - a CropGroup record.
+     */
     @Override
     public void insert(CropGroup cropGroup) {
         Connection connection = null;
@@ -40,7 +48,12 @@ public class CropGroupDaoImpl implements CropGroupDao {
             }
         }
     }
-
+    /**
+     * receives a crop_group_id number, and returns a record that has
+     * the same crop_group_id number.
+     * @param id - the crop_group_id of the record that will be selected.
+     * @return a CropGroup record.
+     */
     @Override
     public CropGroup selectById(int id) {
         CropGroup cropGroup = new CropGroup();
@@ -87,6 +100,11 @@ public class CropGroupDaoImpl implements CropGroupDao {
         return cropGroup;
     }
 
+    /**
+     * selects all CropGroup records in the table 'crop_group',
+     * and returns them as a list.
+     * @return a list of all CropGroup records from database table 'crop_group'.
+     */
     @Override
     public List<CropGroup> selectAll() {
         List<CropGroup> cropGroupList = new ArrayList<CropGroup>();
@@ -134,6 +152,11 @@ public class CropGroupDaoImpl implements CropGroupDao {
         return cropGroupList;
     }
 
+    /**
+     * deletes a CropGroup record from the database table `crop_group`
+     * with the same crop_group_id as the param.
+     * @param id - the crop_group_id of the record to remove.
+     */
     @Override
     public void delete(int id) {
         Connection connection = null;
@@ -165,7 +188,13 @@ public class CropGroupDaoImpl implements CropGroupDao {
         }
     }
 
-
+    /**
+     * takes a CropGroup record with values and a crop_group_id, and updates
+     * the record in the table with the same crop_group_id with the values
+     * of the other record.
+     * @param cropGroup - the CropGroup record to get the values from.
+     * @param id - the id position of the CropGroup record to update.
+     */
     @Override
     public void update(CropGroup cropGroup, int id) {
         Connection connection = null;
@@ -200,6 +229,12 @@ public class CropGroupDaoImpl implements CropGroupDao {
             }
         }
     }
+
+    /**
+     * returns an int of the first crop_group_id of a record that does not yet exist
+     * in the 'crop_group' table.
+     * @return the first unoccupied crop_group_id in the 'crop_group' table.
+     */
     @Override
     public int generateUniqueId() {
         Connection connection = null;
@@ -246,23 +281,32 @@ public class CropGroupDaoImpl implements CropGroupDao {
         return emptySpace;
     }
 
+    /**
+     * receives a list of CropGroup records, and inserts all of them
+     * to the `crop_group` table.
+     * @param cropGroupList - the CropGroup records list to be added to the database.
+     */
     @Override
-    public void insertAll(String[] cropGroupNames) {
+    public void insertAll(List<CropGroup> cropGroupList) {
 
-        for(String cropGroupName : cropGroupNames) {
-            CropGroup cropGroup = new CropGroup();
-            cropGroup.setCropGroupDesc(cropGroupName);
-            cropGroup.setCropGroupId(this.generateUniqueId());
+        for(CropGroup cropGroup : cropGroupList) {
             this.insert(cropGroup);
-
         }
         System.out.println("insertAll finished!");
     }
 
+    /**
+     * insert all CropGroup records that are supposed to be in the database initially.
+     */
     @Override
     public void autoInsertAll() {
         String[] cropGroupNames = {"Orchards" , "Field crops"};
-        this.insertAll(cropGroupNames);
+        CropGroup cg1 = new CropGroup(1,"Orchards");
+        CropGroup cg2 = new CropGroup(2,"Field crops");
+        List<CropGroup> cropGroupList = new ArrayList<>();
+        cropGroupList.add(cg1);
+        cropGroupList.add(cg2);
+        this.insertAll(cropGroupList);
 
 
     }

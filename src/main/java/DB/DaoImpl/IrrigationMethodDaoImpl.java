@@ -1,14 +1,23 @@
 package DB.DaoImpl;
 
-import DB.Dao.IrrigationMethodDao;
+import DB.Dao.Dao;
 import DB.Entites.IrrigationMethod;
 import DB.Util.ConnectionConfiguration;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-public class IrrigationMethodDaoImpl implements IrrigationMethodDao {
+
+/**
+ * the class implements the generic Dao class.
+ * responsible for performing actions on the database table `irrigation_method`.
+ */
+public class IrrigationMethodDaoImpl implements Dao<IrrigationMethod> {
+    /**
+     * receives an IrrigationMethod record and inserts it
+     * to the `irrigation_method` table in the database.
+     * @param irrigationMethod - an IrrigationMethod record.
+     */
     @Override
     public void insert(IrrigationMethod irrigationMethod) {
         Connection connection = null;
@@ -43,7 +52,12 @@ public class IrrigationMethodDaoImpl implements IrrigationMethodDao {
             }
         }
     }
-
+    /**
+     * receives an irrigation_method_id number, and returns a record that has
+     * the same irrigation_method_id number.
+     * @param id - the irrigation_method_id of the record that will be selected.
+     * @return an IrrigationMethod record
+     */
     @Override
     public IrrigationMethod selectById(int id) {
         IrrigationMethod irrigationMethod = new IrrigationMethod();
@@ -92,6 +106,11 @@ public class IrrigationMethodDaoImpl implements IrrigationMethodDao {
         return irrigationMethod;
     }
 
+    /**
+     * selects all IrrigationMethod records in the table 'irrigation_method',
+     * and returns them as a list.
+     * @return a list of all IrrigationMethod records from database table 'irrigation_method'.
+     */
     @Override
     public List<IrrigationMethod> selectAll() {
         List<IrrigationMethod> irrigationMethodList = new ArrayList<IrrigationMethod>();
@@ -141,6 +160,11 @@ public class IrrigationMethodDaoImpl implements IrrigationMethodDao {
         return irrigationMethodList;
     }
 
+    /**
+     * deletes an IrrigationMethod record from the database table `irrigation_method`
+     * with the same irrigation_method_id as the param.
+     * @param id - the irrigation_method_id of the record to remove.
+     */
     @Override
     public void delete(int id) {
         Connection connection = null;
@@ -172,7 +196,13 @@ public class IrrigationMethodDaoImpl implements IrrigationMethodDao {
         }
     }
 
-
+    /**
+     * takes an IrrigationMethod record with values and an irrigation_method_id, and updates
+     * the record in the table with the same irrigation_method_id with the values
+     * of the other record.
+     * @param irrigationMethod - the IrrigationMethod record to get the values from.
+     * @param id - the id position of the IrrigationMethod record to update.
+     */
     @Override
     public void update(IrrigationMethod irrigationMethod, int id) {
         Connection connection = null;
@@ -211,6 +241,12 @@ public class IrrigationMethodDaoImpl implements IrrigationMethodDao {
             }
         }
     }
+
+    /**
+     * returns an int of the first irrigation_method_id of a record that does not yet exist
+     * in the 'irrigation_method' table.
+     * @return the first unoccupied irrigation_method_id in the 'irrigation_method' table.
+     */
     @Override
     public int generateUniqueId() {
         Connection connection = null;
@@ -257,6 +293,11 @@ public class IrrigationMethodDaoImpl implements IrrigationMethodDao {
         return emptySpace;
     }
 
+    /**
+     * receives a list of IrrigationMethod records, and inserts all of them
+     * to the `irrigation_method` table.
+     * @param irrigationMethodList - the IrrigationMethod records list to be added to the database.
+     */
     @Override
     public void insertAll(List<IrrigationMethod> irrigationMethodList) {
 
@@ -267,6 +308,9 @@ public class IrrigationMethodDaoImpl implements IrrigationMethodDao {
         System.out.println("insertAll finished!");
     }
 
+    /**
+     * insert all IrrigationMethod records that are supposed to be in the database initially.
+     */
     @Override
     public void autoInsertAll() {
         IrrigationMethod irrigationMethod1 = new IrrigationMethod("Drip",0.9,0.5);

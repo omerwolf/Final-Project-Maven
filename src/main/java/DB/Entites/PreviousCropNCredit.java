@@ -1,5 +1,9 @@
 package DB.Entites;
 
+/**
+ * represents a record in the `previous_crop_n_credit` table
+ * in the database.
+ */
 public class PreviousCropNCredit {
 
     private int previousCropId;
@@ -7,10 +11,20 @@ public class PreviousCropNCredit {
     private Integer percent;
     private int nCredit;
 
+    /**
+     * the default constructor.
+     */
     public PreviousCropNCredit() {
 
     }
 
+    /**
+     * creates a PreviousCropNCredit record.
+     * @param previousCropId - the id of the previous crop.
+     * @param previousCropName - the name of the previous crop.
+     * @param percent - the percentage.
+     * @param nCredit - the amount of nCredit.
+     */
     public PreviousCropNCredit(int previousCropId, String previousCropName, Integer percent, int nCredit) {
         this.previousCropId = previousCropId;
         this.previousCropName = previousCropName;
@@ -50,6 +64,11 @@ public class PreviousCropNCredit {
         this.nCredit = nCredit;
     }
 
+    /**
+     * overrides toString method in order to print the record's
+     * names and values.
+     * @return record's fields name and values.
+     */
     @Override
     public String toString() {
         return "PreviousCropNCredit{" +

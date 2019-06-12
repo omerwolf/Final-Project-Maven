@@ -10,6 +10,7 @@ import Analysis.SoilAnalysis.SoilAnalysisDao;
 import Analysis.SoilAnalysis.SoilAnalysisDaoImpl;
 import Analysis.WaterAnalysis.*;
 import Model.WriteOutput.NutrientsOutput;
+import Model.WriteOutput.WriteOutput;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -91,6 +92,8 @@ public class Model {
         n = fe.calculateFertilizationEfficiency(p,n);
         NutrientsWaterAnalysis nwa = new NutrientsWaterAnalysis();
         n = nwa.nutrientsWaterAnalysis(p,n);
+
+        exportOutputTables(n);
     }
 
     public void testSoilAnalysisOutput(SoilAnalysis sa) {
@@ -118,6 +121,12 @@ public class Model {
         return nutrientsOutput;
     }
 
+    /**
+     * calculates the summary of the nutrients in the adjustment table.
+     * @param p - the parameters data.
+     * @param n - the nutrients data.
+     * @return the nutrients data, updated.
+     */
     public Nutrients calculateSummaryAdjTable(Parameters p, Nutrients n) {
 
         List<NutrientsOutput> nutrientsOutputList = n.getPreSeason().getAdjNutrients();
@@ -133,5 +142,25 @@ public class Model {
         nutrientsOutputList.add(summaryOutput);
         n.getPreSeason().setAdjNutrients(nutrientsOutputList);
         return n;
+    }
+
+    /**
+     * creates an excel file for all tables (adjustment nutrients, actual nutrients,
+     * water analysis and soil analysis).
+     * @param n - the nutrients data.
+     */
+    public void exportOutputTables(Nutrients n) {
+        System.out.println("ui something is " + ui.getSelectedSoil().getName());
+        WriteOutput writeOutput = new WriteOutput(ui);
+        try {
+        writeOutput.writeNutrientsOutput(n.getPreSeason().getAdjNutrients());
+        writeOutput.writeNutrientsOutput(n.getPreSeason().getActualNutrients());
+        writeOutput.writeSoilAnalysisOutput(n.getPreSeason().getSoilAnalysis());
+        writeOutput.writeWaterAnalysisOutput(n.getPreSeason().getWaterAnalysis());
+        }
+        catch(Exception e) {
+            System.out.println("there was an error with one or more of the outputs");
+            System.out.println(e.getMessage());
+        }
     }
 }

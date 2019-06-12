@@ -1,7 +1,6 @@
 package Model;
 
-import DB.Dao.ParameterPhEffectDao;
-import DB.Dao.PhRangesDao;
+import DB.Dao.Dao;
 import DB.DaoImpl.ParameterPhEffectDaoImpl;
 import DB.DaoImpl.PhRangesDaoImpl;
 import DB.Entites.ParameterPhEffect;
@@ -9,7 +8,6 @@ import DB.Entites.PhRanges;
 import Model.WriteOutput.NutrientsOutput;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -69,7 +67,7 @@ public class PhAdjustment {
         }
         if (!phDesc.equals("NaN")) {
             int rangeId = 0;
-            PhRangesDao phRangesDao = new PhRangesDaoImpl();
+            Dao<PhRanges> phRangesDao = new PhRangesDaoImpl();
             List<PhRanges> phRangesList = phRangesDao.selectAll();
             for (PhRanges pr:phRangesList) {
                 if (pr.getRangeDesc().equals(phDesc)) {
@@ -77,7 +75,7 @@ public class PhAdjustment {
                 }
             }
             System.out.println("the range is: " +rangeId);
-            ParameterPhEffectDao pped = new ParameterPhEffectDaoImpl();
+            Dao<ParameterPhEffect> pped = new ParameterPhEffectDaoImpl();
             List<ParameterPhEffect> parameterPhEffectList = pped.selectAll();
             List<Double> rangePhValues = new ArrayList<>();
             for (ParameterPhEffect ppe:parameterPhEffectList) {

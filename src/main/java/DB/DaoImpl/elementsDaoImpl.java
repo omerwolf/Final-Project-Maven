@@ -1,6 +1,6 @@
 package DB.DaoImpl;
 
-import DB.Dao.elementsDao;
+import DB.Dao.Dao;
 import DB.Entites.elements;
 import DB.Util.ConnectionConfiguration;
 
@@ -8,7 +8,17 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-public class elementsDaoImpl implements elementsDao{
+
+/**
+ * the class implements the generic Dao class.
+ * responsible for performing actions on the database table `elements`.
+ */
+public class elementsDaoImpl implements Dao<elements> {
+    /**
+     * receives an elements record and inserts it
+     * to the `elements` table in the database.
+     * @param element - an elements record.
+     */
     @Override
     public void insert(elements element) {
         Connection connection = null;
@@ -47,7 +57,12 @@ public class elementsDaoImpl implements elementsDao{
             }
         }
     }
-
+    /**
+     * receives an element_id number, and returns a record that has
+     * the same element_id number.
+     * @param id - the element_id of the record that will be selected.
+     * @return an elements record.
+     */
     @Override
     public elements selectById(int id) {
         elements element = new elements();
@@ -95,6 +110,11 @@ public class elementsDaoImpl implements elementsDao{
         return element;
     }
 
+    /**
+     * selects all elements records in the table 'elements',
+     * and returns them as a list.
+     * @return a list of all elements records from database table 'elements'.
+     */
     @Override
     public List<elements> selectAll() {
         List<elements> elements = new ArrayList<elements>();
@@ -143,6 +163,11 @@ public class elementsDaoImpl implements elementsDao{
         return elements;
     }
 
+    /**
+     * deletes an elements record from the database table `elements`
+     * with the same element_id as the param.
+     * @param id - the element_id of the record to remove.
+     */
     @Override
     public void delete(int id) {
         Connection connection = null;
@@ -173,6 +198,13 @@ public class elementsDaoImpl implements elementsDao{
         }
     }
 
+    /**
+     * takes an elements record with values and an element_id, and updates
+     * the record in the table with the same element_id with the values
+     * of the other record.
+     * @param element - the elements record to get the values from.
+     * @param id - the id position of the elements record to update.
+     */
     @Override
     public void update(elements element, int id) {
         Connection connection = null;
@@ -211,6 +243,11 @@ public class elementsDaoImpl implements elementsDao{
         }
     }
 
+    /**
+     * returns an int of the first element_id of a record that does not yet exist
+     * in the 'elements' table.
+     * @return the first unoccupied element_id in the 'elements' table.
+     */
     @Override
     public int generateUniqueId() {
         Connection connection = null;
@@ -257,6 +294,11 @@ public class elementsDaoImpl implements elementsDao{
         return emptySpace;
     }
 
+    /**
+     * receives a list of elements records, and inserts all of them
+     * to the `elements` table.
+     * @param elements - the elements records list to be added to the database.
+     */
     @Override
     public void insertAll(List<elements> elements) {
         //soils.sort((Soil s1, Soil s2) -> s1.getName().compareTo(s2.getName()));
@@ -268,6 +310,9 @@ public class elementsDaoImpl implements elementsDao{
         System.out.println("InsertAll finished");
     }
 
+    /**
+     * insert all elements records that are supposed to be in the database initially.
+     */
     @Override
     public void autoInsertAll() {
         elements e1 = new elements("N","Nitrogen");

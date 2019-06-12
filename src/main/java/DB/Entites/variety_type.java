@@ -67,6 +67,11 @@ public class variety_type {
         this.variety_name = variety_name;
     }
 
+    /**
+     * overrides toString method in order to print the record's
+     * names and values.
+     * @return record's fields name and values.
+     */
     @Override
     public String toString() {
         return "variety_type{" +

@@ -1,15 +1,23 @@
 package DB.DaoImpl;
 
-import DB.Dao.PreviousCropNCreditDao;
+import DB.Dao.Dao;
 import DB.Entites.PreviousCropNCredit;
 import DB.Util.ConnectionConfiguration;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class PreviousCropNCreditDaoImpl implements PreviousCropNCreditDao{
+/**
+ * the class implements the generic Dao class.
+ * responsible for performing actions on the database table `previous_crop_n_credit`.
+ */
+public class PreviousCropNCreditDaoImpl implements Dao<PreviousCropNCredit> {
+    /**
+     * receives a PreviousCropNCredit record and inserts it
+     * to the `previous_crop_n_credit` table in the database.
+     * @param previousCropNCredit - a PreviousCropNCredit record.
+     */
     @Override
     public void insert(PreviousCropNCredit previousCropNCredit) {
         Connection connection = null;
@@ -55,7 +63,12 @@ public class PreviousCropNCreditDaoImpl implements PreviousCropNCreditDao{
             }
         }
     }
-
+    /**
+     * receives a previous_crop_id number, and returns a record that has
+     * the same previous_crop_id number.
+     * @param id - the previous_crop_id of the record that will be selected.
+     * @return a PreviousCropNCredit record.
+     */
     @Override
     public PreviousCropNCredit selectById(int id) {
         PreviousCropNCredit previousCropNCredit = new PreviousCropNCredit();
@@ -104,6 +117,11 @@ public class PreviousCropNCreditDaoImpl implements PreviousCropNCreditDao{
         return previousCropNCredit;
     }
 
+    /**
+     * selects all PreviousCropNCredit records in the table 'previous_crop_n_credit',
+     * and returns them as a list.
+     * @return a list of all PreviousCropNCredit records from database table 'previous_crop_n_credit'.
+     */
     @Override
     public List<PreviousCropNCredit> selectAll() {
         List<PreviousCropNCredit> previousCropNCreditList = new ArrayList<PreviousCropNCredit>();
@@ -153,6 +171,11 @@ public class PreviousCropNCreditDaoImpl implements PreviousCropNCreditDao{
         return previousCropNCreditList;
     }
 
+    /**
+     * deletes a PreviousCropNCredit record from the database table `previous_crop_n_credit`
+     * with the same previous_crop_id as the param.
+     * @param id - the previous_crop_id of the record to remove.
+     */
     @Override
     public void delete(int id) {
         Connection connection = null;
@@ -183,6 +206,13 @@ public class PreviousCropNCreditDaoImpl implements PreviousCropNCreditDao{
         }
     }
 
+    /**
+     * takes a PreviousCropNCredit record with values and a previous_crop_id, and updates
+     * the record in the table with the same previous_crop_id with the values
+     * of the other record.
+     * @param previousCropNCredit - the PreviousCropNCredit record to get the values from.
+     * @param id - the id position of the PreviousCropNCredit record to update.
+     */
     @Override
     public void update(PreviousCropNCredit previousCropNCredit, int id) {
         Connection connection = null;
@@ -223,6 +253,11 @@ public class PreviousCropNCreditDaoImpl implements PreviousCropNCreditDao{
         }
     }
 
+    /**
+     * returns an int of the first previous_crop_id of a record that does not yet exist
+     * in the 'previous_crop_n_credit' table.
+     * @return the first unoccupied previous_crop_id in the 'previous_crop_n_credit' table.
+     */
     @Override
     public int generateUniqueId() {
         Connection connection = null;
@@ -269,6 +304,12 @@ public class PreviousCropNCreditDaoImpl implements PreviousCropNCreditDao{
         return emptySpace;
     }
 
+    /**
+     * receives a list of PreviousCropNCredit records, and inserts all of them
+     * to the `previous_crop_n_credit` table.
+     * @param previousCropNCreditList - the PreviousCropNCredit records list
+     * to be added to the database.
+     */
     @Override
     public void insertAll(List<PreviousCropNCredit> previousCropNCreditList) {
         //pheonological_stages.sort((pheonological_stage ps1, pheonological_stage ps2) -> ps1.getPheonological_stage_desc().compareTo(ps2.getPheonological_stage_desc()));
@@ -281,6 +322,9 @@ public class PreviousCropNCreditDaoImpl implements PreviousCropNCreditDao{
         System.out.println("InsertAll finished");
     }
 
+    /**
+     * insert all PreviousCropNCredit records that are supposed to be in the database initially.
+     */
     @Override
     public void autoInsertAll() {
         //desc, crop_id, phenological_days, gdd

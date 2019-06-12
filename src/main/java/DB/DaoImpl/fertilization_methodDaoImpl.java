@@ -1,14 +1,22 @@
 package DB.DaoImpl;
 
-import DB.Dao.fertilization_methodDao;
+import DB.Dao.Dao;
 import DB.Entites.fertilization_method;
 import DB.Util.ConnectionConfiguration;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-public class fertilization_methodDaoImpl implements fertilization_methodDao{
+/**
+ * the class implements the generic Dao class.
+ * responsible for performing actions on the database table `fertilization method`.
+ */
+public class fertilization_methodDaoImpl implements Dao<fertilization_method> {
+    /**
+     * receives a fertilization_method record and inserts it
+     * to the `fertilization method` table in the database.
+     * @param fertilization_method - a fertilization_method record.
+     */
     @Override
     public void insert(fertilization_method fertilization_method) {
         Connection connection = null;
@@ -39,7 +47,12 @@ public class fertilization_methodDaoImpl implements fertilization_methodDao{
             }
         }
     }
-
+    /**
+     * receives a fert_method_id number, and returns a record that has
+     * the same fert_method_id number.
+     * @param id - the fert_method_id of the record that will be selected.
+     * @return a fertilization_method record.
+     */
     @Override
     public fertilization_method selectById(int id) {
         fertilization_method fertilization_method = new fertilization_method();
@@ -86,6 +99,11 @@ public class fertilization_methodDaoImpl implements fertilization_methodDao{
         return fertilization_method;
     }
 
+    /**
+     * selects all fertilization_method records in the table 'fertilization method',
+     * and returns them as a list.
+     * @return a list of all fertilization_method records from database table 'fertilization method'.
+     */
     @Override
     public List<fertilization_method> selectAll() {
         List<fertilization_method> fertilization_methods = new ArrayList<fertilization_method>();
@@ -133,6 +151,11 @@ public class fertilization_methodDaoImpl implements fertilization_methodDao{
         return fertilization_methods;
     }
 
+    /**
+     * deletes a fertilization_method record from the database table `fertilization method`
+     * with the same fert_method_id as the param.
+     * @param id - the fert_method_id of the record to remove.
+     */
     @Override
     public void delete(int id) {
         Connection connection = null;
@@ -164,7 +187,13 @@ public class fertilization_methodDaoImpl implements fertilization_methodDao{
         }
     }
 
-
+    /**
+     * takes a fertilization_method record with values and a fert_method_id, and updates
+     * the record in the table with the same fert_method_id with the values
+     * of the other record.
+     * @param fertilization_method - the fertilization_method record to get the values from.
+     * @param id - the id position of the fertilization_method record to update.
+     */
     @Override
     public void update(fertilization_method fertilization_method, int id) {
         Connection connection = null;
@@ -199,6 +228,12 @@ public class fertilization_methodDaoImpl implements fertilization_methodDao{
             }
         }
     }
+
+    /**
+     * returns an int of the first fert_method_id of a record that does not yet exist
+     * in the 'fertilization method' table.
+     * @return the first unoccupied fert_method_id in the 'fertilization method' table.
+     */
     @Override
     public int generateUniqueId() {
         Connection connection = null;
@@ -242,24 +277,34 @@ public class fertilization_methodDaoImpl implements fertilization_methodDao{
         return emptySpace;
     }
 
+    /**
+     * receives a list of fertilization_method records, and inserts all of them
+     * to the `fertilization method` table.
+     * @param fertilizationMethodList - the fertilization_method records list
+     * to be added to the database.
+     */
     @Override
-    public void insertAll(String[] fert_method_names) {
+    public void insertAll(List<fertilization_method> fertilizationMethodList) {
 
-        for(String fert_method_name : fert_method_names) {
-            fertilization_method fertilization_method = new fertilization_method();
-            fertilization_method.setFert_method_desc(fert_method_name);
-            fertilization_method.setFert_method_id(this.generateUniqueId());
-            this.insert(fertilization_method);
-
+        for(fertilization_method fertMethod : fertilizationMethodList) {
+            this.insert(fertMethod);
         }
         System.out.println("insertAll finished!");
     }
 
+    /**
+     * insert all fertilization_method records that are supposed to be in the database initially.
+     */
     @Override
     public void autoInsertAll() {
-        String[] fert_methods_names = {"Soil Application", "Band Application" ,"Drip Fertigation", "SDI Fertigation" ,
+        String[] fertMethodNames = {"Soil Application", "Band Application" ,"Drip Fertigation", "SDI Fertigation" ,
                 "Sprinklers Fertigation", "Pivot Fertigation", "Flooding"};
-        this.insertAll(fert_methods_names);
+        List<fertilization_method> fertilizationMethodList = new ArrayList<>();
+        for (String fertMethodName:fertMethodNames) {
+            fertilization_method fertMethod = new fertilization_method(this.generateUniqueId(),fertMethodName);
+            fertilizationMethodList.add(fertMethod);
+        }
+        this.insertAll(fertilizationMethodList);
 
 
     }

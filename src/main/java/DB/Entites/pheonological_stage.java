@@ -1,5 +1,9 @@
 package DB.Entites;
 
+/**
+ * represents a record in the `pheonological stage` table
+ * in the database.
+ */
 public class pheonological_stage {
     private int pheonological_stage_id;
     private String pheonological_stage_desc;
@@ -7,14 +11,43 @@ public class pheonological_stage {
     private int pheonological_stage_duration_days;
     private Integer pheonological_stage_duration_gdd;
 
+    /**
+     * the default constructor.
+     */
     public pheonological_stage() {
 
     }
 
+    /**
+     * creates a pheonological_stage record, without receiving pheonological stage id,
+     * which is set in this constructor by default to 1, but than changed later.
+     * @param pheonological_stage_desc - the name of the current crop's stage.
+     * @param crop_id - the crop's id.
+     * @param pheonological_stage_duration_days - crop's stage duration.
+     * @param pheonological_stage_duration_gdd - growing degree days duration (usually null).
+     */
     public pheonological_stage( String pheonological_stage_desc,
                                int crop_id, int pheonological_stage_duration_days,
                                Integer pheonological_stage_duration_gdd) {
         this.pheonological_stage_id = 1;
+        this.pheonological_stage_desc = pheonological_stage_desc;
+        this.crop_id = crop_id;
+        this.pheonological_stage_duration_days = pheonological_stage_duration_days;
+        this.pheonological_stage_duration_gdd = pheonological_stage_duration_gdd;
+    }
+
+    /**
+     * creates a pheonological_stage record.
+     * @param pheonological_stage_id - the id of the phenological stage
+     * @param pheonological_stage_desc - the name of the current crop's stage.
+     * @param crop_id - the crop's id.
+     * @param pheonological_stage_duration_days - crop's stage duration.
+     * @param pheonological_stage_duration_gdd - growing degree days duration (usually null).
+     */
+    public pheonological_stage(int pheonological_stage_id, String pheonological_stage_desc,
+                               int crop_id, int pheonological_stage_duration_days,
+                               Integer pheonological_stage_duration_gdd) {
+        this.pheonological_stage_id = pheonological_stage_id;
         this.pheonological_stage_desc = pheonological_stage_desc;
         this.crop_id = crop_id;
         this.pheonological_stage_duration_days = pheonological_stage_duration_days;

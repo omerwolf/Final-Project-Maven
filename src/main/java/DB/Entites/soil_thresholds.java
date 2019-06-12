@@ -1,5 +1,9 @@
 package DB.Entites;
 
+/**
+ * represents a record in the `soil_thresholds` table
+ * in the database.
+ */
 public class soil_thresholds {
     int soil_threshold_id;
     int lab_id;
@@ -18,9 +22,26 @@ public class soil_thresholds {
     double high_threshold;
     double very_high_threshold;
 
+    /**
+     * the default constructor.
+     */
     public soil_thresholds() {
     }
 
+    /**
+     * creates a soil_thresholds record.
+     * several fields aren't set, since they are by default null/empty.
+     * @param soil_threshold_id - the thresholds id.
+     * @param lab_id - the lab id.
+     * @param extraction_method_id - the id that represents the extraction method.
+     * @param parameters_id - the parameters id (nutrient).
+     * @param uom_id - the id of the unit of measure(most are ppm, several need to be converted).
+     * @param very_low_threshold - a number that represents the very low thresholds of the current parameter.
+     * @param low_threshold - a number that represents the low thresholds of the current parameter.
+     * @param target_threshold - a number that represents the target thresholds of the current parameter.
+     * @param high_threshold - a number that represents the high thresholds of the current parameter.
+     * @param very_high_threshold -  a number that represents the very high thresholds of the current parameter.
+     */
     public soil_thresholds(int soil_threshold_id, int lab_id, int extraction_method_id, int parameters_id, int uom_id,
                            double very_low_threshold, double low_threshold, double target_threshold,
                            double high_threshold, double very_high_threshold) {
@@ -116,6 +137,11 @@ public class soil_thresholds {
         this.very_high_threshold = very_high_threshold;
     }
 
+    /**
+     * overrides toString method in order to print the record's
+     * names and values.
+     * @return record's fields name and values.
+     */
     @Override
     public String toString() {
         return "soil_thresholds{" +

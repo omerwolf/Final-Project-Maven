@@ -3,9 +3,8 @@ package Analysis.SoilAnalysis;
 import Analysis.LabAnalysisResults.LabAnalysisResultDao;
 import Analysis.LabAnalysisResults.LabAnalysisResultDaoImpl;
 import Analysis.LabAnalysisResults.SoilLabAnalysisResult;
+import DB.Dao.Dao;
 import DB.Dao.ExtractionMethodDao;
-import DB.Dao.SoilDao;
-import DB.Dao.layer_depth_typeDao;
 import DB.DaoImpl.ExtractionMethodDaoImpl;
 import DB.DaoImpl.SoilDaoImpl;
 import DB.DaoImpl.layer_depth_typeDaoImpl;
@@ -191,7 +190,7 @@ public class ERSoilAnalysis {
     }
 
     int getSoilTypeId(String cropName){
-        SoilDao soilDao = new SoilDaoImpl();
+        Dao<Soil> soilDao = new SoilDaoImpl();
         List<Soil> soils = soilDao.selectAll();
         for (Soil soil : soils){
             if(soil.getName().toLowerCase().equals(cropName.toLowerCase())){
@@ -203,7 +202,7 @@ public class ERSoilAnalysis {
     }
 
     int getLayerDepthId(String layerDepth){
-        layer_depth_typeDao ldtDao = new layer_depth_typeDaoImpl();
+        Dao<layer_depth_type> ldtDao = new layer_depth_typeDaoImpl();
         List<layer_depth_type> layers = ldtDao.selectAll();
         for (layer_depth_type layer : layers){
             if(layer.getLayer_depth_name().toLowerCase().equals(layerDepth.toLowerCase())){

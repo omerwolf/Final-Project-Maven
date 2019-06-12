@@ -1,16 +1,23 @@
 package DB.DaoImpl;
 
-import DB.Dao.parametersDao;
+import DB.Dao.Dao;
 import DB.Entites.parameters;
 import DB.Util.ConnectionConfiguration;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class parametersDaoImpl implements parametersDao {
-
+/**
+ * the class implements the generic Dao class.
+ * responsible for performing actions on the database table `parameters`.
+ */
+public class parametersDaoImpl implements Dao<parameters> {
+    /**
+     * receives a parameters record and inserts it
+     * to the `parameters` table in the database.
+     * @param parameters - a parameters record.
+     */
     @Override
     public void insert(parameters parameters) {
         Connection connection = null;
@@ -60,7 +67,12 @@ public class parametersDaoImpl implements parametersDao {
             }
         }
     }
-
+    /**
+     * receives a parameter_id number, and returns a record that has
+     * the same parameter_id number.
+     * @param id - the parameter_id of the record that will be selected.
+     * @return a parameters record.
+     */
     @Override
     public parameters selectById(int id) {
         parameters parameters = new parameters();
@@ -114,6 +126,11 @@ public class parametersDaoImpl implements parametersDao {
         return parameters;
     }
 
+    /**
+     * selects all parameters records in the table 'parameters',
+     * and returns them as a list.
+     * @return a list of all parameters records from database table 'parameters'.
+     */
     @Override
     public List<parameters> selectAll() {
         List<parameters> parametersList = new ArrayList<parameters>();
@@ -168,6 +185,11 @@ public class parametersDaoImpl implements parametersDao {
         return parametersList;
     }
 
+    /**
+     * deletes a parameters record from the database table `parameters`
+     * with the same parameter_id as the param.
+     * @param id - the parameter_id of the record to remove.
+     */
     @Override
     public void delete(int id) {
         Connection connection = null;
@@ -198,6 +220,13 @@ public class parametersDaoImpl implements parametersDao {
         }
     }
 
+    /**
+     * takes a parameters record with values and a parameter_id, and updates
+     * the record in the table with the same parameter_id with the values
+     * of the other record.
+     * @param parameters - the parameters record to get the values from.
+     * @param id - the id position of the parameters record to update.
+     */
     @Override
     public void update(parameters parameters, int id) {
         Connection connection = null;
@@ -248,6 +277,11 @@ public class parametersDaoImpl implements parametersDao {
         }
     }
 
+    /**
+     * returns an int of the first parameter_id of a record that does not yet exist
+     * in the 'parameters' table.
+     * @return the first unoccupied parameter_id in the 'parameters' table.
+     */
     @Override
     public int generateUniqueId() {
         Connection connection = null;
@@ -294,6 +328,11 @@ public class parametersDaoImpl implements parametersDao {
         return emptySpace;
     }
 
+    /**
+     * receives a list of parameters records, and inserts all of them
+     * to the `parameters` table.
+     * @param parametersList - the parameters records list to be added to the database.
+     */
     @Override
     public void insertAll(List<parameters> parametersList) {
 
@@ -304,6 +343,9 @@ public class parametersDaoImpl implements parametersDao {
         System.out.println("InsertAll finished");
     }
 
+    /**
+     * insert all parameters records that are supposed to be in the database initially.
+     */
     @Override
     public void autoInsertAll() {
         parameters p1 = new parameters(1,1,1,1,1,1,1,1);

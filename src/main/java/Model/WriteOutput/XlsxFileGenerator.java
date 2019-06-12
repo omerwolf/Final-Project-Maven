@@ -14,15 +14,26 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 
-
+/**
+ * generate an xlsx file with info about the user input.
+ */
 public class XlsxFileGenerator {
     private UserInput ui;
     private String filePath;
 
+    /**
+     * receives a user input and set it.
+     * @param ui - the user input.
+     */
     public XlsxFileGenerator(UserInput ui) {
         this.ui = ui;
     }
 
+    /**
+     * creates a Workbook that contains the details about all the field
+     * values from the user input, and then returns it.
+     * @return Workbook containing ui info.
+     */
     public Workbook getWorkbook(){
         Workbook workbook = new XSSFWorkbook(); //create  a XLSX file.
         Sheet sheet = workbook.createSheet("general info");
@@ -121,6 +132,10 @@ public class XlsxFileGenerator {
         cell.setCellValue("Date:");
         cell.setCellStyle(headerCellStyle);
         LocalDate date = ui.getSelectedDate();
+        if (date ==null) {
+            System.out.println("date is null");
+            date = LocalDate.now();
+        }
         row.createCell(1).setCellValue(date.getDayOfMonth() + "/" + date.getMonthValue() +
                 "/" + date.getYear());
 
@@ -131,7 +146,7 @@ public class XlsxFileGenerator {
         }
 
 
-        this.filePath = "Output/" + timeStamp + ".xlsx";
+        this.filePath = "Output_" + timeStamp + ".xlsx";
         try {
             OutputStream fileOut = new FileOutputStream(new File(filePath));
             workbook.write(fileOut);

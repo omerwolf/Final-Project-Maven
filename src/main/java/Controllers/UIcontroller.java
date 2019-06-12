@@ -370,7 +370,7 @@ public class UIcontroller extends  BaseController{
 
             }
             private void setNCreditByChoosenIndex(int choosenIndex) {
-                PreviousCropNCreditDao pcnd = new PreviousCropNCreditDaoImpl();
+                Dao<PreviousCropNCredit> pcnd = new PreviousCropNCreditDaoImpl();
                 selectedNCredit = pcnd.selectById(choosenIndex).getnCredit();
             }
 
@@ -530,7 +530,7 @@ public class UIcontroller extends  BaseController{
     }
 
     private List<Crop> getCropTypes() {
-        CropDao cd = new CropDaoImpl();
+        Dao<Crop> cd = new CropDaoImpl();
         List<Crop> cropTypes = cd.selectAll();
         return cropTypes;
     }
@@ -540,7 +540,7 @@ public class UIcontroller extends  BaseController{
         crop_expected_yield_validationDao ceyv = new crop_expected_yield_validationDaoImpl();
         List<Integer> matchVarTypeId = ceyv.getMatchVarType(selectedCropId);
 
-        variety_typeDao varTypeDao = new variety_typeDaoImpl();
+        Dao<variety_type> varTypeDao = new variety_typeDaoImpl();
         List<variety_type> matchVarType = new ArrayList<>();
         for (int id : matchVarTypeId) {
             variety_type vt = varTypeDao.selectById(id);
@@ -551,17 +551,17 @@ public class UIcontroller extends  BaseController{
     }
 
     private List<Soil> getSoilTypes() {
-        SoilDao sd = new SoilDaoImpl();
+        Dao<Soil> sd = new SoilDaoImpl();
         List<Soil> soilTypes = sd.selectAll();
         return soilTypes;
     }
     private List<IrrigationMethod> getIrrigationMethod() {
-        IrrigationMethodDao imd = new IrrigationMethodDaoImpl();
+        Dao<IrrigationMethod> imd = new IrrigationMethodDaoImpl();
         List<IrrigationMethod> irrigationMethods = imd.selectAll();
         return irrigationMethods;
     }
     private List<fertilization_method> getFertilizationMethod() {
-        fertilization_methodDao fm = new fertilization_methodDaoImpl();
+        Dao<fertilization_method> fm = new fertilization_methodDaoImpl();
         List<fertilization_method> fertilizationMethods= fm.selectAll();
         return fertilizationMethods;
 
@@ -569,7 +569,7 @@ public class UIcontroller extends  BaseController{
 
 
     private List<String> getPreviousCropNCredit() {
-        PreviousCropNCreditDao pcnd = new PreviousCropNCreditDaoImpl();
+        Dao<PreviousCropNCredit> pcnd = new PreviousCropNCreditDaoImpl();
         List<PreviousCropNCredit> previousCropNCreditList = pcnd.selectAll();
         List<String> pCropAndPrecent = new ArrayList<>();
         for (PreviousCropNCredit crop : previousCropNCreditList) {

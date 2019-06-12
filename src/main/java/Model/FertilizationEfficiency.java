@@ -1,6 +1,6 @@
 package Model;
 
-import DB.Dao.FertilizationMethodEfficiencyDao;
+import DB.Dao.Dao;
 import DB.DaoImpl.FertilizationMethodEfficiencyDaoImpl;
 import DB.Entites.FertilizationMethodEfficiency;
 import DB.Entites.fertilization_method;
@@ -41,7 +41,7 @@ public class FertilizationEfficiency {
         double [] fertilization = new double[12];
         fertilization_method fm = p.getUi().getSelectedFertilizationMethod();
         int fertMethodId = fm.getFert_method_id();
-        FertilizationMethodEfficiencyDao fmed = new FertilizationMethodEfficiencyDaoImpl();
+        Dao<FertilizationMethodEfficiency> fmed = new FertilizationMethodEfficiencyDaoImpl();
         List<FertilizationMethodEfficiency> fmList = fmed.selectAll();
         List<Double> fertEfficientValues = new ArrayList<>();
         List<Double> baseEfficiency = new ArrayList<>();

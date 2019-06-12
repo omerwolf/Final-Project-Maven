@@ -1,15 +1,30 @@
 package DB.Entites;
 
+/**
+ * represents a record in the `parameter_ph_effect` table
+ * in the database.
+ */
 public class ParameterPhEffect {
     private int effectId;
     private int parameterId;
     private int rangeId;
     private double effect;
 
+    /**
+     * the default constructor.
+     */
     public ParameterPhEffect() {
 
     }
 
+    /**
+     *
+     * @param effectId - the id of the effect.
+     * @param parameterId - the id of the paramter (nutrient).
+     * @param rangeId - the id representing the range of the ph.
+     * @param effect - represents the percentage of the effect
+     *              of the ph on each one of the nutrients.
+     */
     public ParameterPhEffect(int effectId, int parameterId, int rangeId, double effect) {
         this.effectId = effectId;
         this.parameterId = parameterId;

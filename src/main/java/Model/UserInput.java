@@ -5,6 +5,9 @@ import DB.Entites.*;
 import java.io.File;
 import java.time.LocalDate;
 
+/**
+ * contains all the info that the user put before the beginning of a season.
+ */
 public class UserInput {
     private Crop selectedCrop;
     private variety_type selectedVarType;
@@ -22,7 +25,24 @@ public class UserInput {
 
     private LocalDate selectedDate;
 
-
+    /**
+     * creates a class of the user input, by receiving all the necessary input
+     * from the user.
+     * @param runName - current run name.
+     * @param selectedCrop - the crop the user selected to grow.
+     * @param selectedVarType - the variety type of the crop the user selected to grow.
+     * @param selectedSoil - the soil on which the crop will grow.
+     * @param selectedexpectedYield - the expected yield of the crop (values ranges depends on on the
+     *                              crop and variety type selected).
+     * @param selectedNCredit - the amount of n credit from previous crop.
+     * @param selectedIrrigationMethod - the irrigation method the user selected.
+     * @param selectedIrrigationVolume - the irrigation volume selected.
+     * @param selectedFertilizationMethod - the fertilization method the user selected.
+     * @param selectedBaseDressing - the amount of base dressing.
+     * @param selectedSoilCorrection - the soil correction value.
+     * @param selectedSoilPH - the amount of ph (values between 0-14)
+     * @param selectedDate - the date the user selected to start the crop's growth.
+     */
     public UserInput(String runName,Crop selectedCrop, variety_type selectedVarType, Soil selectedSoil, Double selectedexpectedYield,
                      int selectedNCredit, IrrigationMethod selectedIrrigationMethod, Double selectedIrrigationVolume,
                      fertilization_method selectedFertilizationMethod, Boolean selectedBaseDressing,
@@ -94,6 +114,11 @@ public class UserInput {
         return selectedDate;
     }
 
+    /**
+     * overrides toString method in order to print the user input
+     * field names and values.
+     * @return climate's field names and values.
+     */
     @Override
     public String toString() {
         return "UserInput{" +

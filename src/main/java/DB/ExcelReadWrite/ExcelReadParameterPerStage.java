@@ -14,12 +14,25 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+/**
+ * reads the excel file of the soil info,
+ * in order to insert it's values to the database.
+ */
 public class ExcelReadParameterPerStage{
     static String fileName = "src\\main\\resources\\parameter_per_stage.xlsx";
+
+    /**
+     * the default constructor.
+     */
     public ExcelReadParameterPerStage() {
 
     }
 
+    /**
+     * reads the ParameterPerStage data from the excel,
+     * creates records, and add them to a list, which is then returned.
+     * @return a list of ParameterPerStage records to be added to the database.
+     */
     public List<ParameterPerStage> readExcelData() {
         List<ParameterPerStage> parameterPerStageList = new ArrayList<ParameterPerStage>();
 

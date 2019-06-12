@@ -1,7 +1,6 @@
 package Model;
 
-import DB.Dao.layer_depth_typeDao;
-import DB.Dao.parametersDao;
+import DB.Dao.Dao;
 import DB.Dao.soil_thresholdsDao;
 import DB.DaoImpl.layer_depth_typeDaoImpl;
 import DB.DaoImpl.parametersDaoImpl;
@@ -54,7 +53,7 @@ public class PreSeasonNutrientsSoilAnalysis {
 
         Soil soil = n.getSoil();
         int layerDepthId = p.getSa().getLayer_depth_id();
-        layer_depth_typeDao ldtd = new layer_depth_typeDaoImpl();
+        Dao<layer_depth_type> ldtd = new layer_depth_typeDaoImpl();
         layer_depth_type ldt = ldtd.selectById(layerDepthId);
         double layerAvg = (double)(ldt.getLayer_max() - ldt.getLayer_min());
         double layerDepth = layerAvg/100; // divide value (taken from DB) by 100
@@ -335,7 +334,7 @@ public class PreSeasonNutrientsSoilAnalysis {
      */
     public List<List<Double>> factorsListInitialization() {
         List<List<Double>> factorListOfLists = new ArrayList<>();
-        parametersDao pd = new parametersDaoImpl();
+        Dao<parameters> pd = new parametersDaoImpl();
         List<parameters> parametersList = pd.selectAll();
 
         //creating all the lists to be added to the list of lists

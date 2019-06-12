@@ -1,6 +1,7 @@
 package DB.DaoImpl;
 
-import DB.Dao.CropDao;
+
+import DB.Dao.Dao;
 import DB.Entites.Crop;
 import DB.Util.ConnectionConfiguration;
 
@@ -9,7 +10,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class CropDaoImpl implements CropDao {
+/**
+ * the class implements the generic Dao class.
+ * responsible for performing actions on the database table `crop type`.
+ */
+public class CropDaoImpl implements Dao<Crop> {
+    /**
+     * receives a crop record and inserts it
+     * to the `crop type` table in the database.
+     * @param crop - a crop record.
+     */
     @Override
     public void insert(Crop crop) {
         Connection connection = null;
@@ -42,6 +52,12 @@ public class CropDaoImpl implements CropDao {
         }
     }
 
+    /**
+     * receives a crop_id number, and returns a record that has
+     * the same crop_id number.
+     * @param id - the crop_id of the record that will be selected.
+     * @return a Crop record.
+     */
     @Override
     public Crop selectById(int id) {
         Crop crop = new Crop();
@@ -89,6 +105,11 @@ public class CropDaoImpl implements CropDao {
         return crop;
     }
 
+    /**
+     * selects all Crop records in the table 'crop type',
+     * and returns them as a list.
+     * @return a list of all Crop records from database table 'crop type'.
+     */
     @Override
     public List<Crop> selectAll() {
         List<Crop> crops = new ArrayList<Crop>();
@@ -137,6 +158,11 @@ public class CropDaoImpl implements CropDao {
         return crops;
     }
 
+    /**
+     * deletes a Crop record from the database table `crop type`
+     * with the same crop_id as the param.
+     * @param id - the crop_id of the record to remove.
+     */
     @Override
     public void delete(int id) {
         Connection connection = null;
@@ -168,7 +194,13 @@ public class CropDaoImpl implements CropDao {
         }
     }
 
-
+    /**
+     * takes a Crop record with values and a crop_id, and updates
+     * the record in the table with the same crop_id with the values
+     * of the other record.
+     * @param crop - the Crop record to get the values from.
+     * @param id - the id position of the Crop record to update.
+     */
     @Override
     public void update(Crop crop, int id) {
         Connection connection = null;
@@ -204,6 +236,12 @@ public class CropDaoImpl implements CropDao {
             }
         }
     }
+
+    /**
+     * returns an int of the first crop_id of a record that does not yet exist
+     * in the 'crop type' table.
+     * @return the first unoccupied crop_id in the 'crop type' table.
+     */
     @Override
     public int generateUniqueId() {
         Connection connection = null;
@@ -250,6 +288,11 @@ public class CropDaoImpl implements CropDao {
         return emptySpace;
     }
 
+    /**
+     * receives a list of Crop records, and inserts all of them
+     * to the `crop type` table.
+     * @param cropList - the Crop records list to be added to the database.
+     */
     @Override
     public void insertAll(List<Crop> cropList) {
 
@@ -260,7 +303,9 @@ public class CropDaoImpl implements CropDao {
         }
         System.out.println("insertAll finished!");
     }
-
+    /**
+     * insert all Crop records that are supposed to be in the database initially.
+     */
     @Override
     public void autoInsertAll() {
         Crop crop1 = new Crop("Potato" , 2);

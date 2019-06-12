@@ -1,6 +1,6 @@
 package DB.DaoImpl;
 
-import DB.Dao.FertilizationMethodEfficiencyDao;
+import DB.Dao.Dao;
 import DB.Entites.FertilizationMethodEfficiency;
 import DB.Util.ConnectionConfiguration;
 import DB.ExcelReadWrite.ERFertilizationMethodEfficiency;
@@ -8,7 +8,17 @@ import DB.ExcelReadWrite.ERFertilizationMethodEfficiency;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-public class FertilizationMethodEfficiencyDaoImpl implements FertilizationMethodEfficiencyDao{
+
+/**
+ * the class implements the generic Dao class.
+ * responsible for performing actions on the database table `fertilization_method_efficiency`.
+ */
+public class FertilizationMethodEfficiencyDaoImpl implements Dao<FertilizationMethodEfficiency> {
+    /**
+     * receives a FertilizationMethodEfficiency record and inserts it
+     * to the `fertilization_method_efficiency` table in the database.
+     * @param fertilizationMethodEfficiency - a FertilizationMethodEfficiency record.
+     */
     @Override
     public void insert(FertilizationMethodEfficiency fertilizationMethodEfficiency) {
         Connection connection = null;
@@ -45,7 +55,12 @@ public class FertilizationMethodEfficiencyDaoImpl implements FertilizationMethod
             }
         }
     }
-
+    /**
+     * receives a fert_method_efficiency_id number, and returns a record that has
+     * the same fert_method_efficiency_id number.
+     * @param id - the fert_method_efficiency_id of the record that will be selected.
+     * @return a FertilizationMethodEfficiency record
+     */
     @Override
     public FertilizationMethodEfficiency selectById(int id) {
         FertilizationMethodEfficiency fertilizationMethodEfficiency = new FertilizationMethodEfficiency();
@@ -95,6 +110,12 @@ public class FertilizationMethodEfficiencyDaoImpl implements FertilizationMethod
         return fertilizationMethodEfficiency;
     }
 
+    /**
+     * selects all FertilizationMethodEfficiency records in the table 'fertilization_method_efficiency',
+     * and returns them as a list.
+     * @return a list of all FertilizationMethodEfficiency records
+     * from database table 'fertilization_method_efficiency'.
+     */
     @Override
     public List<FertilizationMethodEfficiency> selectAll() {
         List<FertilizationMethodEfficiency> fertilizationMethodEfficiencyList = new ArrayList<FertilizationMethodEfficiency>();
@@ -144,6 +165,11 @@ public class FertilizationMethodEfficiencyDaoImpl implements FertilizationMethod
         return fertilizationMethodEfficiencyList;
     }
 
+    /**
+     * deletes a FertilizationMethodEfficiency record from the database table `fertilization_method_efficiency`
+     * with the same fert_method_efficiency_id as the param.
+     * @param id - the fert_method_efficiency_id of the record to remove.
+     */
     @Override
     public void delete(int id) {
         Connection connection = null;
@@ -175,7 +201,14 @@ public class FertilizationMethodEfficiencyDaoImpl implements FertilizationMethod
         }
     }
 
-
+    /**
+     * takes a FertilizationMethodEfficiency record with values and a fert_method_efficiency_id,
+     * and updates the record in the table with the same fert_method_efficiency_id
+     * with the values of the other record.
+     * @param fertilizationMethodEfficiency - the FertilizationMethodEfficiency record
+     * to get the values from.
+     * @param id - the id position of the FertilizationMethodEfficiency record to update.
+     */
     @Override
     public void update(FertilizationMethodEfficiency fertilizationMethodEfficiency, int id) {
         Connection connection = null;
@@ -213,6 +246,13 @@ public class FertilizationMethodEfficiencyDaoImpl implements FertilizationMethod
             }
         }
     }
+
+    /**
+     * returns an int of the first fert_method_efficiency_id of a record that does not yet exist
+     * in the 'fertilization_method_efficiency' table.
+     * @return the first unoccupied fert_method_efficiency_id in the
+     * 'fertilization_method_efficiency' table.
+     */
     @Override
     public int generateUniqueId() {
         Connection connection = null;
@@ -259,6 +299,12 @@ public class FertilizationMethodEfficiencyDaoImpl implements FertilizationMethod
         return emptySpace;
     }
 
+    /**
+     * receives a list of FertilizationMethodEfficiency records, and inserts all of them
+     * to the `fertilization_method_efficiency` table.
+     * @param fertilizationMethodEfficiencyList - the FertilizationMethodEfficiency
+     * records list to be added to the database.
+     */
     @Override
     public void insertAll(List<FertilizationMethodEfficiency> fertilizationMethodEfficiencyList) {
 
@@ -270,6 +316,11 @@ public class FertilizationMethodEfficiencyDaoImpl implements FertilizationMethod
         System.out.println("insertAll finished!");
     }
 
+    /**
+     * insert all FertilizationMethodEfficiency records that are supposed
+     * to be in the database initially.
+     * note: in this implementation class, it does that by reading from the excel.
+     */
     @Override
     public void autoInsertAll() {
         ERFertilizationMethodEfficiency ERFertilizationMethodEfficiency= new ERFertilizationMethodEfficiency();

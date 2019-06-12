@@ -1,6 +1,6 @@
 package Model;
 
-import DB.Dao.pheonological_stageDao;
+import DB.Dao.Dao;
 import DB.DaoImpl.pheonological_stageDaoImpl;
 import DB.Entites.pheonological_stage;
 
@@ -47,7 +47,7 @@ public class StageDate {
         catch (ParseException e) {
             System.out.println("invalid date format");
         }
-        pheonological_stageDao p = new pheonological_stageDaoImpl();
+        Dao<pheonological_stage> p = new pheonological_stageDaoImpl();
         List<pheonological_stage> pheonologicalStageList= p.selectAll();
         List<String> stageName = new ArrayList<>();
         List<Integer> stageDuration = new ArrayList<>();

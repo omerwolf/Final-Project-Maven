@@ -1,7 +1,7 @@
 package DB.Entites;
 
 /**
- * represents a record in the data_types table.
+ * represents a record in the `data_types` table
  * in the database.
  */
 public class data_types {

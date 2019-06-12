@@ -1,14 +1,23 @@
 package DB.DaoImpl;
 
-import DB.Dao.pheonological_stageDao;
+import DB.Dao.Dao;
 import DB.Entites.pheonological_stage;
 import DB.Util.ConnectionConfiguration;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-public class pheonological_stageDaoImpl implements pheonological_stageDao{
+
+/**
+ * the class implements the generic Dao class.
+ * responsible for performing actions on the database table `pheonological stage`.
+ */
+public class pheonological_stageDaoImpl implements Dao<pheonological_stage> {
+    /**
+     * receives a pheonological_stage record and inserts it
+     * to the `pheonological stage` table in the database.
+     * @param pheonological_stage - a pheonological_stage record.
+     */
     @Override
     public void insert(pheonological_stage pheonological_stage) {
         Connection connection = null;
@@ -56,7 +65,12 @@ public class pheonological_stageDaoImpl implements pheonological_stageDao{
             }
         }
     }
-
+    /**
+     * receives a pheonological_stage_id number, and returns a record that has
+     * the same pheonological_stage_id number.
+     * @param id - the pheonological_stage_id of the record that will be selected.
+     * @return a pheonological_stage record
+     */
     @Override
     public pheonological_stage selectById(int id) {
         pheonological_stage pheonological_stage = new pheonological_stage();
@@ -106,6 +120,11 @@ public class pheonological_stageDaoImpl implements pheonological_stageDao{
         return pheonological_stage;
     }
 
+    /**
+     * selects all pheonological_stage records in the table 'pheonological stage',
+     * and returns them as a list.
+     * @return a list of all pheonological_stage records from database table 'pheonological stage'.
+     */
     @Override
     public List<pheonological_stage> selectAll() {
         List<pheonological_stage> pheonological_stages = new ArrayList<pheonological_stage>();
@@ -156,6 +175,11 @@ public class pheonological_stageDaoImpl implements pheonological_stageDao{
         return pheonological_stages;
     }
 
+    /**
+     * deletes a pheonological_stage record from the database table `pheonological stage`
+     * with the same pheonological_stage_id as the param.
+     * @param id - the pheonological_stage_id of the record to remove.
+     */
     @Override
     public void delete(int id) {
         Connection connection = null;
@@ -186,6 +210,13 @@ public class pheonological_stageDaoImpl implements pheonological_stageDao{
         }
     }
 
+    /**
+     * takes a pheonological_stage record with values and a pheonological_stage_id, and updates
+     * the record in the table with the same pheonological_stage_id with the values
+     * of the other record.
+     * @param pheonological_stage - the pheonological_stage record to get the values from.
+     * @param id - the id position of the pheonological_stage record to update.
+     */
     @Override
     public void update(pheonological_stage pheonological_stage, int id) {
         Connection connection = null;
@@ -228,6 +259,11 @@ public class pheonological_stageDaoImpl implements pheonological_stageDao{
         }
     }
 
+    /**
+     * returns an int of the first pheonological_stage_id of a record that does not yet exist
+     * in the 'pheonological stage' table.
+     * @return the first unoccupied pheonological_stage_id in the 'pheonological stage' table.
+     */
     @Override
     public int generateUniqueId() {
         Connection connection = null;
@@ -274,6 +310,12 @@ public class pheonological_stageDaoImpl implements pheonological_stageDao{
         return emptySpace;
     }
 
+    /**
+     * receives a list of pheonological_stage records, and inserts all of them
+     * to the `pheonological stage` table.
+     * @param pheonological_stages - the pheonological_stage records list
+     * to be added to the database.
+     */
     @Override
     public void insertAll(List<pheonological_stage> pheonological_stages) {
         //pheonological_stages.sort((pheonological_stage ps1, pheonological_stage ps2) -> ps1.getPheonological_stage_desc().compareTo(ps2.getPheonological_stage_desc()));
@@ -286,6 +328,9 @@ public class pheonological_stageDaoImpl implements pheonological_stageDao{
         System.out.println("InsertAll finished");
     }
 
+    /**
+     * insert all pheonological_stage records that are supposed to be in the database initially.
+     */
     @Override
     public void autoInsertAll() {
         //desc, crop_id, phenological_days, gdd

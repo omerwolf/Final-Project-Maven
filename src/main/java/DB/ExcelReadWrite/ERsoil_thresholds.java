@@ -14,12 +14,26 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * reads the excel file of the soil info,
+ * in order to insert it's values to the database.
+ */
 public class ERsoil_thresholds {
     static String fileName = "src\\main\\resources\\soil_thresholds.xlsx";
 
+    /**
+     * the default constructor.
+     */
     public ERsoil_thresholds() {
     }
 
+    /**
+     * reads from the file name (set as static String) the required information for each row
+     * in the excel file. the values from each row are used in order to create the
+     * Soil records, that will be added to a list that will than
+     * be returned.
+     * @return a list of the records that were added from the excel file.
+     */
     public List<soil_thresholds> readExcelData() {
         List<soil_thresholds> soilThresholdsList = new ArrayList<soil_thresholds>();
 

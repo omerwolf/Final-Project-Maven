@@ -1,14 +1,23 @@
 package DB.DaoImpl;
 
-import DB.Dao.parameter_cropDao;
+import DB.Dao.Dao;
 import DB.Entites.parameter_crop;
 import DB.Util.ConnectionConfiguration;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-public class parameter_cropDaoImpl implements parameter_cropDao{
+
+/**
+ * the class implements the generic Dao class.
+ * responsible for performing actions on the database table `parameter_crop`.
+ */
+public class parameter_cropDaoImpl implements Dao<parameter_crop> {
+    /**
+     * receives a parameter_crop record and inserts it
+     * to the `parameter_crop` table in the database.
+     * @param parameter_crop - a parameter_crop record.
+     */
     @Override
     public void insert(parameter_crop parameter_crop) {
         Connection connection = null;
@@ -55,7 +64,12 @@ public class parameter_cropDaoImpl implements parameter_cropDao{
             }
         }
     }
-
+    /**
+     * receives a param_per_crop_id number, and returns a record that has
+     * the same param_per_crop_id number.
+     * @param id - the param_per_crop_id of the record that will be selected.
+     * @return a parameter_crop record.
+     */
     @Override
     public parameter_crop selectById(int id) {
         parameter_crop parameter_crop = new parameter_crop();
@@ -107,6 +121,11 @@ public class parameter_cropDaoImpl implements parameter_cropDao{
         return parameter_crop;
     }
 
+    /**
+     * selects all parameter_crop records in the table 'parameter_crop',
+     * and returns them as a list.
+     * @return a list of all parameter_crop records from database table 'parameter_crop'.
+     */
     @Override
     public List<parameter_crop> selectAll() {
         List<parameter_crop> parameter_crops = new ArrayList<parameter_crop>();
@@ -159,6 +178,11 @@ public class parameter_cropDaoImpl implements parameter_cropDao{
         return parameter_crops;
     }
 
+    /**
+     * deletes a parameter_crop record from the database table `parameter_crop`
+     * with the same param_per_crop_id as the param.
+     * @param id - the param_per_crop_id of the record to remove.
+     */
     @Override
     public void delete(int id) {
         Connection connection = null;
@@ -189,6 +213,13 @@ public class parameter_cropDaoImpl implements parameter_cropDao{
         }
     }
 
+    /**
+     * takes a parameter_crop record with values and a param_per_crop_id, and updates
+     * the record in the table with the same param_per_crop_id with the values
+     * of the other record.
+     * @param parameter_crop - the parameter_crop record to get the values from.
+     * @param id - the id position of the parameter_crop record to update.
+     */
     @Override
     public void update(parameter_crop parameter_crop, int id) {
         Connection connection = null;
@@ -235,6 +266,11 @@ public class parameter_cropDaoImpl implements parameter_cropDao{
         }
     }
 
+    /**
+     * returns an int of the first param_per_crop_id of a record that does not yet exist
+     * in the 'parameter_crop' table.
+     * @return the first unoccupied param_per_crop_id in the 'parameter_crop' table.
+     */
     @Override
     public int generateUniqueId() {
         Connection connection = null;
@@ -281,6 +317,11 @@ public class parameter_cropDaoImpl implements parameter_cropDao{
         return emptySpace;
     }
 
+    /**
+     * receives a list of parameter_crop records, and inserts all of them
+     * to the `parameter_crop` table.
+     * @param parameter_crops - the parameter_crop records list to be added to the database.
+     */
     @Override
     public void insertAll(List<parameter_crop> parameter_crops) {
         //soils.sort((Soil s1, Soil s2) -> s1.getName().compareTo(s2.getName()));
@@ -292,6 +333,9 @@ public class parameter_cropDaoImpl implements parameter_cropDao{
         System.out.println("InsertAll finished");
     }
 
+    /**
+     * insert all parameter_crop records that are supposed to be in the database initially.
+     */
     @Override
     public void autoInsertAll() {
         parameter_crop pc1 = new parameter_crop(8,	8,	1,	2.408,	0.000, 0);

@@ -12,10 +12,18 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * reads the excel file of the soil info,
+ * in order to insert it's values to the database.
+ */
 public class ERClimate {
     List<MonthClimate> monthClimateList;
     static String fileName = "src\\main\\resources\\Climate.xlsx";
 
+    /**
+     * reads the climate data from the excel,
+     * creates records, and add them to the monthClimateList member.
+     */
     public ERClimate() {
         this.monthClimateList = new ArrayList<>();
         try {
@@ -55,6 +63,10 @@ public class ERClimate {
         }
     }
 
+    /**
+     * returns the climate list if it exists.
+     * @return the monthClimateList
+     */
     public List<MonthClimate> getMonthClimateList() {
         if (this.monthClimateList == null) {
             System.out.println("monthClimateList is not initialized");

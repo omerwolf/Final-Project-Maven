@@ -1,5 +1,5 @@
 package DB.DaoImpl;
-import DB.Dao.ParameterPhEffectDao;
+import DB.Dao.Dao;
 import DB.Entites.ParameterPhEffect;
 import DB.ExcelReadWrite.ExcelReadParameterPhEffect;
 import DB.Util.ConnectionConfiguration;
@@ -8,7 +8,17 @@ import DB.Util.ConnectionConfiguration;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-public class ParameterPhEffectDaoImpl implements ParameterPhEffectDao {
+
+/**
+ * the class implements the generic Dao class.
+ * responsible for performing actions on the database table `parameter_ph_effect`.
+ */
+public class ParameterPhEffectDaoImpl implements Dao<ParameterPhEffect> {
+    /**
+     * receives a ParameterPhEffect record and inserts it
+     * to the `parameter_ph_effect` table in the database.
+     * @param parameterPhEffect - a ParameterPhEffect record.
+     */
     @Override
     public void insert(ParameterPhEffect parameterPhEffect) {
         Connection connection = null;
@@ -45,7 +55,12 @@ public class ParameterPhEffectDaoImpl implements ParameterPhEffectDao {
             }
         }
     }
-
+    /**
+     * receives a effect_id number, and returns a record that has
+     * the same effect_id number.
+     * @param id - the effect_id of the record that will be selected.
+     * @return a ParameterPhEffect record.
+     */
     @Override
     public ParameterPhEffect selectById(int id) {
         ParameterPhEffect parameterPhEffect = new ParameterPhEffect();
@@ -94,6 +109,11 @@ public class ParameterPhEffectDaoImpl implements ParameterPhEffectDao {
         return parameterPhEffect;
     }
 
+    /**
+     * selects all ParameterPhEffect records in the table 'parameter_ph_effect',
+     * and returns them as a list.
+     * @return a list of all ParameterPhEffect records from database table 'parameter_ph_effect'.
+     */
     @Override
     public List<ParameterPhEffect> selectAll() {
         List<ParameterPhEffect> parameterPhEffectList = new ArrayList<ParameterPhEffect>();
@@ -143,6 +163,11 @@ public class ParameterPhEffectDaoImpl implements ParameterPhEffectDao {
         return parameterPhEffectList;
     }
 
+    /**
+     * deletes a ParameterPhEffect record from the database table `parameter_ph_effect`
+     * with the same effect_id as the param.
+     * @param id - the effect_id of the record to remove.
+     */
     @Override
     public void delete(int id) {
         Connection connection = null;
@@ -174,7 +199,13 @@ public class ParameterPhEffectDaoImpl implements ParameterPhEffectDao {
         }
     }
 
-
+    /**
+     * takes a ParameterPhEffect record with values and a effect_id, and updates
+     * the record in the table with the same effect_id with the values
+     * of the other record.
+     * @param parameterPhEffect - the ParameterPhEffect record to get the values from.
+     * @param id - the id position of the ParameterPhEffect record to update.
+     */
     @Override
     public void update(ParameterPhEffect parameterPhEffect, int id) {
         Connection connection = null;
@@ -213,6 +244,12 @@ public class ParameterPhEffectDaoImpl implements ParameterPhEffectDao {
             }
         }
     }
+
+    /**
+     * returns an int of the first effect_id of a record that does not yet exist
+     * in the 'parameter_ph_effect' table.
+     * @return the first unoccupied effect_id in the 'parameter_ph_effect' table.
+     */
     @Override
     public int generateUniqueId() {
         Connection connection = null;
@@ -259,6 +296,12 @@ public class ParameterPhEffectDaoImpl implements ParameterPhEffectDao {
         return emptySpace;
     }
 
+    /**
+     * receives a list of ParameterPhEffect records, and inserts all of them
+     * to the `parameter_ph_effect` table.
+     * @param parameterPhEffectList - the ParameterPhEffect records list
+     * to be added to the database.
+     */
     @Override
     public void insertAll(List<ParameterPhEffect> parameterPhEffectList) {
 
@@ -269,6 +312,10 @@ public class ParameterPhEffectDaoImpl implements ParameterPhEffectDao {
         System.out.println("insertAll finished!");
     }
 
+    /**
+     * insert all ParameterPhEffect records that are supposed to be in the database initially.
+     * note: in this implementation class, it does that by reading from the excel.
+     */
     @Override
     public void autoInsertAll() {
         ExcelReadParameterPhEffect ppeER = new ExcelReadParameterPhEffect();

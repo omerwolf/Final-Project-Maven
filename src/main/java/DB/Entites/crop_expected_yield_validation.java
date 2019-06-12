@@ -1,7 +1,7 @@
 package DB.Entites;
 
 /**
- * represents a record in the crop_expected_yield_validation
+ * represents a record in the `crop_expected_yield_validation`
  * in the database.
  */
 public class crop_expected_yield_validation {

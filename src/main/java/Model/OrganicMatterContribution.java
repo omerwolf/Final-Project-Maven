@@ -1,6 +1,6 @@
 package Model;
 
-import DB.Dao.layer_depth_typeDao;
+import DB.Dao.Dao;
 import DB.DaoImpl.layer_depth_typeDaoImpl;
 import DB.Entites.Soil;
 import DB.Entites.layer_depth_type;
@@ -34,7 +34,7 @@ public class OrganicMatterContribution {
         double organicMatter = p.getSa().getOrganic_matter();
         //extracting the range for the depth
         int layerDepthId = p.getSa().getLayer_depth_id();
-        layer_depth_typeDao ldtd = new layer_depth_typeDaoImpl();
+        Dao<layer_depth_type> ldtd = new layer_depth_typeDaoImpl();
         layer_depth_type ldt = ldtd.selectById(layerDepthId);
         double layerAvg = (ldt.getLayer_min() + ldt.getLayer_max())/2;
         double layerDepth = layerAvg/100; // divide value (taken from DB) by 100

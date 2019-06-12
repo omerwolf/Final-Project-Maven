@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * represents a line in two output tables, that is created during the model run,
+ * and consists a row description name, and amounts for each of the 12 nutrients.
+ * used for adjustment table and actual nutrients table.
+ */
 public class NutrientsOutput {
     private String stageName;
     private double N;
@@ -19,6 +24,22 @@ public class NutrientsOutput {
     private double Cu;
     private double Mo;
 
+    /**
+     * creates a NutrientsOutput row in an output table.
+     * @param stageName - the row name.
+     * @param n - n nutrient amount.
+     * @param p205 - p nutrient amount.
+     * @param k20 - k nutrient amount.
+     * @param ca0 - ca nutrient amount.
+     * @param mg0 - mg nutrient amount.
+     * @param s - s nutrient amount.
+     * @param fe - fe nutrient amount.
+     * @param b - b nutrient amount.
+     * @param mn - mn nutrient amount.
+     * @param zn - zn nutrient amount.
+     * @param cu - cu nutrient amount.
+     * @param mo - mo nutrient amount.
+     */
     public NutrientsOutput(String stageName, double n, double p205, double k20, double ca0, double mg0, double s,
                            double fe, double b, double mn, double zn, double cu, double mo) {
         this.stageName = stageName;
@@ -36,6 +57,12 @@ public class NutrientsOutput {
         Mo = mo;
     }
 
+    /**
+     * receives a row name and a list of amounts for each nutrient, and sets
+     * each one of its members with the list's amounts.
+     * @param stageName - the row name.
+     * @param nutrients - a list of all 12 nutrients amounts.
+     */
     public NutrientsOutput(String stageName, List<Double> nutrients) {
         this.stageName = stageName;
         N = nutrients.get(0);
@@ -161,6 +188,11 @@ public class NutrientsOutput {
         Mo = mo;
     }
 
+    /**
+     * overrides toString method in order to print the NutrientsOutput
+     * field names and values.
+     * @return NutrientsOutput's field names and values.
+     */
     @Override
     public String toString() {
         return "NutrientsOutput{" +

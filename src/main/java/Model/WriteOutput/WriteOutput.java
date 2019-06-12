@@ -9,19 +9,43 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+/**
+ * writes the output of the tables that were calculated during the model's run
+ * to an excel file.
+ */
 public class WriteOutput {
     final int NUM_OF_COLUMNS = 13; //The amount of members at WriteOutput class
     final String filePate;
     final Workbook workbook;
 
+    /**
+     * creates a WriteOutput class.
+     * receives ui info and generates a workbook from it, and a filepath for it.
+     * @param ui - the user input.
+     */
     public WriteOutput(UserInput ui){
         XlsxFileGenerator fileGenerator = new XlsxFileGenerator(ui);
         this.workbook = fileGenerator.getWorkbook();
         this.filePate = fileGenerator.getFilePath();
     }
+
+    /**
+     * writes the adjustment nutrients table and the actual nutrients table
+     * to an excel file.
+     * @param nutrientsOutput - a list of NutrientsOutput(the table) to write to an excel.
+     * @throws Exception - throws exception if there was a problem.
+     */
     public void writeNutrientsOutput(List<NutrientsOutput> nutrientsOutput) throws Exception{
         int numOfSheets = this.workbook.getNumberOfSheets();
-        Sheet sheet = this.workbook.createSheet("Nutrients");
+        Sheet sheet;
+        //if it's the adjustment nutrients table.
+        if (nutrientsOutput.get(0).getStageName().equals("Basic_Removal")) {
+            sheet = this.workbook.createSheet("Nutrients Adjustment");
+        }
+        //will be the actual nutrients table.
+        else {
+            sheet = this.workbook.createSheet("Actual Nutrients");
+        }
         Row row = sheet.createRow(0);
         this.writeNutrientsOutputHeader(row);
 
@@ -40,11 +64,17 @@ public class WriteOutput {
         FileOutputStream fos = new FileOutputStream(this.filePate);
         workbook.write(fos);
         fos.close();
-        System.out.println("NutrientsOutput:: " + this.filePate + " written successfully");
+            System.out.println("NutrientsOutput:: " + this.filePate + " written successfully");
 
 
     }
 
+    /**
+     * writes the Water Analysis table and the actual nutrients table
+     * to an excel file.
+     * @param waterAnalysisOutput - a list of WaterAnalysisOutput(the table) to write to an excel.
+     * @throws Exception - throws exception if there was a problem.
+     */
     public void writeWaterAnalysisOutput(List<WaterAnalysisOutput> waterAnalysisOutput) throws Exception{
         int numOfSheets = this.workbook.getNumberOfSheets();
         Sheet sheet = this.workbook.createSheet("Water analysis interpretation");
@@ -70,6 +100,12 @@ public class WriteOutput {
 
     }
 
+    /**
+     * writes the Soil Analysis table and the actual nutrients table
+     * to an excel file.
+     * @param soilAnalysisOutput - a list of SoilAnalysisOutput(the table) to write to an excel.
+     * @throws Exception - throws exception if there was a problem.
+     */
     public void writeSoilAnalysisOutput(List<SoilAnalysisOutput> soilAnalysisOutput) throws Exception{
         int numOfSheets = this.workbook.getNumberOfSheets();
         Sheet sheet = this.workbook.createSheet("Soil analysis interpretation");
@@ -95,6 +131,10 @@ public class WriteOutput {
 
     }
 
+    /**
+     * used in order to write the headers for the nutrients output table.
+     * @param firstRow - the first row of the output excel that was just created.
+     */
     private void writeNutrientsOutputHeader(Row firstRow) {
         // Change font and color
         Font headerFont = workbook.createFont();
@@ -153,6 +193,12 @@ public class WriteOutput {
         cell.setCellStyle(headerCellStyle);
     }
 
+    /**
+     * takes a row in the sheet and it's associated NutrientOutput, which contains
+     * the values needed to be inserted to that row and inserts them.
+     * @param row - the current row.
+     * @param no - the list of the nutrients values in that row.
+     */
     private void writeNutrientsOutputData(Row row, NutrientsOutput no ) {
 
         Cell cell = row.createCell(0);
@@ -195,6 +241,11 @@ public class WriteOutput {
         cell.setCellValue(no.getMo());
 
     }
+
+    /**
+     * used in order to write the headers for the water analysis output table.
+     * @param firstRow - the first row of the output excel that was just created.
+     */
     private void writeWaterAnalysisOutputHeader(Row firstRow) {
         // Change font and color
         Font headerFont = workbook.createFont();
@@ -225,6 +276,13 @@ public class WriteOutput {
         cell.setCellStyle(headerCellStyle);
 
     }
+
+    /**
+     * takes a row in the sheet and it's associated WaterAnalysisOutput, which contains
+     * the values needed to be inserted to that row and inserts them.
+     * @param row - the current row.
+     * @param wao - the list of the values in that row.
+     */
     private void writeWaterAnalysisOutputData(Row row, WaterAnalysisOutput wao ) {
 
         Cell cell = row.createCell(0);
@@ -245,6 +303,11 @@ public class WriteOutput {
         cell = row.createCell(5);
         cell.setCellValue(wao.getActualNutrientsKg());
     }
+
+    /**
+     * used in order to write the headers for the soil analysis output table.
+     * @param firstRow - the first row of the output excel that was just created.
+     */
     private void writeSoilAnalysisOutputHeader(Row firstRow) {
         // Change font and color
         Font headerFont = workbook.createFont();
@@ -274,11 +337,18 @@ public class WriteOutput {
         cell.setCellValue("Recommendation");
         cell.setCellStyle(headerCellStyle);
 
-        cell = firstRow.createCell(5);
+        cell = firstRow.createCell(6);
         cell.setCellValue("Correction");
         cell.setCellStyle(headerCellStyle);
 
     }
+
+    /**
+     * takes a row in the sheet and it's associated SoilAnalysisOutput, which contains
+     * the values needed to be inserted to that row and inserts them.
+     * @param row - the current row.
+     * @param sao - the list of the values in that row.
+     */
     private void writeSoilAnalysisOutputData(Row row, SoilAnalysisOutput sao ) {
 
         Cell cell = row.createCell(0);
