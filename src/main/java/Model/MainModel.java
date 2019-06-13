@@ -20,12 +20,12 @@ public class MainModel {
         int cropId = 8;
         variety_type vt = getVarietyType(cropId);
         int soilId = 3;
-        int selectedNCredit = 12;
+        int selectedNCredit = 78;
         int irrigationMethod = 1;
         Double irrigationVolume = 350.0;
         int fertilizationMethod = 3;
         Boolean selectedBaseDressing = true;
-        Double soilCorrection = 1.0;
+        Double soilCorrection = 0.01;
         Double ph = 5.5;
         String date = "02/01/2016";
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");

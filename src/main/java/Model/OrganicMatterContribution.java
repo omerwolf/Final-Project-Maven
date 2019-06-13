@@ -30,91 +30,89 @@ public class OrganicMatterContribution {
      */
     public Nutrients organicMatterContribution(Parameters p, Nutrients n) {
 
-        //if check (once pre season soil excel will be in the DB, and if labeled "yes")
-        double organicMatter = p.getSa().getOrganic_matter();
-        //extracting the range for the depth
-        int layerDepthId = p.getSa().getLayer_depth_id();
-        Dao<layer_depth_type> ldtd = new layer_depth_typeDaoImpl();
-        layer_depth_type ldt = ldtd.selectById(layerDepthId);
-        double layerAvg = (ldt.getLayer_min() + ldt.getLayer_max())/2;
-        double layerDepth = layerAvg/100; // divide value (taken from DB) by 100
-        if (layerDepth == 0) {
-            layerDepth = 0.3;
-        }
+        if (p.getSa().isIs_active()) {
+            double organicMatter = p.getSa().getOrganic_matter();
+            //extracting the range for the depth
+            int layerDepthId = p.getSa().getLayer_depth_id();
+            Dao<layer_depth_type> ldtd = new layer_depth_typeDaoImpl();
+            layer_depth_type ldt = ldtd.selectById(layerDepthId);
+            double layerAvg = (ldt.getLayer_min() + ldt.getLayer_max()) / 2;
+            Double layerDepth = layerAvg / 100; // divide value (taken from DB) by 100
+            if (layerDepth == null) {
+                layerDepth = 0.3;
+            }
 
-        double[] somNutrients = {100,15*2.29,15};
-        double oc = 0.58;
-        Soil soil = n.getSoil();
-        //active and yes check
-        double db; //* bulk density in pre soil
-        System.out.println("pre soil bulk is: " + p.getSa().getBulk_density());
-        if (p.getSa() != null ) { //bulk null check? may be redundant
-            db = 1000 * p.getSa().getBulk_density();
-        }
-        else {
-            db = 1000 * soil.getDefualtBulkDensity();
-        }
-        List<CropStage> cropStageList = p.getCropStages();
-        Set<Integer> uniqueMonths = uniqueMonths(cropStageList);
-        for (Integer i:uniqueMonths) {
-            System.out.println("unique month: " +i);
-        }
-        //calculating the mean temperature
-        ERClimate erClimate = new ERClimate();
-        double meanTemp = 0.0;
-        for (Integer monthId:uniqueMonths) {
-            MonthClimate mc = erClimate.getMonth(monthId);
-            meanTemp += mc.getTemp();
-        }
-        meanTemp = meanTemp/uniqueMonths.size();
-        System.out.println("mean temp is: " + meanTemp);
-        double decomosingRate;
-        //get decomposing rate based on the calculated meanTemp value
-        if (meanTemp < 15) {
-            decomosingRate = soil.getSomDecompLow();
-        }
-        else if (meanTemp < 25) {
-            decomosingRate = soil.getSomDecompModerate();
-        }
-        else {
-            decomosingRate = soil.getSomDecompHigh();
-        }
+            double[] somNutrients = {100, 15 * 2.29, 15};
+            double oc = 0.58;
+            Soil soil = n.getSoil();
+            //active and yes check
+            double db; //* bulk density in pre soil
+            System.out.println("pre soil bulk is: " + p.getSa().getBulk_density());
+            if (p.getSa().isIs_active() && p.getSa().getBulk_density() != null) {
+                db = 1000 * p.getSa().getBulk_density();
+            } else {
+                db = 1000 * soil.getDefualtBulkDensity();
+            }
+            List<CropStage> cropStageList = p.getCropStages();
+            Set<Integer> uniqueMonths = uniqueMonths(cropStageList);
+            for (Integer i : uniqueMonths) {
+                System.out.println("unique month: " + i);
+            }
+            //calculating the mean temperature
+            ERClimate erClimate = new ERClimate();
+            double meanTemp = 0.0;
+            for (Integer monthId : uniqueMonths) {
+                MonthClimate mc = erClimate.getMonth(monthId);
+                meanTemp += mc.getTemp();
+            }
+            meanTemp = meanTemp / uniqueMonths.size();
+            System.out.println("mean temp is: " + meanTemp);
+            double decomosingRate;
+            //get decomposing rate based on the calculated meanTemp value
+            if (meanTemp < 15) {
+                decomosingRate = soil.getSomDecompLow();
+            } else if (meanTemp < 25) {
+                decomosingRate = soil.getSomDecompModerate();
+            } else {
+                decomosingRate = soil.getSomDecompHigh();
+            }
 
 
-        double duration = (p.getDuration())/365.0;
-        System.out.println("duration is: " + duration);
-        double soilWeight = layerDepth * db * 10;
-        double soilOc = oc * soilWeight * organicMatter;
-        double annualOcDecomp = soilOc * decomosingRate;
-        double ocDecomp = annualOcDecomp * duration;
-        System.out.println(soilWeight+ " "  + soilOc +" " +annualOcDecomp + " " +ocDecomp);
-        double[] nps = new double[3];
-        for (int i=0;i<somNutrients.length;i++) {
-            nps[i] = somNutrients[i] * ocDecomp;
-            System.out.println(nps[i]);
-        }
-        //soil organic matter(som) calculation
-        List<Double> som = new ArrayList<>(Collections.nCopies(n.getName().size(),0.0));
-        for (int i=0;i<n.getName().size() ;i++) {
-            System.out.println(n.getName().get(i));
-        }
-        Integer somN = (int)Math.round(-nps[0]);
-        Integer somP = (int)Math.round(-nps[1]);
-        Integer somS = (int)Math.round(-nps[2]);
-        som.set(0,Double.valueOf(somN));
-        som.set(1,Double.valueOf(somP));
-        som.set(5,Double.valueOf(somS));
-        System.out.println("som values: ");
-        for (int i=0;i<som.size() ;i++) {
-            System.out.println(som.get(i));
-        }
+            double duration = (p.getDuration()) / 365.0;
+            System.out.println("duration is: " + duration);
+            double soilWeight = layerDepth * db * 10;
+            double soilOc = oc * soilWeight * organicMatter;
+            double annualOcDecomp = soilOc * decomosingRate;
+            double ocDecomp = annualOcDecomp * duration;
+            System.out.println(soilWeight + " " + soilOc + " " + annualOcDecomp + " " + ocDecomp);
+            double[] nps = new double[3];
+            for (int i = 0; i < somNutrients.length; i++) {
+                nps[i] = somNutrients[i] * ocDecomp;
+                System.out.println(nps[i]);
+            }
+            //soil organic matter(som) calculation
+            List<Double> som = new ArrayList<>(Collections.nCopies(n.getName().size(), 0.0));
+            for (int i = 0; i < n.getName().size(); i++) {
+                System.out.println(n.getName().get(i));
+            }
+            Integer somN = (int) Math.round(-nps[0]);
+            Integer somP = (int) Math.round(-nps[1]);
+            Integer somS = (int) Math.round(-nps[2]);
+            som.set(0, Double.valueOf(somN));
+            som.set(1, Double.valueOf(somP));
+            som.set(5, Double.valueOf(somS));
+            System.out.println("som values: ");
+            for (int i = 0; i < som.size(); i++) {
+                System.out.println(som.get(i));
+            }
 
-        //adding som to nutrients adj output table
-        n.getSoilNutrients().setSom(som);
-        List<NutrientsOutput> nutrientsOutputList = n.getPreSeason().getAdjNutrients();
-        NutrientsOutput nutrientsOutput = new NutrientsOutput("SOM", som);
-        nutrientsOutputList.add(nutrientsOutput);
-        n.getPreSeason().setAdjNutrients(nutrientsOutputList);
+            //adding som to nutrients adj output table
+            n.getSoilNutrients().setSom(som);
+            List<NutrientsOutput> nutrientsOutputList = n.getPreSeason().getAdjNutrients();
+            NutrientsOutput nutrientsOutput = new NutrientsOutput("SOM", som);
+            nutrientsOutputList.add(nutrientsOutput);
+            n.getPreSeason().setAdjNutrients(nutrientsOutputList);
+        }
         return n;
     }
 

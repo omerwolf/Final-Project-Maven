@@ -33,8 +33,8 @@ public class PhAdjustment {
     public Nutrients phAdjustment(Parameters p, Nutrients n, double sample) {
 
         double soilPh = 0;
-        System.out.println(p.getSa().getSoil_pH());
-        if (soilPh == 0) { //if general excel table of pre soil is active - check if needed
+        //System.out.println(p.getSa().getSoil_pH());
+        if (p.getSa() != null) { //top table of pre soil is active (technically exists)
             if (sample == 0) { // 0 = pre season
                 if (p.getSa().getSoil_pH() != null) { //if pre soil value of ph isn't null
                     soilPh = p.getSa().getSoil_pH();

@@ -19,20 +19,22 @@ public class WaterAnalysisDaoImpl implements WaterAnalysisDao {
             statement.executeQuery("SET FOREIGN_KEY_CHECKS=0");
             preparedStatement = connection.prepareStatement("INSERT INTO `water_lab_analysis`" +
                             "(`water_analysis_id`," +
+                            "`is_active`," +
                             "`farm_id`," +
                             "`sample_date`," +
                             "`sample_name`," +
                             "`ib_id`," +
                             "`water_EC`," +
                             "`water_pH`)" +
-                    "VALUES (?,?,?,?,?,?,?)");
+                    "VALUES (?,?,?,?,?,?,?,?)");
             preparedStatement.setInt(1, waterAnalyses.getWater_analysis_id());
-            preparedStatement.setInt(2, waterAnalyses.getFarm_id());
-            preparedStatement.setDate(3, date);
-            preparedStatement.setString(4, waterAnalyses.getSample_name());
-            preparedStatement.setInt(5, waterAnalyses.getIb_id());
-            preparedStatement.setDouble(6, waterAnalyses.getWater_EC());
-            preparedStatement.setDouble(7, waterAnalyses.getWater_pH());
+            preparedStatement.setBoolean(2, waterAnalyses.getIs_active());
+            preparedStatement.setInt(3, waterAnalyses.getFarm_id());
+            preparedStatement.setDate(4, date);
+            preparedStatement.setString(5, waterAnalyses.getSample_name());
+            preparedStatement.setInt(6, waterAnalyses.getIb_id());
+            preparedStatement.setDouble(7, waterAnalyses.getWater_EC());
+            preparedStatement.setDouble(8, waterAnalyses.getWater_pH());
             preparedStatement.executeUpdate();
             statement.executeQuery("SET FOREIGN_KEY_CHECKS=1");
             System.out.println("inserted : " + waterAnalyses);
@@ -73,6 +75,7 @@ public class WaterAnalysisDaoImpl implements WaterAnalysisDao {
             while (resultSet.next()) {
 
                 waterAnalysis.setWater_analysis_id(resultSet.getInt("water_analysis_id"));
+                waterAnalysis.setIs_active(resultSet.getBoolean("is_active"));
                 waterAnalysis.setFarm_id(resultSet.getInt("farm_id"));
                 //convert sql date to local date
                 Date date = resultSet.getDate("sample_date");

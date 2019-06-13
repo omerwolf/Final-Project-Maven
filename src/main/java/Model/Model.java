@@ -27,16 +27,19 @@ public class Model {
 
     public Model(Integer soilAnalysisId, Integer waterAnalysisId, UserInput ui) {
         this.soilAnalysisId = soilAnalysisId;
+        System.out.println("i have an id at it is: " + soilAnalysisId);
         this.waterAnalysisId = waterAnalysisId;
+        System.out.println("i have an id at it is: " + waterAnalysisId);
         this.ui = ui;
+        //System.out.println(ui.toString());
 
     }
 
     public void init() {
         SoilAnalysisDao sad = new SoilAnalysisDaoImpl();
         WaterAnalysisDao wad = new WaterAnalysisDaoImpl();
-        SoilAnalysis sa = null;
-        WaterAnalysis wa = null;
+        SoilAnalysis sa = null; //general soil analysis data record
+        WaterAnalysis wa = null; // general water analysis data record
         if (soilAnalysisId != null) {
             System.out.println("soil analysis isn't null and id is: " + soilAnalysisId);
             sa = sad.selectById(soilAnalysisId); //temporal - top table
@@ -48,8 +51,14 @@ public class Model {
         System.out.println("the crop is: " + ui.getSelectedCrop().getName());
         System.out.println("the variety is: " + ui.getSelectedVarType().getVariety_name());
         LabAnalysisResultDao lard = new LabAnalysisResultDaoImpl();
-        List<SoilLabAnalysisResult> soilLabAnalysisResults = lard.selectAllSoilById(111); //temporal - lower table
-        List<WaterLabAnalysisResult> waterLabAnalysisResults = lard.selectAllWaterById(19); //temporal - lower table
+        List<SoilLabAnalysisResult> soilLabAnalysisResults = null;
+        List<WaterLabAnalysisResult> waterLabAnalysisResults = null;
+        if (soilAnalysisId != null) {
+            soilLabAnalysisResults = lard.selectAllSoilById(soilAnalysisId);
+        }
+        if (waterAnalysisId != null) {
+            waterLabAnalysisResults = lard.selectAllWaterById(waterAnalysisId); //temporal - lower table
+        }
 
 
         Parameters p = new Parameters(ui, sa, wa, soilLabAnalysisResults, waterLabAnalysisResults);
@@ -75,13 +84,15 @@ public class Model {
         NCredit ncredit = new NCredit();
         n = ncredit.nCredit(p, n);
         System.out.println(n.getSoilNutrients().getnCredits().get(0));
-        //needs to add a check if lab analysis exists.
-        OrganicMatterContribution omc = new OrganicMatterContribution();
-        n = omc.organicMatterContribution(p, n);
-        PreSeasonNutrientsSoilAnalysis psnsa = new PreSeasonNutrientsSoilAnalysis();
-        n = psnsa.PreSeasonNutrientsSoilAnalysis(p, n);
-        OrganicNitrogenLogic onl = new OrganicNitrogenLogic();
-        n = onl.calculateOnl(p,n);
+        //if lab analysis exists, proceed for the following calculations.
+        if (p.getSa() != null) {
+            OrganicMatterContribution omc = new OrganicMatterContribution();
+            n = omc.organicMatterContribution(p, n);
+            PreSeasonNutrientsSoilAnalysis psnsa = new PreSeasonNutrientsSoilAnalysis();
+            n = psnsa.PreSeasonNutrientsSoilAnalysis(p, n);
+            OrganicNitrogenLogic onl = new OrganicNitrogenLogic();
+            n = onl.calculateOnl(p, n);
+        }
         n = roundResults(n);
         n = calculateSummaryAdjTable(p,n);
         //if pre season, write to output the soil Analysis output (nutrients->preseason->soilanalysis

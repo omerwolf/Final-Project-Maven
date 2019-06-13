@@ -32,8 +32,9 @@ public class SoilAnalysisDaoImpl implements SoilAnalysisDao {
                     "`soil_pH`," +
                     "`soil_EC`," +
                     "`soil_CEC`," +
+                    "`is_active`," +
                     "`test_type_id`) " +
-                    "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+                    "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
             preparedStatement.setString(1, soilAnalysis.getSample_name());
             preparedStatement.setInt(2, soilAnalysis.getSoil_analysis_id());
             preparedStatement.setInt(3, soilAnalysis.getFarm_id());
@@ -47,8 +48,8 @@ public class SoilAnalysisDaoImpl implements SoilAnalysisDao {
             preparedStatement.setDouble(11, soilAnalysis.getSoil_pH());
             preparedStatement.setDouble(12, soilAnalysis.getSoil_EC());
             preparedStatement.setDouble(13, soilAnalysis.getSoil_CEC());
-            //preparedStatement.setDouble(13, soilAnalysis.getSoil_CEC());
-            preparedStatement.setInt(14, soilAnalysis.getTest_type_id());
+            preparedStatement.setBoolean(14, soilAnalysis.isIs_active());
+            preparedStatement.setInt(15, soilAnalysis.getTest_type_id());
             preparedStatement.executeUpdate();
             statement.executeQuery("SET FOREIGN_KEY_CHECKS=1");
             System.out.println("inserted : " + soilAnalysis);
@@ -88,6 +89,7 @@ public class SoilAnalysisDaoImpl implements SoilAnalysisDao {
             while (resultSet.next()) {
                 soilAnalysis.setSample_name(resultSet.getString("sample_name"));
                 soilAnalysis.setSoil_analysis_id(resultSet.getInt("soil_analysis_id"));
+                soilAnalysis.setIs_active(resultSet.getBoolean("is_active"));
                 soilAnalysis.setFarm_id(resultSet.getInt("farm_id"));
                 //convert sql date to local date
                 Date date = resultSet.getDate("sample_date");

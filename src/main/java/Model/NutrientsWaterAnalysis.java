@@ -54,49 +54,51 @@ public class NutrientsWaterAnalysis {
         List<Double> efficiency = new ArrayList<>(Collections.nCopies(nutrientsName.length,0.0));
         List<Double> actualNutrientsKg = new ArrayList<>(Collections.nCopies(nutrientsName.length,0.0));
         System.out.println();
-        for (int i=0;i<nutrientsName.length;i++) {
-            waterNutrients.set(i,p.getWlar().get(i).getParameter_value()); //check later if needed to work for more than 12
-            System.out.print("water nutrient " + (i+1) + " " + waterNutrients.get(i));
-            resultsUnit[i] = "'ppm'"; // add uom and get from there - check with ofer
-            appliedNutrients.set(i,waterNutrients.get(i) *irrigationVolume/100);
-            System.out.print("applied nutrient " + (i+1) + " " + appliedNutrients.get(i));
-            efficiency.set(i,fertEfficientFactors.get(i) * im.getIrrigation_method_efficiency());
-            System.out.print("efficiency " + (i+1) + " " + efficiency.get(i));
-            actualNutrientsKg.set(i,efficiency.get(i) * appliedNutrients.get(i));
-            System.out.print("actual nutrients " + (i+1) + " " + actualNutrientsKg.get(i));
-            System.out.println();
-        }
-        List<WaterAnalysisOutput> waoList = new ArrayList<>();
-        for (int i=0;i<nutrientsName.length;i++) {
-            WaterAnalysisOutput wao = new WaterAnalysisOutput(nutrientsName[i],waterNutrients.get(i),resultsUnit[i],
-                    appliedNutrients.get(i),efficiency.get(i),actualNutrientsKg.get(i));
-            waoList.add(wao);
-        }
-        n.getPreSeason().setWaterAnalysis(waoList); //sets the table in preSeason class
-        for (int i=0;i<nutrientsName.length;i++) {
-            System.out.println(n.getPreSeason().getWaterAnalysis().get(i));
-        }
+        if (p.getWa() != null) { // need to validate with offer
+            for (int i = 0; i < nutrientsName.length; i++) {
+                waterNutrients.set(i, p.getWlar().get(i).getParameter_value());
+                System.out.print("water nutrient " + (i + 1) + " " + waterNutrients.get(i));
+                resultsUnit[i] = "'ppm'"; // add uom and get from there - check with ofer
+                appliedNutrients.set(i, waterNutrients.get(i) * irrigationVolume / 100);
+                System.out.print("applied nutrient " + (i + 1) + " " + appliedNutrients.get(i));
+                efficiency.set(i, fertEfficientFactors.get(i) * im.getIrrigation_method_efficiency());
+                System.out.print("efficiency " + (i + 1) + " " + efficiency.get(i));
+                actualNutrientsKg.set(i, efficiency.get(i) * appliedNutrients.get(i));
+                System.out.print("actual nutrients " + (i + 1) + " " + actualNutrientsKg.get(i));
+                System.out.println();
+            }
+            List<WaterAnalysisOutput> waoList = new ArrayList<>();
+            for (int i = 0; i < nutrientsName.length; i++) {
+                WaterAnalysisOutput wao = new WaterAnalysisOutput(nutrientsName[i], waterNutrients.get(i), resultsUnit[i],
+                        appliedNutrients.get(i), efficiency.get(i), actualNutrientsKg.get(i));
+                waoList.add(wao);
+            }
+            n.getPreSeason().setWaterAnalysis(waoList); //sets the table in preSeason class
+            for (int i = 0; i < nutrientsName.length; i++) {
+                System.out.println(n.getPreSeason().getWaterAnalysis().get(i));
+            }
 
 
-        double [] oxide = {1, 2.29 , 1.2 , 1.4 , 1.6 , 1 , 1 , 1 , 1 , 1, 1, 1 };
-        double [] waterContribution = new double[oxide.length];
-        for (int i=0;i<waterContribution.length;i++) {
-            waterContribution[i] = -Math.round(actualNutrientsKg.get(i) *oxide[i]);
+            double[] oxide = {1, 2.29, 1.2, 1.4, 1.6, 1, 1, 1, 1, 1, 1, 1};
+            double[] waterContribution = new double[oxide.length];
+            for (int i = 0; i < waterContribution.length; i++) {
+                waterContribution[i] = -Math.round(actualNutrientsKg.get(i) * oxide[i]);
+            }
+            List<NutrientsOutput> actualNutrients = n.getPreSeason().getActualNutrients();
+            NutrientsOutput waterContributionOutput = toNutrientOutput(waterContribution, "Water_Contribution");
+            actualNutrients.add(waterContributionOutput);
+            double[] totalFertilization = new double[oxide.length];
+            double[] arrayActualFertilization = {actualNutrients.get(4).getN(), actualNutrients.get(4).getP205(),
+                    actualNutrients.get(4).getK20(), actualNutrients.get(4).getCa0(), actualNutrients.get(4).getMg0(), actualNutrients.get(4).getS(),
+                    actualNutrients.get(4).getFe(), actualNutrients.get(4).getB(), actualNutrients.get(4).getMn(), actualNutrients.get(4).getZn()
+                    , actualNutrients.get(4).getCu(), actualNutrients.get(4).getMo()};
+            for (int i = 0; i < oxide.length; i++) {
+                totalFertilization[i] = arrayActualFertilization[i] + waterContribution[i];
+            }
+            NutrientsOutput totalFertilizationOutput = toNutrientOutput(totalFertilization, "Total_Fertilization");
+            actualNutrients.add(totalFertilizationOutput);
+            System.out.println(actualNutrients);
         }
-        List<NutrientsOutput> actualNutrients = n.getPreSeason().getActualNutrients();
-        NutrientsOutput waterContributionOutput = toNutrientOutput(waterContribution, "Water_Contribution");
-        actualNutrients.add(waterContributionOutput);
-        double [] totalFertilization = new double[oxide.length];
-        double [] arrayActualFertilization = {actualNutrients.get(4).getN(),actualNutrients.get(4).getP205(),
-        actualNutrients.get(4).getK20(),actualNutrients.get(4).getCa0(),actualNutrients.get(4).getMg0(),actualNutrients.get(4).getS(),
-                actualNutrients.get(4).getFe(),actualNutrients.get(4).getB(),actualNutrients.get(4).getMn(),actualNutrients.get(4).getZn()
-        ,actualNutrients.get(4).getCu(),actualNutrients.get(4).getMo()};
-        for (int i=0;i<oxide.length;i++) {
-            totalFertilization[i] = arrayActualFertilization[i] + waterContribution[i];
-        }
-        NutrientsOutput totalFertilizationOutput = toNutrientOutput(totalFertilization,"Total_Fertilization");
-        actualNutrients.add(totalFertilizationOutput);
-        System.out.println(actualNutrients);
         return n;
     }
 

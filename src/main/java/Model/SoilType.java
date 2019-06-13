@@ -32,11 +32,13 @@ public class SoilType {
      */
     public Nutrients soilType(Parameters p, Nutrients n) {
         //if lab analysis is active, read soil info from there (should be in the db at this stage).
-        int soilId = p.getSa().getSoil_type_id();
-        Dao<Soil> soilDao = new SoilDaoImpl();
-        Soil soil = soilDao.selectById(soilId);
-        n.setSoil(soil);
-        //else
+        if (p.getSa() != null) {
+            int soilId = p.getSa().getSoil_type_id();
+            Dao<Soil> soilDao = new SoilDaoImpl();
+            Soil soil = soilDao.selectById(soilId);
+            n.setSoil(soil);
+        }
+        else
         n.setSoil(p.getUi().getSelectedSoil()); //take soil from simulation data
         return n;
     }

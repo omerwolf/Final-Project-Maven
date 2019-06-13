@@ -34,6 +34,7 @@ public class ERSoilAnalysis {
     }
 
     public int read() {
+        System.out.println("read read read!!!");
         Integer soilAnalysisId = null;
         SoilAnalysis soilAnalysis = null;
         List<SoilLabAnalysisResult> labAnalysisResultList = new ArrayList<>();
@@ -145,7 +146,7 @@ public class ERSoilAnalysis {
                     labAnalysisResultList.add(new SoilLabAnalysisResult(soil_analysis_id,16,p16Val,p16ExtractionMethod));
                     labAnalysisResultList.add(new SoilLabAnalysisResult(soil_analysis_id,17,p17Val,p17ExtractionMethod));
                     labAnalysisResultList.add(new SoilLabAnalysisResult(soil_analysis_id,19,p19Val,p19ExtractionMethod));
-
+                    System.out.println("in the end");
 
                     //insert to lab_analysis_results schema
                     LabAnalysisResultDao larDao = new LabAnalysisResultDaoImpl();
