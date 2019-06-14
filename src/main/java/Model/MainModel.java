@@ -33,7 +33,7 @@ public class MainModel {
         UserInput ui = new UserInput(name,getCrop(cropId),vt,getSoil(soilId),getExpectedYield(vt.getVariety_id()),
                 selectedNCredit,getIrrigationMethod(irrigationMethod),irrigationVolume,
                 getFertilizationMethod(fertilizationMethod),selectedBaseDressing, soilCorrection,ph,dateTime);
-        Model model = new Model(111,19,ui);
+        Model model = new Model(103,103,ui);
         model.init();
 
         SoilAnalysisDao sad = new SoilAnalysisDaoImpl();

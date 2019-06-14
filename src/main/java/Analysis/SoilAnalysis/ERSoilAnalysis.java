@@ -92,7 +92,7 @@ public class ERSoilAnalysis {
                     double p1Val = firstSheet.getRow(17).getCell(1).getNumericCellValue();
                     double p13Val = firstSheet.getRow(18).getCell(1).getNumericCellValue();
                     double p14Val = firstSheet.getRow(19).getCell(1).getNumericCellValue();
-                    double p15Val = firstSheet.getRow(20).getCell(1).getNumericCellValue();
+                    double p20Val = firstSheet.getRow(20).getCell(1).getNumericCellValue();
                     double p2Val = firstSheet.getRow(21).getCell(1).getNumericCellValue();
                     double p3Val = firstSheet.getRow(22).getCell(1).getNumericCellValue();
                     double p4Val = firstSheet.getRow(23).getCell(1).getNumericCellValue();
@@ -112,7 +112,7 @@ public class ERSoilAnalysis {
                     int p1ExtractionMethod = this.getExtractionMethodId(firstSheet.getRow(17).getCell(3).getStringCellValue());
                     int p13ExtractionMethod = this.getExtractionMethodId(firstSheet.getRow(18).getCell(3).getStringCellValue());
                     int p14ExtractionMethod  = this.getExtractionMethodId(firstSheet.getRow(19).getCell(3).getStringCellValue());
-                    int p15ExtractionMethod  = this.getExtractionMethodId(firstSheet.getRow(20).getCell(3).getStringCellValue());
+                    int p20ExtractionMethod  = this.getExtractionMethodId(firstSheet.getRow(20).getCell(3).getStringCellValue());
                     int p2ExtractionMethod  = this.getExtractionMethodId(firstSheet.getRow(21).getCell(3).getStringCellValue());
                     int p3ExtractionMethod  = this.getExtractionMethodId(firstSheet.getRow(22).getCell(3).getStringCellValue());
                     int p4ExtractionMethod  = this.getExtractionMethodId(firstSheet.getRow(23).getCell(3).getStringCellValue());
@@ -142,10 +142,10 @@ public class ERSoilAnalysis {
                     labAnalysisResultList.add(new SoilLabAnalysisResult(soil_analysis_id,12,p12Val,p12ExtractionMethod));
                     labAnalysisResultList.add(new SoilLabAnalysisResult(soil_analysis_id,13,p13Val,p13ExtractionMethod));
                     labAnalysisResultList.add(new SoilLabAnalysisResult(soil_analysis_id,14,p14Val,p14ExtractionMethod));
-                    labAnalysisResultList.add(new SoilLabAnalysisResult(soil_analysis_id,15,p15Val,p15ExtractionMethod));
                     labAnalysisResultList.add(new SoilLabAnalysisResult(soil_analysis_id,16,p16Val,p16ExtractionMethod));
                     labAnalysisResultList.add(new SoilLabAnalysisResult(soil_analysis_id,17,p17Val,p17ExtractionMethod));
                     labAnalysisResultList.add(new SoilLabAnalysisResult(soil_analysis_id,19,p19Val,p19ExtractionMethod));
+                    labAnalysisResultList.add(new SoilLabAnalysisResult(soil_analysis_id,20,p20Val,p20ExtractionMethod));
                     System.out.println("in the end");
 
                     //insert to lab_analysis_results schema

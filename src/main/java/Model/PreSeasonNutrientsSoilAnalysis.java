@@ -74,7 +74,7 @@ public class PreSeasonNutrientsSoilAnalysis {
 
             double soilWeight = db * layerDepth * 10000; //soil weight in kg/ha
             double wettedArea = p.getUi().getSelectedIrrigationMethod().getIrrigation_method_wetted_area();
-
+            System.out.println("wetted area in pre analysis: " + wettedArea);
 
             //determine phenological stage
             Boolean preSeason;
@@ -107,7 +107,7 @@ public class PreSeasonNutrientsSoilAnalysis {
             Double nh4 = p.getSlar().get(12).getParameter_value(); //13th element value - can be done in the long way.
             Double n03 = p.getSlar().get(13).getParameter_value(); //14th element value - can be done in the long way.
             //double nOrganic = p.getSlar().get(19).getParameter_value(); //20th element value - can be done in the long way.
-            Double nOrganic = 0.0; //should be read from slar (needs to add to lab_results
+            Double nOrganic = 0.0; //unused in matlab code.
             Double nTotal = nh4 + n03; //skipped null check, since it does not appear in final soil analysis input
             System.out.println("n total is " + nTotal);
 
@@ -117,10 +117,12 @@ public class PreSeasonNutrientsSoilAnalysis {
             } else {
                 result = nTotal;
             }
+            System.out.println("n result is: " + result);
             //find thresholds - for now, n tresholds found in soil thresholds, with no regard to stage (ofer)
             //that's why it's currently the same both in both instances
             soil_thresholds nSoilThresh;
             if (preSeason) {
+                System.out.println("in preseasons?");
                 nSoilThresh = stList.get(stList.size() - 1); //list containing n thresholds
                 soilThresholds.set(0, String.valueOf(nSoilThresh.getLow_threshold()) + " - "
                         + String.valueOf(nSoilThresh.getHigh_threshold()));
@@ -149,8 +151,10 @@ public class PreSeasonNutrientsSoilAnalysis {
                     }
                 }
                 if (nThreshIndex == null) {
+                    //very high
                     analysisStatus.set(0, interp[interp.length - 1]);
                 } else {
+                    //other status
                     analysisStatus.set(0, interp[nThreshIndex]);
                 }
                 System.out.println("n status is: " + analysisStatus.get(0));
@@ -180,9 +184,9 @@ public class PreSeasonNutrientsSoilAnalysis {
                 //adding the current nutrient thresholds to the list
                 currentSoilThreshList.add(currentThresh.getVery_low_threshold());
                 currentSoilThreshList.add(currentThresh.getLow_threshold());
+                currentSoilThreshList.add(currentThresh.getTarget_value());
                 currentSoilThreshList.add(currentThresh.getHigh_threshold());
                 currentSoilThreshList.add(currentThresh.getVery_high_threshold());
-                currentSoilThreshList.add(currentThresh.getTarget_value());
                 //System.out.println("current thresh is: " +currentThresh);
                 soilThresholds.set(i, currentThresh.getLow_threshold() + " - " + currentThresh.getHigh_threshold());
                 Double target;
@@ -204,13 +208,13 @@ public class PreSeasonNutrientsSoilAnalysis {
                     for (int j = 0; j < currentSoilThreshList.size(); j++) {
                         Double thresh = currentSoilThreshList.get(j);
                         currentSoilThreshList.set(j, thresh * factor * cec);
-                        Double soilThresCur = currentSoilThreshList.get(1);
-                        Double soilThresCur2 = currentSoilThreshList.get(2);
-                        soilThresCur = new BigDecimal(soilThresCur).setScale(2, RoundingMode.FLOOR).doubleValue();
-                        soilThresCur2 = new BigDecimal(soilThresCur2).setScale(2, RoundingMode.FLOOR).doubleValue();
-                        soilThresholds.set(i, soilThresCur + " - " + soilThresCur2);
                     }
-                    target = currentSoilThreshList.get(currentSoilThreshList.size() - 1);
+                    Double soilThresCur = currentSoilThreshList.get(1);
+                    Double soilThresCur2 = currentSoilThreshList.get(3);
+                    soilThresCur = new BigDecimal(soilThresCur).setScale(2, RoundingMode.FLOOR).doubleValue();
+                    soilThresCur2 = new BigDecimal(soilThresCur2).setScale(2, RoundingMode.FLOOR).doubleValue();
+                    soilThresholds.set(i, soilThresCur + " - " + soilThresCur2);
+                    target = currentSoilThreshList.get(2);
                 }
 
                 if (result == null) {
@@ -233,8 +237,10 @@ public class PreSeasonNutrientsSoilAnalysis {
                     if (result == null) {
                         soilNutrientsBalance.set(i, null);
                     } else {
-                        Double balance = result - target; //the target n
+                        Double balance = result - target; //the target
+                        System.out.println("balance is " + balance);
                         Double kg = (balance * soilWeight) / Math.pow(10, 6) * wettedArea;
+                        System.out.println("kg is " + kg);
                         soilNutrientsBalance.set(i, kg);
                     }
                     soilNutrientsResults.set(i, result);

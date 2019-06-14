@@ -466,7 +466,7 @@ public class UIcontroller extends  BaseController{
             public void changed(ObservableValue ov, Number value, Number new_value)
             {
                 String choosen = new_value.toString();
-                if (!choosen.equals("Yes")) {
+                if (choosen.equals("Yes")) {
                     selectedBaseDressing = Boolean.TRUE;
                 } else {
                     selectedBaseDressing = Boolean.FALSE;
