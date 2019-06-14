@@ -150,6 +150,12 @@ public class Model {
                 summary.set(j, summary.get(j) + currentNutrientOutput.get(j));
             }
         }
+        //0 for all negative summaries
+        for (int i=0;i<summary.size();i++) {
+            if (summary.get(i) < 0) {
+                summary.set(i, 0.0);
+            }
+        }
         System.out.println("summary is: "+summary);
         NutrientsOutput summaryOutput = new NutrientsOutput("summary",summary);
         nutrientsOutputList.add(summaryOutput);

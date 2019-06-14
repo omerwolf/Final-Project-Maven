@@ -32,10 +32,14 @@ public class OrganicMatterContribution {
 
         if (p.getSa().isIs_active()) {
             double organicMatter = p.getSa().getOrganic_matter();
+            System.out.println("organic matter is: " + organicMatter);
             //extracting the range for the depth
             int layerDepthId = p.getSa().getLayer_depth_id();
+            System.out.println("layer id is: " + layerDepthId);
             Dao<layer_depth_type> ldtd = new layer_depth_typeDaoImpl();
             layer_depth_type ldt = ldtd.selectById(layerDepthId);
+            System.out.println("max is: " +ldt.getLayer_max());
+            System.out.println("min is: " +ldt.getLayer_min());
             double layerAvg = (ldt.getLayer_min() + ldt.getLayer_max()) / 2;
             Double layerDepth = layerAvg / 100; // divide value (taken from DB) by 100
             if (layerDepth == null) {
@@ -43,7 +47,7 @@ public class OrganicMatterContribution {
             }
 
             double[] somNutrients = {100, 15 * 2.29, 15};
-            double oc = 0.58;
+            double oc = 0.0058; //0.58 in matlab, but during code treated as 0.0058
             Soil soil = n.getSoil();
             //active and yes check
             double db; //* bulk density in pre soil
@@ -77,14 +81,16 @@ public class OrganicMatterContribution {
                 decomosingRate = soil.getSomDecompHigh();
             }
 
-
+            System.out.println("layer depth is: " + layerDepth);
+            System.out.println("db is: " + db);
             double duration = (p.getDuration()) / 365.0;
             System.out.println("duration is: " + duration);
             double soilWeight = layerDepth * db * 10;
             double soilOc = oc * soilWeight * organicMatter;
             double annualOcDecomp = soilOc * decomosingRate;
             double ocDecomp = annualOcDecomp * duration;
-            System.out.println(soilWeight + " " + soilOc + " " + annualOcDecomp + " " + ocDecomp);
+            System.out.println("soil weight: " + soilWeight + " soil oc: " + soilOc
+                    + " annualocdecomp: " + annualOcDecomp + " ocdecomp: " + ocDecomp);
             double[] nps = new double[3];
             for (int i = 0; i < somNutrients.length; i++) {
                 nps[i] = somNutrients[i] * ocDecomp;

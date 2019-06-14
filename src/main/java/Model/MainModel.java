@@ -27,12 +27,12 @@ public class MainModel {
         Boolean selectedBaseDressing = true;
         Double soilCorrection = 0.01;
         Double ph = 5.5;
-        String date = "02/01/2016";
+        String date = "02/06/2018";
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate dateTime = LocalDate.parse(date, formatter);
         UserInput ui = new UserInput(name,getCrop(cropId),vt,getSoil(soilId),getExpectedYield(vt.getVariety_id()),
                 selectedNCredit,getIrrigationMethod(irrigationMethod),irrigationVolume,
-                getFertilizationMethod(fertilizationMethod),selectedBaseDressing, soilCorrection,ph,null);
+                getFertilizationMethod(fertilizationMethod),selectedBaseDressing, soilCorrection,ph,dateTime);
         Model model = new Model(111,19,ui);
         model.init();
 
@@ -101,7 +101,7 @@ public class MainModel {
         int expectedYield = rnd.nextInt((maxRangeInt - minRangeInt) + 1) + minRangeInt;
         double expectedYieldD = (double) expectedYield;
         //System.out.println("chosen expected yield " + expectedYieldD);
-        expectedYieldD = 100;
+        expectedYieldD = 90;
         return expectedYieldD;
     }
 
