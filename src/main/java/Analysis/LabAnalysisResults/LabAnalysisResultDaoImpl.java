@@ -6,8 +6,16 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * implements the labAnalysisResultDao interface.
+ * responsible for all the actions on the 'lab_analysis_result'
+ */
 public class LabAnalysisResultDaoImpl implements LabAnalysisResultDao {
-
+    /**
+     * inserts a water lab analysis result record into the lab_analysis_results table
+     * in the db.
+     * @param waterLabAnalysisResult - the water lab analysis result to insert.
+     */
     @Override
     public void insertWater(WaterLabAnalysisResult waterLabAnalysisResult) {
         Connection connection = null;
@@ -45,6 +53,11 @@ public class LabAnalysisResultDaoImpl implements LabAnalysisResultDao {
             }
         }
     }
+    /**
+     * receives a list of water lab analysis results records, and inserts them
+     * to the db.
+     * @param waterLabAnalysisResultList - a list of water lab analysis result records
+     */
     public void insertAllWater(List<WaterLabAnalysisResult> waterLabAnalysisResultList) {
         for (WaterLabAnalysisResult lar : waterLabAnalysisResultList){
             this.insertWater(lar);
@@ -53,7 +66,11 @@ public class LabAnalysisResultDaoImpl implements LabAnalysisResultDao {
     }
 
 
-
+    /**
+     * inserts a soil lab analysis result record into the lab_analysis_results table
+     * in the db.
+     * @param soilLabAnalysisResult - the soil lab analysis result to insert.
+     */
     @Override
     public void insertSoil (SoilLabAnalysisResult soilLabAnalysisResult){
         Connection connection = null;
@@ -93,6 +110,11 @@ public class LabAnalysisResultDaoImpl implements LabAnalysisResultDao {
             }
         }
     }
+    /**
+     * receives a list of soil lab analysis results records, and inserts them
+     * to the db.
+     * @param soilLabAnalysisResultList - a list of water lab analysis result records
+     */
     @Override
     public void insertAllSoil (List < SoilLabAnalysisResult > soilLabAnalysisResultList) {
         for (SoilLabAnalysisResult lar : soilLabAnalysisResultList) {
@@ -100,7 +122,11 @@ public class LabAnalysisResultDaoImpl implements LabAnalysisResultDao {
         }
         System.out.println("finish insertAll to lab_analysis_results");
     }
-
+    /**
+     * returns a list of soil lab analysis results that has the given soil analysis id.
+     * @param soilAnalasisId - the id of the soil lab results to extract from the db.
+     * @return a list of all soil lab results with the same given id.
+     */
     @Override
     public List<SoilLabAnalysisResult> selectAllSoilById(int soilAnalasisId) {
         List<SoilLabAnalysisResult> results = new ArrayList<SoilLabAnalysisResult>();
@@ -150,7 +176,11 @@ public class LabAnalysisResultDaoImpl implements LabAnalysisResultDao {
         }
         return results;
     }
-
+    /**
+     * returns a list of water lab analysis results that has the given water analysis id.
+     * @param waterAnalasisId - the id of the water lab results to extract from the db.
+     * @return a list of all water lab results with the same given id.
+     */
     @Override
     public List<WaterLabAnalysisResult> selectAllWaterById(int waterAnalasisId) {
         List<WaterLabAnalysisResult> results = new ArrayList<WaterLabAnalysisResult>();

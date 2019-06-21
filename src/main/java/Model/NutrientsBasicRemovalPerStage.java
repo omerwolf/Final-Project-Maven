@@ -1,5 +1,10 @@
 package Model;
 
+/**
+ * represents a list the contain information about a specific
+ * stage, including it's name, it's starting date, and the amount of
+ * nutrients that are needed to be removed during that stage.
+ */
 public class NutrientsBasicRemovalPerStage {
     private CropStage sd;
     private double n;
@@ -19,6 +24,24 @@ public class NutrientsBasicRemovalPerStage {
 
     }
 
+    /**
+     * creates the nutrientsBasicRemovalPerStage object, which contains the amount
+     * of removal that is needed for each nutrient in a specific stage during
+     * the crop's growth. also contains the stage name, and it's starting date.
+     * @param sd
+     * @param n
+     * @param p
+     * @param k
+     * @param ca
+     * @param mg
+     * @param s
+     * @param fe
+     * @param mn
+     * @param b
+     * @param zn
+     * @param cu
+     * @param mo
+     */
     public NutrientsBasicRemovalPerStage(CropStage sd, double n, double p, double k,
                                          double ca, double mg, double s, double fe,
                                          double mn, double b, double zn, double cu, double mo) {

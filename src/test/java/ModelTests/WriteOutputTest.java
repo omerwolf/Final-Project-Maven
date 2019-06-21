@@ -1,5 +1,6 @@
 package ModelTests;
 
+import Analysis.SoilAnalysis.SoilAnalysis;
 import DB.Dao.*;
 import DB.DaoImpl.*;
 import DB.Entites.*;
@@ -28,9 +29,15 @@ import static org.junit.Assert.assertTrue;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+/**
+ * test class for outputs.
+ */
 public class WriteOutputTest{
     private static WriteOutput writeOutput;
 
+    /**
+     * setup for the tests.
+     */
     @BeforeClass
     public static void init(){
         int cropId = 8;
@@ -51,6 +58,9 @@ public class WriteOutputTest{
         writeOutput  = new WriteOutput(ui);
     }
 
+    /**
+     * tests the nutrients output
+     */
     @Test
     public void TestNutrientsOutput(){
 
@@ -78,6 +88,9 @@ public class WriteOutputTest{
 
     }
 
+    /**
+     * tests the water analysis output.
+     */
     @Test
     public void TestWaterAnalysisOutput(){
 
@@ -102,6 +115,9 @@ public class WriteOutputTest{
 
     }
 
+    /**
+     * tests the soil analysis output.
+     */
     @Test
     public void TestSoilAnalysisOutput(){
 
@@ -126,12 +142,24 @@ public class WriteOutputTest{
 
     }
 
+    /**
+     * receives a crop id, and returns the crop with that id.
+     * @param id - the crop's id.
+     * @return crop with the same id.
+     */
     public static Crop getCrop(int id) {
         Dao<Crop> cd = new CropDaoImpl();
         Crop c = cd.selectById(id);
         return c;
     }
 
+    /**
+     * receives a crop id, and returns it's variety type.
+     * note: if there is more than 1 variety type for a given crop id,
+     * the first variety type (by id number) will be selected.
+     * @param cropId - the crop's id
+     * @return a variety of the crop's
+     */
     public static variety_type getVarietyType (int cropId) {
         crop_expected_yield_validationDao ceyv = new crop_expected_yield_validationDaoImpl();
         List<Integer> matchVarTypeId = ceyv.getMatchVarType(cropId);
@@ -146,12 +174,22 @@ public class WriteOutputTest{
         return vt;
     }
 
+    /**
+     * receives an id, and returns the soil with that id.
+     * @param id - the id of the soil to be selected.
+     * @return the soil with that id.
+     */
     public static Soil getSoil(int id) {
         Dao<Soil> sd = new SoilDaoImpl();
         Soil s = sd.selectById(id);
         return s;
     }
 
+    /**
+     * receives an id of a crop's variety type, and returns it's expected yield.
+     * @param varTypeId - the id of the crop's variety type.
+     * @return the expected yield.
+     */
     public static double getExpectedYield(int varTypeId) {
         Double minRange = null;
         Double maxRange = null;
@@ -173,12 +211,24 @@ public class WriteOutputTest{
         return expectedYieldD;
     }
 
+    /**
+     * receives a IrrigationMethod id, and returns the Irrigation method
+     * with the same id.
+     * @param irrigationMethodId - the id of the Irrigation method.
+     * @return the Irrigation method with that id.
+     */
     public static IrrigationMethod getIrrigationMethod(int irrigationMethodId) {
         Dao<IrrigationMethod> imd = new IrrigationMethodDaoImpl();
         IrrigationMethod im = imd.selectById(irrigationMethodId);
         return im;
     }
 
+    /**
+     * receives a fertilizationMethod id, and returns the fertilization method
+     * with the same id.
+     * @param fertilizationMethodId - the id of the fertilization method.
+     * @return the fertilization method with that id.
+     */
     public static fertilization_method getFertilizationMethod(int fertilizationMethodId) {
         Dao<fertilization_method> fmd = new fertilization_methodDaoImpl();
         fertilization_method fm = fmd.selectById(fertilizationMethodId);

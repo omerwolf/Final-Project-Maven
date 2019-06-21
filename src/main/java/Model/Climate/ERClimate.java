@@ -13,7 +13,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * reads the excel file of the soil info,
+ * reads the excel file of the climate info,
  * in order to insert it's values to the database.
  */
 public class ERClimate {
@@ -74,6 +74,11 @@ public class ERClimate {
         return this.monthClimateList;
     }
 
+    /**
+     * receives a number of a month (1-12) and returns it from the monthClimateList.
+     * @param monthNum - the month number.
+     * @return the MonthClimate of that month (with info about rain and temperature).
+     */
     public MonthClimate getMonth(int monthNum){
         return this.monthClimateList.get(monthNum - 1);
     }

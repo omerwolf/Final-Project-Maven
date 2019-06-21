@@ -29,13 +29,10 @@ public class NCredit {
      * @return n - the updated nutrients data
      */
     public Nutrients nCredit(Parameters p, Nutrients n) {
-        SoilNutrients soilNutrients = new SoilNutrients();
         List<Double> nCredits = new ArrayList<Double>(Collections.nCopies(n.getName().size(),0.0));
         Integer nCreditValue = round(-(p.getUi().getSelectedNCredit()));
         nCredits.set(0,Double.valueOf(nCreditValue));
 
-        soilNutrients.setnCredits(nCredits);
-        n.setSoilNutrients(soilNutrients);
         //add to adj table output
         List<NutrientsOutput> nutrientsOutputList = n.getPreSeason().getAdjNutrients();
         NutrientsOutput nutrientsOutputNCredit = new NutrientsOutput("N_Credit",nCredits);

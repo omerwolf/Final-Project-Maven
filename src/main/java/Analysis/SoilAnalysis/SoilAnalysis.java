@@ -2,6 +2,10 @@ package Analysis.SoilAnalysis;
 
 import java.time.LocalDate;
 
+/**
+ * represents a record in the soil_lab_analysis table in the db.
+ * contains soil analysis info about a sample that was taken before.
+ */
 public class SoilAnalysis {
 
     final int test_type_id = 1;
@@ -20,9 +24,29 @@ public class SoilAnalysis {
     private double soil_EC;
     private Double soil_CEC;
 
+    /**
+     * the default constructor.
+     */
     public SoilAnalysis() {
     }
 
+    /**
+     * creates a SoilAnalysis record.
+     * @param sample_name - the name of the sample that was taken.
+     * @param soil_analysis_id - the id number of the soil analysis.
+     * @param is_active - represents whether or not to use this sample's data.
+     * @param farm_id - the id of the farm.
+     * @param sample_date - the date on which the sample was taken.
+     * @param lab_id - the id of the lab.
+     * @param soil_type_id - the soil type id, representing the soil on which the sample was taken.
+     * @param layer_depth_id - an id represents a range of possible values for the layer depth.
+     * @param irrigation_block_id - the id of the irrigation block.
+     * @param organic_matter - the amount of the organic matter.
+     * @param bulk_density - the bulk density.
+     * @param soil_pH - the amount of soil ph.
+     * @param soil_EC - the amount of soil ec.
+     * @param soil_CEC - the amount of soil cec.
+     */
     public SoilAnalysis(String sample_name, int soil_analysis_id, boolean is_active, int farm_id, LocalDate sample_date,
                         int lab_id, int soil_type_id, int layer_depth_id, int irrigation_block_id, double organic_matter,
                         Double bulk_density, Double soil_pH, double soil_EC, Double soil_CEC) {
@@ -157,7 +181,11 @@ public class SoilAnalysis {
     public void setSoil_CEC(Double soil_CEC) {
         this.soil_CEC = soil_CEC;
     }
-
+    /**
+     * overrides toString method in order to print the record's
+     * names and values.
+     * @return record's fields name and values.
+     */
     @Override
     public String toString() {
         return "SoilAnalysis{" +

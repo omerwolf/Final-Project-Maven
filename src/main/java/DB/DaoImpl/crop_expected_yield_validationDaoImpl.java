@@ -9,7 +9,16 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * implements the crop_expected_yield_validationDao interface.
+ * responsible for performing actions on the database table `crop_expected_yield_validation`.
+ */
 public class crop_expected_yield_validationDaoImpl implements crop_expected_yield_validationDao {
+
+    /**
+     * receives a crop expected yield variation record, and insert it to the database.
+     * @param expYield - a crop expected yield validation record
+     */
     @Override
     public void insert(crop_expected_yield_validation expYield) {
         Connection connection = null;
@@ -46,6 +55,12 @@ public class crop_expected_yield_validationDaoImpl implements crop_expected_yiel
 
     }
 
+    /**
+     * receives an id number, and returns a record that has
+     * the same id number.
+     * @param id - the id of the record that will be selected.
+     * @return selected crop expected yield validation record.
+     */
     @Override
     public crop_expected_yield_validation selectById(int id) {
         crop_expected_yield_validation expYield = new crop_expected_yield_validation();
@@ -96,6 +111,11 @@ public class crop_expected_yield_validationDaoImpl implements crop_expected_yiel
         return expYield;
     }
 
+    /**
+     * selects all records from the crop expected yield validation table
+     * and returns them as a list.
+     * @return a list of all the records (entire table).
+     */
     @Override
     public List<crop_expected_yield_validation> selectAll() {
         List<crop_expected_yield_validation> crops = new ArrayList<crop_expected_yield_validation>();
@@ -146,6 +166,11 @@ public class crop_expected_yield_validationDaoImpl implements crop_expected_yiel
         return crops;
     }
 
+    /**
+     * deletes a record from a crop expected yield validation table,
+     * with the same id as the param.
+     * @param id - the id of the record to remove.
+     */
     @Override
     public void delete(int id) {
         Connection connection = null;
@@ -178,6 +203,13 @@ public class crop_expected_yield_validationDaoImpl implements crop_expected_yiel
         }
     }
 
+    /**
+     * takes a crop expected yield validation record with values and an id number,
+     * and updates the record in the table with the same id number with the values
+     * of the other record.
+     * @param expYield - the crop expected yield validation record to get the values from.
+     * @param id - the id position of the record to update.
+     */
     @Override
     public void update(crop_expected_yield_validation expYield, int id) {
         Connection connection = null;
@@ -217,11 +249,22 @@ public class crop_expected_yield_validationDaoImpl implements crop_expected_yiel
         }
     }
 
+    /**
+     * returns an int of the first id of a record that does not yet exist
+     * in the crop expected yield validation table.
+     * @return the first unoccupied id in the crop expected yield validation
+     * database table.
+     */
     @Override
     public int generateUniqueId() {
         return 0;
     }
 
+    /**
+     * receives a list of records, and inserts all of them
+     * to the database table.
+     * @param expYield - the record list to be added to the database.
+     */
     @Override
     public void insertAll(List<crop_expected_yield_validation> expYield) {
         for (crop_expected_yield_validation yield : expYield) {
@@ -230,6 +273,10 @@ public class crop_expected_yield_validationDaoImpl implements crop_expected_yiel
         System.out.println("InsertAll finished");
     }
 
+    /**
+     * insert all records that are supposed to be in the database initially.
+     * note: additional records can be added through the insertAll/insert methods.
+     */
     @Override
     public void autoInsertAll() {
         crop_expected_yield_validation c1 = new crop_expected_yield_validation(1,1,15,20,120);
@@ -271,6 +318,12 @@ public class crop_expected_yield_validationDaoImpl implements crop_expected_yiel
         this.insertAll(expYield);
     }
 
+    /**
+     * receives a crop id, and if exists in the crop expected yield validation table
+     * in the db, returns a list of all variety types possible for that crop.
+     * @param cropTypeId - the crop id to search in the db.
+     * @return a list of variety id values for the received crop.
+     */
     @Override
     public List<Integer> getMatchVarType(int cropTypeId) {
         List<crop_expected_yield_validation> expYield = this.selectAll();

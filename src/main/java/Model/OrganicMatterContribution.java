@@ -113,7 +113,6 @@ public class OrganicMatterContribution {
             }
 
             //adding som to nutrients adj output table
-            n.getSoilNutrients().setSom(som);
             List<NutrientsOutput> nutrientsOutputList = n.getPreSeason().getAdjNutrients();
             NutrientsOutput nutrientsOutput = new NutrientsOutput("SOM", som);
             nutrientsOutputList.add(nutrientsOutput);

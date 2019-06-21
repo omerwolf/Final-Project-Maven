@@ -9,9 +9,16 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * implements the soil_thresholdsDao interface.
+ * responsible for performing actions on the database table `soil_thresholds`.
+ */
 public class soil_thresholdsDaoImpl implements soil_thresholdsDao {
 
-
+    /**
+     * receives a soil threshold record, and inserts it to the table.
+     * @param st - a soil analysis record
+     */
     @Override
     public void insert(soil_thresholds st) {
         Connection connection = null;
@@ -65,6 +72,12 @@ public class soil_thresholdsDaoImpl implements soil_thresholdsDao {
         }
     }
 
+    /**
+     * receives an id number, and returns a record that has
+     * the same id number.
+     * @param soil_threshold_id - the id of the soil analysis record that will be selected.
+     * @return selected soil analysis record.
+     */
     @Override
     public soil_thresholds selectById(int soil_threshold_id) {
         soil_thresholds soilThresholds = new soil_thresholds();
@@ -120,6 +133,12 @@ public class soil_thresholdsDaoImpl implements soil_thresholdsDao {
         return soilThresholds;
 
     }
+
+    /**
+     * selects all records from the soil analysis table
+     * and returns them as a list.
+     * @return a list of all the soil analysis records.
+     */
     @Override
     public List<soil_thresholds> selectAll() {
         List<soil_thresholds> soil_thresholdsList = new ArrayList<soil_thresholds>();
@@ -174,6 +193,12 @@ public class soil_thresholdsDaoImpl implements soil_thresholdsDao {
         }
         return soil_thresholdsList;
     }
+
+    /**
+     * insert all soil thresholds records that are supposed to be in the database initially.
+     * they are read directly from the excel file, using the ERsoil_thresholds class.
+     * note: additional soil thresholds records can be added through the insert method.
+     */
     public void autoInsertAll(){
         ERsoil_thresholds ERst = new ERsoil_thresholds();
         List<soil_thresholds> soil_thresholdsList = ERst.readExcelData();

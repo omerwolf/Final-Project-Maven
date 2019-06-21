@@ -17,13 +17,26 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * responsible for extracting from an excel file the necessary info about
+ * the water analysis lab results.
+ */
 public class ERWaterAnalysis {
     private String path;
 
+    /**
+     * creates the ERWaterAnalysis, by receiving the file's path.
+     * @param path - the path of the excel file.
+     */
     public ERWaterAnalysis(String path) {
         this.path = path;
     }
 
+    /**
+     * reads the excel file, and creates the water analysis, and the lab water results.
+     * @return the water analysis id, that is used for both the 'water_lab_analysis' table
+     *         and the 'lab_analysis_results' table in the db.
+     */
     public int read() {
         Integer waterAnalysisId = null;
         WaterAnalysis waterAnalysis = new WaterAnalysis();
@@ -132,7 +145,11 @@ public class ERWaterAnalysis {
     }
 
 
-
+    /**
+     * reades the "active" status from the excel, and true or false based on the given value.
+     * @param s - the string to check.
+     * @return true(if active=true), otherwise false.
+     */
     private Boolean getIsActive(String s){
         if(s.toLowerCase().equals("yes") || s.toLowerCase().equals("true")) {
             return true;

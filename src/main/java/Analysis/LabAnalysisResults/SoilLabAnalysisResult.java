@@ -1,5 +1,11 @@
 package Analysis.LabAnalysisResults;
 
+/**
+ * represents a lab analysis soil result record
+ * in the lab_analysis_results table in the db.
+ * note: each record represents a single parameter result,
+ * therefore there are several records for each soil analysis.
+ */
 public class SoilLabAnalysisResult{
     private int lab_results_id;
     private Integer soil_analysis_id;
@@ -7,9 +13,20 @@ public class SoilLabAnalysisResult{
     private double parameter_value;
     private int extraction_method_id;
 
+    /**
+     * the default constructor
+     */
     public SoilLabAnalysisResult() {
     }
 
+    /**
+     * creates a SoilLabAnalysisResult record in the lab_analysis_results table.
+     * @param lab_results_id - the number of the lab result
+     * @param soil_analysis_id - the id of the specific soil analysis.
+     * @param parameter_id - the parameter id of the nutrient.
+     * @param parameter_value - the parameter's(nutrient's) value.
+     * @param extraction_method_id - the extraction method id.
+     */
     public SoilLabAnalysisResult(int lab_results_id, int soil_analysis_id, int parameter_id, double parameter_value, int extraction_method_id){
         this.lab_results_id = lab_results_id;
         this.soil_analysis_id = soil_analysis_id;
@@ -17,6 +34,14 @@ public class SoilLabAnalysisResult{
         this.parameter_value = parameter_value;
         this.extraction_method_id = extraction_method_id;
     }
+
+    /**
+     * creates a SoilLabAnalysisResult record in the lab_analysis_results table.
+     * @param soil_analysis_id - the id of the specific soil analysis.
+     * @param parameter_id - the parameter id of the nutrient.
+     * @param parameter_value - the parameter's(nutrient's) value.
+     * @param extraction_method_id - the extraction method id.
+     */
     public SoilLabAnalysisResult(int soil_analysis_id, int parameter_id, double parameter_value, int extraction_method_id){
         this.soil_analysis_id = soil_analysis_id;
         this.parameter_id = parameter_id;
@@ -68,6 +93,11 @@ public class SoilLabAnalysisResult{
         this.lab_results_id = lab_results_id;
     }
 
+    /**
+     * overrides toString method in order to print the record's
+     * names and values.
+     * @return record's fields name and values.
+     */
     @Override
     public String toString() {
         return "SoilLabAnalysisResult{" +

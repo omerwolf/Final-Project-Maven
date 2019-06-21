@@ -5,8 +5,18 @@ import DB.Util.ConnectionConfiguration;
 import java.sql.*;
 import java.time.LocalDate;
 
+/**
+ * implements the SoilAnalysisDao interface.
+ * responsible for executing actions in the soil_lab_analysis table
+ * in the db.
+ */
 public class SoilAnalysisDaoImpl implements SoilAnalysisDao {
 
+    /**
+     * inserts a soil analysis record into the soil_lab_analysis table
+     * in the db.
+     * @param soilAnalysis - the soil analysis record to insert.
+     */
     @Override
     public void insert(SoilAnalysis soilAnalysis) {
         //convert LocalDate to SQL Date
@@ -73,6 +83,13 @@ public class SoilAnalysisDaoImpl implements SoilAnalysisDao {
         }
 
     }
+
+    /**
+     * receives an id number, and returns a record that has
+     * the same id number.
+     * @param id - the id of the record that will be selected.
+     * @return selected soil analysis record.
+     */
     @Override
     public SoilAnalysis selectById(int id) {
         SoilAnalysis soilAnalysis = new SoilAnalysis();

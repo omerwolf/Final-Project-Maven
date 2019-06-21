@@ -2,6 +2,10 @@ package Analysis.WaterAnalysis;
 
 import java.time.LocalDate;
 
+/**
+ * represents a record in the water_lab_analysis table in the db.
+ * contains water analysis info about a sample that was taken before.
+ */
 public class WaterAnalysis {
     final int test_type_id = 2;
 
@@ -15,10 +19,23 @@ public class WaterAnalysis {
     private double water_pH;
     private Integer id_status = null; //default
 
-
+    /**
+     * the default constructor.
+     */
     public WaterAnalysis() {
     }
 
+    /**
+     * creates a WaterAnalysis record.
+     * @param water_analysis_id - the id number of the water analysis.
+     * @param is_active - represents whether or not to use this sample's data.
+     * @param farm_id - the id of the farm.
+     * @param sample_date - the date on which the sample was taken.
+     * @param sample_name - the name of the sample that was taken.
+     * @param ib_id - the irrigation block id.
+     * @param water_EC - the water ec value
+     * @param water_pH - the water ph value
+     */
     public WaterAnalysis(int water_analysis_id, boolean is_active, int farm_id, LocalDate sample_date,
                             String sample_name, int ib_id, double water_EC, double water_pH) {
         this.water_analysis_id = water_analysis_id;
@@ -106,7 +123,11 @@ public class WaterAnalysis {
     public int getTest_type_id() {
         return test_type_id;
     }
-
+    /**
+     * overrides toString method in order to print the record's
+     * names and values.
+     * @return record's fields name and values.
+     */
     @Override
     public String toString() {
         return "WaterAnalysis{" +

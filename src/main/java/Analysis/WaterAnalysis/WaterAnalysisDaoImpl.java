@@ -5,7 +5,17 @@ import DB.Util.ConnectionConfiguration;
 import java.sql.*;
 import java.time.LocalDate;
 
+/**
+ * implements the WaterAnalysisDao interface.
+ * responsible for executing actions in the water_lab_analysis table
+ * in the db.
+ */
 public class WaterAnalysisDaoImpl implements WaterAnalysisDao {
+    /**
+     * inserts a water analysis record into the water_lab_analysis table
+     * in the db.
+     * @param waterAnalyses - the water analysis record to insert.
+     */
     @Override
     public void insert(WaterAnalysis waterAnalyses) {
         //convert LocalDate to SQL Date
@@ -58,7 +68,12 @@ public class WaterAnalysisDaoImpl implements WaterAnalysisDao {
         }
 
     }
-
+    /**
+     * receives an id number, and returns a record that has
+     * the same id number.
+     * @param id - the id of the record that will be selected.
+     * @return selected water analysis record.
+     */
     @Override
     public WaterAnalysis selectById(int id) {
         WaterAnalysis waterAnalysis = new WaterAnalysis();

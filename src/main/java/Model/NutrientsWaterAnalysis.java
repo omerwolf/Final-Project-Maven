@@ -54,7 +54,7 @@ public class NutrientsWaterAnalysis {
         List<Double> efficiency = new ArrayList<>(Collections.nCopies(nutrientsName.length,0.0));
         List<Double> actualNutrientsKg = new ArrayList<>(Collections.nCopies(nutrientsName.length,0.0));
         System.out.println();
-        if (p.getWa() != null) { // need to validate with offer
+        if (p.getWa() != null) {
             for (int i = 0; i < nutrientsName.length; i++) {
                 waterNutrients.set(i, p.getWlar().get(i).getParameter_value());
                 System.out.print("water nutrient " + (i + 1) + " " + waterNutrients.get(i));
@@ -73,7 +73,7 @@ public class NutrientsWaterAnalysis {
                         appliedNutrients.get(i), efficiency.get(i), actualNutrientsKg.get(i));
                 waoList.add(wao);
             }
-            n.getPreSeason().setWaterAnalysis(waoList); //sets the table in preSeason class
+            n.getPreSeason().setWaterAnalysis(waoList);
             for (int i = 0; i < nutrientsName.length; i++) {
                 System.out.println(n.getPreSeason().getWaterAnalysis().get(i));
             }
@@ -81,6 +81,7 @@ public class NutrientsWaterAnalysis {
 
             double[] oxide = {1, 2.29, 1.2, 1.4, 1.6, 1, 1, 1, 1, 1, 1, 1};
             double[] waterContribution = new double[oxide.length];
+            //oxide calculation for the water contribution
             for (int i = 0; i < waterContribution.length; i++) {
                 waterContribution[i] = -Math.round(actualNutrientsKg.get(i) * oxide[i]);
             }

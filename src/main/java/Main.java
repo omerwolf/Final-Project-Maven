@@ -9,6 +9,9 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.net.URL;
 
+/**
+ * the main class in the project. this is where the code should run from
+ */
 public class Main extends Application{
 
     @Override

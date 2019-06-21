@@ -38,8 +38,9 @@ public class SoilType {
             Soil soil = soilDao.selectById(soilId);
             n.setSoil(soil);
         }
-        else
-        n.setSoil(p.getUi().getSelectedSoil()); //take soil from simulation data
+        else {
+            n.setSoil(p.getUi().getSelectedSoil()); //take soil from simulation data
+        }
         return n;
     }
 }

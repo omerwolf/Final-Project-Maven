@@ -8,7 +8,15 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * implements the ExtractionMethodDao interface.
+ * responsible for performing actions on the database table `extraction_methods`.
+ */
 public class ExtractionMethodDaoImpl implements ExtractionMethodDao {
+    /**
+     * receives an extraction method record, and inserts it to the database.
+     * @param em - an extraction method record.
+     */
     @Override
     public void insert(ExtractionMethod em) {
         Connection connection = null;
@@ -41,6 +49,9 @@ public class ExtractionMethodDaoImpl implements ExtractionMethodDao {
         }
     }
 
+    /**
+     * inserts all extraction methods to the database.
+     */
     @Override
     public void insertAll() {
         this.insert(new ExtractionMethod(1,"Olsen"));
@@ -56,6 +67,12 @@ public class ExtractionMethodDaoImpl implements ExtractionMethodDao {
         this.insert(new ExtractionMethod(11, "Kjeldahl"));
     }
 
+    /**
+     * selects all extraction methods from the database table
+     * and returns them as a list.
+     * @return a list of all the extraction methods records (entire table)
+     * of a database table.
+     */
     @Override
     public List<ExtractionMethod> selectAll() {
         List<ExtractionMethod> extractionMethods = new ArrayList<ExtractionMethod>();

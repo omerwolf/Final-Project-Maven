@@ -65,10 +65,12 @@ public class PhAdjustment {
         else {
             phDesc = "NaN";
         }
+        // if a description for the ph value could be given
         if (!phDesc.equals("NaN")) {
             int rangeId = 0;
             Dao<PhRanges> phRangesDao = new PhRangesDaoImpl();
             List<PhRanges> phRangesList = phRangesDao.selectAll();
+            //extracting the range id from the db
             for (PhRanges pr:phRangesList) {
                 if (pr.getRangeDesc().equals(phDesc)) {
                     rangeId = pr.getRangeId();
@@ -78,6 +80,7 @@ public class PhAdjustment {
             Dao<ParameterPhEffect> pped = new ParameterPhEffectDaoImpl();
             List<ParameterPhEffect> parameterPhEffectList = pped.selectAll();
             List<Double> rangePhValues = new ArrayList<>();
+            //extract the ph effect for each nutrient, using the previously calculated rangeId
             for (ParameterPhEffect ppe:parameterPhEffectList) {
                 if (ppe.getRangeId() == rangeId) {
                     rangePhValues.add(ppe.getEffect());
@@ -89,6 +92,7 @@ public class PhAdjustment {
             List<Double> phValues = new ArrayList<>();
             System.out.println("rangephvalues size is: " + rangePhValues.size());
             System.out.println("summary size is: " + summary.size());
+            //apply the effects on the summary values
             for (int i=0;i<rangePhValues.size();i++) {
                 System.out.println(i);
                 phValues.add(summary.get(i) *(1+rangePhValues.get(i)));
@@ -98,6 +102,7 @@ public class PhAdjustment {
             n.getPreSeason().setAdjNutrients(nutrientsOutputList);
         }
         else {
+            //copy the summary row to the ph row (as there won't be an effect)
             List<NutrientsOutput> nutrientsOutputList = n.getPreSeason().getAdjNutrients();
             List<Double> summary = nutrientsOutputList.get(nutrientsOutputList.size()-1).nutrientsList();
             List<Double> phValues = new ArrayList<>();

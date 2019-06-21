@@ -9,14 +9,23 @@ import org.junit.jupiter.api.BeforeAll;
 
 import static org.junit.Assert.*;
 
+/**
+ * test class for climate.
+ */
 public class ClimateTest {
     private ERClimate climate;
 
     @Before
+    /**
+     * constructor.
+     */
     public void init(){
         climate = new ERClimate();
     }
 
+    /**
+     * several tests regarding the climate.
+     */
     @Test
     public void test(){
         //Check that an list isn't null

@@ -24,15 +24,27 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.*;
 
+/**
+ * responsible for extracting from an excel file the necessary info about
+ * the soil analysis lab results.
+ */
 public class ERSoilAnalysis {
     String path;
     List<ExtractionMethod> emList;
 
-
+    /**
+     * creates the ERSoilAnalysis, by receiving the file's path.
+     * @param path - the path of the excel file.
+     */
     public ERSoilAnalysis(String path) {
         this.path = path;
     }
 
+    /**
+     * reads the excel file, and creates the soil analysis, and the lab soil results.
+     * @return the soil analysis id, that is used for both the 'soil_lab_analysis' table
+     *         and the 'lab_analysis_results' table in the db.
+     */
     public int read() {
         System.out.println("read read read!!!");
         Integer soilAnalysisId = null;
@@ -84,7 +96,7 @@ public class ERSoilAnalysis {
                     e.printStackTrace();
                     System.out.println("failed to create water analysis");
                 }
-
+                //tries to read the values from the excel file.
                 try {
                     /*
                      * READ PARAMETERS
@@ -169,6 +181,12 @@ public class ERSoilAnalysis {
         return soilAnalysisId;
     }
 
+    /**
+     * receives a cell to read from, in order to read the date of the sample
+     * in the excel file.
+     * @param cell - the cell to read from.
+     * @return the date, converted to LocalDate, or null if not a date/not in the correct format.
+     */
     LocalDate getLocalDate(Cell cell){
         if (DateUtil.isCellDateFormatted(cell)){
             Date date = DateUtil.getJavaDate(cell.getNumericCellValue());
@@ -179,6 +197,11 @@ public class ERSoilAnalysis {
         return null;
     }
 
+    /**
+     * reades the "active" status from the excel, and true or false based on the given value.
+     * @param s - the string to check.
+     * @return true(if active=true), otherwise false.
+     */
     Boolean getIsActive(String s){
         if(s.toLowerCase().equals("yes") || s.toLowerCase().equals("true")) {
             return true;
@@ -190,11 +213,17 @@ public class ERSoilAnalysis {
         return false;
     }
 
-    int getSoilTypeId(String cropName){
+    /**
+     * receives the string given for the soil in the excel file, and tries
+     * to find matching soil name in the db.
+     * @param soilName - the soil name from the excel file.
+     * @return the soil's id (if a valid soil name was given), -1 otherwise
+     */
+    int getSoilTypeId(String soilName){
         Dao<Soil> soilDao = new SoilDaoImpl();
         List<Soil> soils = soilDao.selectAll();
         for (Soil soil : soils){
-            if(soil.getName().toLowerCase().equals(cropName.toLowerCase())){
+            if(soil.getName().toLowerCase().equals(soilName.toLowerCase())){
                 return soil.getId();
             }
         }
@@ -202,6 +231,12 @@ public class ERSoilAnalysis {
         return -1;
     }
 
+    /**
+     * receives a layer depth range in string format, and tries to find
+     * the same range in the db, in order to get the id for that range.
+     * @param layerDepth - the layerDepth range string in the excel file.
+     * @return the id that represents that range.
+     */
     int getLayerDepthId(String layerDepth){
         Dao<layer_depth_type> ldtDao = new layer_depth_typeDaoImpl();
         List<layer_depth_type> layers = ldtDao.selectAll();
@@ -215,6 +250,13 @@ public class ERSoilAnalysis {
 
     }
 
+    /**
+     * receives a string with the extraction method for a parameter,
+     * and tries to find the same extraction method in the db, in order
+     * to get the id for that extraction method.
+     * @param s - the extraction method string.
+     * @return the id for that extraction method.
+     */
     private int getExtractionMethodId(String s) {
         if (this.emList == null) {
             ExtractionMethodDao emd = new ExtractionMethodDaoImpl();

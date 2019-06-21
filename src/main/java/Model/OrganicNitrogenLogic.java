@@ -51,14 +51,14 @@ public class OrganicNitrogenLogic {
         List<String> nutrientNames = Arrays.asList("N", "P" ,"K" ,"Ca" ,"Mg" ,"S" ,"Fe" ,"B" ,"Mn" ,"Zn", "Cu" ,"Mo");
         List<Double> soilRecommendation = new ArrayList<Double>(Collections.nCopies(nutrientNames.size(),0.0));
         Dao<elements> ed = new elementsDaoImpl();
-        elements e = ed.selectById(20); //select norganic - id=20 (may change actual name)
+        elements e = ed.selectById(20);
         Double nOrganic = null;
         for (int i=0;i<p.getSlar().size();i++) {
             if (p.getSlar().get(i).getParameter_id() == e.getElement_id()) {
                 nOrganic = p.getSlar().get(i).getParameter_value();
             }
         }
-        //nOrganic = 5.0; //for testing with value, will be removed
+        //calculate recommendation if n organic value was given and isn't null.
         if (nOrganic != null && nOrganic!= 0) {
             double kg = (nOrganic * soilWeight)/(Math.pow(10,6)) * wettedArea;
             soilRecommendation.set(0, -kg);

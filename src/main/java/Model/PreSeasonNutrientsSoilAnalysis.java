@@ -369,6 +369,12 @@ public class PreSeasonNutrientsSoilAnalysis {
 
         return factorListOfLists;
     }
+
+    /**
+     * receives a list of decimals, and rounds it to 2 digits after the decimal point.
+     * @param row - the row that will have it's values rounded.
+     * @return the rounded row.
+     */
         public List<Double> decimalRound(List<Double> row) {
             for (int i=0;i<row.size();i++) {
                 Double d = new BigDecimal(row.get(i)).setScale(2, RoundingMode.FLOOR).doubleValue();

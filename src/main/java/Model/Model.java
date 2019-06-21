@@ -18,13 +18,24 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * responsible for running the model.
+ * receives input from the user, and optionally input of soil/water/tissue analysis),
+ * and use them throughout the model in order to get an output of the expected amounts
+ * that are needed for each one of the nutrients for the requested crop to grow.
+ */
 public class Model {
     final Integer soilAnalysisId;
     final Integer waterAnalysisId;
     final UserInput ui;
 
 
-
+    /**
+     * creates the model class. receives user input, and soil and water analysis(can be null).
+     * @param soilAnalysisId - the id of the soil analysis info which was inserted as an input.
+     * @param waterAnalysisId - the id of the water analysis info which was inserted as an input.
+     * @param ui - the user input.
+     */
     public Model(Integer soilAnalysisId, Integer waterAnalysisId, UserInput ui) {
         this.soilAnalysisId = soilAnalysisId;
         System.out.println("i have an id at it is: " + soilAnalysisId);
@@ -35,6 +46,11 @@ public class Model {
 
     }
 
+    /**
+     * initiates the model. calls all necessary classes and methods,
+     * in order to calculate the output, which is then created
+     * as an excel file.
+     */
     public void init() {
         SoilAnalysisDao sad = new SoilAnalysisDaoImpl();
         WaterAnalysisDao wad = new WaterAnalysisDaoImpl();
@@ -53,17 +69,16 @@ public class Model {
         LabAnalysisResultDao lard = new LabAnalysisResultDaoImpl();
         List<SoilLabAnalysisResult> soilLabAnalysisResults = null;
         List<WaterLabAnalysisResult> waterLabAnalysisResults = null;
+        //creates soil/water analysis lab results records (if soil/water analysis isn't null)
         if (soilAnalysisId != null) {
             soilLabAnalysisResults = lard.selectAllSoilById(soilAnalysisId);
         }
         if (waterAnalysisId != null) {
-            waterLabAnalysisResults = lard.selectAllWaterById(waterAnalysisId); //temporal - lower table
+            waterLabAnalysisResults = lard.selectAllWaterById(waterAnalysisId);
         }
 
 
         Parameters p = new Parameters(ui, sa, wa, soilLabAnalysisResults, waterLabAnalysisResults);
-        List<NutrientsOutput> nutrientsOutputs = new ArrayList<>();
-        PreSeason ps = new PreSeason(); //add preseason - location of creation may change
         StageDate sd = new StageDate();
         p = sd.stageDate(p);
         for (CropStage d : p.getCropStages()) {
@@ -72,8 +87,6 @@ public class Model {
         Nutrients n;
         NutrientsBasicRemoval nbr = new NutrientsBasicRemoval(ui);
         n = nbr.calculateRemoval(p);
-        String basicRemoval = "Basic Removal";
-        nutrientsOutputs.add(addNutrientOutput(n,basicRemoval)); //add basic removal for output table
         List<NutrientsBasicRemovalPerStage> lista = n.getBasicRemovalPerStages();
         for (NutrientsBasicRemovalPerStage na : lista) {
             System.out.println(na.print());
@@ -83,7 +96,7 @@ public class Model {
         n = st.soilType(p, n);
         NCredit ncredit = new NCredit();
         n = ncredit.nCredit(p, n);
-        System.out.println(n.getSoilNutrients().getnCredits().get(0));
+
         //if lab analysis exists, proceed for the following calculations.
         if (p.getSa() != null) {
             OrganicMatterContribution omc = new OrganicMatterContribution();
@@ -93,6 +106,7 @@ public class Model {
             OrganicNitrogenLogic onl = new OrganicNitrogenLogic();
             n = onl.calculateOnl(p, n);
         }
+
         n = roundResults(n);
         n = calculateSummaryAdjTable(p,n);
         //if pre season, write to output the soil Analysis output (nutrients->preseason->soilanalysis
@@ -106,32 +120,8 @@ public class Model {
         NutrientsWaterAnalysis nwa = new NutrientsWaterAnalysis();
         n = nwa.nutrientsWaterAnalysis(p,n);
 
+        //creates the output tables
         exportOutputTables(n);
-    }
-
-    public void testSoilAnalysisOutput(SoilAnalysis sa) {
-        System.out.println("soil analysis id " + sa.getSoil_analysis_id());
-        System.out.println("farm id " + sa.getFarm_id());
-        System.out.println("sample date " + sa.getSample_date());
-        System.out.println("lab id " + sa.getLab_id());
-        System.out.println("test type id " + sa.getTest_type_id());
-        System.out.println("sample name " + sa.getSample_name());
-        System.out.println("irrigation block " + sa.getIrrigation_block_id());
-        System.out.println("soil ph " + sa.getSoil_pH());
-        System.out.println("soil ec " + sa.getSoil_EC());
-        System.out.println("soil cec " + sa.getSoil_CEC());
-        System.out.println("layer depth id " + sa.getLayer_depth_id());
-        System.out.println("soil type id " + sa.getSoil_type_id());
-        System.out.println("bulk density " + sa.getBulk_density());
-        System.out.println("organic matter " + sa.getOrganic_matter());
-    }
-
-    public NutrientsOutput addNutrientOutput(Nutrients n, String name) {
-        List<Double> basicR = n.getBasicRemoval();
-        NutrientsOutput nutrientsOutput = new NutrientsOutput(name, basicR.get(0),basicR.get(1),basicR.get(2),
-                basicR.get(3),basicR.get(4),basicR.get(5),basicR.get(6),basicR.get(7),basicR.get(8),basicR.get(9)
-                ,basicR.get(10),basicR.get(11));
-        return nutrientsOutput;
     }
 
     /**
@@ -150,7 +140,7 @@ public class Model {
                 summary.set(j, summary.get(j) + currentNutrientOutput.get(j));
             }
         }
-        //0 for all negative summaries
+        //negative sums will receive a 0 value.
         for (int i=0;i<summary.size();i++) {
             if (summary.get(i) < 0) {
                 summary.set(i, 0.0);
@@ -183,11 +173,16 @@ public class Model {
         }
     }
 
+    /**
+     * rounds the adjustment nutrients table and the actual nutrient table
+     * values, so that each value won't have too many digits after the
+     * decimal point.
+     * @param n - the nutrients data
+     * @return the nutrients data, updated with the rounded values.
+     */
     public Nutrients roundResults(Nutrients n) {
         List<NutrientsOutput> adjust = n.getPreSeason().getAdjNutrients();
         List<NutrientsOutput> actual = n.getPreSeason().getActualNutrients();
-        List<WaterAnalysisOutput> water = n.getPreSeason().getWaterAnalysis();
-        List<SoilAnalysisOutput> soil = n.getPreSeason().getSoilAnalysis();
         for (int i=0;i<adjust.size();i++) {
             adjust.get(i).round();
         }

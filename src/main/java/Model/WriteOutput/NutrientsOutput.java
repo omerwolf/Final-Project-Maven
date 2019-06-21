@@ -216,6 +216,9 @@ public class NutrientsOutput {
                 '}';
     }
 
+    /**
+     * rounds the values of the output.
+     */
     public void round() {
         List<Double> list = Arrays.asList(N,P205,K20,Ca0,Mg0,S,Fe,B,Mn,Zn,Cu,Mo);
         for (int i=0;i<list.size();i++) {
