@@ -9,7 +9,7 @@ import java.util.List;
 import static java.lang.Math.round;
 
 /**
- * the class is responsible for adding to the adjusted nutrients output table
+ * The class is responsible for adding to the adjusted nutrients output table
  * a list of n credit.
  */
 public class NCredit {
@@ -20,10 +20,10 @@ public class NCredit {
     }
 
     /**
-     * adds the n credit value from the user input, and adds it
+     * Adds the n credit value from the user input, and adds it
      * to an ncredits list, which is added to the adjusted nutrients table
      * in the PreSeason class member of the nutrients.
-     * returned the updated nutrients class.
+     * Returns the updated nutrients class.
      * @param p - the parameters data
      * @param n - the nutrients data
      * @return n - the updated nutrients data

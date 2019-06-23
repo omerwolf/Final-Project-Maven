@@ -21,7 +21,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * responsible for calculating all the necessary pre soil analysis data,
+ * Responsible for calculating all the necessary pre soil analysis data,
  * including the output for the interpretation table, and the recommendation
  * and soil correction values for the adjusted nutrients table.
  */
@@ -32,13 +32,13 @@ public class PreSeasonNutrientsSoilAnalysis {
     }
 
     /**
-     * reads from the parameters and the db the necessary data needed for the pre season soil analysis
+     * Reads from the parameters and the db the necessary data needed for the pre season soil analysis
      * of the nutrients.
-     * calculates the interpretation output table for the soil analysis, including soil recommendation
+     * Calculates the interpretation output table for the soil analysis, including soil recommendation
      * and correction, which are added to the adjusted nutrients output table.
-     * @param p - the parameters data
-     * @param n - the nutrients data
-     * @return n - the updated nutrients data
+     * @param p - The parameters data
+     * @param n - The nutrients data
+     * @return n - The updated nutrients data
      */
     public Nutrients PreSeasonNutrientsSoilAnalysis(Parameters p, Nutrients n) {
         double soilCorrectionFactor = p.getUi().getSelectedSoilCorrection();
@@ -333,8 +333,8 @@ public class PreSeasonNutrientsSoilAnalysis {
     }
 
     /**
-     * creates a list of lists, the contains in each list factors values for each
-     * nutrient. the factors are (very low, low, high, very high, pre low, pre high)
+     * Creates a list of lists, the contains in each list factors values for each
+     * nutrient. The factors are (very low, low, high, very high, pre low, pre high)
      * @return factorListofLists - a list of lists of p factors
      */
     public List<List<Double>> factorsListInitialization() {
@@ -371,9 +371,9 @@ public class PreSeasonNutrientsSoilAnalysis {
     }
 
     /**
-     * receives a list of decimals, and rounds it to 2 digits after the decimal point.
-     * @param row - the row that will have it's values rounded.
-     * @return the rounded row.
+     * Receives a list of decimals, and rounds it to 2 digits after the decimal point.
+     * @param row - The row that will have it's values rounded.
+     * @return The rounded row.
      */
         public List<Double> decimalRound(List<Double> row) {
             for (int i=0;i<row.size();i++) {

@@ -1,7 +1,7 @@
 package Model.WriteOutput;
 
 /**
- * represents a line in the water analysis table, that is created during the model run,
+ * Represents a line in the water analysis table, that is created during the model run,
  * and consists a row description name, and water analysis results for each of the nutrients.
  */
 public class WaterAnalysisOutput {
@@ -14,11 +14,11 @@ public class WaterAnalysisOutput {
 
     /**
      *
-     * @param nutrientSymbol - the symbol of the nutrients. the row's name.
-     * @param waterNutrients - the amount of water nutrients from the water lab results.
-     * @param resultsUnits - default is ppm.
-     * @param appliedNutrients - the amount of each nutrient to apply.
-     * @param efficiency - efficiency of multiplication of the fertilization efficiency
+     * @param nutrientSymbol - The symbol of the nutrients. the row's name.
+     * @param waterNutrients - The amount of water nutrients from the water lab results.
+     * @param resultsUnits - Default is ppm.
+     * @param appliedNutrients - The amount of each nutrient to apply.
+     * @param efficiency - Efficiency of multiplication of the fertilization efficiency
      *                   and the irrigation efficiency.
      * @param actualNutrientsKg
      */
@@ -81,7 +81,7 @@ public class WaterAnalysisOutput {
     }
 
     /**
-     * overrides toString method in order to print the WaterAnalysisOutput
+     * Overrides toString method in order to print the WaterAnalysisOutput
      * field names and values.
      * @return WaterAnalysisOutput's field names and values.
      */

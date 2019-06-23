@@ -13,7 +13,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * responsible for creating the output for the water analysis output, in addition
+ * Responsible for creating the output for the water analysis output, in addition
  * for updating the actual nutrients output table.
  */
 public class NutrientsWaterAnalysis {
@@ -23,9 +23,9 @@ public class NutrientsWaterAnalysis {
     }
 
     /**
-     * calculates the actual fertilization, water contribution and total fertilization values and adds
+     * Calculates the actual fertilization, water contribution and total fertilization values and adds
      * them to the adjusted nutrients output table.
-     * in addition, creates the nutrients additions from the water analysis, creates an output table, and
+     * In addition, creates the nutrients additions from the water analysis, creates an output table, and
      * updates the nutrients data.
      * @param p - the parameters data.
      * @param n - the nutrients data.
@@ -104,11 +104,11 @@ public class NutrientsWaterAnalysis {
     }
 
     /**
-     * takes a double array and a name, and convert them to NutrientOutput - a row
+     * Takes a double array and a name, and convert them to NutrientOutput - a row
      * in an output table.
-     * @param output - the output array to be converted
-     * @param name - the row name to add to the output table
-     * @return nutrientsOutput - the output array, converted to NutrientsOutput class
+     * @param output - The output array to be converted
+     * @param name - The row name to add to the output table
+     * @return nutrientsOutput - The output array, converted to NutrientsOutput class
      */
     public NutrientsOutput toNutrientOutput(double [] output, String name) {
         NutrientsOutput nutrientsOutput = new NutrientsOutput(name,output[0],output[1],output[2],

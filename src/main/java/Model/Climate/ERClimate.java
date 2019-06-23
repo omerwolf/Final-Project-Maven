@@ -13,7 +13,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * reads the excel file of the climate info,
+ * Reads the excel file of the climate info,
  * in order to insert it's values to the database.
  */
 public class ERClimate {
@@ -21,7 +21,7 @@ public class ERClimate {
     static String fileName = "src\\main\\resources\\Climate.xlsx";
 
     /**
-     * reads the climate data from the excel,
+     * Reads the climate data from the excel,
      * creates records, and add them to the monthClimateList member.
      */
     public ERClimate() {
@@ -64,8 +64,8 @@ public class ERClimate {
     }
 
     /**
-     * returns the climate list if it exists.
-     * @return the monthClimateList
+     * Returns the climate list if it exists.
+     * @return The monthClimateList
      */
     public List<MonthClimate> getMonthClimateList() {
         if (this.monthClimateList == null) {
@@ -75,9 +75,9 @@ public class ERClimate {
     }
 
     /**
-     * receives a number of a month (1-12) and returns it from the monthClimateList.
-     * @param monthNum - the month number.
-     * @return the MonthClimate of that month (with info about rain and temperature).
+     * Receives a number of a month (1-12) and returns it from the monthClimateList.
+     * @param monthNum - The month number.
+     * @return The MonthClimate of that month (with info about rain and temperature).
      */
     public MonthClimate getMonth(int monthNum){
         return this.monthClimateList.get(monthNum - 1);

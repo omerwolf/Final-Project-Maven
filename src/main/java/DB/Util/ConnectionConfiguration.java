@@ -4,12 +4,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 /**
- * configures the connection to the database.
+ * Configures the connection to the database.
  */
 public class ConnectionConfiguration {
     /**
-     * gets the database connection, in order to be able to work with the database.
-     * @return the database connection.
+     * Gets the database connection, in order to be able to work with the database.
+     * @return The database connection.
      */
     public static Connection getConnection(){
         Connection connection = null;

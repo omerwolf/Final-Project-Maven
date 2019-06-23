@@ -14,7 +14,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * calculates the fertilization efficiency and add it to the actual nutrient output table.
+ * Calculates the fertilization efficiency and add it to the actual nutrient output table.
  */
 public class FertilizationEfficiency {
 
@@ -23,7 +23,7 @@ public class FertilizationEfficiency {
     }
 
     /**
-     * takes the ph adjusted values from the adjusted nutrient output table, and then calculates
+     * Takes the ph adjusted values from the adjusted nutrient output table, and then calculates
      * the efficiency of the fertilization method that was selected. those calculations are added
      * to the actual nutrients output table which is added to the nutrients data.
      * @param p - the parameters data.
@@ -57,6 +57,7 @@ public class FertilizationEfficiency {
             }
         }
 
+        //If base dressing is true
         if (p.getUi().getSelectedBaseDressing()) {
             //int minMonth;
             CropStage plantingMonth = p.getCropStages().get(0);
@@ -156,11 +157,11 @@ public class FertilizationEfficiency {
     }
 
     /**
-     * gets a nutrient output row from the list (which represents the output table),
+     * Gets a nutrient output row from the list (which represents the output table),
      * using the given row name, and returns it.
-     * @param n - the nutrients data
-     * @param rowName - the name of the row in the nutrient output table/list
-     * @return nutrientsOutput - the list with the row values of the given name.
+     * @param n - The nutrients data
+     * @param rowName - The name of the row in the nutrient output table/list
+     * @return nutrientsOutput - The list with the row values of the given name.
      */
     public NutrientsOutput getNutrientOutput(Nutrients n,String rowName) {
         List<NutrientsOutput> nlist = n.getPreSeason().getAdjNutrients();
@@ -175,11 +176,11 @@ public class FertilizationEfficiency {
     }
 
     /**
-     * takes a double array and a name, and convert them to NutrientOutput - a row
+     * Takes a double array and a name, and convert them to NutrientOutput - a row
      * in an output table.
-     * @param output - the output array to be converted
-     * @param name - the row name to add to the output table
-     * @return nutrientsOutput - the output array, converted to NutrientsOutput class
+     * @param output - The output array to be converted
+     * @param name - The row name to add to the output table
+     * @return nutrientsOutput - The output array, converted to NutrientsOutput class
      */
     public NutrientsOutput toNutrientOutput(double [] output, String name) {
         NutrientsOutput nutrientsOutput = new NutrientsOutput(name,output[0],output[1],output[2],

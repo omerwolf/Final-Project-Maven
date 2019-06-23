@@ -46,6 +46,10 @@ import java.util.List;
 
 import java.util.ResourceBundle;
 
+/**
+ * This class provide the UI in order to get the input for the model.
+ * Extends BaseController
+ */
 
 public class UIcontroller extends  BaseController{
 
@@ -128,6 +132,10 @@ public class UIcontroller extends  BaseController{
 
 
     //Actions
+    /**
+     * Selected soil analysis file.
+     * @param event
+     */
     @FXML
     private void soilAnalysisFileChooserAction(ActionEvent event){
         FileChooser fc = new FileChooser();
@@ -148,6 +156,10 @@ public class UIcontroller extends  BaseController{
 
         }
     }
+    /**
+     * Selected tissue analysis file.
+     * @param event
+     */
     @FXML
     private void tissueAnalysisFileChooserAction(ActionEvent event){
         FileChooser fc = new FileChooser();
@@ -163,6 +175,10 @@ public class UIcontroller extends  BaseController{
             labTissueAnalysis.setText("Selected file:" + this.selectedTissueAnalysisFile.getName());
         }
     }
+    /**
+     * Selected water analysis file.
+     * @param event
+     */
     @FXML
     private void waterAnalysisFileChooserAction(ActionEvent event){
         FileChooser fc = new FileChooser();
@@ -185,7 +201,11 @@ public class UIcontroller extends  BaseController{
     }
 
 
-
+    /**
+     * Initialize the controller.
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         loadCropType();
@@ -194,17 +214,20 @@ public class UIcontroller extends  BaseController{
 
     }
 
+    /**
+     * Submit all the input to the model and run it.
+     */
     private void submit(){
         // action event
         EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e)
             {
-                 UserInput ui = new UserInput(selectedRunName,selectedCrop,selectedVarType,selectedSoil,selectedExpectedYield,
-                         selectedNCredit,selectedIrrigationMethod,selectedIrrigationVolume,
+                UserInput ui = new UserInput(selectedRunName,selectedCrop,selectedVarType,selectedSoil,selectedExpectedYield,
+                        selectedNCredit,selectedIrrigationMethod,selectedIrrigationVolume,
                         selectedFertilizationMethod,selectedBaseDressing,selectedSoilCorrection,selectedSoilPH,selectedDate);
                 XlsxFileGenerator fileGenerator = new XlsxFileGenerator(ui);
                 Workbook w = fileGenerator.getWorkbook();
-                 Model  model= new Model(selectedSoilAnalysisId, selectedWaterAnalysisId, ui);
+                Model  model= new Model(selectedSoilAnalysisId, selectedWaterAnalysisId, ui);
                 model.init();
             }
 
@@ -212,6 +235,9 @@ public class UIcontroller extends  BaseController{
         submitB.setOnAction(event);
     }
 
+    /**
+     * Load the loadDatePicker option.
+     */
     private void loadDatePicker(){
         // make the DatePicker non-editable
         datePicker.setEditable(false);
@@ -226,7 +252,10 @@ public class UIcontroller extends  BaseController{
         });
     }
 
-
+    /**
+     * Load the crop types from the DB.
+     * Add Listener to the crop button.
+     */
     private void loadCropType() {
         this.oList.removeAll(oList);
         //Pull the cropTypes from DB
@@ -255,7 +284,10 @@ public class UIcontroller extends  BaseController{
 
 
 
-
+    /**
+     * Load the variety types from the DB.
+     * Add Listener to the button.
+     */
     private void loadVarType() {
         this.oList.removeAll(oList);
         //Pull the varietyTypes according the var type selected from DB
@@ -281,7 +313,10 @@ public class UIcontroller extends  BaseController{
     }
 
 
-
+    /**
+     * Load the expected yield from the DB.
+     * Add Listener to the button.
+     */
     private void loadExpectedYield() {
 
         int varTypeId = this.selectedVarType.getVariety_id();
@@ -302,30 +337,33 @@ public class UIcontroller extends  BaseController{
         final double fMinRange = minRange;
         // add a listener
         this.expectedYieldTF.textProperty().addListener((ov,value,new_value) -> {
-                String choosenVal = new_value;
-                try {
-                    selectedExpectedYield = Double.parseDouble(choosenVal);
-                    if (selectedExpectedYield >= fMinRange && selectedExpectedYield <= fMaxRange) {
-                        instructionsTF.setText("Please select Soil type");
-                        loadSoilType();
-                    }
-                    else {
-                        this.instructionsTF.setText("Please select expected yield value between " + fMinRange + " to " + fMaxRange);
-                    }
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    this.instructionsTF.setText("Please enter only numbers!");
-                } finally {
-
+            String choosenVal = new_value;
+            try {
+                selectedExpectedYield = Double.parseDouble(choosenVal);
+                if (selectedExpectedYield >= fMinRange && selectedExpectedYield <= fMaxRange) {
+                    instructionsTF.setText("Please select Soil type");
+                    loadSoilType();
                 }
+                else {
+                    this.instructionsTF.setText("Please select expected yield value between " + fMinRange + " to " + fMaxRange);
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                this.instructionsTF.setText("Please enter only numbers!");
+            } finally {
+
+            }
 
 
         });
 
 
     }
-
+    /**
+     * Load the soil types from the DB.
+     * Add Listener to the button.
+     */
     private void loadSoilType() {
         this.oList.removeAll(oList);
         //Pull the cropTypes from DB
@@ -348,7 +386,10 @@ public class UIcontroller extends  BaseController{
         });
 
     }
-
+    /**
+     * Load the Previous Crop N Credit from the DB.
+     * Add Listener to the button.
+     */
     private void loadPreviousCropNCredit() {
         instructionsTF.setText("Please enter previous crop N credit, if none please enter 0");
         this.oList.removeAll(oList);
@@ -378,8 +419,10 @@ public class UIcontroller extends  BaseController{
 
     }
 
-
-
+    /**
+     * Load the IrrigationMethod from the DB.
+     * Add Listener to the button.
+     */
     private void loadIrrigationMethod() {
         this.instructionsTF.setText("Please enter irrigation volume (mm/season)");
         this.irrigationMethodCB.getItems().removeAll();
@@ -407,7 +450,9 @@ public class UIcontroller extends  BaseController{
         });
 
     }
-
+    /**
+     * Add Listener to IrrigationVolume the button.
+     */
     private void loadIrrigationVolume() {
 
         // add a listener
@@ -431,7 +476,10 @@ public class UIcontroller extends  BaseController{
 
         this.loadFertilizationMethod();
     }
-
+    /**
+     * Load the FertilizationMethod from the DB.
+     * Add Listener to the button.
+     */
     private void loadFertilizationMethod() {
         this.oList.removeAll(oList);
         //Pull the FertilizationMethod from DB
@@ -454,6 +502,9 @@ public class UIcontroller extends  BaseController{
         });
         loadBaseDressing();
     }
+    /**
+     * Add Listener to BaseDressing the button.
+     */
     private void loadBaseDressing(){
         this.oList.removeAll(oList);
         oList.add("Yes");
@@ -478,6 +529,9 @@ public class UIcontroller extends  BaseController{
         instructionsTF.setText("Please soil correction (percent/season) in range from 0 to 100");
         loadSoilCorrection();
     }
+    /**
+     * Add Listener to SoilCorrection the button.
+     */
     private void loadSoilCorrection(){
         // add a listener
         this.soilCorrectionTF.textProperty().addListener((ov,value,new_value) -> {
@@ -500,7 +554,9 @@ public class UIcontroller extends  BaseController{
             }
         });
     }
-
+    /**
+     * Add Listener to SoilPH the button.
+     */
     private void loadSoilPH(){
         // add a listener
         this.soilPHTF.textProperty().addListener((ov,value,new_value) -> {
@@ -521,6 +577,9 @@ public class UIcontroller extends  BaseController{
             }
         });
     }
+    /**
+     * Add Listener to RunName the button.
+     */
     private void loadRunName(){
         // add a listener
         this.runNameTF.textProperty().addListener((ov,value,new_value) -> {
@@ -529,12 +588,19 @@ public class UIcontroller extends  BaseController{
         });
     }
 
+    /**
+     * Return all crops from DB.
+     * @return cropTypes - List<Crop>
+     */
     private List<Crop> getCropTypes() {
         Dao<Crop> cd = new CropDaoImpl();
         List<Crop> cropTypes = cd.selectAll();
         return cropTypes;
     }
-
+    /**
+     * Return all match variety type to crop type from DB.
+     * @return matchVarType - List<variety_type>
+     */
     private List<variety_type> getVarietyTypes() {
         int selectedCropId = this.selectedCrop.getId();
         crop_expected_yield_validationDao ceyv = new crop_expected_yield_validationDaoImpl();
@@ -549,17 +615,28 @@ public class UIcontroller extends  BaseController{
 
         return matchVarType;
     }
-
+    /**
+     * Return all soils from DB.
+     * @return soilTypes - List<Soil>
+     */
     private List<Soil> getSoilTypes() {
         Dao<Soil> sd = new SoilDaoImpl();
         List<Soil> soilTypes = sd.selectAll();
         return soilTypes;
     }
+    /**
+     * Return all irrigation methods from DB.
+     * @return irrigationMethods - List<IrrigationMethod>
+     */
     private List<IrrigationMethod> getIrrigationMethod() {
         Dao<IrrigationMethod> imd = new IrrigationMethodDaoImpl();
         List<IrrigationMethod> irrigationMethods = imd.selectAll();
         return irrigationMethods;
     }
+    /**
+     * Return all fertilization method from DB.
+     * @return fertilizationMethods - List<fertilization_method>
+     */
     private List<fertilization_method> getFertilizationMethod() {
         Dao<fertilization_method> fm = new fertilization_methodDaoImpl();
         List<fertilization_method> fertilizationMethods= fm.selectAll();
@@ -567,7 +644,10 @@ public class UIcontroller extends  BaseController{
 
     }
 
-
+    /**
+     * Return list of crop and the min and max value.
+     * @return pCropAndPrecent - List<String>
+     */
     private List<String> getPreviousCropNCredit() {
         Dao<PreviousCropNCredit> pcnd = new PreviousCropNCreditDaoImpl();
         List<PreviousCropNCredit> previousCropNCreditList = pcnd.selectAll();

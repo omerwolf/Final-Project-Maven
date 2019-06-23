@@ -9,9 +9,9 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * represents a line in two output tables, that is created during the model run,
+ * Represents a line in two output tables, that is created during the model run,
  * and consists a row description name, and amounts for each of the 12 nutrients.
- * used for adjustment table and actual nutrients table.
+ * Used for adjustment table and actual nutrients table.
  */
 public class NutrientsOutput {
     private String stageName;
@@ -29,20 +29,20 @@ public class NutrientsOutput {
     private double Mo;
 
     /**
-     * creates a NutrientsOutput row in an output table.
-     * @param stageName - the row name.
-     * @param n - n nutrient amount.
-     * @param p205 - p nutrient amount.
-     * @param k20 - k nutrient amount.
-     * @param ca0 - ca nutrient amount.
-     * @param mg0 - mg nutrient amount.
-     * @param s - s nutrient amount.
-     * @param fe - fe nutrient amount.
-     * @param b - b nutrient amount.
-     * @param mn - mn nutrient amount.
-     * @param zn - zn nutrient amount.
-     * @param cu - cu nutrient amount.
-     * @param mo - mo nutrient amount.
+     * Creates a NutrientsOutput row in an output table.
+     * @param stageName - The row name.
+     * @param n - N nutrient amount.
+     * @param p205 - P nutrient amount.
+     * @param k20 - K nutrient amount.
+     * @param ca0 - Ca nutrient amount.
+     * @param mg0 - Mg nutrient amount.
+     * @param s - S nutrient amount.
+     * @param fe - Fe nutrient amount.
+     * @param b - B nutrient amount.
+     * @param mn - Mn nutrient amount.
+     * @param zn - Zn nutrient amount.
+     * @param cu - Cu nutrient amount.
+     * @param mo - Mo nutrient amount.
      */
     public NutrientsOutput(String stageName, double n, double p205, double k20, double ca0, double mg0, double s,
                            double fe, double b, double mn, double zn, double cu, double mo) {
@@ -62,10 +62,10 @@ public class NutrientsOutput {
     }
 
     /**
-     * receives a row name and a list of amounts for each nutrient, and sets
+     * Receives a row name and a list of amounts for each nutrient, and sets
      * each one of its members with the list's amounts.
-     * @param stageName - the row name.
-     * @param nutrients - a list of all 12 nutrients amounts.
+     * @param stageName - The row name.
+     * @param nutrients - A list of all 12 nutrients amounts.
      */
     public NutrientsOutput(String stageName, List<Double> nutrients) {
         this.stageName = stageName;
@@ -193,7 +193,7 @@ public class NutrientsOutput {
     }
 
     /**
-     * overrides toString method in order to print the NutrientsOutput
+     * Overrides toString method in order to print the NutrientsOutput
      * field names and values.
      * @return NutrientsOutput's field names and values.
      */
@@ -217,7 +217,7 @@ public class NutrientsOutput {
     }
 
     /**
-     * rounds the values of the output.
+     * Rounds the values of the output.
      */
     public void round() {
         List<Double> list = Arrays.asList(N,P205,K20,Ca0,Mg0,S,Fe,B,Mn,Zn,Cu,Mo);

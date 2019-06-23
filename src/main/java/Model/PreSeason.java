@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * the class contains info about the amount of each nutrient that the crop needs throughout the season.
- * it contains lists that gives info about the soil analysis and water analysis.
- * those lists will be written to an excel during the model's run.
+ * The class contains info about the amount of each nutrient that the crop needs throughout the season.
+ * It contains lists that gives info about the soil analysis and water analysis.
+ * Those lists will be written to an excel during the model's run.
  */
 public class PreSeason {
     private List<NutrientsOutput> adjNutrients = new ArrayList<>();
@@ -27,10 +27,10 @@ public class PreSeason {
 
     /**
      * 2nd constructor, receiving several output lists.
-     * @param adjNutrients - a list with info about the adjustments to the amount of each nutrient.
-     * @param actualNutrients - a list with info about the actual amount needed for each nutrient.
-     * @param soilAnalysis - a list that interprets the soil analysis.
-     * @param waterAnalysis - a list with info about the amount additions from the water analysis.
+     * @param adjNutrients - A list with info about the adjustments to the amount of each nutrient.
+     * @param actualNutrients - A list with info about the actual amount needed for each nutrient.
+     * @param soilAnalysis - A list that interprets the soil analysis.
+     * @param waterAnalysis - A list with info about the amount additions from the water analysis.
      */
     public PreSeason(List<NutrientsOutput> adjNutrients, List<NutrientsOutput> actualNutrients,
                      List<SoilAnalysisOutput> soilAnalysis, List<WaterAnalysisOutput> waterAnalysis) {

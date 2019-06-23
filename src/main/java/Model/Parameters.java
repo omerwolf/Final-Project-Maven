@@ -8,8 +8,8 @@ import Analysis.WaterAnalysis.WaterAnalysis;
 import java.util.List;
 
 /**
- * the class contains the parameters used during the execution of the model.
- * they are used in order to calculate all the adjustments needed for the soil
+ * The class contains the parameters used during the execution of the model.
+ * They are used in order to calculate all the adjustments needed for the soil
  * and water nutrients of a crop.
  */
 public class Parameters {
@@ -26,12 +26,12 @@ public class Parameters {
     }
 
     /**
-     * constructor - builds the parameters class
-     * @param ui - all the relevant input of the user, at the beginning of the program.
-     * @param sa - tha base data for the soil analysis (id, date, name, etc.)
-     * @param wa - the base data for the water analysis(id, date, name, etc.)
-     * @param slar - the soil lab analysis results of each nutrient, including extraction method
-     * @param wlar - the water lab analysis results of each nutrient
+     * Constructor - builds the parameters class
+     * @param ui - All the relevant input of the user, at the beginning of the program.
+     * @param sa - Tha base data for the soil analysis (id, date, name, etc.)
+     * @param wa - The base data for the water analysis(id, date, name, etc.)
+     * @param slar - The soil lab analysis results of each nutrient, including extraction method
+     * @param wlar - The water lab analysis results of each nutrient
      */
     public Parameters(UserInput ui, SoilAnalysis sa, WaterAnalysis wa,
                       List<SoilLabAnalysisResult> slar, List<WaterLabAnalysisResult> wlar) {
@@ -43,15 +43,15 @@ public class Parameters {
     }
 
     /**
-     * return the cropStages
-     * @return cropStages - the dates of each stage of the crop's growth
+     * Return the cropStages
+     * @return cropStages - The dates of each stage of the crop's growth
      */
     public List<CropStage> getCropStages() {
         return cropStages;
     }
 
     /**
-     * sets the dates of each stage of the crop's growth,
+     * Sets the dates of each stage of the crop's growth,
      * which are calculated in the CropStage class.
      * @param cropStages
      */
@@ -60,8 +60,8 @@ public class Parameters {
     }
 
     /**
-     * returns the user input.
-     * @return ui - the user input at the beginning of a season.
+     * Returns the user input.
+     * @return ui - The user input at the beginning of a season.
      */
 
     public UserInput getUi() {
@@ -69,48 +69,48 @@ public class Parameters {
     }
 
     /**
-     * sets the user input.
-     * @param ui - the user input for the crop.
+     * Sets the user input.
+     * @param ui - The user input for the crop.
      */
     public void setUi(UserInput ui) {
         this.ui = ui;
     }
 
     /**
-     * returns the Soil Analysis data
-     * @return sa - the soil analysis base data
+     * Returns the Soil Analysis data
+     * @return sa - The soil analysis base data
      */
     public SoilAnalysis getSa() {
         return sa;
     }
 
     /**
-     * sets the soil analysis data, if provided.
-     * @param sa - the soil analysis base data to set
+     * Sets the soil analysis data, if provided.
+     * @param sa - The soil analysis base data to set
      */
     public void setSa(SoilAnalysis sa) {
         this.sa = sa;
     }
 
     /**
-     * returns the water analysis data
-     * @return wa - the water analysis base data
+     * Returns the water analysis data
+     * @return wa - The water analysis base data
      */
     public WaterAnalysis getWa() {
         return wa;
     }
 
     /**
-     * sets the water analysis data, if provided.
-     * @param wa - the water analysis base data to set
+     * Sets the water analysis data, if provided.
+     * @param wa - The water analysis base data to set
      */
     public void setWa(WaterAnalysis wa) {
         this.wa = wa;
     }
 
     /**
-     * returns a list of soil lab analysis data.
-     * @return slar - a list, in which each record contains
+     * Returns a list of soil lab analysis data.
+     * @return slar - A list, in which each record contains
      * soil lab analysis info for a specific nutrient.
      */
     public List<SoilLabAnalysisResult> getSlar() {
@@ -118,39 +118,39 @@ public class Parameters {
     }
 
     /**
-     * sets a list of soil lab analysis results for each nutrient
-     * @param slar - the list of soil lab analysis data to set.
+     * Sets a list of soil lab analysis results for each nutrient
+     * @param slar - The list of soil lab analysis data to set.
      */
     public void setSlar(List<SoilLabAnalysisResult> slar) {
         this.slar = slar;
     }
     /**
-     * returns a list of water lab analysis data.
-     * @return wlar - a list, in which each record contains
+     * Returns a list of water lab analysis data.
+     * @return wlar - A list, in which each record contains
      * water lab analysis info for a specific nutrient.
      */
     public List<WaterLabAnalysisResult> getWlar() {
         return wlar;
     }
     /**
-     * sets a list of water lab analysis results for each nutrient
-     * @param wlar - the list of water lab analysis data to set.
+     * Sets a list of water lab analysis results for each nutrient
+     * @param wlar - The list of water lab analysis data to set.
      */
     public void setWlar(List<WaterLabAnalysisResult> wlar) {
         this.wlar = wlar;
     }
 
     /**
-     * returns the duration of the crop's growth
-     * @return duration - duration of the crop's growth
+     * Returns the duration of the crop's growth
+     * @return duration - Duration of the crop's growth
      */
     public int getDuration() {
         return duration;
     }
 
     /**
-     * sets the amount of days it takes to grow to crop
-     * @param duration - the duration to set
+     * Sets the amount of days it takes to grow to crop
+     * @param duration - The duration to set
      */
     public void setDuration(int duration) {
         this.duration = duration;

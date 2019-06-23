@@ -5,7 +5,7 @@ import DB.DaoImpl.SoilDaoImpl;
 import DB.Entites.Soil;
 
 /**
- * the class calculates the soil type.
+ * The class calculates the soil type.
  */
 public class SoilType {
 
@@ -16,19 +16,19 @@ public class SoilType {
     }
 
     /**
-     * the constructor receives the user input.
-     * @param ui - the user input
+     * The constructor receives the user input.
+     * @param ui - The user input
      */
     public SoilType(UserInput ui) {
         this.ui = ui;
     }
 
     /**
-     * retrieves the soil type, either from the db (if lab analysis is active)
+     * Retrieves the soil type, either from the db (if lab analysis is active)
      * or the user input, and updates the nutrients data.
-     * @param p - the parameters data.
-     * @param n - the nutrients data.
-     * @return - the nutrients data, updated with the calculated soil type.
+     * @param p - The parameters data.
+     * @param n - The nutrients data.
+     * @return - The nutrients data, updated with the calculated soil type.
      */
     public Nutrients soilType(Parameters p, Nutrients n) {
         //if lab analysis is active, read soil info from there (should be in the db at this stage).

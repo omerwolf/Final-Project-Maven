@@ -15,22 +15,22 @@ import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 
 /**
- * generate an xlsx file with info about the user input.
+ * Generates an xlsx file with info about the user input.
  */
 public class XlsxFileGenerator {
     private UserInput ui;
     private String filePath;
 
     /**
-     * receives a user input and set it.
-     * @param ui - the user input.
+     * Receives a user input and set it.
+     * @param ui - The user input.
      */
     public XlsxFileGenerator(UserInput ui) {
         this.ui = ui;
     }
 
     /**
-     * creates a Workbook that contains the details about all the field
+     * Creates a Workbook that contains the details about all the field
      * values from the user input, and then returns it.
      * @return Workbook containing ui info.
      */

@@ -14,7 +14,7 @@ import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
- * writes the output of the tables that were calculated during the model's run
+ * Writes the output of the tables that were calculated during the model's run
  * to an excel file.
  */
 public class WriteOutput {
@@ -23,9 +23,9 @@ public class WriteOutput {
     final Workbook workbook;
 
     /**
-     * creates a WriteOutput class.
-     * receives ui info and generates a workbook from it, and a filepath for it.
-     * @param ui - the user input.
+     * Creates a WriteOutput class.
+     * Receives ui info and generates a workbook from it, and a filepath for it.
+     * @param ui - The user input.
      */
     public WriteOutput(UserInput ui){
         XlsxFileGenerator fileGenerator = new XlsxFileGenerator(ui);
@@ -34,10 +34,10 @@ public class WriteOutput {
     }
 
     /**
-     * writes the adjustment nutrients table and the actual nutrients table
+     * Writes the adjustment nutrients table and the actual nutrients table
      * to an excel file.
-     * @param nutrientsOutput - a list of NutrientsOutput(the table) to write to an excel.
-     * @throws Exception - throws exception if there was a problem.
+     * @param nutrientsOutput - A list of NutrientsOutput(the table) to write to an excel.
+     * @throws Exception - Throws exception if there was a problem.
      */
     public void writeNutrientsOutput(List<NutrientsOutput> nutrientsOutput) throws Exception{
         int numOfSheets = this.workbook.getNumberOfSheets();
@@ -74,10 +74,10 @@ public class WriteOutput {
     }
 
     /**
-     * writes the Water Analysis table and the actual nutrients table
+     * Writes the Water Analysis table and the actual nutrients table
      * to an excel file.
-     * @param waterAnalysisOutput - a list of WaterAnalysisOutput(the table) to write to an excel.
-     * @throws Exception - throws exception if there was a problem.
+     * @param waterAnalysisOutput - A list of WaterAnalysisOutput(the table) to write to an excel.
+     * @throws Exception - Throws exception if there was a problem.
      */
     public void writeWaterAnalysisOutput(List<WaterAnalysisOutput> waterAnalysisOutput) throws Exception{
         int numOfSheets = this.workbook.getNumberOfSheets();
@@ -105,10 +105,10 @@ public class WriteOutput {
     }
 
     /**
-     * writes the Soil Analysis table and the actual nutrients table
+     * Writes the Soil Analysis table and the actual nutrients table
      * to an excel file.
-     * @param soilAnalysisOutput - a list of SoilAnalysisOutput(the table) to write to an excel.
-     * @throws Exception - throws exception if there was a problem.
+     * @param soilAnalysisOutput - A list of SoilAnalysisOutput(the table) to write to an excel.
+     * @throws Exception - Throws exception if there was a problem.
      */
     public void writeSoilAnalysisOutput(List<SoilAnalysisOutput> soilAnalysisOutput) throws Exception{
         int numOfSheets = this.workbook.getNumberOfSheets();
@@ -136,8 +136,8 @@ public class WriteOutput {
     }
 
     /**
-     * used in order to write the headers for the nutrients output table.
-     * @param firstRow - the first row of the output excel that was just created.
+     * Used in order to write the headers for the nutrients output table.
+     * @param firstRow - The first row of the output excel that was just created.
      */
     private void writeNutrientsOutputHeader(Row firstRow) {
         // Change font and color
@@ -199,10 +199,10 @@ public class WriteOutput {
     }
 
     /**
-     * takes a row in the sheet and it's associated NutrientOutput, which contains
+     * Takes a row in the sheet and it's associated NutrientOutput, which contains
      * the values needed to be inserted to that row and inserts them.
-     * @param row - the current row.
-     * @param no - the list of the nutrients values in that row.
+     * @param row - The current row.
+     * @param no - The list of the nutrients values in that row.
      */
     private void writeNutrientsOutputData(Row row, NutrientsOutput no ) {
 
@@ -262,8 +262,8 @@ public class WriteOutput {
     }
 
     /**
-     * used in order to write the headers for the water analysis output table.
-     * @param firstRow - the first row of the output excel that was just created.
+     * Used in order to write the headers for the water analysis output table.
+     * @param firstRow - The first row of the output excel that was just created.
      */
     private void writeWaterAnalysisOutputHeader(Row firstRow) {
         // Change font and color
@@ -298,10 +298,10 @@ public class WriteOutput {
     }
 
     /**
-     * takes a row in the sheet and it's associated WaterAnalysisOutput, which contains
+     * Takes a row in the sheet and it's associated WaterAnalysisOutput, which contains
      * the values needed to be inserted to that row and inserts them.
-     * @param row - the current row.
-     * @param wao - the list of the values in that row.
+     * @param row - The current row.
+     * @param wao - The list of the values in that row.
      */
     private void writeWaterAnalysisOutputData(Row row, WaterAnalysisOutput wao ) {
 
@@ -334,8 +334,8 @@ public class WriteOutput {
     }
 
     /**
-     * used in order to write the headers for the soil analysis output table.
-     * @param firstRow - the first row of the output excel that was just created.
+     * Used in order to write the headers for the soil analysis output table.
+     * @param firstRow - The first row of the output excel that was just created.
      */
     private void writeSoilAnalysisOutputHeader(Row firstRow) {
         // Change font and color
@@ -374,10 +374,10 @@ public class WriteOutput {
     }
 
     /**
-     * takes a row in the sheet and it's associated SoilAnalysisOutput, which contains
+     * Takes a row in the sheet and it's associated SoilAnalysisOutput, which contains
      * the values needed to be inserted to that row and inserts them.
-     * @param row - the current row.
-     * @param sao - the list of the values in that row.
+     * @param row - The current row.
+     * @param sao - The list of the values in that row.
      */
     private void writeSoilAnalysisOutputData(Row row, SoilAnalysisOutput sao ) {
 

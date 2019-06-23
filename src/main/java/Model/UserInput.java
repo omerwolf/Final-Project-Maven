@@ -6,7 +6,7 @@ import java.io.File;
 import java.time.LocalDate;
 
 /**
- * contains all the info that the user put before the beginning of a season.
+ * Contains all the info that the user put before the beginning of a season.
  */
 public class UserInput {
     private Crop selectedCrop;
@@ -26,22 +26,22 @@ public class UserInput {
     private LocalDate selectedDate;
 
     /**
-     * creates a class of the user input, by receiving all the necessary input
+     * Creates a class of the user input, by receiving all the necessary input
      * from the user.
-     * @param runName - current run name.
-     * @param selectedCrop - the crop the user selected to grow.
-     * @param selectedVarType - the variety type of the crop the user selected to grow.
-     * @param selectedSoil - the soil on which the crop will grow.
-     * @param selectedexpectedYield - the expected yield of the crop (values ranges depends on on the
+     * @param runName - Current run name.
+     * @param selectedCrop - The crop the user selected to grow.
+     * @param selectedVarType - The variety type of the crop the user selected to grow.
+     * @param selectedSoil - The soil on which the crop will grow.
+     * @param selectedexpectedYield - The expected yield of the crop (values ranges depends on on the
      *                              crop and variety type selected).
-     * @param selectedNCredit - the amount of n credit from previous crop.
-     * @param selectedIrrigationMethod - the irrigation method the user selected.
-     * @param selectedIrrigationVolume - the irrigation volume selected.
-     * @param selectedFertilizationMethod - the fertilization method the user selected.
-     * @param selectedBaseDressing - the amount of base dressing.
-     * @param selectedSoilCorrection - the soil correction value.
-     * @param selectedSoilPH - the amount of ph (values between 0-14)
-     * @param selectedDate - the date the user selected to start the crop's growth.
+     * @param selectedNCredit - The amount of n credit from previous crop.
+     * @param selectedIrrigationMethod - The irrigation method the user selected.
+     * @param selectedIrrigationVolume - The irrigation volume selected.
+     * @param selectedFertilizationMethod - The fertilization method the user selected.
+     * @param selectedBaseDressing - Base dressing's status (yes/no)
+     * @param selectedSoilCorrection - The soil correction value.
+     * @param selectedSoilPH - The amount of ph (values between 0-14)
+     * @param selectedDate - The date the user selected to start the crop's growth.
      */
     public UserInput(String runName,Crop selectedCrop, variety_type selectedVarType, Soil selectedSoil, Double selectedexpectedYield,
                      int selectedNCredit, IrrigationMethod selectedIrrigationMethod, Double selectedIrrigationVolume,
@@ -115,9 +115,9 @@ public class UserInput {
     }
 
     /**
-     * overrides toString method in order to print the user input
+     * Overrides toString method in order to print the user input
      * field names and values.
-     * @return climate's field names and values.
+     * @return Climate's field names and values.
      */
     @Override
     public String toString() {

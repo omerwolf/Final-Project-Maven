@@ -1,7 +1,7 @@
 package Model.WriteOutput;
 
 /**
- * represents a line in a soil analysis table, that is created during the model run,
+ * Represents a line in a soil analysis table, that is created during the model run,
  * and consists a row description name, and soil analysis results for each of the nutrients.
  */
 public class SoilAnalysisOutput {
@@ -15,13 +15,13 @@ public class SoilAnalysisOutput {
 
     /**
      *
-     * @param nutrientSymbol - the nutrient's symbol. the name of the row.
-     * @param nutrientsResults - the results amount.
-     * @param status - string that says if the amount is sufficient, high or low.
-     * @param thresholds - string of thresholds range for the nutrient.
-     * @param nutrientBalance - balance amount.
-     * @param recommendation - recommendation amount.
-     * @param correction - soil correction amount.
+     * @param nutrientSymbol - The nutrient's symbol. the name of the row.
+     * @param nutrientsResults - The results amount.
+     * @param status - String that says if the amount is sufficient, high or low.
+     * @param thresholds - String of thresholds range for the nutrient.
+     * @param nutrientBalance - Balance amount.
+     * @param recommendation - Recommendation amount.
+     * @param correction - Soil correction amount.
      */
     public SoilAnalysisOutput(String nutrientSymbol, double nutrientsResults, String status, String thresholds,
                               double nutrientBalance, double recommendation, double correction) {

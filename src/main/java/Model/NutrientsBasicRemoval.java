@@ -8,7 +8,7 @@ import DB.Entites.*;
 import Model.WriteOutput.NutrientsOutput;
 
 /**
- * the class is responsible for calculation of the amount of removal
+ * The class is responsible for calculation of the amount of removal
  * that is needed for each of the nutrients - total and per stage.
  */
 public class NutrientsBasicRemoval {
@@ -16,19 +16,19 @@ public class NutrientsBasicRemoval {
     private UserInput ui;
 
     /**
-     * the constructor receives the user input.
-     * @param ui - the user's input.
+     * The constructor receives the user input.
+     * @param ui - The user's input.
      */
     public NutrientsBasicRemoval(UserInput ui) {
         this.ui = ui;
     }
 
     /**
-     * calculates the amount of removal in kg which is needed
+     * Calculates the amount of removal in kg which is needed
      * for each nutrient total, and for each stage of the crop's growth, pre season.
-     * sets the removal calculations in the nutrients class, and then returns it.
-     * @param parameters - the parameters data
-     * @return nutrients - crop's nutrients data
+     * Sets the removal calculations in the nutrients class, and then returns it.
+     * @param parameters - The parameters data
+     * @return nutrients - Crop's nutrients data
      */
     public Nutrients calculateRemoval(Parameters parameters) {
         Nutrients nutrients = new Nutrients();

@@ -13,7 +13,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * the class is responsible for the calculation of the omc (organic matter contribution).
+ * The class is responsible for the calculation of the omc (organic matter contribution).
  */
 public class OrganicMatterContribution {
 
@@ -22,11 +22,11 @@ public class OrganicMatterContribution {
     }
 
     /**
-     * calculates the organic matter contribution. it adds it to
+     * Calculates the organic matter contribution. It adds it to
      * the adjusted nutrient table, and then returns the updated nutrients data.
-     * @param p - the parameters data.
-     * @param n - the nutrients data.
-     * @return n - the updated nutrients data.
+     * @param p - The parameters data.
+     * @param n - The nutrients data.
+     * @return n - The updated nutrients data.
      */
     public Nutrients organicMatterContribution(Parameters p, Nutrients n) {
 
@@ -122,12 +122,12 @@ public class OrganicMatterContribution {
     }
 
     /**
-     * receives the crop stage list and returns a set that contains
+     * Receives the crop stage list and returns a set that contains
      * the unique months in which a stage is started.
-     * note: it means that if two or more stages begin in the same month,
+     * Note: it means that if two or more stages begin in the same month,
      * their month id value will be taken only once.
-     * @param cropStageList - list containing info about each crop start date and name.
-     * @return months - a set of unique months.
+     * @param cropStageList - List containing info about each crop start date and name.
+     * @return months - A set of unique months.
      */
     public Set<Integer> uniqueMonths(List<CropStage> cropStageList) {
         Set<Integer> months = new LinkedHashSet<>();

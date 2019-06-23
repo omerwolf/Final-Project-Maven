@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * represents all the data needed for the nutrients used during the crop's growth.
+ * Represents all the data needed for the nutrients used during the crop's growth,
  * including the output tables (PreSeason member).
  */
 public class Nutrients {

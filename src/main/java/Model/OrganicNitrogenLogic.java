@@ -10,7 +10,7 @@ import Model.WriteOutput.NutrientsOutput;
 import java.util.*;
 
 /**
- * responsible for the calculation of the Organic Nitrogen.
+ * Responsible for the calculation of the Organic Nitrogen.
  */
 public class OrganicNitrogenLogic {
 
@@ -19,14 +19,14 @@ public class OrganicNitrogenLogic {
     }
 
     /**
-     * takes the nOrganic value from the db.
-     * if not null or 0, removes from adjustment nutrient table the som and n credit,
+     * Takes the nOrganic value from the db.
+     * If not null or 0, removes from adjustment nutrient table the som and n credit,
      * and calculates the kg, which will be added to adjustment nutrient table.
-     * otherwise just adds it as a list of zeroes.
-     * returns the updated nutrients data.
-     * @param p - the parameters data.
-     * @param n - the nutrients data.
-     * @return n - the updated nutrients data.
+     * Otherwise just adds it as a list of zeroes.
+     * Returns the updated nutrients data.
+     * @param p - The parameters data.
+     * @param n - The nutrients data.
+     * @return n - The updated nutrients data.
      */
     public Nutrients calculateOnl(Parameters p, Nutrients n) {
 

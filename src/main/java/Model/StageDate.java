@@ -13,7 +13,7 @@ import java.util.Calendar;
 import java.util.List;
 
 /**
- * calculates the dates for each stage of the crop and their names,
+ * Calculates the dates for each stage of the crop and their names,
  * and the total duration of the crop's growth.
  */
 public class StageDate {
@@ -23,12 +23,12 @@ public class StageDate {
     }
 
     /**
-     * takes the initial date from the user input (if exists, otherwise takes current day),
+     * Takes the initial date from the user input (if exists, otherwise takes current day),
      * and calculates the dates and names of each stage during the crop's growth.
-     * it also calculates the total duration of the crop's growth.
-     * they are inserted to the parameters class(which was received as an input) and then returned.
-     * @param parameters - the parameters data.
-     * @return parameters - the same class, with updated members.
+     * It also calculates the total duration of the crop's growth.
+     * They are inserted to the parameters class(which was received as an input) and then returned.
+     * @param parameters - The parameters data.
+     * @return parameters - The same class, with updated members.
      */
     public Parameters stageDate(Parameters parameters) {
         //checks user input date. if empty, takes the current day

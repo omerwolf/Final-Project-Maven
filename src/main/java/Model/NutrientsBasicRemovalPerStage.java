@@ -1,7 +1,7 @@
 package Model;
 
 /**
- * represents a list the contain information about a specific
+ * Represents a list the contain information about a specific
  * stage, including it's name, it's starting date, and the amount of
  * nutrients that are needed to be removed during that stage.
  */
@@ -25,7 +25,7 @@ public class NutrientsBasicRemovalPerStage {
     }
 
     /**
-     * creates the nutrientsBasicRemovalPerStage object, which contains the amount
+     * Creates the nutrientsBasicRemovalPerStage object, which contains the amount
      * of removal that is needed for each nutrient in a specific stage during
      * the crop's growth. also contains the stage name, and it's starting date.
      * @param sd

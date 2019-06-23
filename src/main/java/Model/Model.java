@@ -19,8 +19,8 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * responsible for running the model.
- * receives input from the user, and optionally input of soil/water/tissue analysis),
+ * Responsible for running the model.
+ * Receives input from the user, and optionally input of soil/water/tissue analysis),
  * and use them throughout the model in order to get an output of the expected amounts
  * that are needed for each one of the nutrients for the requested crop to grow.
  */
@@ -31,10 +31,10 @@ public class Model {
 
 
     /**
-     * creates the model class. receives user input, and soil and water analysis(can be null).
-     * @param soilAnalysisId - the id of the soil analysis info which was inserted as an input.
-     * @param waterAnalysisId - the id of the water analysis info which was inserted as an input.
-     * @param ui - the user input.
+     * Creates the model class. Receives user input, and soil and water analysis(can be null).
+     * @param soilAnalysisId - The id of the soil analysis info which was inserted as an input.
+     * @param waterAnalysisId - The id of the water analysis info which was inserted as an input.
+     * @param ui - The user input.
      */
     public Model(Integer soilAnalysisId, Integer waterAnalysisId, UserInput ui) {
         this.soilAnalysisId = soilAnalysisId;
@@ -47,7 +47,7 @@ public class Model {
     }
 
     /**
-     * initiates the model. calls all necessary classes and methods,
+     * Initiates the model. Calls all necessary classes and methods,
      * in order to calculate the output, which is then created
      * as an excel file.
      */
@@ -125,10 +125,10 @@ public class Model {
     }
 
     /**
-     * calculates the summary of the nutrients in the adjustment table.
-     * @param p - the parameters data.
-     * @param n - the nutrients data.
-     * @return the nutrients data, updated.
+     * Calculates the summary of the nutrients in the adjustment table.
+     * @param p - The parameters data.
+     * @param n - The nutrients data.
+     * @return The nutrients data, updated.
      */
     public Nutrients calculateSummaryAdjTable(Parameters p, Nutrients n) {
 
@@ -154,9 +154,9 @@ public class Model {
     }
 
     /**
-     * creates an excel file for all tables (adjustment nutrients, actual nutrients,
+     * Creates an excel file for all tables (adjustment nutrients, actual nutrients,
      * water analysis and soil analysis).
-     * @param n - the nutrients data.
+     * @param n - The nutrients data.
      */
     public void exportOutputTables(Nutrients n) {
         System.out.println("ui something is " + ui.getSelectedSoil().getName());
@@ -174,11 +174,11 @@ public class Model {
     }
 
     /**
-     * rounds the adjustment nutrients table and the actual nutrient table
+     * Rounds the adjustment nutrients table and the actual nutrient table
      * values, so that each value won't have too many digits after the
      * decimal point.
-     * @param n - the nutrients data
-     * @return the nutrients data, updated with the rounded values.
+     * @param n - The nutrients data
+     * @return The nutrients data, updated with the rounded values.
      */
     public Nutrients roundResults(Nutrients n) {
         List<NutrientsOutput> adjust = n.getPreSeason().getAdjNutrients();

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * updates the summary of the nutrients in the adjustment table output
+ * Updates the summary of the nutrients in the adjustment table output
  * by multiplying them with the ph effect values.
  */
 public class PhAdjustment {
@@ -21,13 +21,13 @@ public class PhAdjustment {
     }
 
     /**
-     * gets the soilPh in order to get the proper range of the ph values.
-     * calculates the effects for each parameter, and then multiply them by
+     * Gets the soilPh in order to get the proper range of the ph values.
+     * Calculates the effects for each parameter, and then multiply them by
      * the nutrients amount summary values in order to get the updated amount for each nutrient,
      * which is affected by the soil ph value.
-     * @param p - .parameters data.
-     * @param n - the nutrients data.
-     * @param sample - a sampling point during the crop's growth
+     * @param p - The parameters data.
+     * @param n - The nutrients data.
+     * @param sample - A sampling point during the crop's growth
      * @return
      */
     public Nutrients phAdjustment(Parameters p, Nutrients n, double sample) {
